@@ -8,29 +8,65 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods-PushySquares.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>SwiftRandom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>SwiftyAnimate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>SwiftyUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>029FC57BA77AB6AAF5D751794A4900D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1B65246B1C49999577D9BA26AA8B49B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1ECC035367B29FE415C52147F2527F97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B9F2C6DD00A30B37FCEE25B2C261248</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>77A13C1EF91AB12EEEBDE915C91866B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1ECC035367B29FE415C52147F2527F97"
-               BuildableName = "Pods_PushySquares.framework"
-               BlueprintName = "Pods-PushySquares"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+               BuildableName = "PushySquaresModel.framework"
+               BlueprintName = "PushySquaresModel"
+               ReferencedContainer = "container:PushySquares.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1ECC035367B29FE415C52147F2527F97"
-            BuildableName = "Pods_PushySquares.framework"
-            BlueprintName = "Pods-PushySquares"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+            BuildableName = "PushySquaresModel.framework"
+            BlueprintName = "PushySquaresModel"
+            ReferencedContainer = "container:PushySquares.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+            BuildableName = "PushySquaresModel.framework"
+            BlueprintName = "PushySquaresModel"
+            ReferencedContainer = "container:PushySquares.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
