@@ -1,0 +1,6 @@
+framework module SwiftyAnimate {
+  umbrella header "SwiftyAnimate-umbrella.h"
+
+  export *
+  module * { export * }
+}
