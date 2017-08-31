@@ -22,6 +22,11 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         }
     }
     
+    public subscript(position: Position) -> T {
+        get { return self[position.x, position.y] }
+        set { self[position.x, position.y] = newValue }
+    }
+    
     public typealias Iterator = Array<T>.Iterator
     public typealias SubSequence = Array<T>.SubSequence
     public typealias Element = [T]
@@ -76,6 +81,18 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         columns = elements.first!.count
         rows = elements.count
         array = elements.flatMap { $0 }
+    }
+    
+    public func indicesOf(itemsWhere predicate: (T) -> Bool) -> [Position] {
+        var indices = [Position]()
+        for x in 0..<columns {
+            for y in 0..<rows {
+                if predicate(self[x, y]) {
+                    indices.append(Position(x: x, y: y))
+                }
+            }
+        }
+        return indices
     }
 }
 
