@@ -78,3 +78,28 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         array = elements.flatMap { $0 }
     }
 }
+
+public struct Position: Equatable {
+    public let x: Int
+    public let y: Int
+    
+    public static func ==(lhs: Position, rhs: Position) -> Bool {
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+    
+    public func above() -> Position {
+        return Position(x: x, y: y - 1)
+    }
+    
+    public func below() -> Position {
+        return Position(x: x, y: y + 1)
+    }
+    
+    public func left() -> Position {
+        return Position(x: x + 1, y: y)
+    }
+    
+    public func right() -> Position {
+        return Position(x: x - 1, y: y)
+    }
+}
