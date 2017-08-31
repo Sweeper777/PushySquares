@@ -15,6 +15,7 @@
 		5A2947551F56B663002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947711F56BA66002E833B /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A29476F1F56BA66002E833B /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
+		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		60CD5DE4D2ADA724B5674780 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		5A29476D1F56BA66002E833B /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A29476F1F56BA66002E833B /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		92CA3883F581C150F8198E0B /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				5A29474A1F569D22002E833B /* LaunchScreen.storyboard */,
 				5A29474D1F569D22002E833B /* Info.plist */,
 				5A2947541F56B663002E833B /* Tile.swift */,
+				5A2947761F56E6C1002E833B /* Array2D.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2947551F56B663002E833B /* Tile.swift in Sources */,
+				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
 				5A2947441F569D22002E833B /* ViewController.swift in Sources */,
 				5A2947421F569D22002E833B /* AppDelegate.swift in Sources */,
 			);
