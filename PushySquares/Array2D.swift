@@ -119,4 +119,9 @@ public struct Position: Equatable {
     public func right() -> Position {
         return Position(x: x - 1, y: y)
     }
+    
+    public init(_ x: Int, _ y: Int) {
+        self.x = x
+        self.y = y
+    }
 }
