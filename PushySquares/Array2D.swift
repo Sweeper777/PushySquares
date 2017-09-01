@@ -96,6 +96,20 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
     }
 }
 
+extension Array2D where T == Tile {
+    public func indicesOf(color: Color) -> [Position] {
+        return self.indicesOf {
+            item in
+            switch item {
+            case .square(let c):
+                return c == color
+            default:
+                return false
+            }
+        }
+    }
+}
+
 public struct Position: Equatable {
     public let x: Int
     public let y: Int
