@@ -17,6 +17,10 @@
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
+		5AB0219A1F588074001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
+		5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
+		5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
+		5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
 		60CD5DE4D2ADA724B5674780 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,7 @@
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5AB021991F588074001A40D1 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		92CA3883F581C150F8198E0B /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +128,7 @@
 				5A2947541F56B663002E833B /* Tile.swift */,
 				5A2947761F56E6C1002E833B /* Array2D.swift */,
 				5AB021971F5815FA001A40D1 /* Player.swift */,
+				5AB021991F588074001A40D1 /* Map.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
 				5A2947441F569D22002E833B /* ViewController.swift in Sources */,
 				5AB021981F5815FA001A40D1 /* Player.swift in Sources */,
+				5AB0219A1F588074001A40D1 /* Map.swift in Sources */,
 				5A2947421F569D22002E833B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2947751F56BA87002E833B /* Tile.swift in Sources */,
+				5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */,
+				5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */,
+				5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92CA3883F581C150F8198E0B /* Pods-PushySquares.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = PushySquares/Info.plist;
@@ -463,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 165727B66FC409F48166F07A /* Pods-PushySquares.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = PushySquares/Info.plist;

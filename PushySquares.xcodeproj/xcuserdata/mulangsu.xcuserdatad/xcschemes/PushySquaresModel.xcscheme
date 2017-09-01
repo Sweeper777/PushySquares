@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+               BlueprintIdentifier = "5A29476C1F56BA66002E833B"
                BuildableName = "PushySquaresModel.framework"
                BlueprintName = "PushySquaresModel"
                ReferencedContainer = "container:PushySquares.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+            BlueprintIdentifier = "5A29476C1F56BA66002E833B"
             BuildableName = "PushySquaresModel.framework"
             BlueprintName = "PushySquaresModel"
             ReferencedContainer = "container:PushySquares.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A29475A1F56B9DC002E833B"
+            BlueprintIdentifier = "5A29476C1F56BA66002E833B"
             BuildableName = "PushySquaresModel.framework"
             BlueprintName = "PushySquaresModel"
             ReferencedContainer = "container:PushySquares.xcodeproj">
