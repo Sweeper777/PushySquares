@@ -3,7 +3,6 @@ public enum Tile {
     case void
     case wall
     case square(Color)
-    case spawn(Color)
 }
 
 public enum Color {
