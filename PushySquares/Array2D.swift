@@ -88,7 +88,7 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         for x in 0..<columns {
             for y in 0..<rows {
                 if predicate(self[x, y]) {
-                    indices.append(Position(x: x, y: y))
+                    indices.append(Position(x, y))
                 }
             }
         }
@@ -105,19 +105,19 @@ public struct Position: Equatable {
     }
     
     public func above() -> Position {
-        return Position(x: x, y: y - 1)
+        return Position(x, y - 1)
     }
     
     public func below() -> Position {
-        return Position(x: x, y: y + 1)
+        return Position(x, y + 1)
     }
     
     public func left() -> Position {
-        return Position(x: x + 1, y: y)
+        return Position(x + 1, y)
     }
     
     public func right() -> Position {
-        return Position(x: x - 1, y: y)
+        return Position(x - 1, y)
     }
     
     public init(_ x: Int, _ y: Int) {
