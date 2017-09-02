@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A25DF631F59A53900455CA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF621F59A53900455CA5 /* Game.swift */; };
+		5A25DF641F59A5BE00455CA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF621F59A53900455CA5 /* Game.swift */; };
+		5A25DF661F59AB0B00455CA5 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */; };
+		5A25DF671F59AB0F00455CA5 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */; };
 		5A2947421F569D22002E833B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947411F569D22002E833B /* AppDelegate.swift */; };
 		5A2947441F569D22002E833B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947431F569D22002E833B /* ViewController.swift */; };
 		5A2947471F569D22002E833B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2947451F569D22002E833B /* Main.storyboard */; };
@@ -40,6 +44,8 @@
 /* Begin PBXFileReference section */
 		165727B66FC409F48166F07A /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 		42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A25DF621F59A53900455CA5 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		5A29473E1F569D22002E833B /* PushySquares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2947411F569D22002E833B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A2947431F569D22002E833B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 				5A2947761F56E6C1002E833B /* Array2D.swift */,
 				5AB021971F5815FA001A40D1 /* Player.swift */,
 				5AB021991F588074001A40D1 /* Map.swift */,
+				5A25DF621F59A53900455CA5 /* Game.swift */,
+				5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -320,6 +328,8 @@
 			files = (
 				5A2947551F56B663002E833B /* Tile.swift in Sources */,
 				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
+				5A25DF661F59AB0B00455CA5 /* GameDelegate.swift in Sources */,
+				5A25DF631F59A53900455CA5 /* Game.swift in Sources */,
 				5A2947441F569D22002E833B /* ViewController.swift in Sources */,
 				5AB021981F5815FA001A40D1 /* Player.swift in Sources */,
 				5AB0219A1F588074001A40D1 /* Map.swift in Sources */,
@@ -331,7 +341,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A25DF671F59AB0F00455CA5 /* GameDelegate.swift in Sources */,
 				5A2947751F56BA87002E833B /* Tile.swift in Sources */,
+				5A25DF641F59A5BE00455CA5 /* Game.swift in Sources */,
 				5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */,
 				5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */,
 				5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */,
