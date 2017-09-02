@@ -30,6 +30,14 @@ class Game {
         default:
             fatalError()
         }
+        
+        if playerCount < 4 {
+            spawnpoints[.color4] = nil
+        }
+        
+        if playerCount < 3 {
+            spawnpoints[.color2] = nil
+        }
     }
     
     private func spawnNewSquare(color: Color) {
