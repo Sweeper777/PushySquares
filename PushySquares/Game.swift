@@ -10,6 +10,8 @@ class Game {
     
     private var currentPlayerIndex = 0
     
+    public weak var delegate: GameDelegate?
+    
     public init(map: Map, playerCount: Int, lives: Int = 5) {
         self.board = map.board
         self.spawnpoints = map.spawnpoints
@@ -42,5 +44,6 @@ class Game {
     
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
+        delegate?.squareDidSpawn(color: color)
     }
 }
