@@ -10,4 +10,7 @@ class Game {
     
     private var currentPlayerIndex = 0
     
+    private func spawnNewSquare(color: Color) {
+        board[spawnpoints[color]!] = .square(color)
+    }
 }
