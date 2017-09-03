@@ -46,6 +46,24 @@ class Game {
         let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
         var movingSquaresPositions = [Position]()
         var beingDestroyedSquaresPositions = [Position]()
+        for position in allSquaresPositions {
+            var pushedPositions = [position]
+            loop: while true {
+                switch board[pushedPositions.last!.above()] {
+                case .empty:
+                    break loop
+                case .wall:
+                    pushedPositions = []
+                    break loop
+                case .void:
+                    beingDestroyedSquaresPositions.append(pushedPositions.last!)
+                    break loop
+                case .square:
+                    pushedPositions.append(pushedPositions.last!.above())
+                }
+            }
+            movingSquaresPositions.append(contentsOf: pushedPositions)
+        }
     }
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
