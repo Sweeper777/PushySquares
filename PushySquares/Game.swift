@@ -72,6 +72,7 @@ class Game {
                 board[position.above()] = tile
             }
         }
+        delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
     }
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
