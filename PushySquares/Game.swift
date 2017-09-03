@@ -42,6 +42,11 @@ class Game {
         }
     }
     
+    public func moveUp() {
+        let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
+        var movingSquaresPositions = [Position]()
+        var beingDestroyedSquaresPositions = [Position]()
+    }
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
         delegate?.squareDidSpawn(color: color)
