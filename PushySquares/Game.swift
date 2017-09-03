@@ -64,6 +64,7 @@ class Game {
             }
             movingSquaresPositions.append(contentsOf: pushedPositions)
         }
+        let sortedPositions = movingSquaresPositions.sorted { $0.0.y < $0.1.y }
     }
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
