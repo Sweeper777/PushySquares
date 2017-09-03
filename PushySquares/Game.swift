@@ -74,6 +74,40 @@ class Game {
         }
         delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
     }
+    
+    private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool) {
+        let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
+        var movingSquaresPositions = [Position]()
+        var beingDestroyedSquaresPositions = [Position]()
+        for position in allSquaresPositions {
+            var pushedPositions = [position]
+            loop: while true {
+                switch board[displace(pushedPositions.last!)] {
+                case .empty:
+                    break loop
+                case .wall:
+                    pushedPositions = []
+                    break loop
+                case .void:
+                    beingDestroyedSquaresPositions.append(pushedPositions.last!)
+                    break loop
+                case .square:
+                    pushedPositions.append(displace(pushedPositions.last!))
+                }
+            }
+            movingSquaresPositions.append(contentsOf: pushedPositions)
+        }
+        let sortedPositions = movingSquaresPositions.sorted(by: sorter)
+        for position in sortedPositions {
+            let tile = board[position]
+            board[position] = .empty
+            if !beingDestroyedSquaresPositions.contains(position) {
+                board[displace(position)] = tile
+            }
+        }
+        delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
+    }
+    
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
         delegate?.squareDidSpawn(color: color)
