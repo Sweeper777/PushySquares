@@ -40,6 +40,8 @@ public class Game {
         if playerCount < 3 {
             spawnpoints[.color2] = nil
         }
+        
+        currentPlayer.turnsUntilNewSquare -= 1
     }
     
     public func moveUp() {
