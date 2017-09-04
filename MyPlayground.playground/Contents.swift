@@ -29,3 +29,6 @@ func printBoard(_ board: Array2D<Tile>) {
         print("")
     }
 }
+
+let game = Game(map: .standard, playerCount: 4)
+printBoard(game.board)
