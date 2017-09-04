@@ -19,16 +19,20 @@ public class Game {
         case 4:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color4))
             spawnNewSquare(color: .color4)
+            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
             fallthrough
         case 3:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color2))
             spawnNewSquare(color: .color2)
+            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
             fallthrough
         case 2:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color1))
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color3))
             spawnNewSquare(color: .color1)
             spawnNewSquare(color: .color3)
+            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
+            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color3)
         default:
             fatalError()
         }
@@ -95,6 +99,5 @@ public class Game {
     
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
-        delegate?.squareDidSpawn(color: color)
     }
 }
