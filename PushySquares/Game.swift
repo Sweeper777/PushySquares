@@ -43,36 +43,6 @@ public class Game {
     }
     
     public func moveUp() {
-        let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
-        var movingSquaresPositions = [Position]()
-        var beingDestroyedSquaresPositions = [Position]()
-        for position in allSquaresPositions {
-            var pushedPositions = [position]
-            loop: while true {
-                switch board[pushedPositions.last!.above()] {
-                case .empty:
-                    break loop
-                case .wall:
-                    pushedPositions = []
-                    break loop
-                case .void:
-                    beingDestroyedSquaresPositions.append(pushedPositions.last!)
-                    break loop
-                case .square:
-                    pushedPositions.append(pushedPositions.last!.above())
-                }
-            }
-            movingSquaresPositions.append(contentsOf: pushedPositions)
-        }
-        let sortedPositions = movingSquaresPositions.sorted { $0.0.y < $0.1.y }
-        for position in sortedPositions {
-            let tile = board[position]
-            board[position] = .empty
-            if !beingDestroyedSquaresPositions.contains(position) {
-                board[position.above()] = tile
-            }
-        }
-        delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
     }
     
     private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool) {
