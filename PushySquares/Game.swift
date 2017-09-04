@@ -43,6 +43,19 @@ public class Game {
     }
     
     public func moveUp() {
+        move(displacement: { $0.above() }, sorter: { $0.y < $1.y })
+    }
+    
+    public func moveDown() {
+        move(displacement: { $0.below() }, sorter: { $0.y > $1.y })
+    }
+    
+    public func moveLeft() {
+        move(displacement: { $0.left() }, sorter: { $0.x < $1.x })
+    }
+    
+    public func moveRight() {
+        move(displacement: { $0.right() }, sorter: { $0.x > $1.x })
     }
     
     private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool) {
