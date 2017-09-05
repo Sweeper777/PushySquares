@@ -12,3 +12,10 @@ public enum Color {
     case color4
     case grey
 }
+
+public enum Direction {
+    case up
+    case down
+    case left
+    case right
+}
