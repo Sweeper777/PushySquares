@@ -1,5 +1,5 @@
 
 
 public protocol GameDelegate : class {
-    func playerDidMakeMove(originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?)
+    func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?)
 }

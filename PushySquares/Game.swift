@@ -19,20 +19,20 @@ public class Game {
         case 4:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color4))
             spawnNewSquare(color: .color4)
-            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
             fallthrough
         case 3:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color2))
             spawnNewSquare(color: .color2)
-            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
             fallthrough
         case 2:
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color1))
             players.append(Player(turnsUntilNewSquare: playerCount + 1, lives: lives, color: .color3))
             spawnNewSquare(color: .color1)
             spawnNewSquare(color: .color3)
-            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
-            delegate?.playerDidMakeMove(originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color3)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color3)
         default:
             fatalError()
         }
@@ -49,22 +49,22 @@ public class Game {
     }
     
     public func moveUp() {
-        move(displacement: { $0.above() }, sorter: { $0.y < $1.y })
+        move(displacement: { $0.above() }, sorter: { $0.y < $1.y }, direction: .up)
     }
     
     public func moveDown() {
-        move(displacement: { $0.below() }, sorter: { $0.y > $1.y })
+        move(displacement: { $0.below() }, sorter: { $0.y > $1.y }, direction: .down)
     }
     
     public func moveLeft() {
-        move(displacement: { $0.left() }, sorter: { $0.x < $1.x })
+        move(displacement: { $0.left() }, sorter: { $0.x < $1.x }, direction: .left)
     }
     
     public func moveRight() {
-        move(displacement: { $0.right() }, sorter: { $0.x > $1.x })
+        move(displacement: { $0.right() }, sorter: { $0.x > $1.x }, direction: .right)
     }
     
-    private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool) {
+    private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool, direction: Direction) {
         let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
         var movingSquaresPositions = [Position]()
         var beingDestroyedSquaresPositions = [Position]()
