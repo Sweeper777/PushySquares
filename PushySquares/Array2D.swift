@@ -138,4 +138,8 @@ public struct Position: Equatable {
         self.x = x
         self.y = y
     }
+extension Position: CustomStringConvertible {
+    public var description: String {
+        return "(\(x), \(y))"
+    }
 }
