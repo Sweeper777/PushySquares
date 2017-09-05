@@ -110,7 +110,7 @@ extension Array2D where T == Tile {
     }
 }
 
-public struct Position: Equatable {
+public struct Position: Hashable {
     public let x: Int
     public let y: Int
     
@@ -138,6 +138,12 @@ public struct Position: Equatable {
         self.x = x
         self.y = y
     }
+    
+    public var hashValue: Int {
+        return x * 1000 + y
+    }
+}
+
 extension Position: CustomStringConvertible {
     public var description: String {
         return "(\(x), \(y))"
