@@ -94,7 +94,11 @@ public class Game {
                 board[displace(position)] = tile
             }
         }
-        delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
+        let newSquareColor = nextTurn()
+        let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
+        delegate?.playerDidMakeMove(direction: direction, originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions, greyedOutPositions: greyedOutSquaresPositions, newSquareColor: newSquareColor)
+    }
+    
     private func nextTurn() -> Color? {
         var retVal: Color?
         repeat {
