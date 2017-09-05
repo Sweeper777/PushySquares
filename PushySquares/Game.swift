@@ -95,6 +95,21 @@ public class Game {
             }
         }
         delegate?.squaresDidMove(originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions)
+    private func nextTurn() -> Color? {
+        var retVal: Color?
+        repeat {
+            currentPlayerIndex = currentPlayerIndex == players.endIndex - 1 ? 0 : currentPlayerIndex + 1
+        } while currentPlayer.lives == 0
+        currentPlayer.turnsUntilNewSquare -= 1
+        if currentPlayer.turnsUntilNewSquare == 0 {
+            if case .empty = board[spawnpoints[currentPlayer.color]!] {
+                spawnNewSquare(color: currentPlayer.color)
+                retVal = currentPlayer.color
+            }
+            currentPlayer.turnsUntilNewSquare = players.count + 1
+        }
+        return retVal
+    }
     }
     
     private func spawnNewSquare(color: Color) {
