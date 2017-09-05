@@ -110,6 +110,26 @@ public class Game {
         }
         return retVal
     }
+    
+    private func handleDeaths(destroyedSquarePositions: [Position]) -> [Position] {
+        var retVal = [Position]()
+        for player in players {
+            let destroyedSquares = destroyedSquarePositions.filter {
+                if case .square(player.color) = board[$0] {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            player.lives -= destroyedSquares.count
+            if player.lives == 0 {
+                for pos in board.indicesOf(color: player.color) {
+                    retVal.append(pos)
+                    board[pos] = .square(.grey)
+                }
+            }
+        }
+        return retVal
     }
     
     private func spawnNewSquare(color: Color) {
