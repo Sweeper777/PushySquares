@@ -127,11 +127,11 @@ public struct Position: Hashable {
     }
     
     public func left() -> Position {
-        return Position(x + 1, y)
+        return Position(x - 1, y)
     }
     
     public func right() -> Position {
-        return Position(x - 1, y)
+        return Position(x + 1, y)
     }
     
     public init(_ x: Int, _ y: Int) {
