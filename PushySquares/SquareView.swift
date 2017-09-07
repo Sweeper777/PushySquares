@@ -5,6 +5,8 @@ import SwiftyAnimate
 
 @IBDesignable
 class SquareView: UIView {
+    static var animDuration: TimeInterval = 0.5
+    
     override func draw(_ rect: CGRect) {
         let strokeWidth = self.width / 8
         let path = UIBezierPath()
