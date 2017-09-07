@@ -86,7 +86,7 @@ public class Game {
             }
             movingSquaresPositions.append(contentsOf: pushedPositions)
         }
-        let sortedPositions = movingSquaresPositions.sorted(by: sorter)
+        let sortedPositions = Set(movingSquaresPositions).sorted(by: sorter)
         for position in sortedPositions {
             let tile = board[position]
             board[position] = .empty
