@@ -18,4 +18,9 @@ class SquareView: UIView {
         path.stroke()
     }
     
+    var moveUp: Animate {
+        return transform(duration: SquareView.animDuration, transforms: [
+            .move(x: 0, y: -self.height * 1.125)
+            ])
+    }
 }
