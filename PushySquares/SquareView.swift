@@ -5,4 +5,15 @@ import SwiftyAnimate
 
 @IBDesignable
 class SquareView: UIView {
+    override func draw(_ rect: CGRect) {
+        let strokeWidth = self.width / 8
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: self.width - strokeWidth / 2, y: 0))
+        path.addLine(to: CGPoint(x: self.width - strokeWidth / 2, y: self.height - strokeWidth / 2))
+        path.addLine(to: CGPoint(x: 0, y: self.height - strokeWidth / 2))
+        self.backgroundColor?.darker().setStroke()
+        path.lineWidth = strokeWidth
+        path.stroke()
+    }
+    
 }
