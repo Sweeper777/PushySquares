@@ -36,4 +36,10 @@ class SquareView: UIView {
             ])
     }
     
+    var moveRight: Animate {
+        return transform(duration: SquareView.animDuration, transforms: [
+            .move(x: self.width * 1.125, y: 0)
+            ])
+    }
+    
 }
