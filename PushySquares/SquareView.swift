@@ -42,4 +42,12 @@ class SquareView: UIView {
             ])
     }
     
+    var destroyed: Animate {
+        return transform(duration: SquareView.animDuration, transforms: [
+            .scale(x: 0, y: 0)
+            ]).do { [weak self] in
+                self?.removeFromSuperview()
+        }
+    }
+    
 }
