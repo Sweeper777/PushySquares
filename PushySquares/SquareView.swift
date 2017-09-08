@@ -50,4 +50,10 @@ class SquareView: UIView {
         }
     }
     
+    var appear: Animate {
+        return Animate(duration: SquareView.animDuration) {
+            [weak self] in
+            self?.alpha = 1
+        }
+    }
 }
