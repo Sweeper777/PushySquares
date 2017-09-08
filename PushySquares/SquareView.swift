@@ -23,4 +23,11 @@ class SquareView: UIView {
             .move(x: 0, y: -self.height * 1.125)
             ])
     }
+    
+    var moveDown: Animate {
+        return transform(duration: SquareView.animDuration, transforms: [
+            .move(x: 0, y: self.height * 1.125)
+            ])
+    }
+    
 }
