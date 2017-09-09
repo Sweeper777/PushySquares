@@ -31,4 +31,13 @@ class GameBoardView: UIView {
         return squareLength / GameBoardView.borderSize
     }
     
+    private func squareViewPoint(for position: Position) -> CGPoint {
+        let pointForPosition = point(for: position)
+        let offset = squareLength / GameBoardView.borderSize / 2
+        return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
+    }
+    
+    func position(forViewTag tag: Int) -> Position {
+        return Position(tag / 1000, tag % 1000)
+    }
 }
