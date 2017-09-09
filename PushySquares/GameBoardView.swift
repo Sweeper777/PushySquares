@@ -32,6 +32,19 @@ class GameBoardView: UIView {
             }
         }
         
+        let wallsLocations = game.board.indicesOf { (tile) -> Bool in
+            if case .wall = tile {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        for position in wallsLocations {
+            addSquareView(at: position, color: .white)
+        }
+    }
+    
     private func addSquareView(at position: Position, color: UIColor) {
         let squareView = SquareView(frame: CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength , height: squareViewLength)))
         squareView.backgroundColor = color
