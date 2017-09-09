@@ -19,4 +19,16 @@ class GameBoardView: UIView {
         }
     }
     
+    private var squareLength: CGFloat {
+        return (GameBoardView.borderSize * self.width) / (GameBoardView.borderSize * game!.board.columns.f + 1.0)
+    }
+    
+    private var squareViewLength: CGFloat {
+        return squareLength - (squareLength / GameBoardView.borderSize)
+    }
+    
+    private var strokeWidth: CGFloat {
+        return squareLength / GameBoardView.borderSize
+    }
+    
 }
