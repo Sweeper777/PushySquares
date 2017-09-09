@@ -32,6 +32,20 @@ class GameBoardView: UIView {
             }
         }
         
+    private func addSquareView(at position: Position, color: UIColor) {
+        let squareView = SquareView(frame: CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength , height: squareViewLength)))
+        squareView.backgroundColor = color
+        let borderFactor = 1.0 / GameBoardView.borderSize
+        let lengthMultiplier = 1.0 / (game!.board.columns.f * borderFactor + borderFactor + game!.board.columns.f)
+        let heightConstraint = NSLayoutConstraint(item: squareView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: lengthMultiplier, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: squareView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: lengthMultiplier, constant: 0)
+        squareView.tag = position.hashValue
+        self.addSubview(squareView)
+        self.addConstraints([heightConstraint, widthConstraint])
+    }
+    
+    private func point(for position: Position) -> CGPoint {
+        return CGPoint(x: strokeWidth / 2 + position.x.f * squareLength, y: strokeWidth / 2 + position.y.f * squareLength)
     }
     
     private var squareLength: CGFloat {
