@@ -19,6 +19,21 @@ class GameBoardView: UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        guard let game = self.game else { return }
+        for x in 0..<game.board.columns {
+            for y in 0..<game.board.rows {
+                if case .void = game.board[x, y] {} else {
+                    let path = UIBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+                    UIColor.black.setStroke()
+                    path.lineWidth = strokeWidth
+                    path.stroke()
+                }
+            }
+        }
+        
+    }
+    
     private var squareLength: CGFloat {
         return (GameBoardView.borderSize * self.width) / (GameBoardView.borderSize * game!.board.columns.f + 1.0)
     }
