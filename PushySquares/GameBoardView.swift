@@ -43,6 +43,13 @@ class GameBoardView: UIView {
         for position in wallsLocations {
             addSquareView(at: position, color: .white)
         }
+        
+        for color in [Color.color1, .color2, .color3, .color4] {
+            let locations = game.board.indicesOf(color: color)
+            for position in locations {
+                addSquareView(at: position, color: GameBoardView.colorToUIColor[color]!)
+            }
+        }
     }
     
     private func addSquareView(at position: Position, color: UIColor) {
