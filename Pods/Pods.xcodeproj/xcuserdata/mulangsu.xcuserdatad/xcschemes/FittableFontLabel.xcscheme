@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3B9F2C6DD00A30B37FCEE25B2C261248'
-               BlueprintName = 'DynamicColor'
+               BlueprintIdentifier = '8EFB44D2DE7C5EB00C3EC386780F54FB'
+               BlueprintName = 'FittableFontLabel'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DynamicColor.framework'>
+               BuildableName = 'FittableFontLabel.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -9,5 +9,5 @@ target 'PushySquares' do
   pod 'SwiftRandom'
   pod 'SwiftyUtils'
   pod 'DynamicColor'
-
+  pod 'FittableFontLabel'
 end

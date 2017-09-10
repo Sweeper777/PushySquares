@@ -8,51 +8,36 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
+		</dict>
+		<key>FittableFontLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-PushySquares.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>SwiftRandom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>SwiftyAnimate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SwiftyUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>029FC57BA77AB6AAF5D751794A4900D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B65246B1C49999577D9BA26AA8B49B3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1ECC035367B29FE415C52147F2527F97</key>
+		<key>2EA124400DEE3DD4CBBFC677407FF203</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77A13C1EF91AB12EEEBDE915C91866B8</key>
+		<key>4E984A329CE7B634F878D6E731F4A38C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8EFB44D2DE7C5EB00C3EC386780F54FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC8D57D67C9AE3669C50088BAC7FE1DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAEA2F965FBD2351141FBF7B5664CB0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

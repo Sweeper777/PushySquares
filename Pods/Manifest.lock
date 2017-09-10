@@ -1,21 +1,24 @@
 PODS:
   - DynamicColor (3.3)
+  - FittableFontLabel (1.4.0)
   - SwiftRandom (1.0.0)
   - SwiftyAnimate (1.3.0)
   - SwiftyUtils (1.0.0)
 
 DEPENDENCIES:
   - DynamicColor
+  - FittableFontLabel
   - SwiftRandom
   - SwiftyAnimate
   - SwiftyUtils
 
 SPEC CHECKSUMS:
   DynamicColor: 3cdaa1e01c16e93ba744e0630f768373e0fc7a7d
+  FittableFontLabel: 20502441e83bb41eb8b41611cca91af85c4e21e3
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
   SwiftyAnimate: 82bf6e7691bcd149250fd8cdb968c166420f269b
   SwiftyUtils: f48a22d2fa8eece42a11d8bbb4d01a9758dd0602
 
-PODFILE CHECKSUM: 1cd73e31e2bb7e31bf48149f065f3e427e2dca75
+PODFILE CHECKSUM: d7abc321e29693d88f51dc01eda1fa4ce35ce7c7
 
 COCOAPODS: 1.1.0.beta.1
