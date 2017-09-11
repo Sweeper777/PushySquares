@@ -10,6 +10,10 @@ class GameViewController: UIViewController, GameDelegate {
     var swipeLeftGR: UISwipeGestureRecognizer!
     var swipeRightGR: UISwipeGestureRecognizer!
     
+    var allGR: [UIGestureRecognizer] {
+        return [swipeUpGR, swipeDownGR, swipeRightGR, swipeLeftGR]
+    }
+    
     override func viewDidLoad() {
         boardView.game = self.game
         
