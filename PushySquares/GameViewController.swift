@@ -5,6 +5,11 @@ class GameViewController: UIViewController, GameDelegate {
     @IBOutlet var boardView: GameBoardView!
     let game = Game(map: .standard, playerCount: 4)
     
+    var swipeUpGR: UISwipeGestureRecognizer!
+    var swipeDownGR: UISwipeGestureRecognizer!
+    var swipeLeftGR: UISwipeGestureRecognizer!
+    var swipeRightGR: UISwipeGestureRecognizer!
+    
     override func viewDidLoad() {
         boardView.game = self.game
         
