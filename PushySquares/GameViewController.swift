@@ -7,6 +7,9 @@ class GameViewController: UIViewController, GameDelegate {
     
     override func viewDidLoad() {
         boardView.game = self.game
+        
+        game.delegate = self
+        
     }
     
     func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
