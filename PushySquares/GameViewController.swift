@@ -28,6 +28,8 @@ class GameViewController: UIViewController, GameDelegate {
         swipeLeftGR.direction = .left
         swipeRightGR.direction = .right
         
+        allGR.forEach { self.view.addGestureRecognizer($0) }
+        
     }
     
     func swipedUp() {
