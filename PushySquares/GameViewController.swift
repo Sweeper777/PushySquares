@@ -19,6 +19,15 @@ class GameViewController: UIViewController, GameDelegate {
         
         game.delegate = self
         
+        swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
+        swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedDown))
+        swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft))
+        swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
+        swipeUpGR.direction = .up
+        swipeDownGR.direction = .down
+        swipeLeftGR.direction = .left
+        swipeRightGR.direction = .right
+        
     }
     
     func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
