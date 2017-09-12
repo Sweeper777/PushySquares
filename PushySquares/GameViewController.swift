@@ -68,6 +68,7 @@ class GameViewController: UIViewController, GameDelegate {
         }
         
         var destroyedAnim = Animate()
+        moveAnim.perform()
     }
 }
 
