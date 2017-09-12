@@ -68,7 +68,14 @@ class GameViewController: UIViewController, GameDelegate {
         }
         
         var destroyedAnim = Animate()
+        
+        allGR.forEach { $0.isEnabled = false }
         moveAnim.perform()
+            {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.allGR.forEach { $0.isEnabled = true }
+        }
     }
 }
 
