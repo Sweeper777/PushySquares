@@ -50,6 +50,23 @@ class GameViewController: UIViewController, GameDelegate {
     
     func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
         var moveAnim = Animate()
+        
+        for position in originalPositions {
+            let squareView = boardView.viewWithTag(position.hashValue) as! SquareView
+            let squareViewMove: Animate
+            switch direction! {
+            case .down:
+                squareViewMove = squareView.moveDown
+            case .up:
+                squareViewMove = squareView.moveUp
+            case .left:
+                squareViewMove = squareView.moveLeft
+            case .right:
+                squareViewMove = squareView.moveRight
+            }
+            moveAnim = moveAnim.and(animation: squareViewMove)
+        }
+        
         var destroyedAnim = Animate()
     }
 }
