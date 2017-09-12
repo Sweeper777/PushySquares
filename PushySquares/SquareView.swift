@@ -19,9 +19,13 @@ class SquareView: UIView {
     }
     
     var moveUp: Animate {
-        return transform(duration: SquareView.animDuration, transforms: [
-            .move(x: 0, y: -self.height * 1.125)
-            ])
+        return Animate(duration: SquareView.animDuration, delay: 0, options: [.curveEaseInOut]) {
+            [weak self] in
+            guard let `self` = self else { return }
+            let superView = self.superview as! GameBoardView
+            self.tag = superView.position(forViewTag: self.tag).above().hashValue
+            self.frame = self.frame.with(origin: superView.squareViewPoint(for: superView.position(forViewTag: self.tag)))
+        }
     }
     
     var moveDown: Animate {
