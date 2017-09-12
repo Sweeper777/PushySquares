@@ -30,6 +30,18 @@ class GameViewController: UIViewController, GameDelegate {
         
     }
     
+    func swipedUp() {
+    }
+    
+    func swipedDown() {
+    }
+    
+    func swipedLeft() {
+    }
+    
+    func swipedRight() {
+    }
+    
     func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
     }
 }
