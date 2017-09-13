@@ -37,6 +37,8 @@ public class Game {
             fatalError()
         }
         
+        players.sort { $0.color.rawValue < $1.color.rawValue }
+        
         if playerCount < 4 {
             spawnpoints[.color4] = nil
         }
