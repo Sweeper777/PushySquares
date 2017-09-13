@@ -98,7 +98,7 @@ public class Game {
         }
         let newSquareColor = nextTurn()
         let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
-        delegate?.playerDidMakeMove(direction: direction, originalPositions: movingSquaresPositions, destroyedSquarePositions: beingDestroyedSquaresPositions, greyedOutPositions: greyedOutSquaresPositions, newSquareColor: newSquareColor)
+        delegate?.playerDidMakeMove(direction: direction, originalPositions: sortedPositions, destroyedSquarePositions: beingDestroyedSquaresPositions, greyedOutPositions: greyedOutSquaresPositions, newSquareColor: newSquareColor)
     }
     
     private func nextTurn() -> Color? {
