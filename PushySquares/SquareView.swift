@@ -49,9 +49,13 @@ class SquareView: UIView {
     }
     
     var moveRight: Animate {
-        return transform(duration: SquareView.animDuration, transforms: [
-            .move(x: self.width * 1.125, y: 0)
-            ])
+        return Animate(duration: SquareView.animDuration, delay: 0, options: [.curveEaseInOut]) {
+            [weak self] in
+            guard let `self` = self else { return }
+            let superView = self.superview as! GameBoardView
+            self.tag = superView.position(forViewTag: self.tag).right().hashValue
+            self.frame = self.frame.with(origin: superView.squareViewPoint(for: superView.position(forViewTag: self.tag)))
+        }
     }
     
     var destroyed: Animate {
