@@ -4,7 +4,7 @@ import FittableFontLabel
 @IBDesignable
 class StatusBar: UIView {
     @IBOutlet var lblNewSquareIn: FittableFontLabel!
-    @IBOutlet var imgCurrentTurn: UIImageView!
+    @IBOutlet var imgCurrentTurn: SquareView!
     @IBOutlet var lblLives: FittableFontLabel!
     
     override init(frame: CGRect) {
