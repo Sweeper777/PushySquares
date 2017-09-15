@@ -20,6 +20,8 @@ class StatusBar: UIView {
         let text = NSMutableAttributedString(string: "LIVES:\n")
         let player1Lives = NSAttributedString(string: "♥︎\(players[0].lives) ", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[0].color]!])
         text.append(player1Lives)
+        let player2Lives = NSAttributedString(string: "♥︎\(players[1].lives)", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[1].color]!])
+        text.append(player2Lives)
         lblLives.attributedText = text
     }
     
