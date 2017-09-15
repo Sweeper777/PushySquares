@@ -25,6 +25,9 @@ class StatusBar: UIView {
         guard players.count > 2 else { return }
         let player3Lives = NSAttributedString(string: "\n♥︎\(players[2].lives)", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[2].color]!])
         text.append(player3Lives)
+        guard players.count > 3 else { return }
+        let player4Lives = NSAttributedString(string: " ♥︎\(players[3].lives)", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[3].color]!])
+        text.append(player4Lives)
         lblLives.attributedText = text
     }
     
