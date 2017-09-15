@@ -12,6 +12,9 @@ class StatusBar: UIView {
         lblNewSquareIn.text = value.description
     }
     
+    func setCurrentTurn(value: Color) {
+        imgCurrentTurn.backgroundColor = GameBoardView.colorToUIColor[value]!
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
