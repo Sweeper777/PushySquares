@@ -1,11 +1,16 @@
 import UIKit
 import FittableFontLabel
+import SwiftyUtils
 
 @IBDesignable
 class StatusBar: UIView {
     @IBOutlet var lblNewSquareIn: FittableFontLabel!
     @IBOutlet var imgCurrentTurn: SquareView!
     @IBOutlet var lblLives: FittableFontLabel!
+    
+    func setNewSquareIn(value: Int) {
+        lblNewSquareIn.text = value.description
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
