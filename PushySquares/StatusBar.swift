@@ -15,6 +15,14 @@ class StatusBar: UIView {
     func setCurrentTurn(value: Color) {
         imgCurrentTurn.backgroundColor = GameBoardView.colorToUIColor[value]!
     }
+    
+    func setLives(players: [Player]) {
+        let text = NSMutableAttributedString(string: "LIVES:\n")
+        let player1Lives = NSAttributedString(string: "♥︎\(players[0].lives) ", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[0].color]!])
+        text.append(player1Lives)
+        lblLives.attributedText = text
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
