@@ -3,6 +3,7 @@ import UIKit
 class GameViewController: UIViewController, GameDelegate {
 
     @IBOutlet var boardView: GameBoardView!
+    @IBOutlet var statusBar: StatusBar!
     let game = Game(map: .standard, playerCount: 4)
     
     var swipeUpGR: UISwipeGestureRecognizer!
@@ -30,6 +31,9 @@ class GameViewController: UIViewController, GameDelegate {
         
         allGR.forEach { self.view.addGestureRecognizer($0) }
         
+        self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
+        self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
+        self.statusBar.setLives(players: self.game.players)
     }
     
     func swipedUp() {
