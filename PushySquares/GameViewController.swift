@@ -1,4 +1,5 @@
 import UIKit
+import SwiftyAnimate
 
 class GameViewController: UIViewController, GameDelegate {
 
@@ -91,6 +92,11 @@ class GameViewController: UIViewController, GameDelegate {
             [weak self] in
             guard let `self` = self else { return }
             self.allGR.forEach { $0.isEnabled = true }
+            self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
+            self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
+            if destroyedSquarePositions.isNotEmpty {
+                self.statusBar.setLives(players: self.game.players)
+            }
         }
     }
 }
