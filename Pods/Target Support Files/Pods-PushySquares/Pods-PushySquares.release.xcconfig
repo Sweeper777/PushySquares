@@ -1,9 +1,9 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/DynamicColor" "$PODS_CONFIGURATION_BUILD_DIR/FittableFontLabel" "$PODS_CONFIGURATION_BUILD_DIR/SwiftRandom" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyAnimate" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUtils"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/DynamicColor" "$PODS_CONFIGURATION_BUILD_DIR/FittableFontLabel" "$PODS_CONFIGURATION_BUILD_DIR/NGORoundedButton" "$PODS_CONFIGURATION_BUILD_DIR/SwiftRandom" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyAnimate" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUtils"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/DynamicColor/DynamicColor.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FittableFontLabel/FittableFontLabel.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftRandom/SwiftRandom.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyAnimate/SwiftyAnimate.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUtils/SwiftyUtils.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "DynamicColor" -framework "FittableFontLabel" -framework "SwiftRandom" -framework "SwiftyAnimate" -framework "SwiftyUtils"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/DynamicColor/DynamicColor.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/FittableFontLabel/FittableFontLabel.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/NGORoundedButton/NGORoundedButton.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftRandom/SwiftRandom.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyAnimate/SwiftyAnimate.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyUtils/SwiftyUtils.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "DynamicColor" -framework "FittableFontLabel" -framework "NGORoundedButton" -framework "SwiftRandom" -framework "SwiftyAnimate" -framework "SwiftyUtils"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

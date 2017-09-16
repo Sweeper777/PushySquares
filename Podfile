@@ -10,4 +10,5 @@ target 'PushySquares' do
   pod 'SwiftyUtils'
   pod 'DynamicColor'
   pod 'FittableFontLabel'
+  pod 'NGORoundedButton'
 end

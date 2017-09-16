@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NGORoundedButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PushySquares.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2EA124400DEE3DD4CBBFC677407FF203</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3B9F2C6DD00A30B37FCEE25B2C261248</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E984A329CE7B634F878D6E731F4A38C</key>
+		<key>460B6910A099D0876A4FA36B2AF70F45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BFF9D8CBD629729416C933758A0BD41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC8D57D67C9AE3669C50088BAC7FE1DF</key>
+		<key>CE9FFA3A52A3EC3714E038D40F2E4164</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAEA2F965FBD2351141FBF7B5664CB0A</key>
+		<key>D56DD25E879876717EA76029179354B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F07CCBFE4AF38AFD03EBCFAE99576FA3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
