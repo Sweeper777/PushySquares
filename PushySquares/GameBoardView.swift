@@ -52,7 +52,7 @@ class GameBoardView: UIView {
         }
     }
     
-    private func addSquareView(at position: Position, color: UIColor) {
+    func addSquareView(at position: Position, color: UIColor) {
         let squareView = SquareView(frame: CGRect(origin: squareViewPoint(for: position), size: CGSize(width: squareViewLength , height: squareViewLength)))
         squareView.backgroundColor = color
         let borderFactor = 1.0 / GameBoardView.borderSize
@@ -80,7 +80,7 @@ class GameBoardView: UIView {
         return squareLength / GameBoardView.borderSize
     }
     
-    private func squareViewPoint(for position: Position) -> CGPoint {
+    func squareViewPoint(for position: Position) -> CGPoint {
         let pointForPosition = point(for: position)
         let offset = squareLength / GameBoardView.borderSize / 2
         return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
