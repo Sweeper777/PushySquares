@@ -109,6 +109,10 @@ class GameViewController: UIViewController, GameDelegate {
             case .right:
                 closure = {$0.right()}
             }
+            for position in destroyedSquarePositions.map(closure) {
+                let view = self.boardView.viewWithTag(position.hashValue)!
+                view.removeFromSuperview()
+            }
         }
     }
 }
