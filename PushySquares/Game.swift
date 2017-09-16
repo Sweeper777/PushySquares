@@ -68,6 +68,13 @@ public class Game {
     
     private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool, direction: Direction) {
         let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
+        
+        if allSquaresPositions.isEmpty {
+            let newSquareColor = nextTurn()
+            delegate?.playerDidMakeMove(direction: direction, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: newSquareColor)
+            return
+        }
+        
         var movingSquaresPositions = [Position]()
         var beingDestroyedSquaresPositions = [Position]()
         for position in allSquaresPositions {
@@ -89,6 +96,7 @@ public class Game {
             movingSquaresPositions.append(contentsOf: pushedPositions)
         }
         let sortedPositions = Set(movingSquaresPositions).sorted(by: sorter)
+        
         for position in sortedPositions {
             let tile = board[position]
             board[position] = .empty
