@@ -97,6 +97,18 @@ class GameViewController: UIViewController, GameDelegate {
             if destroyedSquarePositions.isNotEmpty {
                 self.statusBar.setLives(players: self.game.players)
             }
+            
+            let closure: (Position) -> Position
+            switch direction! {
+            case .down:
+                closure = {$0.below()}
+            case .up:
+                closure = {$0.above()}
+            case .left:
+                closure = {$0.left()}
+            case .right:
+                closure = {$0.right()}
+            }
         }
     }
 }
