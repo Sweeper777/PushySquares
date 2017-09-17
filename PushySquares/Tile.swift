@@ -5,12 +5,12 @@ public enum Tile {
     case square(Color)
 }
 
-public enum Color {
-    case color1
-    case color2
-    case color3
-    case color4
-    case grey
+public enum Color: Int {
+    case color1 = 1
+    case color2 = 2
+    case color3 = 3
+    case color4 = 4
+    case grey = 0
 }
 
 public enum Direction {
