@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CE9FFA3A52A3EC3714E038D40F2E4164'
-               BlueprintName = 'NGORoundedButton'
+               BlueprintIdentifier = '98E6C2103FDC77D30FCCF6B40146DEB8'
+               BlueprintName = 'JTImageButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'NGORoundedButton.framework'>
+               BuildableName = 'JTImageButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
