@@ -60,10 +60,8 @@ class SquareView: UIView {
     
     var destroyed: Animate {
         return transform(duration: SquareView.animDuration, transforms: [
-            .scale(x: 0, y: 0)
-            ]).do { [weak self] in
-                self?.removeFromSuperview()
-        }
+            .scale(x: 0.1, y: 0.1)
+            ])
     }
     
     var appear: Animate {
