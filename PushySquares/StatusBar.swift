@@ -48,6 +48,7 @@ class StatusBar: UIView {
             UIViewAutoresizing.flexibleHeight
         ]
         addSubview(view)
+        backgroundColor = .clear
     }
     
     private func viewFromNibForClass() -> UIView {
