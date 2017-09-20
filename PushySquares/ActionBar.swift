@@ -35,6 +35,7 @@ class ActionBar: UIView {
         quitButton.touchEffectEnabled = true
         quitButton.cornerRadius = buttonHeight / 2
         
+        restartButton.borderWidth = 0
         restartButton.borderColor = .clear
         restartButton.bgColor = .red
         restartButton.titleColor = .white
