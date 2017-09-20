@@ -5,6 +5,24 @@ import JTImageButton
 class ActionBar: UIView {
     @IBOutlet var quitButton: JTImageButton!
     @IBOutlet var restartButton: JTImageButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+    }
+    private func setupView() {
+        let view = viewFromNibForClass() as! UIStackView
+        view.frame = bounds
+        view.autoresizingMask = [
+            UIViewAutoresizing.flexibleWidth,
+            UIViewAutoresizing.flexibleHeight
+        ]
+        addSubview(view)
         restartButton.borderColor = .clear
         restartButton.bgColor = .red
         restartButton.titleColor = .white
