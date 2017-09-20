@@ -24,6 +24,7 @@ class ActionBar: UIView {
         ]
         addSubview(view)
         backgroundColor = .clear
+        let buttonHeight = (view.height - view.spacing * (view.subviews.count.f - 1)) / view.subviews.count.f
         restartButton.borderColor = .clear
         restartButton.bgColor = .red
         restartButton.titleColor = .white
