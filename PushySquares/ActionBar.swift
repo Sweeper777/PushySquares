@@ -25,6 +25,16 @@ class ActionBar: UIView {
         addSubview(view)
         backgroundColor = .clear
         let buttonHeight = (view.height - view.spacing * (view.subviews.count.f - 1)) / view.subviews.count.f
+        
+        quitButton.borderWidth = 0
+        quitButton.borderColor = .clear
+        quitButton.bgColor = .red
+        quitButton.titleColor = .white
+        quitButton.iconColor = .white
+        quitButton.createTitle("Quit", withIcon: #imageLiteral(resourceName: "quit"), font: UIFont.systemFont(ofSize: 12), iconOffsetY: 0)
+        quitButton.touchEffectEnabled = true
+        quitButton.cornerRadius = buttonHeight / 2
+        
         restartButton.borderColor = .clear
         restartButton.bgColor = .red
         restartButton.titleColor = .white
