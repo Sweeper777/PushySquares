@@ -23,6 +23,7 @@ class ActionBar: UIView {
             UIViewAutoresizing.flexibleHeight
         ]
         addSubview(view)
+        backgroundColor = .clear
         restartButton.borderColor = .clear
         restartButton.bgColor = .red
         restartButton.titleColor = .white
