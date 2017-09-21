@@ -123,6 +123,9 @@ class GameViewController: UIViewController, GameDelegate {
         let separator = 8.f
         let statusBarWeight = 13.f / 84.f
         if size.height > size.width {
+            let statusBarHeight = (size.height - 7 * separator) * statusBarWeight
+            let statusBarWidth = size.width  - 2 * separator
+            statusBar = StatusBar(frame: CGRect(x: separator, y: separator * 3, width: statusBarWidth, height: statusBarHeight))
         } else {
             
         }
