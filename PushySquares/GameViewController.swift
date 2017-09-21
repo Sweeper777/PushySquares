@@ -115,5 +115,16 @@ class GameViewController: UIViewController, GameDelegate {
             }
         }
     }
+    
+    func repositionViews(size: CGSize) {
+        view.subviews.forEach { $0.removeFromSuperview() }
+        let separator = 8.f
+        let statusBarWeight = 13.f / 84.f
+        if size.height > size.width {
+        } else {
+            
+        }
+    }
+    
 }
 
