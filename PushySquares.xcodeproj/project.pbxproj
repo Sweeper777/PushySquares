@@ -26,7 +26,6 @@
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
 		5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */; };
-		5AAEBB371F6E864F00480E7F /* LivesDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAEBB361F6E864F00480E7F /* LivesDisplay.swift */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
 		5AB0219A1F588074001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
 		5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
@@ -73,7 +72,6 @@
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
-		5AAEBB361F6E864F00480E7F /* LivesDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesDisplay.swift; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5AB021991F588074001A40D1 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		92CA3883F581C150F8198E0B /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				5A269FA71F61D2FF00FEE02D /* StatusBar.xib */,
 				5A2563631F6D132A00E5DFAB /* ActionBar.xib */,
 				5A2563651F6D1FEC00E5DFAB /* ActionBar.swift */,
-				5AAEBB361F6E864F00480E7F /* LivesDisplay.swift */,
 				5A2947481F569D22002E833B /* Assets.xcassets */,
 				5A29474A1F569D22002E833B /* LaunchScreen.storyboard */,
 				5A29474D1F569D22002E833B /* Info.plist */,
@@ -350,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2947551F56B663002E833B /* Tile.swift in Sources */,
-				5AAEBB371F6E864F00480E7F /* LivesDisplay.swift in Sources */,
 				5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */,
 				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
 				5A25DF661F59AB0B00455CA5 /* GameDelegate.swift in Sources */,
