@@ -17,6 +17,8 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     override func viewDidLoad() {
+        repositionViews(size: view.frame.size)
+        
         boardView.game = self.game
         
         game.delegate = self
