@@ -136,6 +136,11 @@ class GameViewController: UIViewController, GameDelegate {
             let boardLength = min(heightLeft, widthLeft)
             let centerY = 6 * separator + statusBarHeight + heightLeft / 2
             let centerX = size.width / 2
+            boardView = GameBoardView(frame: CGRect(origin: .zero, size: CGSize(width: boardLength, height: boardLength)))
+            boardView.game = self.game
+            boardView.center = CGPoint(x: centerX, y: centerY)
+            boardView.backgroundColor = .clear
+            view.addSubview(boardView)
         } else {
             
         }
