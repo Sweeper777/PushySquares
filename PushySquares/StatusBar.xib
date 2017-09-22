@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,146 +11,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
             <connections>
+                <outlet property="currentTurnHeader" destination="l0Q-zX-D1J" id="Laj-5C-cXJ"/>
                 <outlet property="imgCurrentTurn" destination="g5y-YM-hxi" id="gC6-eq-sRI"/>
-                <outlet property="lblLives" destination="gcj-mf-D2E" id="ufs-en-hAt"/>
-                <outlet property="lblNewSquareIn" destination="XnM-rU-B9W" id="WKr-e1-y6W"/>
+                <outlet property="imgLives" destination="KtY-5b-Qis" id="f00-58-0LX"/>
+                <outlet property="imgNewSquareIn" destination="iCD-hZ-BM8" id="VEE-DR-1ev"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="TH1-H9-o1c">
-            <rect key="frame" x="0.0" y="0.0" width="357" height="62"/>
+            <rect key="frame" x="0.0" y="0.0" width="438" height="82"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xx8-To-TPP">
-                    <rect key="frame" x="0.0" y="0.0" width="119" height="62"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW SQUARE IN:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRi-T8-Xnt" customClass="FittableFontLabel" customModule="FittableFontLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="119" height="21"/>
-                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnM-rU-B9W" customClass="FittableFontLabel" customModule="FittableFontLabel">
-                            <rect key="frame" x="0.0" y="28" width="119" height="34"/>
-                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="maxFontSize">
-                                    <real key="value" value="25"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                    </subviews>
-                </stackView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsquarein4" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-hZ-BM8">
+                    <rect key="frame" x="0.0" y="0.0" width="146" height="82"/>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-wf-qVO">
-                    <rect key="frame" x="119" y="0.0" width="119" height="62"/>
+                    <rect key="frame" x="146" y="0.0" width="146" height="82"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-zX-D1J" customClass="FittableFontLabel" customModule="FittableFontLabel">
-                            <rect key="frame" x="37.5" y="0.0" width="44" height="31"/>
-                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-zX-D1J">
+                            <rect key="frame" x="52.5" y="0.0" width="41" height="41"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5y-YM-hxi" customClass="SquareView" customModule="PushySquares" customModuleProvider="target">
-                            <rect key="frame" x="44" y="31" width="31.5" height="31"/>
+                            <rect key="frame" x="52.5" y="41" width="41" height="41"/>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="g5y-YM-hxi" secondAttribute="height" multiplier="1:1" id="Esu-aA-uid"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="g5y-YM-hxi" firstAttribute="width" secondItem="l0Q-zX-D1J" secondAttribute="width" id="tGx-An-Kq9"/>
+                    </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcj-mf-D2E" customClass="FittableFontLabel" customModule="FittableFontLabel">
-                    <rect key="frame" x="238" y="0.0" width="119" height="62"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">LIVES
-</string>
-                            <attributes>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="♥︎">
-                            <attributes>
-                                <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="HiraginoSans-W3"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="2">
-                            <attributes>
-                                <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content=" ">
-                            <attributes>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="♥︎">
-                            <attributes>
-                                <color key="NSColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="HiraginoSans-W3"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="1">
-                            <attributes>
-                                <color key="NSColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                            <attributes>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="♥︎">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="HiraginoSans-W3"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="3 ">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="♥︎">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="HiraginoSans-W3"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="1">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="11" name="ChalkboardSE-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoAdjustFontSize" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtY-5b-Qis" customClass="UIImageView">
+                    <rect key="frame" x="292" y="0.0" width="146" height="82"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <point key="canvasLocation" x="78.5" y="25"/>
+            <point key="canvasLocation" x="119" y="35"/>
         </stackView>
     </objects>
+    <resources>
+        <image name="newsquarein4" width="500" height="288"/>
+    </resources>
 </document>
