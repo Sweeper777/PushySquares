@@ -11,7 +11,18 @@ class StatusBar: UIView {
     @IBOutlet var currentTurnHeader: UILabel!
     
     func setNewSquareIn(value: Int) {
-        lblNewSquareIn.text = value.description
+        let string = NSMutableAttributedString()
+        let paraStyle = NSMutableParagraphStyle()
+        paraStyle.alignment = .center
+        string.append(NSAttributedString(string: "NEW SQUARE IN:\n", attributes: [
+            NSFontAttributeName: UIFont(name: "Chalkboard SE", size: 30)!,
+            NSParagraphStyleAttributeName: paraStyle
+            ]))
+        string.append(NSAttributedString(string: value.description, attributes: [
+            NSFontAttributeName: UIFont(name: "Chalkboard SE", size: 60)!,
+            NSParagraphStyleAttributeName: paraStyle
+            ]))
+        imgNewSquareIn.image = imageFrom(string)
     }
     
     func setCurrentTurn(value: Color) {
