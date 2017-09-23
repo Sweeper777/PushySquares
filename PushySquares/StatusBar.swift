@@ -86,4 +86,13 @@ class StatusBar: UIView {
         
         return view
     }
+    
+    private func imageFrom(_ str: NSAttributedString) -> UIImage {
+        let size = str.size()
+        UIGraphicsBeginImageContext(size)
+        str.draw(in: CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
 }
