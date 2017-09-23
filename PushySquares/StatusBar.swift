@@ -47,6 +47,13 @@ class StatusBar: UIView {
             text.append(player4Lives)
             text.append(NSAttributedString(string: "\(players[3].lives)"))
         }
+        let paraStyle = NSMutableParagraphStyle()
+        paraStyle.alignment = .center
+        text.addAttributes([
+            NSFontAttributeName: UIFont(name: "Chalkboard SE", size: 60)!,
+            NSParagraphStyleAttributeName: paraStyle
+            ], range: NSRange.init(location: 0, length: text.length))
+        imgLives.image = imageFrom(text)
     }
     
     override init(frame: CGRect) {
