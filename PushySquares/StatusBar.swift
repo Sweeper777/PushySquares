@@ -4,9 +4,11 @@ import SwiftyUtils
 
 @IBDesignable
 class StatusBar: UIView {
-    @IBOutlet var lblNewSquareIn: FittableFontLabel!
+    @IBOutlet var imgNewSquareIn: UIImageView!
     @IBOutlet var imgCurrentTurn: SquareView!
-    @IBOutlet var lblLives: FittableFontLabel!
+    @IBOutlet var imgLives: UIImageView!
+    
+    @IBOutlet var currentTurnHeader: UILabel!
     
     func setNewSquareIn(value: Int) {
         lblNewSquareIn.text = value.description
