@@ -74,6 +74,8 @@ class StatusBar: UIView {
         ]
         addSubview(view)
         backgroundColor = .clear
+        imgLives.contentMode = .scaleAspectFit
+        
     }
     
     private func viewFromNibForClass() -> UIView {
