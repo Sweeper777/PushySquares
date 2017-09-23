@@ -1,6 +1,0 @@
-framework module JTImageButton {
-  umbrella header "JTImageButton-umbrella.h"
-
-  export *
-  module * { export * }
-}

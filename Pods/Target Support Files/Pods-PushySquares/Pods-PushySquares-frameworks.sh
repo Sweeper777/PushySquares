@@ -86,7 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DynamicColor/DynamicColor.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FittableFontLabel/FittableFontLabel.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JTImageButton/JTImageButton.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NGORoundedButton/NGORoundedButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyAnimate/SwiftyAnimate.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUtils/SwiftyUtils.framework"
@@ -94,7 +94,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DynamicColor/DynamicColor.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FittableFontLabel/FittableFontLabel.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JTImageButton/JTImageButton.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NGORoundedButton/NGORoundedButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyAnimate/SwiftyAnimate.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUtils/SwiftyUtils.framework"
