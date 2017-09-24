@@ -76,6 +76,9 @@ class StatusBar: UIView {
         backgroundColor = .clear
         imgLives.contentMode = .scaleAspectFit
         
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.currentTurnHeader.fontSizeToFit()
+        }
     }
     
     private func viewFromNibForClass() -> UIView {
