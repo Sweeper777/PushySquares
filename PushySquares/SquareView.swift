@@ -70,4 +70,11 @@ class SquareView: UIView {
             self?.alpha = 1
         }
     }
+    
+    var greyOut: Animate {
+        return Animate(duration: SquareView.animDuration) {
+            [weak self] in
+            self?.backgroundColor = .gray
+        }
+    }
 }
