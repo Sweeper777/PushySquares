@@ -60,7 +60,7 @@ class SquareView: UIView {
     
     var destroyed: Animate {
         return transform(duration: SquareView.animDuration, transforms: [
-            .scale(x: 0.1, y: 0.1)
+            .scale(x: 0.001, y: 0.001)
             ])
     }
     
