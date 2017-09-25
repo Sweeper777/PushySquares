@@ -148,6 +148,9 @@ class GameViewController: UIViewController, GameDelegate {
             boardView.backgroundColor = .clear
             view.addSubview(boardView)
         } else {
+            let statusBarWidth = (size.width - 7 * separator) * statusBarWeight
+            let statusBarHeight = size.height - 2 * separator
+            statusBar = StatusBar(frame: CGRect(x: separator * 3, y: separator, width: statusBarWidth, height: statusBarHeight))
             
         }
     }
