@@ -81,6 +81,13 @@ class GameViewController: UIViewController, GameDelegate {
         }
         moveAnim = moveAnim.then(animation: destroyedAnim)
         
+        var greyOutAnim = Animate()
+        for position in greyedOutPositions {
+            let squareView = boardView.viewWithTag(position.hashValue) as! SquareView
+            greyOutAnim = greyOutAnim.and(animation: squareView.greyOut)
+        }
+        moveAnim = moveAnim.then(animation: greyOutAnim)
+        
         if let color = newSquareColor {
             boardView.addSquareView(at: game.spawnpoints[color]!, color: GameBoardView.colorToUIColor[color]!)
             let squareView = boardView.viewWithTag(game.spawnpoints[color]!.hashValue) as! SquareView
