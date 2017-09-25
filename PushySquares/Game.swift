@@ -96,6 +96,10 @@ public class Game {
             movingSquaresPositions.append(contentsOf: pushedPositions)
         }
         let sortedPositions = Set(movingSquaresPositions).sorted(by: sorter)
+        beingDestroyedSquaresPositions = Array(Set(beingDestroyedSquaresPositions))
+        
+        let newSquareColor = nextTurn()
+        let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
         
         for position in sortedPositions {
             let tile = board[position]
@@ -104,8 +108,6 @@ public class Game {
                 board[displace(position)] = tile
             }
         }
-        let newSquareColor = nextTurn()
-        let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
         delegate?.playerDidMakeMove(direction: direction, originalPositions: sortedPositions, destroyedSquarePositions: beingDestroyedSquaresPositions, greyedOutPositions: greyedOutSquaresPositions, newSquareColor: newSquareColor)
     }
     
