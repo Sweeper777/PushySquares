@@ -120,7 +120,7 @@ public class Game {
                 spawnNewSquare(color: currentPlayer.color)
                 retVal = currentPlayer.color
             }
-            currentPlayer.turnsUntilNewSquare = players.count
+            currentPlayer.turnsUntilNewSquare = players.count + 1
         }
         return retVal
     }
