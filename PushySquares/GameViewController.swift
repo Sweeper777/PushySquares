@@ -157,6 +157,11 @@ class GameViewController: UIViewController, GameDelegate {
             self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
             self.statusBar.setLives(players: self.game.players)
             
+            let widthLeft = size.width - (separator * 7 + statusBarWidth)
+            let heightLeft = size.height - separator * 2
+            let boardLength = min(heightLeft, widthLeft)
+            let centerX = 6 * separator + statusBarWidth + widthLeft / 2
+            let centerY = size.height / 2
         }
     }
     
