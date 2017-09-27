@@ -177,5 +177,8 @@ class GameViewController: UIViewController, GameDelegate {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         repositionViews(size: size)
     }
+    
+    func showHideActionBar() {
+    }
 }
 
