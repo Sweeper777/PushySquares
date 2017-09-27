@@ -29,12 +29,14 @@ class GameViewController: UIViewController, GameDelegate {
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedDown))
         swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft))
         swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
+        tapGR = UITapGestureRecognizer(target: self, action: #selector(showHideActionBar))
         swipeUpGR.direction = .up
         swipeDownGR.direction = .down
         swipeLeftGR.direction = .left
         swipeRightGR.direction = .right
         
         allGR.forEach { self.view.addGestureRecognizer($0) }
+        self.view.addGestureRecognizer(tapGR)
         
         self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
         self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
