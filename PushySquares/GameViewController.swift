@@ -12,6 +12,8 @@ class GameViewController: UIViewController, GameDelegate {
     var swipeLeftGR: UISwipeGestureRecognizer!
     var swipeRightGR: UISwipeGestureRecognizer!
     
+    var tapGR: UITapGestureRecognizer!
+    
     var allGR: [UIGestureRecognizer] {
         return [swipeUpGR, swipeDownGR, swipeRightGR, swipeLeftGR]
     }
