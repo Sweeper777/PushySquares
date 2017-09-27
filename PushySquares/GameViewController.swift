@@ -152,6 +152,10 @@ class GameViewController: UIViewController, GameDelegate {
             let statusBarHeight = size.height - 2 * separator
             statusBar = StatusBar(frame: CGRect(x: separator * 3, y: separator, width: statusBarWidth, height: statusBarHeight))
             (statusBar.subviews.first! as! UIStackView).axis = .vertical
+            view.addSubview(statusBar)
+            self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
+            self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
+            self.statusBar.setLives(players: self.game.players)
             
         }
     }
