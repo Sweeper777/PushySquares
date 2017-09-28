@@ -226,6 +226,14 @@ class GameViewController: UIViewController, GameDelegate {
             quitButton.alpha = 0
             quitButton.tag = 1
             quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+            let restartImage = imageToFitButtonFrame(image: #imageLiteral(resourceName: "restart"), size: CGSize(width: actionBarButtonLength, height: actionBarButtonLength))
+            let restartButton = NGORoundedButton(buttonCustomImage: restartImage, andShape: .circle)!
+            restartButton.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            restartButton.alpha = 0
+            restartButton.tag = 2
+            restartButton.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
+            self.view.addSubview(restartButton)
+            self.view.addSubview(quitButton)
         }
     }
 }
