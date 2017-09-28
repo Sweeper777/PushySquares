@@ -215,6 +215,12 @@ class GameViewController: UIViewController, GameDelegate {
                 }
             })
         } else {
+            let actionBarButtonLength = min(self.view.width, self.view.height) / 8
+            let actionBarYWeight = 0.7.f
+            let separatorLength = self.view.width / 3
+            let actionBarY = self.view.height * actionBarYWeight
+            let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
+            let quitImage = imageToFitButtonFrame(image: #imageLiteral(resourceName: "quit"), size: CGSize(width: actionBarButtonLength, height: actionBarButtonLength))
         }
     }
 }
