@@ -204,6 +204,18 @@ class GameViewController: UIViewController, GameDelegate {
             return newImage!
         }
         
+        if let quitButton = self.view.viewWithTag(1), let restartButton = self.view.viewWithTag(2) {
+            UIView.animate(withDuration: SquareView.animDuration, animations: {
+                quitButton.alpha = 0
+                restartButton.alpha = 0
+            }, completion: {
+                if $0 {
+                    restartButton.removeFromSuperview()
+                    quitButton.removeFromSuperview()
+                }
+            })
+        } else {
+        }
     }
 }
 
