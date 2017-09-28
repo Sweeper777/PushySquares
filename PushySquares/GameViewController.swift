@@ -241,5 +241,12 @@ class GameViewController: UIViewController, GameDelegate {
             })
         }
     }
+    
+    func quitTapped() {
+        
+    }
+    
+    func restartTapped() {
+    }
 }
 
