@@ -221,6 +221,11 @@ class GameViewController: UIViewController, GameDelegate {
             let actionBarY = self.view.height * actionBarYWeight
             let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
             let quitImage = imageToFitButtonFrame(image: #imageLiteral(resourceName: "quit"), size: CGSize(width: actionBarButtonLength, height: actionBarButtonLength))
+            let quitButton = NGORoundedButton(buttonCustomImage: quitImage, andShape: .circle)!
+            quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            quitButton.alpha = 0
+            quitButton.tag = 1
+            quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
         }
     }
 }
