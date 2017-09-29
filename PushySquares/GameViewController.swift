@@ -255,6 +255,14 @@ class GameViewController: UIViewController, GameDelegate {
     func restartTapped() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("Yes", action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.game = self.newGame()
+            self.game.delegate = self
+            self.boardView.game = self.game
+            self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
+            self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
+            self.statusBar.setLives(players: self.game.players)
         })
         alert.addButton("No", action: {})
         alert.showWarning("Cofirm", subTitle: "Do you really want to restart?")
