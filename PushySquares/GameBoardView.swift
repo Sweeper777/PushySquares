@@ -16,6 +16,7 @@ class GameBoardView: UIView {
     weak var game: Game? {
         didSet {
             setNeedsDisplay()
+            self.subviews.forEach { $0.removeFromSuperview() }
         }
     }
     
