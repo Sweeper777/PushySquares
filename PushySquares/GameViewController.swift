@@ -247,6 +247,11 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     func restartTapped() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes", action: {
+        })
+        alert.addButton("No", action: {})
+        alert.showWarning("Cofirm", subTitle: "Do you really want to restart?")
     }
 }
 
