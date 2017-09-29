@@ -2,6 +2,7 @@ PODS:
   - DynamicColor (3.3)
   - FittableFontLabel (1.4.0)
   - NGORoundedButton (3.1)
+  - SCLAlertView (0.7.0)
   - SwiftRandom (1.0.0)
   - SwiftyAnimate (1.3.0)
   - SwiftyUtils (1.0.0)
@@ -10,6 +11,7 @@ DEPENDENCIES:
   - DynamicColor
   - FittableFontLabel
   - NGORoundedButton
+  - SCLAlertView
   - SwiftRandom
   - SwiftyAnimate
   - SwiftyUtils
@@ -18,10 +20,11 @@ SPEC CHECKSUMS:
   DynamicColor: 3cdaa1e01c16e93ba744e0630f768373e0fc7a7d
   FittableFontLabel: 20502441e83bb41eb8b41611cca91af85c4e21e3
   NGORoundedButton: dd1e7a293ccc16e0f5c073ba9be62b0fb8b8d496
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
   SwiftyAnimate: 82bf6e7691bcd149250fd8cdb968c166420f269b
   SwiftyUtils: f48a22d2fa8eece42a11d8bbb4d01a9758dd0602
 
-PODFILE CHECKSUM: 785b9abd8778f80d234f5daa6c1f64d3ddcd8727
+PODFILE CHECKSUM: af039949ee867171850154b44b626d833eceae44
 
 COCOAPODS: 1.1.0.beta.1

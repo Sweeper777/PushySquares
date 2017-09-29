@@ -11,4 +11,5 @@ target 'PushySquares' do
   pod 'DynamicColor'
   pod 'FittableFontLabel'
   pod 'NGORoundedButton'
+  pod 'SCLAlertView'
 end
