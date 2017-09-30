@@ -113,6 +113,11 @@ public class Game {
     
     private func nextTurn() -> Color? {
         var retVal: Color?
+        
+        if (!players.contains { $0.lives > 0 }) {
+            return .grey
+        }
+        
         repeat {
             currentPlayerIndex = currentPlayerIndex == players.endIndex - 1 ? 0 : currentPlayerIndex + 1
         } while currentPlayer.lives == 0
