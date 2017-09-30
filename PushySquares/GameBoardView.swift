@@ -11,6 +11,13 @@ class GameBoardView: UIView {
         .grey: .gray
     ]
     
+    static let colorToString: [Color: String] = [
+        .color1: "Red",
+        .color2: "Blue",
+        .color3: "Green",
+        .color4: "Yellow"
+    ]
+    
     static let borderSize: CGFloat = 8
     
     weak var game: Game? {
