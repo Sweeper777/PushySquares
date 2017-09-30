@@ -99,11 +99,17 @@ class GameViewController: UIViewController, GameDelegate {
         }
         moveAnim = moveAnim.then(animation: greyOutAnim)
         
+        var winnerColor: Color?
+        
         if let color = newSquareColor {
-            boardView.addSquareView(at: game.spawnpoints[color]!, color: GameBoardView.colorToUIColor[color]!)
-            let squareView = boardView.viewWithTag(game.spawnpoints[color]!.hashValue) as! SquareView
-            squareView.alpha = 0
-            moveAnim = moveAnim.then(animation: squareView.appear)
+            if color == .grey {
+                winnerColor = .grey
+            } else {
+                boardView.addSquareView(at: game.spawnpoints[color]!, color: GameBoardView.colorToUIColor[color]!)
+                let squareView = boardView.viewWithTag(game.spawnpoints[color]!.hashValue) as! SquareView
+                squareView.alpha = 0
+                moveAnim = moveAnim.then(animation: squareView.appear)
+            }
         }
         
         allGR.forEach { $0.isEnabled = false }
