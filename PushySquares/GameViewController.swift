@@ -112,6 +112,13 @@ class GameViewController: UIViewController, GameDelegate {
             }
         }
         
+        let remainingPlayers = game.players.filter({ $0.lives > 0 })
+        if remainingPlayers.count == 1 {
+            winnerColor = remainingPlayers.first!.color
+        } else if remainingPlayers.count == 0 {
+            winnerColor = .grey
+        }
+        
         allGR.forEach { $0.isEnabled = false }
         moveAnim.perform()
             {
