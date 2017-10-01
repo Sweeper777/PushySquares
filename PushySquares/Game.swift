@@ -12,7 +12,7 @@ public class Game {
     
     public weak var delegate: GameDelegate?
     
-    public init(map: Map, playerCount: Int, lives: Int = 5) {
+    public init(map: Map, playerCount: Int, lives: Int = 1) {
         self.board = map.board
         self.spawnpoints = map.spawnpoints
         switch playerCount {
