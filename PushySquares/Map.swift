@@ -9,8 +9,8 @@ public struct Map {
         [.void, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .void],
         [.wall, .empty, .empty, .empty, .wall,  .wall,  .empty, .empty, .empty, .wall],
         [.wall, .empty, .empty, .empty, .wall,  .wall,  .empty, .empty, .empty, .wall],
-        [.void, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .square(.color1), .void],
-        [.void, .empty, .empty, .empty, .empty, .empty, .empty, .square(.color1), .square(.color3), .void],
+        [.void, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .void],
+        [.void, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .void],
         [.void, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .void],
         [.void, .void,  .void,  .void,  .wall,  .wall,  .void,  .void,  .void,  .void,]
         ], spawnpoints: [
