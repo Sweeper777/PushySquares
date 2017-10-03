@@ -238,14 +238,12 @@ class GameViewController: UIViewController, GameDelegate {
             let separatorLength = self.view.width / 3
             let actionBarY = self.view.height * actionBarYWeight
             let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
-            let quitImage = imageToFitButtonFrame(image: #imageLiteral(resourceName: "quit"), size: CGSize(width: actionBarButtonLength, height: actionBarButtonLength))
-            let quitButton = NGORoundedButton(buttonCustomImage: quitImage, andShape: .circle)!
+            let quitButton = NGORoundedButton(buttonCustomImage: #imageLiteral(resourceName: "quit"), andShape: .circle)!
             quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
             quitButton.alpha = 0
             quitButton.tag = 1
             quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
-            let restartImage = imageToFitButtonFrame(image: #imageLiteral(resourceName: "restart"), size: CGSize(width: actionBarButtonLength, height: actionBarButtonLength))
-            let restartButton = NGORoundedButton(buttonCustomImage: restartImage, andShape: .circle)!
+            let restartButton = NGORoundedButton(buttonCustomImage: #imageLiteral(resourceName: "restart"), andShape: .circle)!
             restartButton.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
             restartButton.alpha = 0
             restartButton.tag = 2
