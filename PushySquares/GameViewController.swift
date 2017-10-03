@@ -158,6 +158,11 @@ class GameViewController: UIViewController, GameDelegate {
                 default:
                     message = "\(GameBoardView.colorToString[color]!) is the winner!"
                 }
+                UIGraphicsBeginImageContextWithOptions(CGSize(width: 56, height: 56), false, 0)
+                winnerUIColor.setFill()
+                UIRectFill(CGRect.zero.with(width: 56).with(height: 56))
+                let image = UIGraphicsGetImageFromCurrentImageContext()!
+                UIGraphicsEndImageContext()
         }
     }
     
