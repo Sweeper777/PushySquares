@@ -163,6 +163,10 @@ class GameViewController: UIViewController, GameDelegate {
                 UIRectFill(CGRect.zero.with(width: 56).with(height: 56))
                 let image = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
+                alert.addButton("OK", action: {})
+                _ = alert.showCustom(message, subTitle: "", color: .black, icon: image)
+            }
         }
     }
     
