@@ -1,6 +1,7 @@
 import UIKit
 import SwiftyAnimate
 import NGORoundedButton
+import SCLAlertView
 
 class GameViewController: UIViewController, GameDelegate {
 
@@ -65,6 +66,8 @@ class GameViewController: UIViewController, GameDelegate {
     func swipedRight() {
         game.moveRight()
     }
+    
+    
     
     func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
         var moveAnim = Animate()
@@ -145,6 +148,16 @@ class GameViewController: UIViewController, GameDelegate {
             for position in destroyedSquarePositions.map(closure) {
                 self.boardView.viewWithTag(position.hashValue)!.removeFromSuperview()
             }
+                
+            if let color = winnerColor {
+                let winnerUIColor = GameBoardView.colorToUIColor[color]!
+                let message: String
+                switch color {
+                case .grey:
+                    message = "It's a draw"
+                default:
+                    message = "\(GameBoardView.colorToString[color]!) is the winner!"
+                }
         }
     }
     
