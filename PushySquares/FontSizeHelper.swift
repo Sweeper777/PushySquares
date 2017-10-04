@@ -1,4 +1,9 @@
 import UIKit
+
+fileprivate func shouldContinueToEnlarge(targetSize: CGSize, currentSize: CGSize) -> Bool {
+    return targetSize.height > currentSize.height && targetSize.width > currentSize.width
+}
+
 func fontSizeThatFits(size: CGSize, text: NSString, font: UIFont) -> CGFloat {
     var fontToTest = font.withSize(0)
     var currentSize = text.size(attributes: [NSFontAttributeName: fontToTest])
