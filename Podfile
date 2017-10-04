@@ -12,4 +12,5 @@ target 'PushySquares' do
   pod 'FittableFontLabel'
   pod 'NGORoundedButton'
   pod 'SCLAlertView'
+  pod 'SwiftyButton'
 end

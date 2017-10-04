@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9339078BCF2AA6642296565168FF35BF'
-               BlueprintName = 'SwiftRandom'
+               BlueprintIdentifier = '5C64BBBB446130C50D5E060091B06D88'
+               BlueprintName = 'SwiftyButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftRandom.framework'>
+               BuildableName = 'SwiftyButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

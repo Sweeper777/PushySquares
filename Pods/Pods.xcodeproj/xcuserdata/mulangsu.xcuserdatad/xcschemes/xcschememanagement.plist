@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyUtils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F16C73E270D5593BA401C1E5B5CD7FD</key>
+		<key>4ED9A29C3DC6CAD5C2D81EBD9081CD3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>744AA71EFA1556973B4292F11C094910</key>
+		<key>5C64BBBB446130C50D5E060091B06D88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B196FB7A0E816A25DDD98053119DCD4</key>
+		<key>7D0222991FFC1A3D48F4DF119F794EA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A251EF12C1536F80DF00274BB4887D54</key>
+		<key>9339078BCF2AA6642296565168FF35BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA1ABB69E3C0DCF09F371B1194A10D3A</key>
+		<key>DE7A56108B90F911BE25BE439BEE2DC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF1E6D0B450D513F0FDF072C845F94EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

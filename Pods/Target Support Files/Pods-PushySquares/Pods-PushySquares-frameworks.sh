@@ -90,6 +90,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView/SCLAlertView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyAnimate/SwiftyAnimate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyButton/SwiftyButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUtils/SwiftyUtils.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -99,5 +100,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SCLAlertView/SCLAlertView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftRandom/SwiftRandom.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyAnimate/SwiftyAnimate.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftyButton/SwiftyButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyUtils/SwiftyUtils.framework"
 fi
