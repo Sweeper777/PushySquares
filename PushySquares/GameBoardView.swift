@@ -29,6 +29,9 @@ class GameBoardView: UIView {
     
     override func draw(_ rect: CGRect) {
         guard let game = self.game else { return }
+        
+        self.subviews.forEach { $0.removeFromSuperview() }
+        
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
                 if case .void = game.board[x, y] {} else {
