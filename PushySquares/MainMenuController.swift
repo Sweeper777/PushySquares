@@ -9,6 +9,15 @@ class MainMenuController: UIViewController {
     func repositionViews() {
         viewsToBeRepositioned.forEach { $0.removeFromSuperview() }
         viewsToBeRepositioned = []
+        
+        let startButtonY = 36 + view.height / 2
+        let startButtonWidth: CGFloat
+        if traitCollection.horizontalSizeClass == .regular {
+            startButtonWidth = view.width / 2
+        } else {
+            startButtonWidth = view.width * 0.8
+        }
+        let startButtonX = (view.width - startButtonWidth) / 2
     override func viewDidLoad() {
         repositionViews()
     }
