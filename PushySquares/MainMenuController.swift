@@ -12,5 +12,12 @@ class MainMenuController: UIViewController {
     override func viewDidLoad() {
         repositionViews()
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            self.repositionViews()
+        }
+    }
     }
 }
