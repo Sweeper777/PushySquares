@@ -26,6 +26,8 @@ class MainMenuController: UIViewController {
             .with(y: startButtonY)
             .with(height: view.height / 10))
         let fontSize = fontSizeThatFits(size: startButton.frame.size, text: "START", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        viewsToBeRepositioned.append(startButton)
+        view.addSubview(startButton)
     override func viewDidLoad() {
         repositionViews()
     }
