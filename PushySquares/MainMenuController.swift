@@ -9,5 +9,8 @@ class MainMenuController: UIViewController {
     func repositionViews() {
         viewsToBeRepositioned.forEach { $0.removeFromSuperview() }
         viewsToBeRepositioned = []
+    override func viewDidLoad() {
+        repositionViews()
+    }
     }
 }
