@@ -18,6 +18,13 @@ class MainMenuController: UIViewController {
             startButtonWidth = view.width * 0.8
         }
         let startButtonX = (view.width - startButtonWidth) / 2
+        
+        let startButton = PressableButton(frame:
+            CGRect.zero
+            .with(width: startButtonWidth)
+            .with(x: startButtonX)
+            .with(y: startButtonY)
+            .with(height: view.height / 10))
     override func viewDidLoad() {
         repositionViews()
     }
