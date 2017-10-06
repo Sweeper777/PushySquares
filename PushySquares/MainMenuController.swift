@@ -26,6 +26,14 @@ class MainMenuController: UIViewController {
             .with(y: startButtonY)
             .with(height: view.height / 10))
         let fontSize = fontSizeThatFits(size: startButton.frame.size, text: "START", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        startButton.setAttributedTitle(
+            NSAttributedString(string: "START", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        startButton.colors = PressableButton.ColorSet(button: UIColor.green.desaturated().darker(), shadow: UIColor.green.desaturated().darker().darker())
+        startButton.shadowHeight = startButton.height * 0.1
         viewsToBeRepositioned.append(startButton)
         view.addSubview(startButton)
     override func viewDidLoad() {
