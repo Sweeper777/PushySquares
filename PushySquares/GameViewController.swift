@@ -250,7 +250,7 @@ class GameViewController: UIViewController, GameDelegate {
             restartButton.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
             self.view.addSubview(restartButton)
             self.view.addSubview(quitButton)
-            UIView.animate(withDuration: SquareView.animDuration, animations: { 
+            UIView.animate(withDuration: 0.25, animations: {
                 quitButton.alpha = 1
                 restartButton.alpha = 1
             })
