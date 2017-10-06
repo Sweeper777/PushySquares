@@ -38,6 +38,15 @@ class MainMenuController: UIViewController {
         let helpButton = PressableButton(frame:
             startButton.frame
                 .with(y: startButton.frame.maxY + startButton.height * 0.2))
+        helpButton.setAttributedTitle(
+            NSAttributedString(string: "HELP", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        helpButton.colors = PressableButton.ColorSet(button: UIColor.blue.desaturated(), shadow: UIColor.blue.desaturated().darker())
+        helpButton.shadowHeight = helpButton.height * 0.1
+        
         viewsToBeRepositioned.append(startButton)
         viewsToBeRepositioned.append(helpButton)
         view.addSubview(startButton)
