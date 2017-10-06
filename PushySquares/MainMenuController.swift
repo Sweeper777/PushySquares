@@ -34,8 +34,14 @@ class MainMenuController: UIViewController {
             , for: .normal)
         startButton.colors = PressableButton.ColorSet(button: UIColor.green.desaturated().darker(), shadow: UIColor.green.desaturated().darker().darker())
         startButton.shadowHeight = startButton.height * 0.1
+        
+        let helpButton = PressableButton(frame:
+            startButton.frame
+                .with(y: startButton.frame.maxY + startButton.height * 0.2))
         viewsToBeRepositioned.append(startButton)
+        viewsToBeRepositioned.append(helpButton)
         view.addSubview(startButton)
+        view.addSubview(helpButton)
     override func viewDidLoad() {
         repositionViews()
     }
