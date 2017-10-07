@@ -51,6 +51,14 @@ class MainMenuController: UIViewController {
         viewsToBeRepositioned.append(helpButton)
         view.addSubview(startButton)
         view.addSubview(helpButton)
+        
+        startButton.addTarget(self, action: #selector(startPressed), for: .touchUpInside)
+    }
+    
+    func startPressed() {
+        performSegue(withIdentifier: "showPlayerCountSelector", sender: self)
+    }
+    
     override func viewDidLoad() {
         repositionViews()
     }
