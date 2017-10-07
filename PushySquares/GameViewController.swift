@@ -276,5 +276,15 @@ class GameViewController: UIViewController, GameDelegate {
         alert.addButton("No", action: {})
         alert.showWarning("Cofirm", subTitle: "Do you really want to restart?")
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
 }
 
