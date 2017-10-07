@@ -54,17 +54,7 @@
                     <view key="view" contentMode="scaleToFill" id="vFH-cn-e9u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Km-MB-A6e">
-                                <rect key="frame" x="35" y="28" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="foo" destination="JHb-83-4Au" eventType="touchUpInside" id="vze-uu-Czk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95527199009999997" blue="0.83132437039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="X4E-x1-Fnn"/>
@@ -72,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAY-Ra-WT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="133"/>
+            <point key="canvasLocation" x="-538.125" y="132.04225352112675"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
