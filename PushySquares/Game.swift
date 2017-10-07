@@ -1,6 +1,12 @@
 
 
 public class Game {
+    static let playerCountToTurnsUntilNewSquare = [
+        2: 2,
+        3: 4,
+        4: 4
+    ]
+    
     public var board: Array2D<Tile>
     public var spawnpoints: [Color: Position]
     public var players = [Player]()
@@ -17,18 +23,18 @@ public class Game {
         self.spawnpoints = map.spawnpoints
         switch playerCount {
         case 4:
-            players.append(Player(turnsUntilNewSquare: playerCount, lives: lives, color: .color4))
+            players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color4))
             spawnNewSquare(color: .color4)
             delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
             fallthrough
         case 3:
-            players.append(Player(turnsUntilNewSquare: playerCount, lives: lives, color: .color2))
+            players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color2))
             spawnNewSquare(color: .color2)
             delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
             fallthrough
         case 2:
-            players.append(Player(turnsUntilNewSquare: playerCount, lives: lives, color: .color1))
-            players.append(Player(turnsUntilNewSquare: playerCount, lives: lives, color: .color3))
+            players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color1))
+            players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color3))
             spawnNewSquare(color: .color1)
             spawnNewSquare(color: .color3)
             delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
@@ -127,7 +133,7 @@ public class Game {
                 spawnNewSquare(color: currentPlayer.color)
                 retVal = currentPlayer.color
             }
-            currentPlayer.turnsUntilNewSquare = players.count + 1
+            currentPlayer.turnsUntilNewSquare = Game.playerCountToTurnsUntilNewSquare[players.count]! + 1
         }
         return retVal
     }
