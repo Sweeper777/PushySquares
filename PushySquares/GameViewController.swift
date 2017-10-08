@@ -263,7 +263,14 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     func quitTapped() {
-        
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes", action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.performSegue(withIdentifier: "quitGame", sender: self)
+        })
+        alert.addButton("No", action: {})
+        alert.showWarning("Cofirm", subTitle: "Do you really want to quit?")
     }
     
     func restartTapped() {
