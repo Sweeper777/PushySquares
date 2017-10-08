@@ -64,6 +64,7 @@ class MainMenuController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else { return }
             self.repositionViews()
