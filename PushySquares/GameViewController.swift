@@ -1,6 +1,6 @@
 import UIKit
 import SwiftyAnimate
-import NGORoundedButton
+import SwiftyButton
 import SCLAlertView
 
 class GameViewController: UIViewController, GameDelegate {
@@ -238,13 +238,17 @@ class GameViewController: UIViewController, GameDelegate {
             let separatorLength = self.view.width / 3
             let actionBarY = self.view.height * actionBarYWeight
             let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
-            let quitButton = NGORoundedButton(buttonCustomImage: #imageLiteral(resourceName: "quit"), andShape: .circle)!
+            let quitButton = PressableButton()
+            quitButton.setImage(#imageLiteral(resourceName: "quit"), for: .normal)
             quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            quitButton.shadowHeight = quitButton.height * 0.1
             quitButton.alpha = 0
             quitButton.tag = 1
             quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
-            let restartButton = NGORoundedButton(buttonCustomImage: #imageLiteral(resourceName: "restart"), andShape: .circle)!
+            let restartButton = PressableButton()
+            restartButton.setImage(#imageLiteral(resourceName: "restart"), for: .normal)
             restartButton.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            restartButton.shadowHeight = restartButton.height * 0.1
             restartButton.alpha = 0
             restartButton.tag = 2
             restartButton.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
