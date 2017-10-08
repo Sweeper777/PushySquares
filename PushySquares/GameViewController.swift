@@ -224,7 +224,7 @@ class GameViewController: UIViewController, GameDelegate {
     func showHideActionBar() {
         
         if let quitButton = self.view.viewWithTag(1), let restartButton = self.view.viewWithTag(2) {
-            UIView.animate(withDuration: SquareView.animDuration, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 quitButton.alpha = 0
                 restartButton.alpha = 0
             }, completion: {
