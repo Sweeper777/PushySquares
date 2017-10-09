@@ -34,6 +34,11 @@ class PlayerCountSelectorController: UIViewController {
         let stackViewHeight = view.height - stackViewY - 8
         let stackViewWidth = view.width - stackViewX - 8
         let stackView = UIStackView(frame: CGRect(x: stackViewX, y: stackViewY, width: stackViewWidth, height: stackViewHeight))
+        if view.width < view.height {
+            stackView.axis = .vertical
+        } else {
+            stackView.axis = .horizontal
+        }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
