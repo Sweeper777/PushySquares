@@ -27,6 +27,13 @@ class PlayerCountSelectorController: UIViewController {
         backButton.colors = PressableButton.ColorSet(button: UIColor.gray, shadow: UIColor.gray.darker())
         backButton.shadowHeight = backButton.height * 0.1
         self.view.addSubview(backButton)
+        
+        let separator = backButton.height / 2
+        let stackViewX = backButtonX
+        let stackViewY = backButton.frame.maxY + separator
+        let stackViewHeight = view.height - stackViewY - 8
+        let stackViewWidth = view.width - stackViewX - 8
+        let stackView = UIStackView(frame: CGRect(x: stackViewX, y: stackViewY, width: stackViewWidth, height: stackViewHeight))
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
