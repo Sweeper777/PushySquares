@@ -5,6 +5,17 @@ class PlayerCountSelectorController: UIViewController {
     
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
+        
+        let backButtonWeight: CGFloat
+        if self.traitCollection.verticalSizeClass == .compact {
+            backButtonWeight = 1.0 / 7.0
+        } else {
+            backButtonWeight = 1.0 / 12.0
+        }
+        let backButtonY = UIScreen.statusBarHeight + 8
+        let backButtonX = 8.f
+        let backButtonHeight = (view.height - 8) * backButtonWeight
+        let backButtonWidth = 2.5 * backButtonHeight
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
