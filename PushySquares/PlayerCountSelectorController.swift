@@ -16,6 +16,7 @@ class PlayerCountSelectorController: UIViewController {
         let backButtonX = 8.f
         let backButtonHeight = (view.height - 8) * backButtonWeight
         let backButtonWidth = 2.5 * backButtonHeight
+        let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
