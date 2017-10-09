@@ -18,6 +18,15 @@ class PlayerCountSelectorController: UIViewController {
         let backButtonWidth = 2.5 * backButtonHeight
         let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
         let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        backButton.setAttributedTitle(
+            NSAttributedString(string: "BACK", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        backButton.colors = PressableButton.ColorSet(button: UIColor.gray, shadow: UIColor.gray.darker())
+        backButton.shadowHeight = backButton.height * 0.1
+        self.view.addSubview(backButton)
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
