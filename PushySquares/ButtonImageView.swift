@@ -35,4 +35,12 @@ class ButtonImageView: UIImageView {
         }
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.subviews.forEach { $0.removeFromSuperview() }
+        if let touch = touches.first {
+            if imageRect.contains(touch.location(in: self)) {
+                onClick?()
+            }
+        }
+    }
 }
