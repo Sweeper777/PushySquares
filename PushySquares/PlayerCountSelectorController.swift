@@ -39,6 +39,9 @@ class PlayerCountSelectorController: UIViewController {
         } else {
             stackView.axis = .horizontal
         }
+        stackView.spacing = separator
+        stackView.distribution = .fillEqually
+        self.view.addSubview(stackView)
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
