@@ -23,4 +23,16 @@ class ButtonImageView: UIImageView {
         
         return imageRect
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if imageRect.contains(touch.location(in: self)) {
+                self.subviews.forEach { $0.removeFromSuperview() }
+                let shade = UIView(frame: imageRect)
+                shade.backgroundColor = UIColor.gray.withAlphaComponent(0.4)
+                self.addSubview(shade)
+            }
+        }
+    }
+    
 }
