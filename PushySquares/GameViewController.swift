@@ -4,6 +4,8 @@ import SwiftyButton
 import SCLAlertView
 
 class GameViewController: UIViewController, GameDelegate {
+    
+    var playerCount: Int!
 
     @IBOutlet var boardView: GameBoardView!
     @IBOutlet var statusBar: StatusBar!
