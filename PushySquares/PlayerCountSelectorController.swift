@@ -49,6 +49,12 @@ class PlayerCountSelectorController: UIViewController {
         twoPlayersButton.isUserInteractionEnabled = true
         stackView.addArrangedSubview(twoPlayersButton)
         
+        let threePlayersButton = ButtonImageView()
+        threePlayersButton.contentMode = .scaleAspectFit
+        threePlayersButton.image = #imageLiteral(resourceName: "3player")
+        threePlayersButton.isUserInteractionEnabled = true
+        stackView.addArrangedSubview(threePlayersButton)
+        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
