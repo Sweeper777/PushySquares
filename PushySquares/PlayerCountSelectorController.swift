@@ -76,6 +76,8 @@ class PlayerCountSelectorController: UIViewController {
             self?.performSegue(withIdentifier: "showGame", sender: 4)
         }
         
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -89,5 +91,10 @@ class PlayerCountSelectorController: UIViewController {
             self?.repositionViews()
         }
     }
+    
+    func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     }
 }
