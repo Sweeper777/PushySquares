@@ -42,6 +42,13 @@ class PlayerCountSelectorController: UIViewController {
         stackView.spacing = separator
         stackView.distribution = .fillEqually
         self.view.addSubview(stackView)
+        
+        let twoPlayersButton = ButtonImageView()
+        twoPlayersButton.contentMode = .scaleAspectFit
+        twoPlayersButton.image = #imageLiteral(resourceName: "2player")
+        twoPlayersButton.isUserInteractionEnabled = true
+        stackView.addArrangedSubview(twoPlayersButton)
+        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
