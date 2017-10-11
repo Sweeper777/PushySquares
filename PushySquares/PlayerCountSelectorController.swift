@@ -61,6 +61,21 @@ class PlayerCountSelectorController: UIViewController {
         fourPlayersButton.isUserInteractionEnabled = true
         stackView.addArrangedSubview(fourPlayersButton)
         
+        twoPlayersButton.onClick = {
+            [weak self] in
+            self?.performSegue(withIdentifier: "showGame", sender: 2)
+        }
+        
+        threePlayersButton.onClick = {
+            [weak self] in
+            self?.performSegue(withIdentifier: "showGame", sender: 3)
+        }
+        
+        fourPlayersButton.onClick = {
+            [weak self] in
+            self?.performSegue(withIdentifier: "showGame", sender: 4)
+        }
+        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
