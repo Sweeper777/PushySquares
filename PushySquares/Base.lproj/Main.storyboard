@@ -36,12 +36,31 @@
                     <connections>
                         <outlet property="logo" destination="c1A-2L-cTK" id="Fbb-X7-9uY"/>
                         <segue destination="JHb-83-4Au" kind="show" identifier="showPlayerCountSelector" id="0WG-44-JaC"/>
+                        <segue destination="2L8-38-Fui" kind="show" identifier="showHelp" id="nik-LS-jcy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiB-IW-G4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FzR-l3-ef1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1278.75" y="134.1549295774648"/>
+        </scene>
+        <!--Help Controller-->
+        <scene sceneID="DYL-Wm-ZuW">
+            <objects>
+                <viewController id="2L8-38-Fui" customClass="HelpController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BtV-YK-MBc"/>
+                        <viewControllerLayoutGuide type="bottom" id="BoF-GH-E1J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jzq-Rh-hMd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.95686274509803915" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8E-MP-sNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1279" y="906"/>
         </scene>
         <!--Player Count Selector Controller-->
         <scene sceneID="GAr-Tw-diI">
@@ -75,28 +94,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9h-4K-ghH" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
-                                <rect key="frame" x="40" y="28" width="252" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc3-cj-MLr" customClass="ActionBar" customModule="PushySquares" customModuleProvider="target">
-                                <rect key="frame" x="74" y="391" width="173" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVe-dP-7XA" customClass="GameBoardView" customModule="PushySquares" customModuleProvider="target">
-                                <rect key="frame" x="40" y="143" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="0.95527199009802899" blue="0.83132437035253803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="boardView" destination="YVe-dP-7XA" id="Xam-e1-DuC"/>
-                        <outlet property="statusBar" destination="i9h-4K-ghH" id="shE-9d-Yvv"/>
                         <segue destination="FzR-l3-ef1" kind="unwind" identifier="quitGame" unwindAction="unwindFromGameWithSegue:" id="hX1-d4-dmj"/>
                     </connections>
                 </viewController>
