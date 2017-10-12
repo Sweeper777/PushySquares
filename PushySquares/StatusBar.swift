@@ -77,7 +77,8 @@ class StatusBar: UIView {
         imgLives.contentMode = .scaleAspectFit
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.currentTurnHeader.fontSizeToFit()
+            let fontSize = fontSizeThatFits(size: self.currentTurnHeader.frame.size, text: "TURN", font: UIFont(name: "Chalkboard SE", size: 0)!)
+            self.currentTurnHeader.font = self.currentTurnHeader.font.withSize(fontSize)
         }
     }
     
