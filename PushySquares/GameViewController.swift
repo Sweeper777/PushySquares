@@ -242,7 +242,6 @@ class GameViewController: UIViewController, GameDelegate {
             let actionBarY = self.view.height * actionBarYWeight
             let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
             let quitButton = PressableButton()
-            quitButton.setImage(#imageLiteral(resourceName: "quit"), for: .normal)
             quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
             quitButton.shadowHeight = quitButton.height * 0.1
             quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
@@ -258,7 +257,6 @@ class GameViewController: UIViewController, GameDelegate {
             quitButton.tag = 1
             quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
             let restartButton = PressableButton()
-            restartButton.setImage(#imageLiteral(resourceName: "restart"), for: .normal)
             restartButton.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
             restartButton.shadowHeight = restartButton.height * 0.1
             restartButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
