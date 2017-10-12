@@ -246,6 +246,8 @@ class GameViewController: UIViewController, GameDelegate {
             quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
             quitButton.shadowHeight = quitButton.height * 0.1
             quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+            
+            let fontSize = fontSizeThatFits(size: quitButton.frame.size, text: "↺", font: UIFont.systemFont(ofSize: 0))
             quitButton.alpha = 0
             quitButton.tag = 1
             quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
