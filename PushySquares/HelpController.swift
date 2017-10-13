@@ -26,5 +26,16 @@ class HelpController: UIViewController, UIWebViewDelegate {
         backButton.colors = PressableButton.ColorSet(button: UIColor.gray, shadow: UIColor.gray.darker())
         backButton.shadowHeight = backButton.height * 0.1
         self.view.addSubview(backButton)
+        
+        let separator = backButton.height / 2
+        let webViewX = backButtonX
+        let webViewY = backButton.frame.maxY + separator
+        let webViewHeight = view.height - webViewY - 8
+        let webViewWidth = view.width - webViewX - 8
+        let webView = UIWebView(frame: CGRect(x: webViewX, y: webViewY, width: webViewWidth, height: webViewHeight))
+        webView.delegate = self
+        webView.alpha = 0
+        webView.backgroundColor = .clear
+        self.view.addSubview(webView)
     }
 }
