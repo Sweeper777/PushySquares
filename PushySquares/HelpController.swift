@@ -37,5 +37,17 @@ class HelpController: UIViewController, UIWebViewDelegate {
         webView.alpha = 0
         webView.backgroundColor = .clear
         self.view.addSubview(webView)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repositionViews()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.repositionViews()
+        }
+    }
     }
 }
