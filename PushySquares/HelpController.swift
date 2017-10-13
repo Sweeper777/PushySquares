@@ -37,6 +37,10 @@ class HelpController: UIViewController, UIWebViewDelegate {
         webView.alpha = 0
         webView.backgroundColor = .clear
         self.view.addSubview(webView)
+        
+        let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help", withExtension: "html")!)
+        webView.loadHTMLString(htmlString, baseURL: nil)
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         repositionViews()
