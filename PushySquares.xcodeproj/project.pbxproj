@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A2316CD1F88B88D00CDD382 /* ButtonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */; };
+		5A2389751F82BA1C00250975 /* PlayerCountSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */; };
 		5A25DF631F59A53900455CA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF621F59A53900455CA5 /* Game.swift */; };
 		5A25DF641F59A5BE00455CA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF621F59A53900455CA5 /* Game.swift */; };
 		5A25DF661F59AB0B00455CA5 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */; };
 		5A25DF671F59AB0F00455CA5 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */; };
 		5A269FA61F61CEE300FEE02D /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A269FA51F61CEE300FEE02D /* StatusBar.swift */; };
 		5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A269FA71F61D2FF00FEE02D /* StatusBar.xib */; };
+		5A2706021F8A26950057B90C /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2706011F8A26950057B90C /* HelpController.swift */; };
+		5A2706041F8A28030057B90C /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A2706031F8A28030057B90C /* help.html */; };
 		5A2947421F569D22002E833B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947411F569D22002E833B /* AppDelegate.swift */; };
 		5A2947441F569D22002E833B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947431F569D22002E833B /* GameViewController.swift */; };
 		5A2947471F569D22002E833B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2947451F569D22002E833B /* Main.storyboard */; };
@@ -24,11 +28,13 @@
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
 		5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */; };
+		5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3223411F7F983000B476A1 /* MainMenuController.swift */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
 		5AB0219A1F588074001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
 		5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
 		5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
+		5AFEB47A1F80DD9B00152892 /* FontSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */; };
 		60CD5DE4D2ADA724B5674780 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,10 +54,14 @@
 /* Begin PBXFileReference section */
 		165727B66FC409F48166F07A /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 		42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonImageView.swift; sourceTree = "<group>"; };
+		5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountSelectorController.swift; sourceTree = "<group>"; };
 		5A25DF621F59A53900455CA5 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		5A269FA51F61CEE300FEE02D /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		5A269FA71F61D2FF00FEE02D /* StatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBar.xib; sourceTree = "<group>"; };
+		5A2706011F8A26950057B90C /* HelpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
+		5A2706031F8A28030057B90C /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		5A29473E1F569D22002E833B /* PushySquares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2947411F569D22002E833B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A2947431F569D22002E833B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +78,10 @@
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		5A3223411F7F983000B476A1 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5AB021991F588074001A40D1 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizeHelper.swift; sourceTree = "<group>"; };
 		92CA3883F581C150F8198E0B /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,8 +147,13 @@
 			children = (
 				5A2947411F569D22002E833B /* AppDelegate.swift */,
 				5A2947431F569D22002E833B /* GameViewController.swift */,
+				5A3223411F7F983000B476A1 /* MainMenuController.swift */,
+				5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */,
+				5A2706011F8A26950057B90C /* HelpController.swift */,
+				5A2706031F8A28030057B90C /* help.html */,
 				5A2947451F569D22002E833B /* Main.storyboard */,
 				5A2E11E01F5D283100B82A2D /* SquareView.swift */,
+				5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */,
 				5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */,
 				5A269FA51F61CEE300FEE02D /* StatusBar.swift */,
 				5A269FA71F61D2FF00FEE02D /* StatusBar.xib */,
@@ -149,6 +166,7 @@
 				5AB021991F588074001A40D1 /* Map.swift */,
 				5A25DF621F59A53900455CA5 /* Game.swift */,
 				5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */,
+				5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -271,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A29474C1F569D22002E833B /* LaunchScreen.storyboard in Resources */,
+				5A2706041F8A28030057B90C /* help.html in Resources */,
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
@@ -344,10 +363,15 @@
 				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
 				5A25DF661F59AB0B00455CA5 /* GameDelegate.swift in Sources */,
 				5A25DF631F59A53900455CA5 /* Game.swift in Sources */,
+				5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */,
 				5A2947441F569D22002E833B /* GameViewController.swift in Sources */,
 				5AB021981F5815FA001A40D1 /* Player.swift in Sources */,
 				5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */,
+				5AFEB47A1F80DD9B00152892 /* FontSizeHelper.swift in Sources */,
+				5A2316CD1F88B88D00CDD382 /* ButtonImageView.swift in Sources */,
 				5AB0219A1F588074001A40D1 /* Map.swift in Sources */,
+				5A2706021F8A26950057B90C /* HelpController.swift in Sources */,
+				5A2389751F82BA1C00250975 /* PlayerCountSelectorController.swift in Sources */,
 				5A2947421F569D22002E833B /* AppDelegate.swift in Sources */,
 				5A269FA61F61CEE300FEE02D /* StatusBar.swift in Sources */,
 			);
