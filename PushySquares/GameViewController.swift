@@ -27,9 +27,10 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     override func viewDidLoad() {
+        
         game = newGame()
         
-        repositionViews(size: view.frame.size)
+        repositionViews(size: self.view.frame.size)
         
         boardView.game = self.game
         
@@ -307,6 +308,7 @@ class GameViewController: UIViewController, GameDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIApplication.shared.isIdleTimerDisabled = true
+        repositionViews(size: view.frame.size)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
