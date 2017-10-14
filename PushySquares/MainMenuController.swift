@@ -53,13 +53,19 @@ class MainMenuController: UIViewController {
         view.addSubview(helpButton)
         
         startButton.addTarget(self, action: #selector(startPressed), for: .touchUpInside)
+        helpButton.addTarget(self, action: #selector(helpPressed), for: .touchUpInside)
     }
     
     func startPressed() {
         performSegue(withIdentifier: "showPlayerCountSelector", sender: self)
     }
     
-    override func viewDidLoad() {
+    func helpPressed() {
+        performSegue(withIdentifier: "showHelp", sender: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         repositionViews()
     }
     
