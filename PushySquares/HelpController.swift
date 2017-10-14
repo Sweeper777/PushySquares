@@ -41,6 +41,8 @@ class HelpController: UIViewController, UIWebViewDelegate {
         let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help", withExtension: "html")!)
         webView.loadHTMLString(htmlString, baseURL: nil)
         
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         repositionViews()
@@ -53,5 +55,8 @@ class HelpController: UIViewController, UIWebViewDelegate {
             self?.repositionViews()
         }
     }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.alpha = 1
     }
 }
