@@ -23,7 +23,7 @@ class GameViewController: UIViewController, GameDelegate {
     }
     
     func newGame() -> Game {
-        return Game(map: .standard, playerCount: 2)
+        return Game(map: .standard, playerCount: playerCount)
     }
     
     override func viewDidLoad() {
