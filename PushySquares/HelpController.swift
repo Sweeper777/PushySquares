@@ -41,6 +41,11 @@ class HelpController: UIViewController, UIWebViewDelegate {
         let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help", withExtension: "html")!)
         webView.loadHTMLString(htmlString, baseURL: nil)
         
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
+    
+    func back() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
