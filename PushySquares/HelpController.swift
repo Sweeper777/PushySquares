@@ -39,7 +39,7 @@ class HelpController: UIViewController, UIWebViewDelegate {
         self.view.addSubview(webView)
         
         let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help", withExtension: "html")!)
-        webView.loadHTMLString(htmlString, baseURL: nil)
+        webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
