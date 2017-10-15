@@ -84,7 +84,7 @@ class StatusBar: UIView {
     
     private func viewFromNibForClass() -> UIView {
         
-        let bundle = Bundle.main
+        let bundle = Bundle(for: StatusBar.self)
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         
