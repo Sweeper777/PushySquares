@@ -26,6 +26,8 @@
 		5A2947711F56BA66002E833B /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A29476F1F56BA66002E833B /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
+		5A2DEEE21F921AC000001B96 /* lives.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2DEEE11F921AC000001B96 /* lives.png */; };
+		5A2DEEE41F921AE400001B96 /* new square in.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2DEEE31F921AE400001B96 /* new square in.png */; };
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
 		5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */; };
 		5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3223411F7F983000B476A1 /* MainMenuController.swift */; };
@@ -76,6 +78,8 @@
 		5A29476F1F56BA66002E833B /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		5A2DEEE11F921AC000001B96 /* lives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lives.png; sourceTree = "<group>"; };
+		5A2DEEE31F921AE400001B96 /* new square in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in.png"; sourceTree = "<group>"; };
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		5A3223411F7F983000B476A1 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		5A2947401F569D22002E833B /* PushySquares */ = {
 			isa = PBXGroup;
 			children = (
+				5A2DEEE31F921AE400001B96 /* new square in.png */,
+				5A2DEEE11F921AC000001B96 /* lives.png */,
 				5A2947411F569D22002E833B /* AppDelegate.swift */,
 				5A2947431F569D22002E833B /* GameViewController.swift */,
 				5A3223411F7F983000B476A1 /* MainMenuController.swift */,
@@ -293,6 +299,8 @@
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
+				5A2DEEE41F921AE400001B96 /* new square in.png in Resources */,
+				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +525,7 @@
 				INFOPLIST_FILE = PushySquares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PushySquares;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.PushySquares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -533,7 +541,7 @@
 				INFOPLIST_FILE = PushySquares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PushySquares;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.PushySquares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
