@@ -13,4 +13,6 @@ target 'PushySquares' do
   pod 'NGORoundedButton'
   pod 'SCLAlertView'
   pod 'SwiftyButton'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
