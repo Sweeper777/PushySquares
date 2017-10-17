@@ -22,14 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="c1A-2L-cTK">
-                                <rect key="frame" x="0.0" y="28" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="189.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95527199009999997" blue="0.83132437039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="c1A-2L-cTK" firstAttribute="leading" secondItem="WBX-xa-Q1n" secondAttribute="leading" id="DrB-V4-uFP"/>
                             <constraint firstItem="c1A-2L-cTK" firstAttribute="top" secondItem="ntf-T6-841" secondAttribute="bottom" constant="8" id="sUX-j6-PMe"/>
-                            <constraint firstItem="c1A-2L-cTK" firstAttribute="height" secondItem="WBX-xa-Q1n" secondAttribute="height" multiplier="0.5" id="sdf-wy-zI1"/>
+                            <constraint firstAttribute="height" secondItem="c1A-2L-cTK" secondAttribute="height" multiplier="3" id="sdf-wy-zI1"/>
                             <constraint firstAttribute="trailing" secondItem="c1A-2L-cTK" secondAttribute="trailing" id="zW8-RK-4SE"/>
                         </constraints>
                     </view>
@@ -37,12 +37,32 @@
                         <outlet property="logo" destination="c1A-2L-cTK" id="Fbb-X7-9uY"/>
                         <segue destination="JHb-83-4Au" kind="show" identifier="showPlayerCountSelector" id="0WG-44-JaC"/>
                         <segue destination="2L8-38-Fui" kind="show" identifier="showHelp" id="nik-LS-jcy"/>
+                        <segue destination="ARr-HG-8ZX" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="0ii-h4-Bmh"/>
+                        <segue destination="Do0-D3-ZIA" kind="presentation" identifier="showJoin" modalPresentationStyle="formSheet" id="3RF-sF-T3Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiB-IW-G4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FzR-l3-ef1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1278.75" y="134.1549295774648"/>
+            <point key="canvasLocation" x="-1989" y="-295"/>
+        </scene>
+        <!--Join View Controller-->
+        <scene sceneID="AoD-S6-eGr">
+            <objects>
+                <viewController id="Do0-D3-ZIA" customClass="JoinViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8HT-IF-Qfm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lwp-Pd-RIe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tYY-gt-mCP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D34-ee-Rfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="-597"/>
         </scene>
         <!--Help Controller-->
         <scene sceneID="DYL-Wm-ZuW">
@@ -60,7 +80,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8E-MP-sNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1279" y="906"/>
+            <point key="canvasLocation" x="-538" y="870"/>
+        </scene>
+        <!--Host View Controller-->
+        <scene sceneID="l7W-n5-mPd">
+            <objects>
+                <viewController id="ARr-HG-8ZX" customClass="HostViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iF6-CQ-HN7"/>
+                        <viewControllerLayoutGuide type="bottom" id="W1Y-8M-fNB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OgX-Zx-wGF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXl-n7-50n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="-1306"/>
         </scene>
         <!--Player Count Selector Controller-->
         <scene sceneID="GAr-Tw-diI">
