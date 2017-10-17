@@ -26,6 +26,9 @@
 		5A2947711F56BA66002E833B /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A29476F1F56BA66002E833B /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
+		5A2C4A361F94BC6C00241FD5 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */; };
+		5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */; };
+		5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */; };
 		5A2DEEE21F921AC000001B96 /* lives.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2DEEE11F921AC000001B96 /* lives.png */; };
 		5A2DEEE41F921AE400001B96 /* new square in.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2DEEE31F921AE400001B96 /* new square in.png */; };
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
@@ -78,6 +81,9 @@
 		5A29476F1F56BA66002E833B /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinVewController.swift; sourceTree = "<group>"; };
+		5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeerTableViewCell.xib; sourceTree = "<group>"; };
 		5A2DEEE11F921AC000001B96 /* lives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lives.png; sourceTree = "<group>"; };
 		5A2DEEE31F921AE400001B96 /* new square in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in.png"; sourceTree = "<group>"; };
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				5A3223411F7F983000B476A1 /* MainMenuController.swift */,
 				5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */,
 				5A2706011F8A26950057B90C /* HelpController.swift */,
+				5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */,
+				5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */,
 				5A2706031F8A28030057B90C /* help.html */,
 				5A2947451F569D22002E833B /* Main.storyboard */,
 				5A2E11E01F5D283100B82A2D /* SquareView.swift */,
@@ -163,6 +171,7 @@
 				5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */,
 				5A269FA51F61CEE300FEE02D /* StatusBar.swift */,
 				5A269FA71F61D2FF00FEE02D /* StatusBar.xib */,
+				5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */,
 				5A2947481F569D22002E833B /* Assets.xcassets */,
 				5A29474A1F569D22002E833B /* LaunchScreen.storyboard */,
 				5A29474D1F569D22002E833B /* Info.plist */,
@@ -299,6 +308,7 @@
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
+				5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */,
 				5A2DEEE41F921AE400001B96 /* new square in.png in Resources */,
 				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
 			);
@@ -376,9 +386,11 @@
 				5AB021981F5815FA001A40D1 /* Player.swift in Sources */,
 				5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */,
 				5AFEB47A1F80DD9B00152892 /* FontSizeHelper.swift in Sources */,
+				5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */,
 				5A2316CD1F88B88D00CDD382 /* ButtonImageView.swift in Sources */,
 				5AB0219A1F588074001A40D1 /* Map.swift in Sources */,
 				5A2706021F8A26950057B90C /* HelpController.swift in Sources */,
+				5A2C4A361F94BC6C00241FD5 /* HostViewController.swift in Sources */,
 				5A2389751F82BA1C00250975 /* PlayerCountSelectorController.swift in Sources */,
 				5A2947421F569D22002E833B /* AppDelegate.swift in Sources */,
 				5A269FA61F61CEE300FEE02D /* StatusBar.swift in Sources */,
