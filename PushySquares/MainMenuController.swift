@@ -69,11 +69,17 @@ class MainMenuController: UIViewController {
         
         viewsToBeRepositioned.append(startButton)
         viewsToBeRepositioned.append(helpButton)
+        viewsToBeRepositioned.append(hostButton)
+        viewsToBeRepositioned.append(joinButton)
         view.addSubview(startButton)
         view.addSubview(helpButton)
+        view.addSubview(hostButton)
+        view.addSubview(joinButton)
         
         startButton.addTarget(self, action: #selector(startPressed), for: .touchUpInside)
         helpButton.addTarget(self, action: #selector(helpPressed), for: .touchUpInside)
+        hostButton.addTarget(self, action: #selector(hostPressed), for: .touchUpInside)
+        joinButton.addTarget(self, action: #selector(joinPressed), for: .touchUpInside)
     }
     
     func startPressed() {
@@ -82,6 +88,14 @@ class MainMenuController: UIViewController {
     
     func helpPressed() {
         performSegue(withIdentifier: "showHelp", sender: self)
+    }
+    
+    func hostPressed() {
+        performSegue(withIdentifier: "showHost", sender: self)
+    }
+    
+    func joinPressed() {
+        performSegue(withIdentifier: "showJoin", sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
