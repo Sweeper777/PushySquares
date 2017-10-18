@@ -3,6 +3,7 @@ import MultipeerConnectivity
 import SwiftyButton
 import RxSwift
 import RxCocoa
+import SCLAlertView
 
 enum ConnectionState {
     case connecting
@@ -11,7 +12,7 @@ enum ConnectionState {
     case error
 }
 
-class PeerIDStateTuple : Equatable {
+struct PeerIDStateTuple : Equatable {
     let peerID: MCPeerID
     var state: ConnectionState
     
@@ -25,3 +26,12 @@ class PeerIDStateTuple : Equatable {
     }
 }
 
+class HostViewController: UIViewController {
+    var foundPeers = Variable([PeerIDStateTuple]())
+    let disposeBag = DisposeBag()
+    
+    let peerID = MCPeerID(displayName: UIDevice.current.name)
+    var session: MCSession!
+    var browser: MCNearbyServiceBrowser!
+    
+}
