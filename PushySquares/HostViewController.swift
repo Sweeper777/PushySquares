@@ -34,4 +34,30 @@ class HostViewController: UIViewController {
     var session: MCSession!
     var browser: MCNearbyServiceBrowser!
     
+    func repositionViews() {
+        self.view.subviews.forEach { $0.removeFromSuperview() }
+        
+    }
+    
+    override func viewDidLoad() {
+        session = MCSession(peer: peerID)
+        session.delegate = self
+        browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "pushysquares\(Bundle.main.appBuild)")
+        browser.delegate = self
+        browser.startBrowsingForPeers()
+        repositionViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repositionViews()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.repositionViews()
+        }
+    }
 }
