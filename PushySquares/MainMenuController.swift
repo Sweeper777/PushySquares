@@ -10,7 +10,7 @@ class MainMenuController: UIViewController {
         viewsToBeRepositioned.forEach { $0.removeFromSuperview() }
         viewsToBeRepositioned = []
         
-        let startButtonY = 36 + view.height / 2
+        let startButtonY = 36 + logo.frame.maxY
         let startButtonWidth: CGFloat
         if traitCollection.horizontalSizeClass == .regular {
             startButtonWidth = view.width / 2
@@ -46,6 +46,16 @@ class MainMenuController: UIViewController {
             , for: .normal)
         helpButton.colors = PressableButton.ColorSet(button: UIColor.blue.desaturated(), shadow: UIColor.blue.desaturated().darker())
         helpButton.shadowHeight = helpButton.height * 0.1
+        
+        let hostButton = PressableButton(frame: helpButton.frame.with(y: helpButton.frame.maxY + helpButton.height * 0.2))
+        hostButton.setAttributedTitle(
+            NSAttributedString(string: "HOST", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        hostButton.colors = PressableButton.ColorSet(button: UIColor.red.desaturated(), shadow: UIColor.red.desaturated().darker())
+        hostButton.shadowHeight = helpButton.height * 0.1
         
         viewsToBeRepositioned.append(startButton)
         viewsToBeRepositioned.append(helpButton)
