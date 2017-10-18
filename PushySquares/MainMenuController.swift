@@ -57,6 +57,16 @@ class MainMenuController: UIViewController {
         hostButton.colors = PressableButton.ColorSet(button: UIColor.red.desaturated(), shadow: UIColor.red.desaturated().darker())
         hostButton.shadowHeight = helpButton.height * 0.1
         
+        let joinButton = PressableButton(frame: hostButton.frame.with(y: hostButton.frame.maxY + hostButton.height * 0.2))
+        joinButton.setAttributedTitle(
+            NSAttributedString(string: "JOIN", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        joinButton.colors = PressableButton.ColorSet(button: UIColor.yellow.darker().desaturated(), shadow: UIColor.yellow.darker().desaturated().darker())
+        joinButton.shadowHeight = hostButton.height * 0.1
+        
         viewsToBeRepositioned.append(startButton)
         viewsToBeRepositioned.append(helpButton)
         view.addSubview(startButton)
