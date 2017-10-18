@@ -26,6 +26,7 @@
 		5A2947711F56BA66002E833B /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A29476F1F56BA66002E833B /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
+		5A2A08131F95E8F00056C175 /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A08121F95E8F00056C175 /* DataCodes.swift */; };
 		5A2C4A361F94BC6C00241FD5 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */; };
 		5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */; };
 		5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */; };
@@ -81,6 +82,7 @@
 		5A29476F1F56BA66002E833B /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		5A2A08121F95E8F00056C175 /* DataCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCodes.swift; sourceTree = "<group>"; };
 		5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinVewController.swift; sourceTree = "<group>"; };
 		5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeerTableViewCell.xib; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				5A25DF621F59A53900455CA5 /* Game.swift */,
 				5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */,
 				5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */,
+				5A2A08121F95E8F00056C175 /* DataCodes.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */,
 				5A2947441F569D22002E833B /* GameViewController.swift in Sources */,
 				5AB021981F5815FA001A40D1 /* Player.swift in Sources */,
+				5A2A08131F95E8F00056C175 /* DataCodes.swift in Sources */,
 				5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */,
 				5AFEB47A1F80DD9B00152892 /* FontSizeHelper.swift in Sources */,
 				5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */,
