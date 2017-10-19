@@ -4,4 +4,6 @@ enum DataCodes: UInt8 {
     case moveLeft
     case moveDown
     case quit
+    case startGame
+    case ready
 }
