@@ -126,8 +126,7 @@ class GameViewController: UIViewController, GameDelegate {
         }
         
         allGR.forEach { $0.isEnabled = false }
-        moveAnim.perform()
-            {
+        moveAnim.perform() {
             [weak self] in
             guard let `self` = self else { return }
             self.allGR.forEach { $0.isEnabled = true }
@@ -137,22 +136,25 @@ class GameViewController: UIViewController, GameDelegate {
                 self.statusBar.setLives(players: self.game.players)
             }
             
-            let closure: (Position) -> Position
-            switch direction! {
-            case .down:
-                closure = {$0.below()}
-            case .up:
-                closure = {$0.above()}
-            case .left:
-                closure = {$0.left()}
-            case .right:
-                closure = {$0.right()}
+            var closure: ((Position) -> Position) = { $0 }
+            if let dir = direction {
+                switch dir {
+                case .down:
+                    closure = {$0.below()}
+                case .up:
+                    closure = {$0.above()}
+                case .left:
+                    closure = {$0.left()}
+                case .right:
+                    closure = {$0.right()}
+                }
             }
             for position in destroyedSquarePositions.map(closure) {
                 self.boardView.viewWithTag(position.hashValue)!.removeFromSuperview()
             }
                 
             if let color = winnerColor {
+                self.allGR.forEach { $0.isEnabled = false }
                 let winnerUIColor = GameBoardView.colorToUIColor[color]!
                 let message: String
                 switch color {
@@ -171,7 +173,12 @@ class GameViewController: UIViewController, GameDelegate {
                 _ = alert.showCustom(message, subTitle: "", color: .black, icon: image)
             }
             self.boardView.setNeedsDisplay()
+            self.animationDidComplete()
         }
+    }
+    
+    func animationDidComplete() {
+        
     }
     
     func repositionViews(size: CGSize) {
