@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="438" height="82"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsquarein4" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-hZ-BM8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-hZ-BM8">
                     <rect key="frame" x="0.0" y="0.0" width="146" height="82"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-wf-qVO">
@@ -54,7 +54,4 @@
             <point key="canvasLocation" x="119" y="35"/>
         </stackView>
     </objects>
-    <resources>
-        <image name="newsquarein4" width="500" height="288"/>
-    </resources>
 </document>
