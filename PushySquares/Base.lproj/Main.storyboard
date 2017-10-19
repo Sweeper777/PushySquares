@@ -39,6 +39,7 @@
                         <segue destination="2L8-38-Fui" kind="show" identifier="showHelp" id="nik-LS-jcy"/>
                         <segue destination="ARr-HG-8ZX" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="0ii-h4-Bmh"/>
                         <segue destination="Do0-D3-ZIA" kind="presentation" identifier="showJoin" modalPresentationStyle="formSheet" id="3RF-sF-T3Y"/>
+                        <segue destination="272-CU-3Dy" kind="show" identifier="showMultipeerGame" id="OHQ-SF-O5L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiB-IW-G4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,6 +60,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="FzR-l3-ef1" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindFromJoinWithSegue:" id="bzz-z4-3kp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D34-ee-Rfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +84,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8E-MP-sNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="870"/>
+            <point key="canvasLocation" x="-538" y="1018"/>
+        </scene>
+        <!--Multipeer Game View Controller-->
+        <scene sceneID="vNN-Uc-eJD">
+            <objects>
+                <viewController id="272-CU-3Dy" customClass="MultipeerGameViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Edb-ZA-Ylr"/>
+                        <viewControllerLayoutGuide type="bottom" id="sXw-Yi-aax"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8qI-XI-4Re">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="FzR-l3-ef1" kind="unwind" identifier="quitGame" unwindAction="unwindFromGameWithSegue:" id="aDS-cn-KNh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIw-gg-JnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1245" y="1017"/>
         </scene>
         <!--Host View Controller-->
         <scene sceneID="l7W-n5-mPd">
@@ -95,6 +120,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="FzR-l3-ef1" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindFromHostWithSegue:" id="16g-Yx-piA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXl-n7-50n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
