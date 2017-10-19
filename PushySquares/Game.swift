@@ -72,6 +72,23 @@ public class Game {
         move(displacement: { $0.right() }, sorter: { $0.x > $1.x }, direction: .right)
     }
     
+    public func killPlayer(_ color: Color) {
+        guard let index = players.index(where: { $0.color == color && $0.lives > 0 }) else { return }
+        let player = players[index]
+        player.lives = 0
+        var greyedOutPositions = [Position]()
+        for position in board.indicesOf(color: color) {
+            board[position] = .square(.grey)
+            greyedOutPositions.append(position)
+        }
+        var newSquareColor: Color?
+        if currentPlayer.color == color {
+            newSquareColor = nextTurn()
+        }
+        
+        delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: greyedOutPositions, newSquareColor: newSquareColor)
+    }
+    
     private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool, direction: Direction) {
         let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
         
