@@ -58,6 +58,19 @@ class HostViewController: UIViewController {
         backButton.colors = PressableButton.ColorSet(button: UIColor.gray, shadow: UIColor.gray.darker())
         backButton.shadowHeight = backButton.height * 0.1
         self.view.addSubview(backButton)
+        
+        let separator = backButton.height / 2
+        
+        let hintLabel = UILabel(frame: CGRect(
+            x: backButton.x,
+            y: backButton.frame.maxY + separator,
+            width: view.width - backButton.x - 8,
+            height: backButton.height * 2))
+        hintLabel.text = "Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game."
+        hintLabel.numberOfLines = 0
+        hintLabel.font = UIFont(name: "Chalkboard SE", size: hintLabel.font.pointSize)
+        view.addSubview(hintLabel)
+        
     }
     
     override func viewDidLoad() {
