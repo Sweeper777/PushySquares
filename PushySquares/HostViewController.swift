@@ -115,6 +115,23 @@ class HostViewController: UIViewController {
             }.disposed(by: disposeBag)
         
         view.addSubview(tableView)
+        
+        let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
+        let startButtonWidth = longStartButton ? backButton.width * 2 : backButtonWidth
+        let startButtonX = view.width - 8 - startButtonWidth
+        let startButtonText = longStartButton ? "START GAME" : "START"
+        let startButton = PressableButton(frame: CGRect(x: startButtonX, y: backButtonY, width: startButtonWidth, height: backButtonHeight))
+        let startFontSize = fontSizeThatFits(size: startButton.frame.size, text: startButtonText as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        startButton.setAttributedTitle(
+            NSAttributedString(string: startButtonText, attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: startFontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        startButton.colors = PressableButton.ColorSet(button: UIColor.green.desaturated().darker(), shadow: UIColor.green.desaturated().darker().darker())
+        startButton.shadowHeight = startButton.height * 0.1
+        startButton.alpha = 0
+        view.addSubview(startButton)
     }
     
     override func viewDidLoad() {
