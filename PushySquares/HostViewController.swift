@@ -78,6 +78,24 @@ class HostViewController: UIViewController {
         let tableView = UITableView(frame: CGRect(x: tableViewX, y: tableViewY, width: tableViewWidth, height: tableViewHeight))
         tableView.register(UINib(nibName: "PeerTableViewCell", bundle: nil) , forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .clear
+        foundPeers.asObservable().bind(to: tableView.rx.items(cellIdentifier: "cell")) {
+            row, model, cell in
+            cell.backgroundColor = .clear
+            cell.textLabel!.text = model.peerID.displayName
+            cell.textLabel!.font = UIFont(name: "Chalkboard SE", size: cell.textLabel!.font.pointSize)
+            cell.detailTextLabel!.font = UIFont(name: "Chalkboard SE", size: cell.detailTextLabel!.font.pointSize)
+            switch model.state {
+            case .connected:
+                cell.detailTextLabel!.text = "Connected"
+            case .connecting:
+                cell.detailTextLabel!.text = "Connecting..."
+            case .error:
+                cell.detailTextLabel!.text = "Unable to connect"
+            case .notConnected:
+                cell.detailTextLabel!.text = ""
+            }
+        }.disposed(by: disposeBag)
+        
         view.addSubview(tableView)
     }
     
