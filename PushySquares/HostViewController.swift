@@ -132,6 +132,17 @@ class HostViewController: UIViewController {
         startButton.shadowHeight = startButton.height * 0.1
         startButton.alpha = 0
         view.addSubview(startButton)
+        
+        foundPeers.asObservable().map{
+            peers -> CGFloat in
+            if peers.contains(where: {$0.state == .connecting}) {
+                return 0
+            }
+            if peers.filter({ $0.state == .connected}).count == 0 {
+                return 0
+            }
+            return 1
+        }.bind(to: startButton.rx.alpha).disposed(by: disposeBag)
     }
     
     override func viewDidLoad() {
