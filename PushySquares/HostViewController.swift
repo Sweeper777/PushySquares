@@ -175,5 +175,15 @@ class HostViewController: UIViewController {
     }
     
     func start() {
+        var peerToColorDict = [peerID: Color.color1, session.connectedPeers[0]: Color.color3]
+        if session.connectedPeers.count > 1 {
+            peerToColorDict[session.connectedPeers[1]] = .color2
+        }
+        
+        if session.connectedPeers.count > 2 {
+            peerToColorDict[session.connectedPeers[2]] = .color4
+        }
+        try? session.send(Data(bytes: [DataCodes.startGame.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        performSegue(withIdentifier: "unwindToMainMenu", sender: (session, peerToColorDict))
     }
 }
