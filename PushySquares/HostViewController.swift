@@ -96,6 +96,24 @@ class HostViewController: UIViewController {
             }
         }.disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(PeerIDStateTuple.self).bind { [weak self] (model) in
+            guard let `self` = self else { return }
+            tableView.deselectRow(at: IndexPath(row: self.foundPeers.value.index(of: model)!, section: 0), animated: false)
+            guard let index = self.foundPeers.value.index(where: { $0.peerID == model.peerID }) else { return }
+            if self.foundPeers.value[index].state == .error || self.foundPeers.value[index].state == .notConnected {
+                if self.foundPeers.value.filter({ $0.state == .connected || $0.state == .connecting }).count == 3 {
+                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                    alert.addButton("OK", action: {})
+                    alert.showError("Too many players!", subTitle: "You can only connect at most 3 players to the game.")
+                    return
+                }
+                self.browser.invitePeer(self.foundPeers.value[index].peerID, to: self.session, withContext: nil, timeout: 10)
+                self.foundPeers.value[index].state = .connecting
+            } else {
+                try? self.session.send(Data(bytes: [DataCodes.quit.rawValue]), toPeers: [self.foundPeers.value[index].peerID], with: .reliable)
+            }
+            }.disposed(by: disposeBag)
+        
         view.addSubview(tableView)
     }
     
