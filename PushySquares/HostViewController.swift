@@ -71,6 +71,14 @@ class HostViewController: UIViewController {
         hintLabel.font = UIFont(name: "Chalkboard SE", size: hintLabel.font.pointSize)
         view.addSubview(hintLabel)
         
+        let tableViewX = backButtonX
+        let tableViewY = hintLabel.frame.maxY
+        let tableViewHeight = view.height - tableViewY - 8
+        let tableViewWidth = view.width - tableViewX - 8
+        let tableView = UITableView(frame: CGRect(x: tableViewX, y: tableViewY, width: tableViewWidth, height: tableViewHeight))
+        tableView.register(UINib(nibName: "PeerTableViewCell", bundle: nil) , forCellReuseIdentifier: "cell")
+        tableView.backgroundColor = .clear
+        view.addSubview(tableView)
     }
     
     override func viewDidLoad() {
