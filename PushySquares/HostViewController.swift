@@ -143,6 +143,9 @@ class HostViewController: UIViewController {
             }
             return 1
         }.bind(to: startButton.rx.alpha).disposed(by: disposeBag)
+        
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -165,5 +168,12 @@ class HostViewController: UIViewController {
             [weak self] in
             self?.repositionViews()
         }
+    }
+    
+    func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func start() {
     }
 }
