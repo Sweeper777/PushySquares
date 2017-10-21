@@ -186,4 +186,14 @@ class HostViewController: UIViewController {
         try? session.send(Data(bytes: [DataCodes.startGame.rawValue]), toPeers: session.connectedPeers, with: .reliable)
         performSegue(withIdentifier: "unwindToMainMenu", sender: (session, peerToColorDict))
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? MainMenuController else { return }
+        
+        if let sessionTuple = sender as? (MCSession, [MCPeerID: Color]) {
+            vc.sessionDictTuple = sessionTuple
+        }
+    }
+}
+
 }
