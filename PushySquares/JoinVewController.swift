@@ -72,4 +72,26 @@ class JoinViewController : UIViewController {
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
     
+    override func viewDidLoad() {
+        session = MCSession(peer: peerID)
+        session.delegate = self
+        advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "pushysquares\(Bundle.main.appBuild)")
+        advertiser.delegate = self
+        advertiser.startAdvertisingPeer()
+        repositionViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repositionViews()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.repositionViews()
+        }
+    }
+    
 }
