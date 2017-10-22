@@ -45,6 +45,14 @@ class JoinViewController : UIViewController {
         backButton.colors = PressableButton.ColorSet(button: UIColor.gray, shadow: UIColor.gray.darker())
         backButton.shadowHeight = backButton.height * 0.1
         self.view.addSubview(backButton)
+        
+        let activityIndicatorLength = min(view.width, view.height) / 5
+        let activityIndicatorCenterX = view.width / 2
+        let activityIndicatorCenterY = view.height / 2
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.center = CGPoint(x: activityIndicatorCenterX, y: activityIndicatorCenterY)
+        view.addSubview(activityIndicator)
+        
     }
     
 }
