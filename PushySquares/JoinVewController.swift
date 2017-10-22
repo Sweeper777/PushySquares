@@ -53,6 +53,23 @@ class JoinViewController : UIViewController {
         activityIndicator.center = CGPoint(x: activityIndicatorCenterX, y: activityIndicatorCenterY)
         view.addSubview(activityIndicator)
         
+        let labelX = 0.f
+        let labelY = activityIndicator.frame.maxY + 8
+        let labelWidth = view.width
+        let labelHeight = activityIndicatorLength
+        connectionStatusLabel = UILabel(frame: CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight))
+        connectionStatusLabel.textAlignment = .center
+        connectionStatusLabel.font = UIFont(name: "Chalkboard SE", size: connectionStatusLabel.font.pointSize)
+        view.addSubview(connectionStatusLabel)
+        if let connectedPeer = connectedPeerID {
+            activityIndicator.stopAnimating()
+            connectionStatusLabel.text = "Connected to \(connectedPeer.displayName)"
+        } else {
+            activityIndicator.startAnimating()
+            connectionStatusLabel.text = "Waiting to be connected to a game..."
+        }
+        
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
     
 }
