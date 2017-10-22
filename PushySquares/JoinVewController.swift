@@ -94,4 +94,8 @@ class JoinViewController : UIViewController {
         }
     }
     
+    func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
