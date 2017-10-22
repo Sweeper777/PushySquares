@@ -210,6 +210,20 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        if let index = foundPeers.value.index(where: { $0.peerID == peerID }) {
+            switch state {
+            case .connected:
+                foundPeers.value[index].state = .connected
+            case .connecting:
+                foundPeers.value[index].state = .connecting
+            case .notConnected:
+                if foundPeers.value[index].state == .connected {
+                    foundPeers.value[index].state = .notConnected
+                } else {
+                    foundPeers.value[index].state = .error
+                }
+            }
+        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
@@ -225,5 +239,7 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+         _ = foundPeers.value.remove(object: peerIDStateTuple)
     }
 }
