@@ -98,4 +98,11 @@ class JoinViewController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? MainMenuController else { return }
+        
+        if let session = sender as? MCSession {
+            vc.session = session
+        }
+    }
 }
