@@ -116,6 +116,9 @@ class MainMenuController: UIViewController {
         }
     }
     
+    var session: MCSession!
+    var sessionDictTuple: (MCSession, [MCPeerID: Color])!
+    
     @IBAction func unwindFromGame(segue: UIStoryboardSegue) {
         
     }
