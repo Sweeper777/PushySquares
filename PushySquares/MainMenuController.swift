@@ -143,4 +143,19 @@ class MainMenuController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? MultipeerGameViewController else { return }
+        
+        if let session = sender as? MCSession {
+            vc.session = session
+            vc.playerCount = session.connectedPeers.count + 1
+            session.delegate = vc
+        } else if let sessionTuple = sender as? (MCSession, [MCPeerID: Color]) {
+            vc.session = sessionTuple.0
+            vc.playerColorsDict = sessionTuple.1
+            vc.playerCount = sessionTuple.0.connectedPeers.count + 1
+            sessionTuple.0.delegate = vc
+        }
+    }
 }
