@@ -1,5 +1,6 @@
 import UIKit
 import SwiftyButton
+import MultipeerConnectivity
 
 class MainMenuController: UIViewController {
     @IBOutlet var logo: UIImageView!
@@ -83,18 +84,22 @@ class MainMenuController: UIViewController {
     }
     
     func startPressed() {
+        guard !multipeerGameTransitioning else { return }
         performSegue(withIdentifier: "showPlayerCountSelector", sender: self)
     }
     
     func helpPressed() {
+        guard !multipeerGameTransitioning else { return }
         performSegue(withIdentifier: "showHelp", sender: self)
     }
     
     func hostPressed() {
+        guard !multipeerGameTransitioning else { return }
         performSegue(withIdentifier: "showHost", sender: self)
     }
     
     func joinPressed() {
+        guard !multipeerGameTransitioning else { return }
         performSegue(withIdentifier: "showJoin", sender: self)
     }
     
@@ -114,4 +119,6 @@ class MainMenuController: UIViewController {
     @IBAction func unwindFromGame(segue: UIStoryboardSegue) {
         
     }
+    
+    var multipeerGameTransitioning = false
 }
