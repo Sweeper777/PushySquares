@@ -124,4 +124,14 @@ class MainMenuController: UIViewController {
     }
     
     var multipeerGameTransitioning = false
+    @IBAction func unwindFromHost(segue: UIStoryboardSegue) {
+        multipeerGameTransitioning = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) { [weak self] in
+            self?.multipeerGameTransitioning = false
+            if let sessionDictTuple = self?.sessionDictTuple {
+                self?.performSegue(withIdentifier: "showMultipeerGame", sender: sessionDictTuple)
+            }
+        }
+    }
+    
 }
