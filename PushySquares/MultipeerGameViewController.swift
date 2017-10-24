@@ -21,4 +21,24 @@ class MultipeerGameViewController: GameViewController {
             _ = alert.showCustom("Your color is \(GameBoardView.colorToString[myColor]!).", subTitle: "", color: .black, icon: image)
         }
     }
+    
+    override func swipedUp() {
+        try? session.send(Data(bytes: [DataCodes.moveUp.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        super.swipedUp()
+    }
+    
+    override func swipedDown() {
+        try? session.send(Data(bytes: [DataCodes.moveDown.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        super.swipedDown()
+    }
+    
+    override func swipedLeft() {
+        try? session.send(Data(bytes: [DataCodes.moveLeft.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        super.swipedLeft()
+    }
+    
+    override func swipedRight() {
+        try? session.send(Data(bytes: [DataCodes.moveRight.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        super.swipedRight()
+    }
 }
