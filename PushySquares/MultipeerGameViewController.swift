@@ -54,4 +54,10 @@ class MultipeerGameViewController: GameViewController {
         }
     }
     
+    override func animationDidComplete() {
+        if game.currentPlayer.color != myColor {
+            allGR.forEach { $0.isEnabled = false }
+        }
+    }
+    
 }
