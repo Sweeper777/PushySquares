@@ -124,6 +124,14 @@ extension MultipeerGameViewController: MCSessionDelegate {
             }
             return
         }
+        
+        if data[0] == DataCodes.ready.rawValue && playerColorsDict != nil {
+            let dictToSend = playerColorsDict.map { ($0, $1.rawValue) }
+            print(dictToSend)
+            let data = NSKeyedArchiver.archivedData(withRootObject: dictToSend)
+            try? session.send(data, toPeers: [peerID], with: .reliable)
+        }
+        
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
