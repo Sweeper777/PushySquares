@@ -41,4 +41,17 @@ class MultipeerGameViewController: GameViewController {
         try? session.send(Data(bytes: [DataCodes.moveRight.rawValue]), toPeers: session.connectedPeers, with: .reliable)
         super.swipedRight()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if playerColorsDict == nil {
+            try? session.send(Data(bytes: [DataCodes.ready.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        } else {
+            myColor = playerColorsDict[session.myPeerID]!
+        }
+        if game.currentPlayer.color != myColor {
+            allGR.forEach { $0.isEnabled = false }
+        }
+    }
+    
 }
