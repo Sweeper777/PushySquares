@@ -113,6 +113,17 @@ class MultipeerGameViewController: GameViewController {
 
 extension MultipeerGameViewController: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        if data.count > 1 && playerColorsDict == nil {
+            if let dict = NSKeyedUnarchiver.unarchiveObject(with: data) as? [MCPeerID: Int] {
+                self.playerColorsDict = dict.map { ($0, Color(rawValue: $1)!) }
+                DispatchQueue.main.async {
+                    [weak self] in
+                    guard let `self` = self else { return }
+                    self.myColor = self.playerColorsDict[self.session.myPeerID]
+                }
+            }
+            return
+        }
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
