@@ -60,4 +60,54 @@ class MultipeerGameViewController: GameViewController {
         }
     }
     
+    override func showHideActionBar() {
+        
+        if let quitButton = self.view.viewWithTag(1) {
+            UIView.animate(withDuration: 0.25, animations: {
+                quitButton.alpha = 0
+            }, completion: {
+                if $0 {
+                    quitButton.removeFromSuperview()
+                }
+            })
+        } else {
+            let actionBarButtonLength = min(self.view.width, self.view.height) / 8
+            let actionBarYWeight = 0.7.f
+            let actionBarY = self.view.height * actionBarYWeight
+            let actionBarX = (self.view.width - actionBarButtonLength) / 2
+            let quitButton = PressableButton()
+            quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            quitButton.shadowHeight = quitButton.height * 0.1
+            quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+            
+            let fontSize = fontSizeThatFits(size: quitButton.frame.size, text: "↺", font: UIFont.systemFont(ofSize: 0))
+            quitButton.setAttributedTitle(
+                NSAttributedString.init(string: "×", attributes: [
+                    NSFontAttributeName: UIFont.systemFont(ofSize: fontSize),
+                    NSForegroundColorAttributeName: UIColor.white
+                    ]), for: .normal)
+            
+            quitButton.alpha = 0
+            quitButton.tag = 1
+            quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+            self.view.addSubview(quitButton)
+            UIView.animate(withDuration: 0.25, animations: {
+                quitButton.alpha = 1
+            })
+        }
+    }
+    
+    override func quitTapped() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes", action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.disconnectHandled = true
+            self.session.disconnect()
+            self.performSegue(withIdentifier: "quitGame", sender: self)
+        })
+        alert.addButton("No", action: {})
+        alert.showWarning("Cofirm", subTitle: "Do you really want to quit?")
+    }
+}
 }
