@@ -15,4 +15,6 @@ target 'PushySquares' do
   pod 'SwiftyButton'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 end

@@ -1,6 +1,31 @@
 PODS:
   - DynamicColor (3.3)
+  - Firebase/AdMob (4.1.0):
+    - Firebase/Core
+    - Google-Mobile-Ads-SDK (= 7.22.0)
+  - Firebase/Core (4.1.0):
+    - FirebaseAnalytics (= 4.0.3)
+    - FirebaseCore (= 4.0.5)
+  - FirebaseAnalytics (4.0.3):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.5):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.1):
+    - FirebaseCore (~> 4.0)
   - FittableFontLabel (1.4.0)
+  - Google-Mobile-Ads-SDK (7.22.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - NGORoundedButton (3.1)
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
@@ -13,6 +38,8 @@ PODS:
 
 DEPENDENCIES:
   - DynamicColor
+  - Firebase/AdMob
+  - Firebase/Core
   - FittableFontLabel
   - NGORoundedButton
   - RxCocoa
@@ -25,7 +52,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DynamicColor: 3cdaa1e01c16e93ba744e0630f768373e0fc7a7d
+  Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
+  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
+  FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
+  FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
   FittableFontLabel: 20502441e83bb41eb8b41611cca91af85c4e21e3
+  Google-Mobile-Ads-SDK: 1bdf1a4244d0553b1840239874c209c01aef055f
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NGORoundedButton: dd1e7a293ccc16e0f5c073ba9be62b0fb8b8d496
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
@@ -35,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyButton: 4c9b61c499f172971a1b8c2eebbbdc20a26d8a08
   SwiftyUtils: f48a22d2fa8eece42a11d8bbb4d01a9758dd0602
 
-PODFILE CHECKSUM: 54f30bd6a1375bbdef59516856c5f7fd92ef2822
+PODFILE CHECKSUM: 238d54c4a5dbf01f5928ede9d987403d21d16a35
 
 COCOAPODS: 1.1.0.beta.1
