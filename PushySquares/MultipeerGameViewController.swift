@@ -197,6 +197,15 @@ extension MultipeerGameViewController: MCSessionDelegate {
     }
     
     func handleDisconnection(of peerID: MCPeerID) {
+        let color = playerColorsDict[peerID]!
+        game.killPlayer(color)
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("OK", action: {})
+        _ = alert.showWarning("Oops!", subTitle: "\(peerID.displayName) disconnected from the game.")
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
     }
     
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
