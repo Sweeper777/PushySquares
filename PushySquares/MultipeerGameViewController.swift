@@ -132,6 +132,29 @@ extension MultipeerGameViewController: MCSessionDelegate {
             try? session.send(data, toPeers: [peerID], with: .reliable)
         }
         
+        if data[0] == DataCodes.moveUp.rawValue {
+            DispatchQueue.main.async { [weak self] in
+                self?.game.moveUp()
+            }
+        }
+        
+        if data[0] == DataCodes.moveDown.rawValue {
+            DispatchQueue.main.async { [weak self] in
+                self?.game.moveDown()
+            }
+        }
+        
+        if data[0] == DataCodes.moveLeft.rawValue {
+            DispatchQueue.main.async { [weak self] in
+                self?.game.moveLeft()
+            }
+        }
+        
+        if data[0] == DataCodes.moveRight.rawValue {
+            DispatchQueue.main.async { [weak self] in
+                self?.game.moveRight()
+            }
+        }
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
