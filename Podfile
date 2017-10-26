@@ -13,7 +13,7 @@ target 'PushySquares' do
   pod 'NGORoundedButton'
   pod 'SCLAlertView'
   pod 'SwiftyButton'
-  pod 'RxSwift'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'rxswift-3.0'
   pod 'RxCocoa'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
