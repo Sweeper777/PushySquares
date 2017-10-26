@@ -1,7 +1,11 @@
 import UIKit
 import SwiftyButton
+import GoogleMobileAds
 
 class PlayerCountSelectorController: UIViewController {
+    
+    var interstitial: GADInterstitial!
+    var shouldShowAd = false
     
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
