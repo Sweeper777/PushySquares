@@ -117,3 +117,15 @@ class PlayerCountSelectorController: UIViewController {
         }
     }
 }
+
+extension PlayerCountSelectorController: GADInterstitialDelegate {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        guard shouldShowAd else { return }
+        ad.present(fromRootViewController: self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        shouldShowAd = false
+    }
+}
