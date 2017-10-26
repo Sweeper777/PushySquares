@@ -88,6 +88,17 @@ class PlayerCountSelectorController: UIViewController {
         repositionViews()
     }
     
+    override func viewDidLoad() {
+        if arc4random_uniform(100) < 30 {
+            shouldShowAd = true
+            interstitial = GADInterstitial(adUnitID: adUnitID)
+            let request = GADRequest()
+            request.testDevices = [kGADSimulatorID]
+            interstitial.delegate = self
+            interstitial.load(request)
+        }
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         DispatchQueue.main.async {
