@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FSPagerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FittableFontLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,12 +77,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>181D9FC4913359EB1C0D147E71D6BE55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E88A56C43FB431E9D6FB3F8650C116A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3B9F2C6DD00A30B37FCEE25B2C261248</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E06478120373A5423B0FE138557C479</key>
+		<key>408092726E160EF2B6E02048205D5748</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61BED601F46A4E535C306B80593E605E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6EC8B57643525F05C6FCC602674145D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C349E2D64C338C4D1D0110F93C4FDA1</key>
+		<key>78BDA0BB90901D1A59D601BD064A2297</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9597E8F55466F65861A830EB3C288C98</key>
+		<key>AD69C61629290B6752C88E605787114D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9AB6C2DE62A049427A40C08F7AFF0EA6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B7CE9E8860F8779F3CCEACAEFDB155ED</key>
+		<key>C82A3ADAD75BB23C79CE2F4E1A87943E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,7 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD9953BB4415F6665CBE65E1394BC199</key>
+		<key>D110927FEC74BF8C104AD1083FD13624</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0E3D18CC8FCA245ED6098F21002E59C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E65B2EF8244ED04321527C23BDE60B41</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -17,4 +17,5 @@ target 'PushySquares' do
   pod 'RxCocoa'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'FSPagerView'
 end
