@@ -10,6 +10,9 @@ class PlayerCountSelectorController: UIViewController {
     var pageControl: FSPageControl!
     var shouldShowAd = false
     
+    let imageNames = ["2player", "3player", "4player", "playervsai"]
+    var selectedImageIndex = 0
+    
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
         
