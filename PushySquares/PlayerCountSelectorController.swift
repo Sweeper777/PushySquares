@@ -1,10 +1,13 @@
 import UIKit
 import SwiftyButton
 import GoogleMobileAds
+import FSPagerView
 
 class PlayerCountSelectorController: UIViewController {
     
     var interstitial: GADInterstitial!
+    var pageView: FSPagerView!
+    var pageControl: FSPageControl!
     var shouldShowAd = false
     
     func repositionViews() {
