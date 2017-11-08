@@ -39,52 +39,9 @@ class PlayerCountSelectorController: UIViewController {
         self.view.addSubview(backButton)
         
         let separator = backButton.height / 2
-        let stackViewX = backButtonX
-        let stackViewY = backButton.frame.maxY + separator
-        let stackViewHeight = view.height - stackViewY - 8
-        let stackViewWidth = view.width - stackViewX - 8
-        let stackView = UIStackView(frame: CGRect(x: stackViewX, y: stackViewY, width: stackViewWidth, height: stackViewHeight))
-        if view.width < view.height {
-            stackView.axis = .vertical
-        } else {
-            stackView.axis = .horizontal
-        }
-        stackView.spacing = separator
-        stackView.distribution = .fillEqually
-        self.view.addSubview(stackView)
-        
-        let twoPlayersButton = ButtonImageView()
-        twoPlayersButton.contentMode = .scaleAspectFit
-        twoPlayersButton.image = #imageLiteral(resourceName: "2player")
-        twoPlayersButton.isUserInteractionEnabled = true
-        stackView.addArrangedSubview(twoPlayersButton)
-        
-        let threePlayersButton = ButtonImageView()
-        threePlayersButton.contentMode = .scaleAspectFit
-        threePlayersButton.image = #imageLiteral(resourceName: "3player")
-        threePlayersButton.isUserInteractionEnabled = true
-        stackView.addArrangedSubview(threePlayersButton)
-        
-        let fourPlayersButton = ButtonImageView()
-        fourPlayersButton.contentMode = .scaleAspectFit
-        fourPlayersButton.image = #imageLiteral(resourceName: "4player")
-        fourPlayersButton.isUserInteractionEnabled = true
-        stackView.addArrangedSubview(fourPlayersButton)
-        
-        twoPlayersButton.onClick = {
             [weak self] in
-            self?.performSegue(withIdentifier: "showGame", sender: 2)
         }
         
-        threePlayersButton.onClick = {
-            [weak self] in
-            self?.performSegue(withIdentifier: "showGame", sender: 3)
-        }
-        
-        fourPlayersButton.onClick = {
-            [weak self] in
-            self?.performSegue(withIdentifier: "showGame", sender: 4)
-        }
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
