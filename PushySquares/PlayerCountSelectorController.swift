@@ -39,6 +39,10 @@ class PlayerCountSelectorController: UIViewController {
         self.view.addSubview(backButton)
         
         let separator = backButton.height / 2
+        let pageViewX = backButtonX
+        let pageViewY = backButton.frame.maxY + separator
+        let pageViewHeight = view.height - pageViewY - 8
+        let pageViewWidth = view.width - pageViewX - 8
             [weak self] in
         }
         
