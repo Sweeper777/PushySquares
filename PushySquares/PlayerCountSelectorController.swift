@@ -115,3 +115,6 @@ extension PlayerCountSelectorController: GADInterstitialDelegate {
         shouldShowAd = false
     }
 }
+
+extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSource {
+}
