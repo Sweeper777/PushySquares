@@ -57,6 +57,8 @@ class PlayerCountSelectorController: UIViewController {
         
         let pageControlHeight = min(pageViewHeight, pageViewWidth) / 10
         let pageControlY = pageView.frame.maxY
+        pageControl = FSPageControl(frame: CGRect(x: pageViewX, y: pageControlY, width: pageViewWidth, height: pageControlHeight))
+        self.view.addSubview(pageControl)
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
