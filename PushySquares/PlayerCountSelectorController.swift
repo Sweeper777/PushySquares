@@ -45,6 +45,10 @@ class PlayerCountSelectorController: UIViewController {
         let pageViewWidth = view.width - pageViewX - 8
         pageView = FSPagerView(frame: CGRect(x: pageViewX, y: pageViewY, width: pageViewWidth, height: pageViewHeight * 0.9))
         self.view.addSubview(pageView)
+        pageView.transformer = FSPagerViewTransformer(type: .linear)
+        pageView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        pageView.delegate = self
+        pageView.dataSource = self
             [weak self] in
         }
         
