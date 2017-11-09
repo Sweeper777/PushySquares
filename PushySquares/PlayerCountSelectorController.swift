@@ -55,6 +55,8 @@ class PlayerCountSelectorController: UIViewController {
             self.pageView.scrollToItem(at: self.selectedImageIndex, animated: false)
         }
         
+        let pageControlHeight = min(pageViewHeight, pageViewWidth) / 10
+        let pageControlY = pageView.frame.maxY
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
