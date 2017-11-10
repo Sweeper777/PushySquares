@@ -67,6 +67,11 @@ class PlayerCountSelectorController: UIViewController {
         self.view.addSubview(pageControl)
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        
+        let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
+        let startButtonWidth = longStartButton ? backButton.width * 2 : backButtonWidth
+        let startButtonX = view.width - 8 - startButtonWidth
+        let startButtonText = longStartButton ? "START GAME" : "START"
     }
     
     override func viewDidAppear(_ animated: Bool) {
