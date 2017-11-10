@@ -56,6 +56,13 @@ public class Game {
         currentPlayer.turnsUntilNewSquare -= 1
     }
     
+    public init(game: Game) {
+        self.board = game.board
+        self.spawnpoints = game.spawnpoints
+        self.players = game.players.map { $0.createCopy() }
+        self.currentPlayerIndex = game.currentPlayerIndex
+    }
+    
     public func moveUp() {
         move(displacement: { $0.above() }, sorter: { $0.y < $1.y }, direction: .up)
     }
