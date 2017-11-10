@@ -117,4 +117,20 @@ extension PlayerCountSelectorController: GADInterstitialDelegate {
 }
 
 extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSource {
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return imageNames.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = UIImage(named: imageNames[index])
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.contentView.layer.shadowRadius = 0
+        return cell
+    }
+    
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        pageControl.currentPage = pagerView.currentIndex
+        selectedImageIndex = pagerView.currentIndex
+    }
 }
