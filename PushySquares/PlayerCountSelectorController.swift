@@ -133,4 +133,8 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
         pageControl.currentPage = pagerView.currentIndex
         selectedImageIndex = pagerView.currentIndex
     }
+    
+    func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
+        return false
+    }
 }
