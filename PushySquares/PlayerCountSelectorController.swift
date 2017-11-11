@@ -82,6 +82,8 @@ class PlayerCountSelectorController: UIViewController {
             , for: .normal)
         startButton.colors = PressableButton.ColorSet(button: UIColor.green.desaturated().darker(), shadow: UIColor.green.desaturated().darker().darker())
         startButton.shadowHeight = startButton.height * 0.1
+        self.view.addSubview(startButton)
+        startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
