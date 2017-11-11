@@ -114,6 +114,12 @@ class PlayerCountSelectorController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func start() {
+        if pageView.currentIndex < 3 {
+            performSegue(withIdentifier: "showGame", sender: pageView.currentIndex + 2)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GameViewController {
             vc.playerCount = sender as! Int
