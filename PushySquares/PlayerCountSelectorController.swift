@@ -72,6 +72,8 @@ class PlayerCountSelectorController: UIViewController {
         let startButtonWidth = longStartButton ? backButton.width * 2 : backButtonWidth
         let startButtonX = view.width - 8 - startButtonWidth
         let startButtonText = longStartButton ? "START GAME" : "START"
+        let startButton = PressableButton(frame: CGRect(x: startButtonX, y: backButtonY, width: startButtonWidth, height: backButtonHeight))
+        let startFontSize = fontSizeThatFits(size: startButton.frame.size, text: startButtonText as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
     }
     
     override func viewDidAppear(_ animated: Bool) {
