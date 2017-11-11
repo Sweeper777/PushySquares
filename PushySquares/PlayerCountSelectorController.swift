@@ -74,6 +74,14 @@ class PlayerCountSelectorController: UIViewController {
         let startButtonText = longStartButton ? "START GAME" : "START"
         let startButton = PressableButton(frame: CGRect(x: startButtonX, y: backButtonY, width: startButtonWidth, height: backButtonHeight))
         let startFontSize = fontSizeThatFits(size: startButton.frame.size, text: startButtonText as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        startButton.setAttributedTitle(
+            NSAttributedString(string: startButtonText, attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: startFontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        startButton.colors = PressableButton.ColorSet(button: UIColor.green.desaturated().darker(), shadow: UIColor.green.desaturated().darker().darker())
+        startButton.shadowHeight = startButton.height * 0.1
     }
     
     override func viewDidAppear(_ animated: Bool) {
