@@ -307,6 +307,7 @@ class GameViewController: UIViewController, GameDelegate {
             self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
             self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
             self.statusBar.setLives(players: self.game.players)
+            self.allGR.forEach { $0.isEnabled = true }
         })
         alert.addButton("No", action: {})
         alert.showWarning("Cofirm", subTitle: "Do you really want to restart?")
