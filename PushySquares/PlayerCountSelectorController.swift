@@ -124,7 +124,11 @@ class PlayerCountSelectorController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? GameViewController {
+        if let vc = segue.destination as? AIGameViewController {
+            let tuple = sender as! (Int, Int)
+            vc.aiCount = tuple.1
+            vc.playerCount = tuple.0
+        } else if let vc = segue.destination as? GameViewController {
             vc.playerCount = sender as! Int
         }
     }
