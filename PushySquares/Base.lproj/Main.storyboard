@@ -45,7 +45,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiB-IW-G4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FzR-l3-ef1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1989" y="-295"/>
+            <point key="canvasLocation" x="-1989.375" y="-295.77464788732397"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="AoD-S6-eGr">
@@ -85,6 +85,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8E-MP-sNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-538" y="1018"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Uyn-nR-ruA">
+            <objects>
+                <viewController id="wQT-7O-Aea" customClass="AIGameViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p9E-fd-eh7"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkM-RZ-2HC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QZu-P6-HXv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="FzR-l3-ef1" kind="unwind" identifier="quitGame" unwindAction="unwindFromGameWithSegue:" id="NW9-fG-tzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JoE-cs-ef5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="1017"/>
         </scene>
         <!--Multipeer Game View Controller-->
         <scene sceneID="vNN-Uc-eJD">
@@ -143,6 +164,7 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="X4E-x1-Fnn"/>
+                        <segue destination="wQT-7O-Aea" kind="show" identifier="showAIGame" id="B7k-ci-6ZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAY-Ra-WT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="195" y="134"/>
+            <point key="canvasLocation" x="780" y="132"/>
         </scene>
     </scenes>
     <resources>
