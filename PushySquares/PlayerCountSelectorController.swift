@@ -118,6 +118,9 @@ class PlayerCountSelectorController: UIViewController {
         if pageView.currentIndex < 3 {
             performSegue(withIdentifier: "showGame", sender: pageView.currentIndex + 2)
         }
+        if pageView.currentIndex == 3 {
+            performSegue(withIdentifier: "showAIGame", sender: (1, 1))
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
