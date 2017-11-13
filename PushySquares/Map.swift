@@ -26,6 +26,15 @@ public struct Map {
         self.board = board
         self.spawnpoints = spawnpoints
     }
+    
+    public init(file path: String) {
+        let fileContents = try! String(contentsOfFile: path)
+        let dict: [Character: Tile] = [
+            ".": .void,
+            "+": .empty,
+            "O": .wall
+        ]
+    }
 }
 
 public func printBoard(_ board: Array2D<Tile>) {
