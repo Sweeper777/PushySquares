@@ -105,10 +105,6 @@ class MainMenuController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let path = Bundle.main.path(forResource: "dummy", ofType: "map")
-        let map = Map(file: path!)
-        printBoard(map.board)
-        print(map.spawnpoints)
         repositionViews()
     }
     
