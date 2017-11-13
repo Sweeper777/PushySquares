@@ -34,6 +34,9 @@ public struct Map {
             "+": .empty,
             "O": .wall
         ]
+        let lines = fileContents.components(separatedBy: "\n").filter({!$0.isEmpty})
+        var board = Array2D<Tile>(columns: lines.first!.characters.count, rows: lines.count, initialValue: .void)
+        var spawnpoints = [Color: Position]()
     }
 }
 
