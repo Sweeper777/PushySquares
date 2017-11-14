@@ -5,7 +5,13 @@ class AIGameViewController: GameViewController {
     var playerColors: [Color]!
     
     override func newGame() -> Game {
-        return Game(map: .standard, playerCount: playerCount + aiCount)
+        let game = Game(map: .standard, playerCount: playerCount + aiCount)
+        var colors = game.players.map { $0.color }
+        playerColors = []
+        for _ in 0..<playerCount {
+            playerColors.append(randomFromArrayAndRemove(&colors))
+        }
+        return game
     }
     
     override func animationDidComplete() {
