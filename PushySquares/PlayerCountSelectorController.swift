@@ -51,6 +51,7 @@ class PlayerCountSelectorController: UIViewController {
         pageView.dataSource = self
         let itemLength = min(pageViewWidth * 0.7, pageViewHeight)
         pageView.itemSize = CGSize(width: itemLength, height: itemLength)
+        pageView.isInfinite = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             [weak self] in
             guard let `self` = self else { return }
