@@ -293,7 +293,7 @@ class GameViewController: UIViewController, GameDelegate {
             self.performSegue(withIdentifier: "quitGame", sender: self)
         })
         alert.addButton("No", action: {})
-        alert.showWarning("Cofirm", subTitle: "Do you really want to quit?")
+        alert.showWarning("Confirm", subTitle: "Do you really want to quit?")
     }
     
     func restartTapped() {
@@ -310,7 +310,7 @@ class GameViewController: UIViewController, GameDelegate {
             self.allGR.forEach { $0.isEnabled = true }
         })
         alert.addButton("No", action: {})
-        alert.showWarning("Cofirm", subTitle: "Do you really want to restart?")
+        alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
     }
     
     override func viewDidAppear(_ animated: Bool) {

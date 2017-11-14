@@ -107,7 +107,7 @@ class MultipeerGameViewController: GameViewController {
             self.performSegue(withIdentifier: "quitGame", sender: self)
         })
         alert.addButton("No", action: {})
-        alert.showWarning("Cofirm", subTitle: "Do you really want to quit?")
+        alert.showWarning("Confirm", subTitle: "Do you really want to quit?")
     }
 }
 
