@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22431B1FA9B2E4005FD64B /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431A1FA9B2E4005FD64B /* GameAI.swift */; };
+		5A22431C1FA9B2E4005FD64B /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431A1FA9B2E4005FD64B /* GameAI.swift */; };
+		5A22431E1FA9B3AD005FD64B /* AIGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */; };
 		5A2316CD1F88B88D00CDD382 /* ButtonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */; };
 		5A2389751F82BA1C00250975 /* PlayerCountSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */; };
 		5A25DF631F59A53900455CA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25DF621F59A53900455CA5 /* Game.swift */; };
@@ -27,6 +30,9 @@
 		5A2947711F56BA66002E833B /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A29476F1F56BA66002E833B /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2947751F56BA87002E833B /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947541F56B663002E833B /* Tile.swift */; };
 		5A2947771F56E6C1002E833B /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
+		5A29E61C1FB4DC0B00B39790 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
+		5A29E61D1FB4DE3C00B39790 /* dummy.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A29E61B1FB4D8F500B39790 /* dummy.map */; };
+		5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A29E61B1FB4D8F500B39790 /* dummy.map */; };
 		5A2A08131F95E8F00056C175 /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2A08121F95E8F00056C175 /* DataCodes.swift */; };
 		5A2C4A361F94BC6C00241FD5 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */; };
 		5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */; };
@@ -36,13 +42,21 @@
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
 		5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */; };
 		5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3223411F7F983000B476A1 /* MainMenuController.swift */; };
+		5A373C201FB7103F00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
+		5A373C211FB7104B00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
+		5A373C231FB712A400F99847 /* MapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373C221FB712A400F99847 /* MapExtension.swift */; };
+		5A373C251FB8330200F99847 /* small.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C241FB832F500F99847 /* small.map */; };
+		5A373C261FB8330200F99847 /* small.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C241FB832F500F99847 /* small.map */; };
+		5A373C281FB8337B00F99847 /* large.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C271FB8337200F99847 /* large.map */; };
+		5A373C291FB8337C00F99847 /* large.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C271FB8337200F99847 /* large.map */; };
+		5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C2A1FB8406500F99847 /* GameBoardCell.xib */; };
+		5A373C2E1FB8412C00F99847 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */; };
 		5A6A0D011F9B9D260075FDB2 /* SecretStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */; };
 		5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
 		5AB0219A1F588074001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
 		5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2947761F56E6C1002E833B /* Array2D.swift */; };
 		5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
-		5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021991F588074001A40D1 /* Map.swift */; };
 		5AFEB47A1F80DD9B00152892 /* FontSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */; };
 		60CD5DE4D2ADA724B5674780 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +77,8 @@
 /* Begin PBXFileReference section */
 		165727B66FC409F48166F07A /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 		42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A22431A1FA9B2E4005FD64B /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
+		5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIGameViewController.swift; sourceTree = "<group>"; };
 		5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonImageView.swift; sourceTree = "<group>"; };
 		5A2389741F82BA1C00250975 /* PlayerCountSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountSelectorController.swift; sourceTree = "<group>"; };
 		5A25DF621F59A53900455CA5 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -86,6 +102,7 @@
 		5A29476F1F56BA66002E833B /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A2947701F56BA66002E833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2947761F56E6C1002E833B /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		5A29E61B1FB4D8F500B39790 /* dummy.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = dummy.map; sourceTree = "<group>"; };
 		5A2A08121F95E8F00056C175 /* DataCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCodes.swift; sourceTree = "<group>"; };
 		5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinVewController.swift; sourceTree = "<group>"; };
@@ -95,6 +112,12 @@
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
 		5A3223411F7F983000B476A1 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		5A373C1F1FB70A1D00F99847 /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = standard.map; sourceTree = "<group>"; };
+		5A373C221FB712A400F99847 /* MapExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapExtension.swift; sourceTree = "<group>"; };
+		5A373C241FB832F500F99847 /* small.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = small.map; sourceTree = "<group>"; };
+		5A373C271FB8337200F99847 /* large.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = large.map; sourceTree = "<group>"; };
+		5A373C2A1FB8406500F99847 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
+		5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
 		5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
 		5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -174,12 +197,16 @@
 				5A2C4A351F94BC6C00241FD5 /* HostViewController.swift */,
 				5A2C4A371F94CE7E00241FD5 /* JoinVewController.swift */,
 				5A283E821F97374B0033F37A /* MultipeerGameViewController.swift */,
+				5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */,
 				5A2706031F8A28030057B90C /* help.html */,
 				5A2947451F569D22002E833B /* Main.storyboard */,
 				5A2E11E01F5D283100B82A2D /* SquareView.swift */,
 				5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */,
 				5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */,
+				5A373C2A1FB8406500F99847 /* GameBoardCell.xib */,
+				5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */,
 				5A269FA51F61CEE300FEE02D /* StatusBar.swift */,
+				5A373C221FB712A400F99847 /* MapExtension.swift */,
 				5A269FA71F61D2FF00FEE02D /* StatusBar.xib */,
 				5A2C4A391F9526FB00241FD5 /* PeerTableViewCell.xib */,
 				5A2947481F569D22002E833B /* Assets.xcassets */,
@@ -190,10 +217,15 @@
 				5AB021971F5815FA001A40D1 /* Player.swift */,
 				5AB021991F588074001A40D1 /* Map.swift */,
 				5A25DF621F59A53900455CA5 /* Game.swift */,
+				5A22431A1FA9B2E4005FD64B /* GameAI.swift */,
 				5A25DF651F59AB0B00455CA5 /* GameDelegate.swift */,
 				5AFEB4791F80DD9B00152892 /* FontSizeHelper.swift */,
 				5A2A08121F95E8F00056C175 /* DataCodes.swift */,
 				5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */,
+				5A29E61B1FB4D8F500B39790 /* dummy.map */,
+				5A373C1F1FB70A1D00F99847 /* standard.map */,
+				5A373C241FB832F500F99847 /* small.map */,
+				5A373C271FB8337200F99847 /* large.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -318,11 +350,16 @@
 				5A29474C1F569D22002E833B /* LaunchScreen.storyboard in Resources */,
 				5A2706041F8A28030057B90C /* help.html in Resources */,
 				5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */,
+				5A373C201FB7103F00F99847 /* standard.map in Resources */,
+				5A29E61D1FB4DE3C00B39790 /* dummy.map in Resources */,
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
+				5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */,
 				5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */,
+				5A373C281FB8337B00F99847 /* large.map in Resources */,
 				5A2DEEE41F921AE400001B96 /* new square in.png in Resources */,
+				5A373C251FB8330200F99847 /* small.map in Resources */,
 				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +368,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A373C291FB8337C00F99847 /* large.map in Resources */,
+				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
+				5A373C261FB8330200F99847 /* small.map in Resources */,
+				5A373C211FB7104B00F99847 /* standard.map in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A22431E1FA9B3AD005FD64B /* AIGameViewController.swift in Sources */,
 				5A2947551F56B663002E833B /* Tile.swift in Sources */,
 				5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */,
 				5A2947771F56E6C1002E833B /* Array2D.swift in Sources */,
@@ -404,8 +446,11 @@
 				5A2C4A381F94CE7E00241FD5 /* JoinVewController.swift in Sources */,
 				5A2316CD1F88B88D00CDD382 /* ButtonImageView.swift in Sources */,
 				5AB0219A1F588074001A40D1 /* Map.swift in Sources */,
+				5A373C231FB712A400F99847 /* MapExtension.swift in Sources */,
 				5A2706021F8A26950057B90C /* HelpController.swift in Sources */,
 				5A6A0D011F9B9D260075FDB2 /* SecretStuff.swift in Sources */,
+				5A373C2E1FB8412C00F99847 /* GameBoardCell.swift in Sources */,
+				5A22431B1FA9B2E4005FD64B /* GameAI.swift in Sources */,
 				5A2C4A361F94BC6C00241FD5 /* HostViewController.swift in Sources */,
 				5A2389751F82BA1C00250975 /* PlayerCountSelectorController.swift in Sources */,
 				5A2947421F569D22002E833B /* AppDelegate.swift in Sources */,
@@ -419,9 +464,10 @@
 			files = (
 				5A25DF671F59AB0F00455CA5 /* GameDelegate.swift in Sources */,
 				5A2947751F56BA87002E833B /* Tile.swift in Sources */,
+				5A22431C1FA9B2E4005FD64B /* GameAI.swift in Sources */,
+				5A29E61C1FB4DC0B00B39790 /* Map.swift in Sources */,
 				5A25DF641F59A5BE00455CA5 /* Game.swift in Sources */,
 				5AB0219C1F5880C1001A40D1 /* Player.swift in Sources */,
-				5AB0219D1F5880C4001A40D1 /* Map.swift in Sources */,
 				5AB0219B1F5880BC001A40D1 /* Array2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
