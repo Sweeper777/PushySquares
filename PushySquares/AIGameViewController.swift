@@ -26,6 +26,18 @@ class AIGameViewController: GameViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            if !self.playerColors.contains(self.game.currentPlayer.color) {
+                self.allGR.forEach { $0.isEnabled = false }
+                let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                self.game.moveInDirection(ai.getNextMove())
+            }
+        }
+    }
 }
 
 func randomFromArrayAndRemove<T>(_ a: inout [T]) -> T {
