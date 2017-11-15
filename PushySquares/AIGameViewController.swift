@@ -1,4 +1,5 @@
 import UIKit
+import SCLAlertView
 
 class AIGameViewController: GameViewController {
     var aiCount: Int!
@@ -37,6 +38,29 @@ class AIGameViewController: GameViewController {
                 self.game.moveInDirection(ai.getNextMove())
             }
         }
+    }
+    
+    override func restartTapped() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes", action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.game = self.newGame()
+            self.game.delegate = self
+            self.boardView.game = self.game
+            self.statusBar.setNewSquareIn(value: self.game.currentPlayer.turnsUntilNewSquare)
+            self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
+            self.statusBar.setLives(players: self.game.players)
+            if self.playerColors.contains(self.game.currentPlayer.color) {
+                self.allGR.forEach { $0.isEnabled = true }
+            } else {
+                self.allGR.forEach { $0.isEnabled = false }
+                let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                self.game.moveInDirection(ai.getNextMove())
+            }
+        })
+        alert.addButton("No", action: {})
+        alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
     }
 }
 
