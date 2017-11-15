@@ -15,7 +15,7 @@ class AIGameViewController: GameViewController {
     }
     
     override func animationDidComplete() {
-        if game.currentPlayer.color != .color1 {
+        if !self.playerColors.contains(self.game.currentPlayer.color) {
             allGR.forEach { $0.isEnabled = false }
             if game.players.filter({$0.lives > 0}).count > 1 {
                 DispatchQueue.main.async { [weak self] in
