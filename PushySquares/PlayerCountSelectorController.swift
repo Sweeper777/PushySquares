@@ -13,6 +13,11 @@ class PlayerCountSelectorController: UIViewController {
     var shouldShowAd = false
     
     let imageNames = ["2player", "3player", "4player", "playervsai"]
+    let maps = ["standard", "small", "large"].map {
+        name -> Map in
+        let path = Bundle.main.path(forResource: name, ofType: "map")!
+        return Map(file: path)
+    }
     var selectedImageIndex = 0
     
     func repositionViews() {
