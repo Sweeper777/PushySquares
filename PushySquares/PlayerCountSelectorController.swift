@@ -8,6 +8,8 @@ class PlayerCountSelectorController: UIViewController {
     var interstitial: GADInterstitial!
     var pageView: FSPagerView!
     var pageControl: FSPageControl!
+    var mapPageView: FSPagerView!
+    var mapPageControl: FSPageControl!
     var shouldShowAd = false
     
     let imageNames = ["2player", "3player", "4player", "playervsai"]
