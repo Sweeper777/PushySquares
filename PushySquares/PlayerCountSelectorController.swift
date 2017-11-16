@@ -19,6 +19,7 @@ class PlayerCountSelectorController: UIViewController {
         return Map(file: path)
     }
     var selectedImageIndex = 0
+    var selectedMapIndex = 0
     
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
