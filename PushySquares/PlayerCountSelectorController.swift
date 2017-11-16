@@ -77,6 +77,8 @@ class PlayerCountSelectorController: UIViewController {
         pageControl.setFillColor(.black, for: .selected)
         self.view.addSubview(pageControl)
         
+        mapPageView = FSPagerView(frame: CGRect(x: pageViewX, y: pageView.frame.maxY + pageControlHeight, width: pageViewWidth, height: pageViewHeight))
+        self.view.addSubview(mapPageView)
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
         let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
