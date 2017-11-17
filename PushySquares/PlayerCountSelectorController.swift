@@ -182,7 +182,12 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: imageNames[index])
+        if pagerView == pageView {
+            cell.imageView?.image = UIImage(named: imageNames[index])
+        } else {
+            let gameBoardCell = cell as! GameBoardCell
+            gameBoardCell.game = Game(map: maps[index], playerCount: 4)
+        }
         cell.imageView?.contentMode = .scaleAspectFit
         cell.contentView.layer.shadowRadius = 0
         return cell
