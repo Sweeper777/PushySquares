@@ -85,6 +85,12 @@ class PlayerCountSelectorController: UIViewController {
         mapPageView.dataSource = self
         mapPageView.itemSize = pageView.itemSize
         mapPageView.isInfinite = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.mapPageView.scrollToItem(at: self.selectedMapIndex, animated: false)
+        }
+        
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
         let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
