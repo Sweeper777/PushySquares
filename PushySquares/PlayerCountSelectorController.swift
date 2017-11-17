@@ -173,7 +173,11 @@ extension PlayerCountSelectorController: GADInterstitialDelegate {
 
 extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
+        if pagerView == pageView {
+            return imageNames.count
+        } else {
+            return maps.count
+        }
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
