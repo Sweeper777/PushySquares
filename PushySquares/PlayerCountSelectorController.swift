@@ -60,11 +60,6 @@ class PlayerCountSelectorController: UIViewController {
         let itemLength = min(pageViewWidth * 0.7, pageViewHeight)
         pageView.itemSize = CGSize(width: itemLength, height: itemLength)
         pageView.isInfinite = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            [weak self] in
-            guard let `self` = self else { return }
-            self.pageView.scrollToItem(at: self.selectedImageIndex, animated: false)
-        }
         
         let pageControlHeight = min(pageViewHeight, pageViewWidth) / 10
         let pageControlY = pageView.frame.maxY
@@ -85,11 +80,6 @@ class PlayerCountSelectorController: UIViewController {
         mapPageView.dataSource = self
         mapPageView.itemSize = pageView.itemSize
         mapPageView.isInfinite = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            [weak self] in
-            guard let `self` = self else { return }
-            self.mapPageView.scrollToItem(at: self.selectedMapIndex, animated: false)
-        }
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
