@@ -18,8 +18,6 @@ class PlayerCountSelectorController: UIViewController {
         let path = Bundle.main.path(forResource: name, ofType: "map")!
         return Map(file: path)
     }
-    var selectedImageIndex = 0
-    var selectedMapIndex = 0
     
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
