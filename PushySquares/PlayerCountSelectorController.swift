@@ -79,6 +79,9 @@ class PlayerCountSelectorController: UIViewController {
         mapPageView.itemSize = pageView.itemSize
         mapPageView.isInfinite = true
         
+        mapPageControl = FSPageControl(frame: CGRect(x: pageViewX, y: mapPageView.frame.maxY, width: pageViewWidth, height: pageControlHeight))
+        self.view.addSubview(mapPageControl)
+        
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
         let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
