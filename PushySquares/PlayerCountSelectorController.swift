@@ -184,9 +184,7 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         if pagerView == pageView {
             pageControl.currentPage = pagerView.currentIndex
-            selectedImageIndex = pagerView.currentIndex
         } else {
-            selectedMapIndex = pagerView.currentIndex
         }
     }
     
