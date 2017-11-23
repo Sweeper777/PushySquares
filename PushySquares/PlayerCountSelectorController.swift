@@ -80,6 +80,12 @@ class PlayerCountSelectorController: UIViewController {
         mapPageView.isInfinite = true
         
         mapPageControl = FSPageControl(frame: CGRect(x: pageViewX, y: mapPageView.frame.maxY, width: pageViewWidth, height: pageControlHeight))
+        mapPageControl.numberOfPages = maps.count
+        mapPageControl.currentPage = mapPageView.currentIndex
+        mapPageControl.setStrokeColor(.black, for: .normal)
+        mapPageControl.setStrokeColor(.black, for: .selected)
+        mapPageControl.setFillColor(.clear, for: .normal)
+        mapPageControl.setFillColor(.black, for: .selected)
         self.view.addSubview(mapPageControl)
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
