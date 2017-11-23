@@ -6,6 +6,7 @@ import SCLAlertView
 class GameViewController: UIViewController, GameDelegate {
     
     var playerCount: Int!
+    var map: Map = .standard
 
     @IBOutlet var boardView: GameBoardView!
     @IBOutlet var statusBar: StatusBar!
