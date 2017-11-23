@@ -6,7 +6,7 @@ class AIGameViewController: GameViewController {
     var playerColors: [Color]!
     
     override func newGame() -> Game {
-        let game = Game(map: .standard, playerCount: playerCount + aiCount)
+        let game = Game(map: map, playerCount: playerCount + aiCount)
         var colors = game.players.map { $0.color }
         playerColors = []
         for _ in 0..<playerCount {
