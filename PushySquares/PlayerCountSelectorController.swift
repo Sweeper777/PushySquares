@@ -194,6 +194,7 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
         if pagerView == pageView {
             pageControl.currentPage = pagerView.currentIndex
         } else {
+            mapPageControl.currentPage = pagerView.currentIndex
         }
     }
     
