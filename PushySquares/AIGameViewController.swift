@@ -55,9 +55,12 @@ class AIGameViewController: GameViewController {
                 self.allGR.forEach { $0.isEnabled = true }
             } else {
                 self.allGR.forEach { $0.isEnabled = false }
-                let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
-                self.game.moveInDirection(ai.getNextMove())
+                DispatchQueue.main.async {
+                    let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                    self.game.moveInDirection(ai.getNextMove())
+                }
             }
+            self.showHideActionBar()
         })
         alert.addButton("No", action: {})
         alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
