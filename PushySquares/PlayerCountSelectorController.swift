@@ -150,8 +150,10 @@ class PlayerCountSelectorController: UIViewController {
             let tuple = sender as! (Int, Int)
             vc.aiCount = tuple.1
             vc.playerCount = tuple.0
+            vc.map = maps[mapPageView.currentIndex]
         } else if let vc = segue.destination as? GameViewController {
             vc.playerCount = sender as! Int
+            vc.map = maps[mapPageView.currentIndex]
         }
     }
 }
