@@ -17,6 +17,9 @@ class GameViewController: UIViewController, GameDelegate {
     var swipeLeftGR: UISwipeGestureRecognizer!
     var swipeRightGR: UISwipeGestureRecognizer!
     
+    var quitButton: PressableButton?
+    var restartButton: PressableButton?
+    
     var tapGR: UITapGestureRecognizer!
     
     var allGR: [UIGestureRecognizer] {
@@ -234,7 +237,7 @@ class GameViewController: UIViewController, GameDelegate {
     
     func showHideActionBar() {
         
-        if let quitButton = self.view.viewWithTag(1), let restartButton = self.view.viewWithTag(2) {
+        if let quitButton = self.quitButton, let restartButton = self.restartButton {
             UIView.animate(withDuration: 0.25, animations: {
                 quitButton.alpha = 0
                 restartButton.alpha = 0
@@ -244,44 +247,45 @@ class GameViewController: UIViewController, GameDelegate {
                     quitButton.removeFromSuperview()
                 }
             })
+            self.quitButton = nil
+            self.restartButton = nil
         } else {
             let actionBarButtonLength = min(self.view.width, self.view.height) / 8
             let actionBarYWeight = 0.7.f
             let separatorLength = self.view.width / 3
             let actionBarY = self.view.height * actionBarYWeight
             let actionBarX = self.view.width / 2 - separatorLength / 2 - actionBarButtonLength
-            let quitButton = PressableButton()
-            quitButton.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
-            quitButton.shadowHeight = quitButton.height * 0.1
-            quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+            quitButton = PressableButton()
+            quitButton!.frame = CGRect(x: actionBarX, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            quitButton!.shadowHeight = quitButton!.height * 0.1
+            quitButton!.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
             
-            let fontSize = fontSizeThatFits(size: quitButton.frame.size, text: "↺", font: UIFont.systemFont(ofSize: 0))
-            quitButton.setAttributedTitle(
+            let fontSize = fontSizeThatFits(size: quitButton!.frame.size, text: "↺", font: UIFont.systemFont(ofSize: 0))
+            quitButton!.setAttributedTitle(
                 NSAttributedString.init(string: "×", attributes: [
                     NSFontAttributeName: UIFont.systemFont(ofSize: fontSize),
                     NSForegroundColorAttributeName: UIColor.white
                     ]), for: .normal)
             
-            quitButton.alpha = 0
-            quitButton.tag = 1
-            quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
-            let restartButton = PressableButton()
-            restartButton.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
-            restartButton.shadowHeight = restartButton.height * 0.1
-            restartButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
-            restartButton.setAttributedTitle(
+            quitButton!.alpha = 0
+            quitButton!.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+            restartButton = PressableButton()
+            restartButton!.frame = CGRect(x: actionBarX + actionBarButtonLength + separatorLength, y: actionBarY, width: actionBarButtonLength, height: actionBarButtonLength)
+            restartButton!.shadowHeight = restartButton!.height * 0.1
+            restartButton!.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+            restartButton!.setAttributedTitle(
                 NSAttributedString.init(string: "↺", attributes: [
                     NSFontAttributeName: UIFont.systemFont(ofSize: fontSize * 0.8),
                     NSForegroundColorAttributeName: UIColor.white
                     ]), for: .normal)
-            restartButton.alpha = 0
-            restartButton.tag = 2
-            restartButton.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
-            self.view.addSubview(restartButton)
-            self.view.addSubview(quitButton)
+            restartButton!.alpha = 0
+            restartButton!.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
+            self.view.addSubview(restartButton!)
+            self.view.addSubview(quitButton!)
             UIView.animate(withDuration: 0.25, animations: {
-                quitButton.alpha = 1
-                restartButton.alpha = 1
+                [weak self] in
+                self?.quitButton!.alpha = 1
+                self?.restartButton!.alpha = 1
             })
         }
     }
@@ -309,6 +313,7 @@ class GameViewController: UIViewController, GameDelegate {
             self.statusBar.setCurrentTurn(value: self.game.currentPlayer.color)
             self.statusBar.setLives(players: self.game.players)
             self.allGR.forEach { $0.isEnabled = true }
+            self.showHideActionBar()
         })
         alert.addButton("No", action: {})
         alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
