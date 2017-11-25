@@ -108,7 +108,7 @@ class JoinViewController : UIViewController {
 }
 
 extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         
     }
     

@@ -1,4 +1,5 @@
 public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
+    
     public let columns: Int
     public let rows: Int
     fileprivate var array: [T]
@@ -29,7 +30,7 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
     
     public typealias Iterator = Array<T>.Iterator
     public typealias SubSequence = Array<T>.SubSequence
-    public typealias Element = [T]
+//    public typealias Element = [T]
     public func makeIterator() -> Iterator {
         return array.makeIterator()
     }
@@ -76,7 +77,7 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         return try self.array.split(maxSplits: maxSplits, omittingEmptySubsequences: omittingEmptySubsequences, whereSeparator: isSeparator)
     }
     
-    public init(arrayLiteral elements: Element...) {
+    public init(arrayLiteral elements: [T]...) {
         precondition(Set(elements.map { $0.count }).count == 1)
         columns = elements.first!.count
         rows = elements.count
