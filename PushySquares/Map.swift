@@ -19,10 +19,10 @@ public struct Map {
             "O": .wall
         ]
         let lines = fileContents.components(separatedBy: "\n").filter({!$0.isEmpty})
-        var board = Array2D<Tile>(columns: lines.first!.characters.count, rows: lines.count, initialValue: .void)
+        var board = Array2D<Tile>(columns: lines.first!.count, rows: lines.count, initialValue: .void)
         var spawnpoints = [Color: Position]()
         for (x, line) in lines.enumerated() {
-            for (y, c) in line.characters.enumerated() {
+            for (y, c) in line.enumerated() {
                 board[x, y] = dict[c] ?? .empty
                 switch c {
                 case "1":
