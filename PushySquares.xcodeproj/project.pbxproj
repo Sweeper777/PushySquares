@@ -41,6 +41,12 @@
 		5A2DEEE41F921AE400001B96 /* new square in.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A2DEEE31F921AE400001B96 /* new square in.png */; };
 		5A2E11E11F5D283100B82A2D /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E01F5D283100B82A2D /* SquareView.swift */; };
 		5A2E11E31F5D35C400B82A2D /* GameBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */; };
+		5A2FF37E1FC03B5900E7FB23 /* hole.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF37D1FC03B4F00E7FB23 /* hole.map */; };
+		5A2FF37F1FC03B5A00E7FB23 /* hole.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF37D1FC03B4F00E7FB23 /* hole.map */; };
+		5A2FF3811FC043AE00E7FB23 /* walls.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3801FC043AE00E7FB23 /* walls.map */; };
+		5A2FF3821FC043C500E7FB23 /* walls.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3801FC043AE00E7FB23 /* walls.map */; };
+		5A2FF3841FC08DE000E7FB23 /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3831FC08DCE00E7FB23 /* zigzag.map */; };
+		5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3831FC08DCE00E7FB23 /* zigzag.map */; };
 		5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3223411F7F983000B476A1 /* MainMenuController.swift */; };
 		5A373C201FB7103F00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
 		5A373C211FB7104B00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
@@ -110,6 +116,9 @@
 		5A2DEEE31F921AE400001B96 /* new square in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in.png"; sourceTree = "<group>"; };
 		5A2E11E01F5D283100B82A2D /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A2E11E21F5D35C400B82A2D /* GameBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardView.swift; sourceTree = "<group>"; };
+		5A2FF37D1FC03B4F00E7FB23 /* hole.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = hole.map; sourceTree = "<group>"; };
+		5A2FF3801FC043AE00E7FB23 /* walls.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = walls.map; sourceTree = "<group>"; };
+		5A2FF3831FC08DCE00E7FB23 /* zigzag.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = zigzag.map; sourceTree = "<group>"; };
 		5A3223411F7F983000B476A1 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		5A373C1F1FB70A1D00F99847 /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = standard.map; sourceTree = "<group>"; };
 		5A373C241FB832F500F99847 /* small.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = small.map; sourceTree = "<group>"; };
@@ -223,6 +232,9 @@
 				5A373C1F1FB70A1D00F99847 /* standard.map */,
 				5A373C241FB832F500F99847 /* small.map */,
 				5A373C271FB8337200F99847 /* large.map */,
+				5A2FF37D1FC03B4F00E7FB23 /* hole.map */,
+				5A2FF3801FC043AE00E7FB23 /* walls.map */,
+				5A2FF3831FC08DCE00E7FB23 /* zigzag.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -305,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Mulang Su";
 				TargetAttributes = {
 					5A29473D1F569D22002E833B = {
@@ -347,16 +359,19 @@
 				5A29474C1F569D22002E833B /* LaunchScreen.storyboard in Resources */,
 				5A2706041F8A28030057B90C /* help.html in Resources */,
 				5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */,
+				5A2FF3841FC08DE000E7FB23 /* zigzag.map in Resources */,
 				5A373C201FB7103F00F99847 /* standard.map in Resources */,
 				5A29E61D1FB4DE3C00B39790 /* dummy.map in Resources */,
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
+				5A2FF3811FC043AE00E7FB23 /* walls.map in Resources */,
 				5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */,
 				5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */,
 				5A373C281FB8337B00F99847 /* large.map in Resources */,
 				5A2DEEE41F921AE400001B96 /* new square in.png in Resources */,
 				5A373C251FB8330200F99847 /* small.map in Resources */,
+				5A2FF37E1FC03B5900E7FB23 /* hole.map in Resources */,
 				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +382,10 @@
 			files = (
 				5A373C291FB8337C00F99847 /* large.map in Resources */,
 				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
+				5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */,
+				5A2FF3821FC043C500E7FB23 /* walls.map in Resources */,
 				5A373C261FB8330200F99847 /* small.map in Resources */,
+				5A2FF37F1FC03B5A00E7FB23 /* hole.map in Resources */,
 				5A373C211FB7104B00F99847 /* standard.map in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +518,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -508,7 +528,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -551,7 +575,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -559,7 +585,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
