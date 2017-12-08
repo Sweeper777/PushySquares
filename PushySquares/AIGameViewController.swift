@@ -70,6 +70,9 @@ class AIGameViewController: GameViewController {
         return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
     }
     
+    fileprivate func multiplayerAI() -> GameAI {
+        return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 8420, wDiffLives: 9285, wSquareThreshold:0, wSelfSpreadBelowThreshold: 181, wSelfSpreadAboveThreshold: 4669, wOpponentSpread: 5890, wSelfInDanger: 4306, wOpponentInDangerBelowThreshold: 4200, wOpponentInDangerAboveThreshold: 7995)
+    }
 }
 
 func randomFromArrayAndRemove<T>(_ a: inout [T]) -> T {
