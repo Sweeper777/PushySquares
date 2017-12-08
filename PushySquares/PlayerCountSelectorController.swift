@@ -12,7 +12,7 @@ class PlayerCountSelectorController: UIViewController {
     var mapPageControl: FSPageControl!
     var shouldShowAd = false
     
-    let imageNames = ["2player", "3player", "4player", "playervsai"]
+    let imageNames = ["2player", "3player", "4player", "playervsai", "playervs3ai"]
     let maps = ["standard", "small", "large", "hole", "walls", "zigzag"].map {
         name -> Map in
         let path = Bundle.main.path(forResource: name, ofType: "map")!
