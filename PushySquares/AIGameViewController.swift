@@ -65,6 +65,11 @@ class AIGameViewController: GameViewController {
         alert.addButton("No", action: {})
         alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
     }
+    
+    fileprivate func twoPlayerAI() -> GameAI {
+        return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+    }
+    
 }
 
 func randomFromArrayAndRemove<T>(_ a: inout [T]) -> T {
