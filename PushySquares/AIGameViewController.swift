@@ -21,7 +21,7 @@ class AIGameViewController: GameViewController {
             if game.players.filter({$0.lives > 0}).count > 1 {
                 DispatchQueue.main.async { [weak self] in
                     guard let `self` = self else { return }
-                    let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                    let ai = self.aiCount < 2 ? self.twoPlayerAI() : self.multiplayerAI()
                     self.game.moveInDirection(ai.getNextMove())
                 }
             }
@@ -34,7 +34,7 @@ class AIGameViewController: GameViewController {
             guard let `self` = self else { return }
             if !self.playerColors.contains(self.game.currentPlayer.color) {
                 self.allGR.forEach { $0.isEnabled = false }
-                let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                let ai = self.aiCount < 2 ? self.twoPlayerAI() : self.multiplayerAI()
                 self.game.moveInDirection(ai.getNextMove())
             }
         }
@@ -56,7 +56,7 @@ class AIGameViewController: GameViewController {
             } else {
                 self.allGR.forEach { $0.isEnabled = false }
                 DispatchQueue.main.async {
-                    let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 553, wDiffLives: 8371, wSquareThreshold: 3, wSelfSpreadBelowThreshold: 5646, wSelfSpreadAboveThreshold: 3791, wOpponentSpread: 8583, wSelfInDanger: 6187, wOpponentInDangerBelowThreshold: 680, wOpponentInDangerAboveThreshold: 9157)
+                    let ai = self.aiCount < 2 ? self.twoPlayerAI() : self.multiplayerAI()
                     self.game.moveInDirection(ai.getNextMove())
                 }
             }
