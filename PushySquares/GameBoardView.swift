@@ -60,6 +60,12 @@ class GameBoardView: UIView {
             for position in locations {
                 addSquareView(at: position, color: GameBoardView.colorToUIColor[color]!)
             }
+            if let spawnpoint = game.spawnpoints[color] {
+                let path = UIBezierPath(rect: CGRect(origin: point(for: Position(spawnpoint.x, spawnpoint.y)), size: CGSize(width: squareLength, height: squareLength)))
+                GameBoardView.colorToUIColor[color]?.setStroke()
+                path.lineWidth = strokeWidth
+                path.stroke()
+            }
         }
     }
     
