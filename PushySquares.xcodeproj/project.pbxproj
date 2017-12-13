@@ -56,6 +56,8 @@
 		5A373C291FB8337C00F99847 /* large.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C271FB8337200F99847 /* large.map */; };
 		5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C2A1FB8406500F99847 /* GameBoardCell.xib */; };
 		5A373C2E1FB8412C00F99847 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */; };
+		5A42491C1FDBE72100557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
+		5A42491D1FDBE72200557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
 		5A6A0D011F9B9D260075FDB2 /* SecretStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */; };
 		5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
@@ -125,6 +127,7 @@
 		5A373C271FB8337200F99847 /* large.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = large.map; sourceTree = "<group>"; };
 		5A373C2A1FB8406500F99847 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
 		5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
+		5A42491B1FDBE71100557067 /* quick.map */ = {isa = PBXFileReference; explicitFileType = text; path = quick.map; sourceTree = "<group>"; };
 		5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
 		5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -235,6 +238,7 @@
 				5A2FF37D1FC03B4F00E7FB23 /* hole.map */,
 				5A2FF3801FC043AE00E7FB23 /* walls.map */,
 				5A2FF3831FC08DCE00E7FB23 /* zigzag.map */,
+				5A42491B1FDBE71100557067 /* quick.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -370,6 +374,7 @@
 				5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */,
 				5A373C281FB8337B00F99847 /* large.map in Resources */,
 				5A2DEEE41F921AE400001B96 /* new square in.png in Resources */,
+				5A42491C1FDBE72100557067 /* quick.map in Resources */,
 				5A373C251FB8330200F99847 /* small.map in Resources */,
 				5A2FF37E1FC03B5900E7FB23 /* hole.map in Resources */,
 				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
@@ -382,6 +387,7 @@
 			files = (
 				5A373C291FB8337C00F99847 /* large.map in Resources */,
 				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
+				5A42491D1FDBE72200557067 /* quick.map in Resources */,
 				5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */,
 				5A2FF3821FC043C500E7FB23 /* walls.map in Resources */,
 				5A373C261FB8330200F99847 /* small.map in Resources */,
