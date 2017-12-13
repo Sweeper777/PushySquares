@@ -13,7 +13,7 @@ class PlayerCountSelectorController: UIViewController {
     var shouldShowAd = false
     
     let imageNames = ["2player", "3player", "4player", "playervsai", "playervs3ai"]
-    let maps = ["standard", "small", "large", "hole", "walls", "zigzag"].map {
+    let maps = ["standard", "small", "large", "hole", "walls", "zigzag", "quick"].map {
         name -> Map in
         let path = Bundle.main.path(forResource: name, ofType: "map")!
         return Map(file: path)
