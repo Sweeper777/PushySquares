@@ -133,6 +133,18 @@ class HostViewController: UIViewController {
         startButton.alpha = 0
         view.addSubview(startButton)
         
+        let mapNuttonX = backButton.frame.maxX + 8
+        let mapButton = PressableButton(frame: CGRect(x: mapNuttonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
+        mapButton.setAttributedTitle(
+            NSAttributedString(string: "MAPS", attributes: [
+                NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
+                NSForegroundColorAttributeName: UIColor.white
+                ])
+            , for: .normal)
+        mapButton.colors = PressableButton.ColorSet(button: UIColor.blue.desaturated(), shadow: UIColor.blue.desaturated().darker())
+        mapButton.shadowHeight = mapButton.height * 0.1
+        self.view.addSubview(mapButton)
+        
         foundPeers.asObservable().map{
             peers -> CGFloat in
             if peers.contains(where: {$0.state == .connecting}) {
@@ -146,6 +158,7 @@ class HostViewController: UIViewController {
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
+        mapButton.addTarget(self, action: #selector(selectMap), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
