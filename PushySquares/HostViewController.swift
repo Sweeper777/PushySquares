@@ -34,6 +34,8 @@ class HostViewController: UIViewController {
     var session: MCSession!
     var browser: MCNearbyServiceBrowser!
     
+    var selectedMap: String?
+    
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
         
@@ -198,6 +200,10 @@ class HostViewController: UIViewController {
         }
         try? session.send(Data(bytes: [DataCodes.startGame.rawValue]), toPeers: session.connectedPeers, with: .reliable)
         performSegue(withIdentifier: "unwindToMainMenu", sender: (session, peerToColorDict))
+    }
+    
+    func selectMap() {
+        performSegue(withIdentifier: "showMapSelector", sender: selectedMap)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
