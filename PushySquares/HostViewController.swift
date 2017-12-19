@@ -46,7 +46,7 @@ class HostViewController: UIViewController {
         let backButtonY = UIScreen.statusBarHeight + 8
         let backButtonX = 8.f
         let backButtonHeight = (view.height - 8) * backButtonWeight
-        let backButtonWidth = min(2 * backButtonHeight, (view.width - 24) / 2)
+        let backButtonWidth = min(2 * backButtonHeight, (view.width - 24) / 3 )
         let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
         let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         backButton.setAttributedTitle(
