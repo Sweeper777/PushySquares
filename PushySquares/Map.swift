@@ -70,3 +70,6 @@ public func printBoard(_ board: Array2D<Tile>) {
         print("")
     }
 }
+
+let allMaps = ["2player", "3player", "4player", "playervsai", "playervs3ai"]
+let maps = ["standard", "small", "large", "hole", "walls", "zigzag", "quick"]
