@@ -44,6 +44,21 @@ class MapSelectorViewController: UIViewController {
         backButton.shadowHeight = backButton.height * 0.1
         self.view.addSubview(backButton)
         
+        let separator = backButton.height / 2
+        let pageViewX = backButtonX
+        let pageViewY = backButton.frame.maxY + separator
+        let pageViewHeight = (view.height - pageViewY - 8) * (10.0 / 11.0) - 8
+        let pageViewWidth = view.width - pageViewX - 8
+        pageView = FSPagerView(frame: CGRect(x: pageViewX, y: pageViewY, width: pageViewWidth, height: pageViewHeight * 0.9))
+        self.view.addSubview(pageView)
+        pageView.transformer = FSPagerViewTransformer(type: .linear)
+        pageView.register(UINib(nibName: "GameBoardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        pageView.delegate = self
+        pageView.dataSource = self
+        let itemLength = min(pageViewWidth * 0.7, pageViewHeight)
+        pageView.itemSize = CGSize(width: itemLength, height: itemLength)
+        pageView.isInfinite = true
+        
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
 }
