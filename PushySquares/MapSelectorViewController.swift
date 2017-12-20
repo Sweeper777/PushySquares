@@ -59,6 +59,17 @@ class MapSelectorViewController: UIViewController {
         pageView.itemSize = CGSize(width: itemLength, height: itemLength)
         pageView.isInfinite = true
         
+        let pageControlHeight = min(pageViewHeight, pageViewWidth) / 10
+        let pageControlY = pageView.frame.maxY
+        pageControl = FSPageControl(frame: CGRect(x: pageViewX, y: pageControlY, width: pageViewWidth, height: pageControlHeight))
+        pageControl.numberOfPages = allMaps.count
+        pageControl.currentPage = pageView.currentIndex
+        pageControl.setStrokeColor(.black, for: .normal)
+        pageControl.setStrokeColor(.black, for: .selected)
+        pageControl.setFillColor(.clear, for: .normal)
+        pageControl.setFillColor(.black, for: .selected)
+        self.view.addSubview(pageControl)
+        
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
 }
