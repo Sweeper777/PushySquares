@@ -12,4 +12,11 @@ class MapSelectorViewController: UIViewController {
     
     var pageView: FSPagerView!
     var pageControl: FSPageControl!
+    
+    var maps = allMaps.map {
+        name -> Map in
+        let path = Bundle.main.path(forResource: name, ofType: "map")!
+        return Map(file: path)
+    }
+    
 }
