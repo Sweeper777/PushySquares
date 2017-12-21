@@ -72,4 +72,9 @@ class MapSelectorViewController: UIViewController {
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
+    
+    func back() {
+        selectedMap = allMaps[pageView.currentIndex]
+        dismiss(animated: true, completion: nil)
+    }
 }
