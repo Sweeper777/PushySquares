@@ -77,4 +77,12 @@ class MapSelectorViewController: UIViewController {
         selectedMap = allMaps[pageView.currentIndex]
         dismiss(animated: true, completion: nil)
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.repositionViews()
+        }
+    }
 }
