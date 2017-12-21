@@ -97,3 +97,26 @@ class MapSelectorViewController: UIViewController {
         pageView?.scrollToItem(at: index, animated: false)
     }
 }
+
+extension MapSelectorViewController: FSPagerViewDelegate, FSPagerViewDataSource {
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return maps.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        let gameBoardCell = cell as! GameBoardCell
+        gameBoardCell.game = Game(map: maps[index], playerCount: 4)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.contentView.layer.shadowRadius = 0
+        return cell
+    }
+    
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        pageControl.currentPage = pagerView.currentIndex
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
+        return false
+    }
+}
