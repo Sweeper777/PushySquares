@@ -198,8 +198,14 @@ class HostViewController: UIViewController {
         if session.connectedPeers.count > 2 {
             peerToColorDict[session.connectedPeers[2]] = .color4
         }
-        try? session.send(Data(bytes: [DataCodes.startGame.rawValue]), toPeers: session.connectedPeers, with: .reliable)
-        performSegue(withIdentifier: "unwindToMainMenu", sender: (session, peerToColorDict))
+        let bytesToSend: [UInt8]
+        if let map = selectedMap {
+            bytesToSend = [DataCodes.startGame.rawValue, DataCodes.mapInfo.rawValue, UInt8(allMaps.indexes(of: map).first!)]
+        } else {
+            bytesToSend = [DataCodes.startGame.rawValue]
+        }
+        try? session.send(Data(bytes: bytesToSend), toPeers: session.connectedPeers, with: .reliable)
+        performSegue(withIdentifier: "unwindToMainMenu", sender: (session, peerToColorDict, selectedMap))
     }
     
     func selectMap() {
