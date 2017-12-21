@@ -91,4 +91,9 @@ class MapSelectorViewController: UIViewController {
         repositionViews()
     }
     
+    override func viewDidLayoutSubviews() {
+        let index = selectedMap == nil ? 0 : allMaps.indexes(of: selectedMap!).first!
+        guard pageView != nil && pageView.numberOfItems > 0 else { return }
+        pageView?.scrollToItem(at: index, animated: false)
+    }
 }
