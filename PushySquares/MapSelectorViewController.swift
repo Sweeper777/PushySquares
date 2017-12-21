@@ -85,4 +85,10 @@ class MapSelectorViewController: UIViewController {
             self?.repositionViews()
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repositionViews()
+    }
+    
 }
