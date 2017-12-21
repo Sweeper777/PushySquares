@@ -6,4 +6,5 @@ enum DataCodes: UInt8 {
     case quit
     case startGame
     case ready
+    case mapInfo
 }
