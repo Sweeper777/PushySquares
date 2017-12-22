@@ -101,8 +101,8 @@ class JoinViewController : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? MainMenuController else { return }
         
-        if let session = sender as? MCSession {
-            vc.session = session
+        if let data = sender as? (MCSession, String?) {
+            vc.dataFromJoinVC = data
         }
     }
 }
