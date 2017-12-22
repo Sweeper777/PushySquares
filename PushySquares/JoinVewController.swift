@@ -141,7 +141,7 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
                 map = allMaps[Int(data[2])]
             }
             DispatchQueue.main.async { [weak self] in
-                self?.performSegue(withIdentifier: "unwindToMainMenu", sender: session)
+                self?.performSegue(withIdentifier: "unwindToMainMenu", sender: (session, map))
             }
         }
     }
