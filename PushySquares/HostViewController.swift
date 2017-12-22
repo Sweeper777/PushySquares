@@ -272,3 +272,11 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
          _ = foundPeers.value.remove(object: peerIDStateTuple)
     }
 }
+
+extension HostViewController: MapSelectorViewControllerDelegate {
+    func didSelectMap(mapSelectorController: MapSelectorViewController) {
+        self.selectedMap = mapSelectorController.selectedMap
+    }
+    
+    
+}
