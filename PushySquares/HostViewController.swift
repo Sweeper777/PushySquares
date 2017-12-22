@@ -213,10 +213,14 @@ class HostViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? MainMenuController else { return }
-        
-        if let sessionTuple = sender as? (MCSession, [MCPeerID: Color]) {
-            vc.sessionDictTuple = sessionTuple
+        if let vc = segue.destination as? MainMenuController {
+            
+            if let data = sender as? (MCSession, [MCPeerID: Color], String?) {
+                vc.dataFromHostVC = data
+            }
+        } else if let vc = segue.destination as? MapSelectorViewController {
+            vc.selectedMap = sender as? String
+            vc.delegate = self
         }
     }
 }
