@@ -147,15 +147,21 @@ class MainMenuController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? MultipeerGameViewController else { return }
         
-        if let session = sender as? MCSession {
-            vc.session = session
-            vc.playerCount = session.connectedPeers.count + 1
-            session.delegate = vc
-        } else if let sessionTuple = sender as? (MCSession, [MCPeerID: Color]) {
+        if let data = sender as? (MCSession, String?) {
+            vc.session = data.0
+            vc.playerCount = data.0.connectedPeers.count + 1
+            data.0.delegate = vc
+            if let map = data.1 {
+                vc.map = Map(file: Bundle.main.path(forResource: map, ofType: "map")!)
+            }
+        } else if let sessionTuple = sender as? (MCSession, [MCPeerID: Color], String?) {
             vc.session = sessionTuple.0
             vc.playerColorsDict = sessionTuple.1
             vc.playerCount = sessionTuple.0.connectedPeers.count + 1
             sessionTuple.0.delegate = vc
+            if let map = sessionTuple.2 {
+                vc.map = Map(file: Bundle.main.path(forResource: map, ofType: "map")!)
+            }
         }
     }
 }
