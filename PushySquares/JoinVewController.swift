@@ -136,10 +136,13 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
             connectedPeerID = nil
         }
         if data[0] == DataCodes.startGame.rawValue {
+            var map: String?
+            if data[1] == DataCodes.mapInfo.rawValue {
+                map = allMaps[Int(data[2])]
+            }
             DispatchQueue.main.async { [weak self] in
                 self?.performSegue(withIdentifier: "unwindToMainMenu", sender: session)
             }
-            
         }
     }
     
