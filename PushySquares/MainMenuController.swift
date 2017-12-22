@@ -116,8 +116,8 @@ class MainMenuController: UIViewController {
         }
     }
     
-    var session: MCSession!
-    var sessionDictTuple: (MCSession, [MCPeerID: Color])!
+    var dataFromJoinVC: (MCSession, String?)!
+    var dataFromHostVC: (MCSession, [MCPeerID: Color], String?)!
     
     @IBAction func unwindFromGame(segue: UIStoryboardSegue) {
         
@@ -128,8 +128,8 @@ class MainMenuController: UIViewController {
         multipeerGameTransitioning = true
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) { [weak self] in
             self?.multipeerGameTransitioning = false
-            if let sessionDictTuple = self?.sessionDictTuple {
-                self?.performSegue(withIdentifier: "showMultipeerGame", sender: sessionDictTuple)
+            if let dataFromHost = self?.dataFromHostVC {
+                self?.performSegue(withIdentifier: "showMultipeerGame", sender: dataFromHost)
             }
         }
     }
@@ -138,8 +138,8 @@ class MainMenuController: UIViewController {
         multipeerGameTransitioning = true
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) { [weak self] in
             self?.multipeerGameTransitioning = false
-            if let session = self?.session {
-                self?.performSegue(withIdentifier: "showMultipeerGame", sender: session)
+            if let dataFromJoin = self?.dataFromJoinVC {
+                self?.performSegue(withIdentifier: "showMultipeerGame", sender: dataFromJoin)
             }
         }
     }
