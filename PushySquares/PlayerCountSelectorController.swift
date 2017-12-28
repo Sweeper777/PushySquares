@@ -159,6 +159,10 @@ class PlayerCountSelectorController: UIViewController {
             vc.map = maps[mapPageView.currentIndex]
         }
     }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        performSegue(withIdentifier: "showAIGame", sender:(0, 4))
+    }
 }
 
 extension PlayerCountSelectorController: GADInterstitialDelegate {
