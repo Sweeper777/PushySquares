@@ -16,7 +16,8 @@ public struct Map {
         let dict: [Character: Tile] = [
             ".": .void,
             "+": .empty,
-            "O": .wall
+            "O": .wall,
+            "g": .square(.grey)
         ]
         let lines = fileContents.components(separatedBy: "\n").filter({!$0.isEmpty})
         var board = Array2D<Tile>(columns: lines.first!.count, rows: lines.count, initialValue: .void)
