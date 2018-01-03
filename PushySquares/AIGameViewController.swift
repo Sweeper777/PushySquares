@@ -18,10 +18,11 @@ class AIGameViewController: GameViewController {
     override func animationDidComplete() {
         if !self.playerColors.contains(self.game.currentPlayer.color) {
             allGR.forEach { $0.isEnabled = false }
-            if game.players.filter({$0.lives > 0}).count > 1 {
+            let livingPlayersCount = game.players.filter({$0.lives > 0}).count
+            if livingPlayersCount > 1 {
                 DispatchQueue.main.async { [weak self] in
                     guard let `self` = self else { return }
-                    let ai = self.aiCount < 2 ? self.twoPlayerAI() : self.multiplayerAI()
+                    let ai = livingPlayersCount == 2 ? self.twoPlayerAI() : self.multiplayerAI()
                     self.game.moveInDirection(ai.getNextMove())
                 }
             }
