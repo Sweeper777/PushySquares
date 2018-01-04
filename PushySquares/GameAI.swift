@@ -214,6 +214,6 @@ class GameAI {
     }
     
     func getNextMove() -> Direction {
-        return minimax(depth: Int(arc4random_uniform(5) + 2), color: myColor).direction
+        return minimax(depth: 6, color: myColor).direction
     }
 }
