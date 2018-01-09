@@ -103,3 +103,9 @@ func randomFromArrayAndRemove<T>(_ a: inout [T]) -> T {
     a.remove(at: randomNumber)
     return item
 }
+
+extension GameAI {
+    convenience init(game: Game, myColor: Color, _ arr: [Int]) {
+        self.init(game: game, myColor: myColor, wSelfLife: arr[0], wDiffLives: arr[1], wSquareThreshold: arr[2], wSelfSpreadBelowThreshold: arr[3], wSelfSpreadAboveThreshold: arr[4], wOpponentSpread: arr[5], wSelfInDanger: arr[6], wOpponentInDangerBelowThreshold: arr[7], wOpponentInDangerAboveThreshold: arr[8])
+    }
+}
