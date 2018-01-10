@@ -74,8 +74,12 @@ class MapSelectorViewController: UIViewController {
     }
     
     func back() {
-        selectedMap = allMaps[pageView.currentIndex]
-        dismiss(animated: true, completion: nil)
+        if pageView.currentIndex > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked") {
+            promptUnlockMaps()
+        } else {
+            selectedMap = allMaps[pageView.currentIndex]
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
