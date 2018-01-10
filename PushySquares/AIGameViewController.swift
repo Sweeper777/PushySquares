@@ -93,7 +93,7 @@ class AIGameViewController: GameViewController {
     }
     
     fileprivate func multiplayerAI() -> GameAI {
-        return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, wSelfLife: 8420, wDiffLives: 9285, wSquareThreshold:0, wSelfSpreadBelowThreshold: 181, wSelfSpreadAboveThreshold: 4669, wOpponentSpread: 5890, wSelfInDanger: 4306, wOpponentInDangerBelowThreshold: 4200, wOpponentInDangerAboveThreshold: 7995)
+        return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, multiplayerAIArrays[Int(arc4random_uniform(UInt32(multiplayerAIArrays.count)))])
     }
 }
 
