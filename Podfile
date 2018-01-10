@@ -18,4 +18,5 @@ target 'PushySquares' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
   pod 'FSPagerView'
+  pod 'EZLoadingActivity'
 end

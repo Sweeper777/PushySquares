@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EZLoadingActivity.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FSPagerView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -76,77 +81,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>181D9FC4913359EB1C0D147E71D6BE55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2E88A56C43FB431E9D6FB3F8650C116A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B9F2C6DD00A30B37FCEE25B2C261248</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>408092726E160EF2B6E02048205D5748</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>505C9587EFAE93ED823A6E1737BF1778</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>78BDA0BB90901D1A59D601BD064A2297</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8EFB44D2DE7C5EB00C3EC386780F54FB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>92BB131FA876445E027D20AE23EA7B5F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AD69C61629290B6752C88E605787114D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C82A3ADAD75BB23C79CE2F4E1A87943E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CE9FFA3A52A3EC3714E038D40F2E4164</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D110927FEC74BF8C104AD1083FD13624</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E0E3D18CC8FCA245ED6098F21002E59C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E65B2EF8244ED04321527C23BDE60B41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
