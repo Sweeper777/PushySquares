@@ -142,6 +142,13 @@ extension MapSelectorViewController: FSPagerViewDelegate, FSPagerViewDataSource 
 }
 
 extension MapSelectorViewController: SKProductsRequestDelegate {
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        EZLoadingActivity.hide()
+        if let product = response.products.first {
+        } else {
+            showIAPError(message: "Unable to get product information. Please check your Internet connection.")
+        }
+    }
     func showIAPError(message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK", action: {})
