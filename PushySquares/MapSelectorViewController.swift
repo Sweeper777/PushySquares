@@ -128,5 +128,11 @@ extension MapSelectorViewController: FSPagerViewDelegate, FSPagerViewDataSource 
     
     func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
         return false
+    fileprivate func promptUnlockMaps() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Unlock All Maps") { [weak self] in
+        alert.addButton("Cancel", action: {})
+        alert.showInfo("This map is locked!", subTitle: "Do you want to unlock all locked maps?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
+    }
     }
 }
