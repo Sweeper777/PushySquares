@@ -126,8 +126,13 @@ extension MapSelectorViewController: FSPagerViewDelegate, FSPagerViewDataSource 
         pageControl.currentPage = pagerView.currentIndex
     }
     
-    func pagerView(_ pagerView: FSPagerView, shouldSelectItemAt index: Int) -> Bool {
-        return false
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: false)
+        if index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked") {
+            promptUnlockMaps()
+        }
+    }
+    
     fileprivate func promptUnlockMaps() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("Unlock All Maps") { [weak self] in
