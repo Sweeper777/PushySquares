@@ -1,6 +1,9 @@
 import UIKit
 import FSPagerView
 import SwiftyButton
+import SCLAlertView
+import StoreKit
+import EZLoadingActivity
 
 class MapSelectorViewController: UIViewController {
     var selectedMap: String? {
@@ -18,6 +21,8 @@ class MapSelectorViewController: UIViewController {
         let path = Bundle.main.path(forResource: name, ofType: "map")!
         return Map(file: path)
     }
+    
+    var productRequest: SKProductsRequest!
     
     func repositionViews() {
         self.view.subviews.forEach { $0.removeFromSuperview() }
