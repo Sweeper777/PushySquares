@@ -173,6 +173,12 @@ extension MapSelectorViewController: SKProductsRequestDelegate {
             showIAPError(message: "Unable to get product information. Please check your Internet connection.")
         }
     }
+    
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        EZLoadingActivity.hide()
+        showIAPError(message: "Unable to get product information. Please check your Internet connection.")
+    }
+    
     func showIAPError(message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK", action: {})
