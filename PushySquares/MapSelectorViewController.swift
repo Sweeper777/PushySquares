@@ -190,5 +190,20 @@ extension MapSelectorViewController: SKProductsRequestDelegate {
         alert.showError("Oops!", subTitle: message)
     }
 }
+
+extension MapSelectorViewController: SKPaymentTransactionObserver {
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        EZLoadingActivity.hide()
+        if queue.transactions.isEmpty {
+            showIAPError(message: "You have not purcheased this yet, so you cannot restore this purchase!")
+        } else {
+            UserDefaults.standard.set(true, forKey: "mapsUnlocked")
+            pageView.reloadData()
+            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            alert.addButton("OK", action: {})
+            alert.showSuccess("Success!", subTitle: "All maps are now unlocked!")
+        }
+    }
+    
     }
 }
