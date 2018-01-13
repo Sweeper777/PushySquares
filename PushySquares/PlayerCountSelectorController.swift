@@ -233,6 +233,9 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
 }
 
 extension PlayerCountSelectorController: SKProductsRequestDelegate {
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        EZLoadingActivity.hide()
+    }
     func showIAPError(message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK", action: {})
