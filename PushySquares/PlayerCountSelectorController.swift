@@ -2,6 +2,9 @@ import UIKit
 import SwiftyButton
 import GoogleMobileAds
 import FSPagerView
+import SCLAlertView
+import StoreKit
+import EZLoadingActivity
 
 class PlayerCountSelectorController: UIViewController {
     
@@ -11,6 +14,7 @@ class PlayerCountSelectorController: UIViewController {
     var mapPageView: FSPagerView!
     var mapPageControl: FSPageControl!
     var shouldShowAd = false
+    var productRequest: SKProductsRequest!
     
     let imageNames = ["2player", "3player", "4player", "playervsai", "playervs3ai"]
     let maps = allMaps.map {
