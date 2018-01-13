@@ -230,5 +230,14 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
         alert.addButton("Cancel", action: {})
         alert.showInfo("This map is locked!", subTitle: "Do you want to unlock all locked maps?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
     }
+}
+
+extension PlayerCountSelectorController: SKProductsRequestDelegate {
+    func showIAPError(message: String) {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("OK", action: {})
+        alert.showError("Oops!", subTitle: message)
+    }
+}
     }
 }
