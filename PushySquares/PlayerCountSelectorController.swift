@@ -201,6 +201,7 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
         } else {
             let gameBoardCell = cell as! GameBoardCell
             gameBoardCell.game = Game(map: maps[index], playerCount: 4)
+            gameBoardCell.locked = index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked")
         }
         cell.imageView?.contentMode = .scaleAspectFit
         cell.contentView.layer.shadowRadius = 0
