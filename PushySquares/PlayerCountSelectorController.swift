@@ -141,6 +141,10 @@ class PlayerCountSelectorController: UIViewController {
     }
     
     func start() {
+        if mapPageView.currentIndex > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked") {
+            promptUnlockMaps()
+            return
+        }
         if pageView.currentIndex < 3 {
             performSegue(withIdentifier: "showGame", sender: pageView.currentIndex + 2)
         }
