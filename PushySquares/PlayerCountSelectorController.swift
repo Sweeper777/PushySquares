@@ -226,6 +226,10 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
     fileprivate func promptUnlockMaps() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("Unlock All Maps") { [weak self] in
+            self?.productRequest = SKProductsRequest(productIdentifiers: [unlockAllMapsProductID])
+            self?.productRequest.delegate = self
+            self?.productRequest.start()
+            EZLoadingActivity.show("Loading...", disableUI: true)
         }
         alert.addButton("Cancel", action: {})
         alert.showInfo("This map is locked!", subTitle: "Do you want to unlock all locked maps?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
