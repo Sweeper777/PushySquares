@@ -258,6 +258,8 @@ extension PlayerCountSelectorController: SKProductsRequestDelegate {
                 SKPaymentQueue.default().restoreCompletedTransactions()
                 EZLoadingActivity.show("Loading...", disableUI: true)
             }
+            alert.addButton("Cancel", action: {})
+            alert.showInfo("Unlock All Maps", subTitle: "Do you want to unlock all locked maps for \(price!)?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
         } else {
             showIAPError(message: "Unable to get product information. Please check your Internet connection.")
         }
