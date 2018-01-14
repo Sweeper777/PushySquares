@@ -252,6 +252,12 @@ extension PlayerCountSelectorController: SKProductsRequestDelegate {
                     self.showIAPError(message: "Purchases are disabled on this device!")
                 }
             }
+            alert.addButton("Restore Purchase") { [weak self] in
+                guard let `self` = self else { return }
+                SKPaymentQueue.default().add(self)
+                SKPaymentQueue.default().restoreCompletedTransactions()
+                EZLoadingActivity.show("Loading...", disableUI: true)
+            }
         } else {
             showIAPError(message: "Unable to get product information. Please check your Internet connection.")
         }
