@@ -299,6 +299,21 @@ extension PlayerCountSelectorController: SKPaymentTransactionObserver {
         EZLoadingActivity.hide()
         for transaction:AnyObject in transactions {
             if let trans = transaction as? SKPaymentTransaction {
+                switch trans.transactionState {
+                case .purchased:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    UserDefaults.standard.set(true, forKey: "mapsUnlocked")
+                    pageView.reloadData()
+                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                    alert.addButton("OK", action: {})
+                    alert.showSuccess("Success!", subTitle: "All maps are now unlocked!")
+                case .failed:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    showIAPError(message: "Unable to purchase. Please check your Internet connection.")
+                case .restored:
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                default: break
+                }
             }
         }
     }
