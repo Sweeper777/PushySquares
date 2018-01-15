@@ -294,5 +294,12 @@ extension PlayerCountSelectorController: SKPaymentTransactionObserver {
             alert.showSuccess("Success!", subTitle: "All maps are now unlocked!")
         }
     }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        EZLoadingActivity.hide()
+        for transaction:AnyObject in transactions {
+            if let trans = transaction as? SKPaymentTransaction {
+            }
+        }
     }
 }
