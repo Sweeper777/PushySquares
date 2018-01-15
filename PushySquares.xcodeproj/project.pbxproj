@@ -48,6 +48,8 @@
 		5A2FF3841FC08DE000E7FB23 /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3831FC08DCE00E7FB23 /* zigzag.map */; };
 		5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A2FF3831FC08DCE00E7FB23 /* zigzag.map */; };
 		5A3223421F7F983000B476A1 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3223411F7F983000B476A1 /* MainMenuController.swift */; };
+		5A3661F11FFF5B86005372F8 /* grey3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3661F01FFF5B76005372F8 /* grey3.map */; };
+		5A3661F21FFF5B87005372F8 /* grey3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3661F01FFF5B76005372F8 /* grey3.map */; };
 		5A373C201FB7103F00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
 		5A373C211FB7104B00F99847 /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C1F1FB70A1D00F99847 /* standard.map */; };
 		5A373C251FB8330200F99847 /* small.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C241FB832F500F99847 /* small.map */; };
@@ -56,6 +58,8 @@
 		5A373C291FB8337C00F99847 /* large.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C271FB8337200F99847 /* large.map */; };
 		5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A373C2A1FB8406500F99847 /* GameBoardCell.xib */; };
 		5A373C2E1FB8412C00F99847 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */; };
+		5A3995BE2000AD6C00E8AE66 /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3995BD2000AD6500E8AE66 /* diagonal.map */; };
+		5A3995BF2000AD6D00E8AE66 /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3995BD2000AD6500E8AE66 /* diagonal.map */; };
 		5A3C1E0D1FE8A94B006DFEB3 /* MapSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */; };
 		5A3C1E0F1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */; };
 		5A42491C1FDBE72100557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
@@ -128,11 +132,13 @@
 		5A2FF3801FC043AE00E7FB23 /* walls.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = walls.map; sourceTree = "<group>"; };
 		5A2FF3831FC08DCE00E7FB23 /* zigzag.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = zigzag.map; sourceTree = "<group>"; };
 		5A3223411F7F983000B476A1 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		5A3661F01FFF5B76005372F8 /* grey3.map */ = {isa = PBXFileReference; explicitFileType = text; path = grey3.map; sourceTree = "<group>"; };
 		5A373C1F1FB70A1D00F99847 /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = standard.map; sourceTree = "<group>"; };
 		5A373C241FB832F500F99847 /* small.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = small.map; sourceTree = "<group>"; };
 		5A373C271FB8337200F99847 /* large.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = large.map; sourceTree = "<group>"; };
 		5A373C2A1FB8406500F99847 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
 		5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
+		5A3995BD2000AD6500E8AE66 /* diagonal.map */ = {isa = PBXFileReference; explicitFileType = text; path = diagonal.map; sourceTree = "<group>"; };
 		5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewController.swift; sourceTree = "<group>"; };
 		5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewControllerDelegate.swift; sourceTree = "<group>"; };
 		5A42491B1FDBE71100557067 /* quick.map */ = {isa = PBXFileReference; explicitFileType = text; path = quick.map; sourceTree = "<group>"; };
@@ -253,6 +259,8 @@
 				5A42491B1FDBE71100557067 /* quick.map */,
 				5A467AEA1FF9B9A400BCB771 /* grey1.map */,
 				5A467AED1FF9DBAA00BCB771 /* grey2.map */,
+				5A3661F01FFF5B76005372F8 /* grey3.map */,
+				5A3995BD2000AD6500E8AE66 /* diagonal.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -385,7 +393,9 @@
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
 				5A467AEF1FF9DBBE00BCB771 /* grey2.map in Resources */,
+				5A3995BE2000AD6C00E8AE66 /* diagonal.map in Resources */,
 				5A2FF3811FC043AE00E7FB23 /* walls.map in Resources */,
+				5A3661F11FFF5B86005372F8 /* grey3.map in Resources */,
 				5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */,
 				5A2C4A3A1F9526FB00241FD5 /* PeerTableViewCell.xib in Resources */,
 				5A373C281FB8337B00F99847 /* large.map in Resources */,
@@ -404,10 +414,12 @@
 				5A467AEE1FF9DBBE00BCB771 /* grey2.map in Resources */,
 				5A373C291FB8337C00F99847 /* large.map in Resources */,
 				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
+				5A3995BF2000AD6D00E8AE66 /* diagonal.map in Resources */,
 				5A42491D1FDBE72200557067 /* quick.map in Resources */,
 				5A467AEC1FF9B9C700BCB771 /* grey1.map in Resources */,
 				5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */,
 				5A2FF3821FC043C500E7FB23 /* walls.map in Resources */,
+				5A3661F21FFF5B87005372F8 /* grey3.map in Resources */,
 				5A373C261FB8330200F99847 /* small.map in Resources */,
 				5A2FF37F1FC03B5A00E7FB23 /* hole.map in Resources */,
 				5A373C211FB7104B00F99847 /* standard.map in Resources */,
@@ -438,9 +450,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/FittableFontLabel/FittableFontLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NGORoundedButton/NGORoundedButton.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyAnimate/SwiftyAnimate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FittableFontLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NGORoundedButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRandom.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAnimate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -453,13 +494,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushySquares-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
