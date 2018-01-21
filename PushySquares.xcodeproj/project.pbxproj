@@ -62,6 +62,8 @@
 		5A3995BF2000AD6D00E8AE66 /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3995BD2000AD6500E8AE66 /* diagonal.map */; };
 		5A3C1E0D1FE8A94B006DFEB3 /* MapSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */; };
 		5A3C1E0F1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */; };
+		5A3ED5F920128B8300A9629E /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3ED5F820128B6F00A9629E /* slippery.map */; };
+		5A3ED5FA20128B8400A9629E /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3ED5F820128B6F00A9629E /* slippery.map */; };
 		5A42491C1FDBE72100557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
 		5A42491D1FDBE72200557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
 		5A467AEB1FF9B9C200BCB771 /* grey1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A467AEA1FF9B9A400BCB771 /* grey1.map */; };
@@ -141,6 +143,7 @@
 		5A3995BD2000AD6500E8AE66 /* diagonal.map */ = {isa = PBXFileReference; explicitFileType = text; path = diagonal.map; sourceTree = "<group>"; };
 		5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewController.swift; sourceTree = "<group>"; };
 		5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewControllerDelegate.swift; sourceTree = "<group>"; };
+		5A3ED5F820128B6F00A9629E /* slippery.map */ = {isa = PBXFileReference; explicitFileType = text; path = slippery.map; sourceTree = "<group>"; };
 		5A42491B1FDBE71100557067 /* quick.map */ = {isa = PBXFileReference; explicitFileType = text; path = quick.map; sourceTree = "<group>"; };
 		5A467AEA1FF9B9A400BCB771 /* grey1.map */ = {isa = PBXFileReference; explicitFileType = text; path = grey1.map; sourceTree = "<group>"; };
 		5A467AED1FF9DBAA00BCB771 /* grey2.map */ = {isa = PBXFileReference; explicitFileType = text; path = grey2.map; sourceTree = "<group>"; };
@@ -261,6 +264,7 @@
 				5A467AED1FF9DBAA00BCB771 /* grey2.map */,
 				5A3661F01FFF5B76005372F8 /* grey3.map */,
 				5A3995BD2000AD6500E8AE66 /* diagonal.map */,
+				5A3ED5F820128B6F00A9629E /* slippery.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -389,6 +393,7 @@
 				5A2FF3841FC08DE000E7FB23 /* zigzag.map in Resources */,
 				5A373C201FB7103F00F99847 /* standard.map in Resources */,
 				5A29E61D1FB4DE3C00B39790 /* dummy.map in Resources */,
+				5A3ED5F920128B8300A9629E /* slippery.map in Resources */,
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
@@ -415,6 +420,7 @@
 				5A373C291FB8337C00F99847 /* large.map in Resources */,
 				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
 				5A3995BF2000AD6D00E8AE66 /* diagonal.map in Resources */,
+				5A3ED5FA20128B8400A9629E /* slippery.map in Resources */,
 				5A42491D1FDBE72200557067 /* quick.map in Resources */,
 				5A467AEC1FF9B9C700BCB771 /* grey1.map in Resources */,
 				5A2FF3851FC08DE000E7FB23 /* zigzag.map in Resources */,

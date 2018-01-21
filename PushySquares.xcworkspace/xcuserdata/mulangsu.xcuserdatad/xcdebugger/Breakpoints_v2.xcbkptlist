@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PushySquares/Map.swift"
-            timestampString = "536469122.522088"
+            timestampString = "538086573.923135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "init(file:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PushySquares/GameBoardView.swift"
-            timestampString = "534505988.532446"
+            timestampString = "538221013.7633049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "refreshSquareViews()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
