@@ -7,9 +7,10 @@ public struct Map {
     
     public static let standard = Map(file: Bundle.main.path(forResource: "standard", ofType: "map")!)
     
-    public init(board: Array2D<Tile>, spawnpoints: [Color: Position]) {
+    public init(board: Array2D<Tile>, spawnpoints: [Color: Position], slipperyPositions: [Position]) {
         self.board = board
         self.spawnpoints = spawnpoints
+        self.slipperyPositions = slipperyPositions
     }
     
     public init(file path: String) {
