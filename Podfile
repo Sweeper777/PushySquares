@@ -12,7 +12,7 @@ target 'PushySquares' do
   pod 'FittableFontLabel'
   pod 'NGORoundedButton'
   pod 'SCLAlertView'
-  pod 'SwiftyButton'
+  pod 'SwiftyButton', :git => 'git@github.com:TakeScoop/SwiftyButton.git', :branch => 'master'
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'rxswift-3.0'
   pod 'RxCocoa'
   pod 'Firebase/Core'
