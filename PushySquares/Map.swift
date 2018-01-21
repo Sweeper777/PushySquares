@@ -3,6 +3,7 @@ import Foundation
 public struct Map {
     public let board: Array2D<Tile>
     public let spawnpoints: [Color: Position]
+    public let slipperyPositions: [Position]
     
     public static let standard = Map(file: Bundle.main.path(forResource: "standard", ofType: "map")!)
     
