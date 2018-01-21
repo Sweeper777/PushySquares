@@ -24,6 +24,7 @@ public struct Map {
         let lines = fileContents.components(separatedBy: "\n").filter({!$0.isEmpty})
         var board = Array2D<Tile>(columns: lines.first!.count, rows: lines.count, initialValue: .void)
         var spawnpoints = [Color: Position]()
+        var slipperyPositions = [Position]()
         for (x, line) in lines.enumerated() {
             for (y, c) in line.enumerated() {
                 board[x, y] = dict[c] ?? .empty
@@ -36,12 +37,15 @@ public struct Map {
                     spawnpoints[.color3] = Position(x, y)
                 case "4":
                     spawnpoints[.color4] = Position(x, y)
+                case "s":
+                    slipperyPositions.append(Position(x, y))
                 default: break
                 }
             }
         }
         self.board = board
         self.spawnpoints = spawnpoints
+        self.slipperyPositions = slipperyPositions
     }
 }
 
