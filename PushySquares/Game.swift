@@ -9,6 +9,7 @@ public class Game {
     
     public var board: Array2D<Tile>
     public var spawnpoints: [Color: Position]
+    public let slipperyPositions: [Position]
     public var players = [Player]()
     public var currentPlayer: Player {
         return players[currentPlayerIndex]
@@ -21,6 +22,7 @@ public class Game {
     public init(map: Map, playerCount: Int, lives: Int = 5) {
         self.board = map.board
         self.spawnpoints = map.spawnpoints
+        self.slipperyPositions = map.slipperyPositions
         switch playerCount {
         case 4:
             players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color4))
