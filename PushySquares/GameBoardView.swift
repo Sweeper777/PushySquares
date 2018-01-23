@@ -27,22 +27,9 @@ class GameBoardView: UIView {
         }
     }
     
-    override func draw(_ rect: CGRect) {
+    func refreshSquareViews() {
         guard let game = self.game else { return }
-        
         self.subviews.forEach { $0.removeFromSuperview() }
-        
-        for x in 0..<game.board.columns {
-            for y in 0..<game.board.rows {
-                if case .void = game.board[x, y] {} else {
-                    let path = UIBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
-                    UIColor.black.setStroke()
-                    path.lineWidth = strokeWidth
-                    path.stroke()
-                }
-            }
-        }
-        
         let wallsLocations = game.board.indicesOf { (tile) -> Bool in
             if case .wall = tile {
                 return true
@@ -60,6 +47,28 @@ class GameBoardView: UIView {
             for position in locations {
                 addSquareView(at: position, color: GameBoardView.colorToUIColor[color]!)
             }
+        }
+    }
+    
+    override func draw(_ rect: CGRect) {
+        guard let game = self.game else { return }
+        
+        self.subviews.forEach { $0.removeFromSuperview() }
+        
+        for x in 0..<game.board.columns {
+            for y in 0..<game.board.rows {
+                if case .void = game.board[x, y] {} else {
+                    let path = UIBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
+                    UIColor.black.setStroke()
+                    path.lineWidth = strokeWidth
+                    path.stroke()
+                }
+            }
+        }
+        
+        
+        refreshSquareViews()
+        for color in [Color.color1, .color2, .color3, .color4, .grey] {
             if let spawnpoint = game.spawnpoints[color] {
                 let path = UIBezierPath(rect: CGRect(origin: point(for: Position(spawnpoint.x, spawnpoint.y)), size: CGSize(width: squareLength, height: squareLength)))
                 GameBoardView.colorToUIColor[color]?.setStroke()
