@@ -66,6 +66,11 @@ class GameBoardView: UIView {
             }
         }
         
+        for slipperyPosition in game.slipperyPositions {
+            let pt = point(for: slipperyPosition)
+            let size = CGSize(width: squareLength, height: squareLength)
+            #imageLiteral(resourceName: "wet").draw(in: CGRect(origin: pt, size: size))
+        }
         
         refreshSquareViews()
         for color in [Color.color1, .color2, .color3, .color4, .grey] {
