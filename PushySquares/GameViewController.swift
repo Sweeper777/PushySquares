@@ -176,7 +176,7 @@ class GameViewController: UIViewController, GameDelegate {
                 alert.addButton("OK", action: {})
                 _ = alert.showCustom(message, subTitle: "", color: .black, icon: image)
             }
-            self.boardView.setNeedsDisplay()
+            self.boardView.refreshSquareViews()
             self.animationDidComplete()
         }
     }
