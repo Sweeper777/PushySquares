@@ -194,4 +194,10 @@ public class Game {
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
     }
+    
+    enum SlipResult {
+        case success
+        case fail
+        case death
+    }
 }
