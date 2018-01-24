@@ -27,20 +27,20 @@ public class Game {
         case 4:
             players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color4))
             spawnNewSquare(color: .color4)
-            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color4)
             fallthrough
         case 3:
             players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color2))
             spawnNewSquare(color: .color2)
-            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color2)
             fallthrough
         case 2:
             players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color1))
             players.append(Player(turnsUntilNewSquare: Game.playerCountToTurnsUntilNewSquare[playerCount]!, lives: lives, color: .color3))
             spawnNewSquare(color: .color1)
             spawnNewSquare(color: .color3)
-            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
-            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color3)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color1)
+            delegate?.playerDidMakeMove(direction: nil, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: .color3)
         default:
             fatalError()
         }
@@ -95,7 +95,7 @@ public class Game {
             newSquareColor = nextTurn()
         }
         
-        delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: greyedOutPositions, newSquareColor: newSquareColor)
+        delegate?.playerDidMakeMove(direction: nil, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: greyedOutPositions, newSquareColor: newSquareColor)
     }
     
     private func move(sorter: (Position, Position) -> Bool, direction: Direction) {
@@ -104,7 +104,7 @@ public class Game {
         
         if allSquaresPositions.isEmpty {
             let newSquareColor = nextTurn()
-            delegate?.playerDidMakeMove(direction: direction, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: newSquareColor)
+            delegate?.playerDidMakeMove(direction: direction, originalPositions: [], slippedPositions: [], destroyedSquarePositions: [], greyedOutPositions: [], newSquareColor: newSquareColor)
             return
         }
         
@@ -141,7 +141,12 @@ public class Game {
             }
         }
         let newSquareColor = nextTurn()
-        delegate?.playerDidMakeMove(direction: direction, originalPositions: sortedPositions, destroyedSquarePositions: beingDestroyedSquaresPositions, greyedOutPositions: greyedOutSquaresPositions, newSquareColor: newSquareColor)
+        delegate?.playerDidMakeMove(direction: direction,
+                                    originalPositions: sortedPositions,
+                                    slippedPositions: slippedPositions,
+                                    destroyedSquarePositions: beingDestroyedSquaresPositions,
+                                    greyedOutPositions: greyedOutSquaresPositions,
+                                    newSquareColor: newSquareColor)
     }
     
     private func nextTurn() -> Color? {
