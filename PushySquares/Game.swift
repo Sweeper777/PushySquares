@@ -66,19 +66,19 @@ public class Game {
     }
     
     public func moveUp() {
-        move(displacement: { $0.above() }, sorter: { $0.y < $1.y }, direction: .up)
+        move(sorter: { $0.y < $1.y }, direction: .up)
     }
     
     public func moveDown() {
-        move(displacement: { $0.below() }, sorter: { $0.y > $1.y }, direction: .down)
+        move(sorter: { $0.y > $1.y }, direction: .down)
     }
     
     public func moveLeft() {
-        move(displacement: { $0.left() }, sorter: { $0.x < $1.x }, direction: .left)
+        move(sorter: { $0.x < $1.x }, direction: .left)
     }
     
     public func moveRight() {
-        move(displacement: { $0.right() }, sorter: { $0.x > $1.x }, direction: .right)
+        move(sorter: { $0.x > $1.x }, direction: .right)
     }
     
     public func killPlayer(_ color: Color) {
