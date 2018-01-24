@@ -76,7 +76,7 @@ class GameViewController: UIViewController, GameDelegate {
     
     
     
-    func playerDidMakeMove(direction: Direction?, originalPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
+    func playerDidMakeMove(direction: Direction?, originalPositions: [Position], slippedPositions: [Position], destroyedSquarePositions: [Position], greyedOutPositions: [Position], newSquareColor: Color?) {
         var moveAnim = Animate()
         
         for position in originalPositions {
