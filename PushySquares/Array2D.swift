@@ -28,6 +28,15 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
         set { self[position.x, position.y] = newValue }
     }
     
+    public subscript(safe position: Position) -> T? {
+        get {
+            if (0..<columns).contains(position.x) && (0..<rows).contains(position.y) {
+                return self[position]
+            }
+            return nil
+        }
+    }
+    
     public typealias Iterator = Array<T>.Iterator
     public typealias SubSequence = Array<T>.SubSequence
 //    public typealias Element = [T]
