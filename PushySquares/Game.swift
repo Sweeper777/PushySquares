@@ -98,7 +98,8 @@ public class Game {
         delegate?.playerDidMakeMove(direction: nil, originalPositions: [], destroyedSquarePositions: [], greyedOutPositions: greyedOutPositions, newSquareColor: newSquareColor)
     }
     
-    private func move(displacement displace: (Position) -> Position, sorter: (Position, Position) -> Bool, direction: Direction) {
+    private func move(sorter: (Position, Position) -> Bool, direction: Direction) {
+        let displace = direction.displacementFunction
         let allSquaresPositions = board.indicesOf(color: currentPlayer.color)
         
         if allSquaresPositions.isEmpty {
