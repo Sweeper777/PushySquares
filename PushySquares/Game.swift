@@ -191,6 +191,25 @@ public class Game {
         return retVal
     }
     
+    private func canSlip(in direction: Direction, position: Position) -> SlipResult {
+        let displace = direction.displacementFunction
+        let displaced = displace(position)
+        if !slipperyPositions.contains(displaced) {
+            return .fail
+        }
+        if let slipped = board[safe: displace(displaced)] {
+            switch slipped {
+            case .empty:
+                return .success
+            case .void:
+                return .death
+            default:
+                return .fail
+            }
+        } else {
+            return .fail
+        }
+    }
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
     }
