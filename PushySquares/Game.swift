@@ -133,11 +133,15 @@ public class Game {
         
         let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
         
-        for position in sortedPositions {
+        for position in slippedPositions + sortedPositions {
             let tile = board[position]
             board[position] = .empty
             if !beingDestroyedSquaresPositions.contains(position) {
-                board[displace(position)] = tile
+                if slippedPositions.contains(position) {
+                    board[displace(displace(position))] = tile
+                } else {
+                    board[displace(position)] = tile
+                }
             }
         }
         let newSquareColor = nextTurn()
