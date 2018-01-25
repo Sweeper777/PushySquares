@@ -128,7 +128,23 @@ public class Game {
             }
             movingSquaresPositions.append(contentsOf: pushedPositions)
         }
-        let sortedPositions = Set(movingSquaresPositions).sorted(by: sorter)
+        var slippedPositions = [Position]()
+        movingSquaresPositions = Array(Set(movingSquaresPositions))
+        loop:
+        for position in movingSquaresPositions {
+            switch canSlip(in: direction, position: position) {
+            case .fail:
+                continue loop
+            case .death:
+                beingDestroyedSquaresPositions.append(position)
+                fallthrough
+            case .success:
+                slippedPositions.append(position)
+                _ = movingSquaresPositions.remove(object: position)
+            }
+        }
+        
+        let sortedPositions = movingSquaresPositions.sorted(by: sorter)
         beingDestroyedSquaresPositions = Array(Set(beingDestroyedSquaresPositions))
         
         let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
