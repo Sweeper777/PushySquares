@@ -94,6 +94,21 @@ class GameViewController: UIViewController, GameDelegate {
             }
             moveAnim = moveAnim.and(animation: squareViewMove)
         }
+        for position in slippedPositions {
+            let squareView = boardView.viewWithTag(position.hashValue) as! SquareView
+            let squareViewMove: Animate
+            switch direction! {
+            case .down:
+                squareViewMove = squareView.slipDown
+            case .up:
+                squareViewMove = squareView.slipUp
+            case .left:
+                squareViewMove = squareView.slipLeft
+            case .right:
+                squareViewMove = squareView.slipRight
+            }
+            moveAnim = moveAnim.and(animation: squareViewMove)
+        }
         
         var destroyedAnim = Animate()
         for position in destroyedSquarePositions {
