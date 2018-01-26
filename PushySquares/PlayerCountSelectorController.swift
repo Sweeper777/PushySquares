@@ -168,9 +168,11 @@ class PlayerCountSelectorController: UIViewController {
         }
     }
     
+    #if (arch(i386) || arch(x86_64))
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         performSegue(withIdentifier: "showAIGame", sender:(0, 4))
     }
+    #endif
 }
 
 extension PlayerCountSelectorController: GADInterstitialDelegate {
