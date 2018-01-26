@@ -91,14 +91,14 @@ class GameAI {
         let mySquares = game.board.indicesOf(color: myColor)
         let finalSelfSpread = -spread(of: mySquares, pivot: game.spawnpoints[myColor]!)
         let finalOpponentSpread = opponents.map { self.spread(of: self.game.board.indicesOf(color: $0), pivot: self.game.spawnpoints[$0]!) }.reduce(0, +) / opponents.count
-        let selfInDanger = mySquares.map { self.isInDanger(position: $0, directionsOfEdge: self.isEdge(position: $0), myColor: myColor) }.filter{ $0 }.count
+        let selfInDanger = mySquares.map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: myColor) }.filter{ $0 }.count
         if selfInDanger >= me.lives {
             return Int.min
         }
         let finalSelfInDanger = -selfInDanger
         var opponentInDanger = 0
         for opponent in opponents {
-            opponentInDanger += game.board.indicesOf(color: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
+            opponentInDanger += game.board.indicesOf(color: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
         }
         let finalOpponentInDanger = opponentInDanger
 //        let spawnpoints = opponents.map { self.game.board[self.game.spawnpoints[$0]!] }
