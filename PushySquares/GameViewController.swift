@@ -155,23 +155,6 @@ class GameViewController: UIViewController, GameDelegate {
                 self.statusBar.setLives(players: self.game.players)
             }
             
-            var closure: ((Position) -> Position) = { $0 }
-            if let dir = direction {
-                switch dir {
-                case .down:
-                    closure = {$0.below()}
-                case .up:
-                    closure = {$0.above()}
-                case .left:
-                    closure = {$0.left()}
-                case .right:
-                    closure = {$0.right()}
-                }
-            }
-            for position in destroyedSquarePositions.map(closure) {
-                self.boardView.viewWithTag(position.hashValue)!.removeFromSuperview()
-            }
-                
             if let color = winnerColor {
                 self.allGR.forEach { $0.isEnabled = false }
                 let winnerUIColor = GameBoardView.colorToUIColor[color]!
