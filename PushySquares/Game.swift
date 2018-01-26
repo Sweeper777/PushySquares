@@ -230,6 +230,24 @@ public class Game {
             return .fail
         }
     }
+    
+    func isEdge(position: Position) -> [Direction] {
+        var directions = [Direction]()
+        if case .void = board[position.above()] {
+            directions.append(.up)
+        }
+        if case .void = board[position.below()] {
+            directions.append(.down)
+        }
+        if case .void = board[position.left()] {
+            directions.append(.left)
+        }
+        if case .void = board[position.right()] {
+            directions.append(.right)
+        }
+        return directions
+    }
+    
     private func spawnNewSquare(color: Color) {
         board[spawnpoints[color]!] = .square(color)
     }

@@ -127,23 +127,6 @@ class GameAI {
         return 0
     }
     
-    private func isEdge(position: Position) -> [Direction] {
-        var directions = [Direction]()
-        if case .void = game.board[position.above()] {
-            directions.append(.up)
-        }
-        if case .void = game.board[position.below()] {
-            directions.append(.down)
-        }
-        if case .void = game.board[position.left()] {
-            directions.append(.left)
-        }
-        if case .void = game.board[position.right()] {
-            directions.append(.right)
-        }
-        return directions
-    }
-    
     private func isInDanger(position: Position, directionsOfEdge: [Direction], myColor: Color) -> Bool {
         directionLoop: for direction in directionsOfEdge {
             let translate: (Position) -> Position
