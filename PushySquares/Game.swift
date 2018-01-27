@@ -63,6 +63,7 @@ public class Game {
         self.spawnpoints = game.spawnpoints
         self.players = game.players.map { $0.createCopy() }
         self.currentPlayerIndex = game.currentPlayerIndex
+        self.slipperyPositions = game.slipperyPositions
     }
     
     public func moveUp() {
