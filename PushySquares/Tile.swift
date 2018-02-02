@@ -3,6 +3,13 @@ public enum Tile {
     case void
     case wall
     case square(Color)
+    
+    public var isSquare: Bool {
+        if case .square = self {
+            return true
+        }
+        return false
+    }
 }
 
 public enum Color: Int {
