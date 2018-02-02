@@ -60,6 +60,8 @@
 		5A373C2E1FB8412C00F99847 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */; };
 		5A3995BE2000AD6C00E8AE66 /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3995BD2000AD6500E8AE66 /* diagonal.map */; };
 		5A3995BF2000AD6D00E8AE66 /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3995BD2000AD6500E8AE66 /* diagonal.map */; };
+		5A3AF5E4201C9EC100E9EBDC /* superslippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3AF5E3201C9EB500E9EBDC /* superslippery.map */; };
+		5A3AF5E5201C9EC500E9EBDC /* superslippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3AF5E3201C9EB500E9EBDC /* superslippery.map */; };
 		5A3C1E0D1FE8A94B006DFEB3 /* MapSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */; };
 		5A3C1E0F1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */; };
 		5A3ED5F920128B8300A9629E /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3ED5F820128B6F00A9629E /* slippery.map */; };
@@ -141,6 +143,7 @@
 		5A373C2A1FB8406500F99847 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
 		5A373C2D1FB8412C00F99847 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
 		5A3995BD2000AD6500E8AE66 /* diagonal.map */ = {isa = PBXFileReference; explicitFileType = text; path = diagonal.map; sourceTree = "<group>"; };
+		5A3AF5E3201C9EB500E9EBDC /* superslippery.map */ = {isa = PBXFileReference; explicitFileType = text; path = superslippery.map; sourceTree = "<group>"; };
 		5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewController.swift; sourceTree = "<group>"; };
 		5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewControllerDelegate.swift; sourceTree = "<group>"; };
 		5A3ED5F820128B6F00A9629E /* slippery.map */ = {isa = PBXFileReference; explicitFileType = text; path = slippery.map; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 				5A3661F01FFF5B76005372F8 /* grey3.map */,
 				5A3995BD2000AD6500E8AE66 /* diagonal.map */,
 				5A3ED5F820128B6F00A9629E /* slippery.map */,
+				5A3AF5E3201C9EB500E9EBDC /* superslippery.map */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
 				5A467AEF1FF9DBBE00BCB771 /* grey2.map in Resources */,
+				5A3AF5E4201C9EC100E9EBDC /* superslippery.map in Resources */,
 				5A3995BE2000AD6C00E8AE66 /* diagonal.map in Resources */,
 				5A2FF3811FC043AE00E7FB23 /* walls.map in Resources */,
 				5A3661F11FFF5B86005372F8 /* grey3.map in Resources */,
@@ -416,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3AF5E5201C9EC500E9EBDC /* superslippery.map in Resources */,
 				5A467AEE1FF9DBBE00BCB771 /* grey2.map in Resources */,
 				5A373C291FB8337C00F99847 /* large.map in Resources */,
 				5A29E61E1FB4DE3E00B39790 /* dummy.map in Resources */,
