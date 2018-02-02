@@ -215,7 +215,7 @@ public class Game {
     private func canSlip(in direction: Direction, position: Position) -> SlipResult {
         let displace = direction.displacementFunction
         let displaced = displace(position)
-        if !slipperyPositions.contains(displaced) {
+        if !slipperyPositions.contains(displaced) || board[displaced].isSquare {
             return .fail
         }
         if let slipped = board[safe: displace(displaced)] {
