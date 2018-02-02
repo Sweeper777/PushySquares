@@ -227,4 +227,8 @@ extension MapSelectorViewController: SKPaymentTransactionObserver {
             }
         }
     }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        return true
+    }
 }
