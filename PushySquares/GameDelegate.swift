@@ -8,3 +8,7 @@ public protocol GameDelegate : class {
                            greyedOutPositions: [Position],
                            newSquareColor: Color?)
 }
+
+public protocol GameAIDelegate : class {
+    func gameAIDidMakeMove(direction: Direction)
+}
