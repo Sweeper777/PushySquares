@@ -198,8 +198,10 @@ class GameAI {
         return (bestScore, bestDirection ?? .left)
     }
     
-    func getNextMove() -> Direction {
-        return minimax(depth: 6, color: myColor).direction
+    func getNextMove(on dispatchQueue: DispatchQueue) {
+        dispatchQueue.sync {
+            self.delegate?.gameAIDidMakeMove(direction: minimax(depth: 6, color: self.myColor).direction)
+        }
     }
 }
 
