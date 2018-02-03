@@ -4,6 +4,8 @@ import SCLAlertView
 class AIGameViewController: GameViewController {
     var aiCount: Int!
     var playerColors: [Color]!
+    var aiQueue = DispatchQueue(label: "gameAI")
+    var currentAI: GameAI!
     
     override func newGame() -> Game {
         let game = Game(map: map, playerCount: playerCount + aiCount)
