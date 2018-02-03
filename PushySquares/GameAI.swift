@@ -49,6 +49,8 @@ class GameAI {
     
     let myColor: Color
     
+    weak var delegate: GameAIDelegate?
+    
     init(game: Game, myColor: Color, wSelfLife: Int, /*wOpponentLifeLoss: Int,*/ wDiffLives: Int, wSquareThreshold: Int, wSelfSpreadBelowThreshold: Int, wSelfSpreadAboveThreshold: Int, wOpponentSpread: Int, wSelfInDanger: Int, wOpponentInDangerBelowThreshold: Int, wOpponentInDangerAboveThreshold: Int) {
         self.gameStates = [game]
         self.myColor = myColor
