@@ -95,7 +95,9 @@ class AIGameViewController: GameViewController {
     }
     
     fileprivate func multiplayerAI() -> GameAI {
-        return GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, multiplayerAIArrays[Int(arc4random_uniform(UInt32(multiplayerAIArrays.count)))])
+        let ai = GameAI(game: self.game.createCopy(), myColor: self.game.currentPlayer.color, multiplayerAIArrays[Int(arc4random_uniform(UInt32(multiplayerAIArrays.count)))])
+        ai.delegate = self
+        return ai
     }
 }
 
