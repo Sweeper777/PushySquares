@@ -16,7 +16,7 @@ class PlayerCountSelectorController: UIViewController {
     var shouldShowAd = false
     var productRequest: SKProductsRequest!
     
-    let imageNames = ["2player", "3player", "4player", "playervsai", "playervs3ai"]
+    let imageNames = ["2player", "3player", "4player", "playervsai", "playervs3ai", "4ai"]
     let maps = allMaps.map {
         name -> Map in
         let path = Bundle.main.path(forResource: name, ofType: "map")!
@@ -147,12 +147,12 @@ class PlayerCountSelectorController: UIViewController {
         }
         if pageView.currentIndex < 3 {
             performSegue(withIdentifier: "showGame", sender: pageView.currentIndex + 2)
-        }
-        if pageView.currentIndex == 3 {
+        } else if pageView.currentIndex == 3 {
             performSegue(withIdentifier: "showAIGame", sender: (1, 1))
-        }
-        if pageView.currentIndex == 4 {
+        } else if pageView.currentIndex == 4 {
             performSegue(withIdentifier: "showAIGame", sender: (1, 3))
+        } else if pageView.currentIndex == 5 {
+            performSegue(withIdentifier: "showAIGame", sender:(0, 4))
         }
     }
     
