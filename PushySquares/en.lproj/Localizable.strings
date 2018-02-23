@@ -14,3 +14,22 @@
 "HELP" = "HELP";
 "JOIN" = "JOIN";
 "HOST" = "HOST";
+
+// PlayerCountSelectorVC
+"BACK" = "BACK";
+"START GAME" = "START GAME";
+"Unlock All Maps" = "Unlock All Maps";
+"Loading..." = "Loading...";
+"Cancel" = "Cancel";
+"This map is locked!" = "This map is locked!";
+"Do you want to unlock all locked maps?" = "Do you want to unlock all locked maps?";
+"Unlock All Maps for %@" = "Unlock All Maps for %@";
+"Purchases are disabled on this device!" = "Purchases are disabled on this device!";
+"Restore Purchase" = "Restore Purchase";
+"Do you want to unlock all locked maps for %@?" = "Do you want to unlock all locked maps for %@?";
+"Unable to get product information. Please check your Internet connection." = "Unable to get product information. Please check your Internet connection.";
+"Oops!" = "Oops!";
+"You have not purcheased this yet, so you cannot restore this purchase!" = "You have not purcheased this yet, so you cannot restore this purchase!";
+"Success!" = "Success!";
+"All maps are now unlocked!" = "All maps are now unlocked!";
+"Unable to purchase. Please check your Internet connection." = "Unable to purchase. Please check your Internet connection.";
