@@ -1,1 +1,11 @@
 
+// GameViewController
+"It's a draw" = "It's a draw";
+"%@ is the winner!" = "%@ is the winner!";
+"OK" = "OK";
+"Yes" = "Yes";
+"No" = "No";
+"Confirm" = "Confirm";
+"Do you really want to quit?" = "Do you really want to quit?";
+"Do you really want to restart?" = "Do you really want to restart?";
+
