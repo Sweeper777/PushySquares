@@ -161,9 +161,9 @@ class GameViewController: UIViewController, GameDelegate {
                 let message: String
                 switch color {
                 case .grey:
-                    message = "It's a draw"
+                    message = "It's a draw".localized
                 default:
-                    message = "\(GameBoardView.colorToString[color]!) is the winner!"
+                    message = String(format: "%@ is the winner!".localized, GameBoardView.colorToString[color]!)
                 }
                 UIGraphicsBeginImageContextWithOptions(CGSize(width: 56, height: 56), false, 0)
                 winnerUIColor.setFill()
@@ -171,7 +171,7 @@ class GameViewController: UIViewController, GameDelegate {
                 let image = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
                 let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
-                alert.addButton("OK", action: {})
+                alert.addButton("OK".localized, action: {})
                 _ = alert.showCustom(message, subTitle: "", color: .black, icon: image)
             }
             self.boardView.refreshSquareViews()
@@ -290,18 +290,18 @@ class GameViewController: UIViewController, GameDelegate {
     
     func quitTapped() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("Yes", action: {
+        alert.addButton("Yes".localized, action: {
             [weak self] in
             guard let `self` = self else { return }
             self.performSegue(withIdentifier: "quitGame", sender: self)
         })
-        alert.addButton("No", action: {})
-        alert.showWarning("Confirm", subTitle: "Do you really want to quit?")
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to quit?".localized)
     }
     
     func restartTapped() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("Yes", action: {
+        alert.addButton("Yes".localized, action: {
             [weak self] in
             guard let `self` = self else { return }
             self.game = self.newGame()
@@ -313,8 +313,8 @@ class GameViewController: UIViewController, GameDelegate {
             self.allGR.forEach { $0.isEnabled = true }
             self.showHideActionBar()
         })
-        alert.addButton("No", action: {})
-        alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to restart?".localized)
     }
     
     override func viewDidAppear(_ animated: Bool) {
