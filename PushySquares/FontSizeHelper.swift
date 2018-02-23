@@ -15,3 +15,9 @@ func fontSizeThatFits(size: CGSize, text: NSString, font: UIFont) -> CGFloat {
     }
     return fontSize - 1
 }
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+}
