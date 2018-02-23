@@ -9,3 +9,8 @@
 "Do you really want to quit?" = "Do you really want to quit?";
 "Do you really want to restart?" = "Do you really want to restart?";
 
+// MainMenuController
+"START" = "START";
+"HELP" = "HELP";
+"JOIN" = "JOIN";
+"HOST" = "HOST";
