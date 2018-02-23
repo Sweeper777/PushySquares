@@ -26,9 +26,9 @@ class MainMenuController: UIViewController {
             .with(x: startButtonX)
             .with(y: startButtonY)
             .with(height: view.height / 10))
-        let fontSize = fontSizeThatFits(size: startButton.frame.size, text: "START", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        let fontSize = fontSizeThatFits(size: startButton.frame.size, text: "START".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         startButton.setAttributedTitle(
-            NSAttributedString(string: "START", attributes: [
+            NSAttributedString(string: "START".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -40,7 +40,7 @@ class MainMenuController: UIViewController {
             startButton.frame
                 .with(y: startButton.frame.maxY + startButton.height * 0.2))
         helpButton.setAttributedTitle(
-            NSAttributedString(string: "HELP", attributes: [
+            NSAttributedString(string: "HELP".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -50,7 +50,7 @@ class MainMenuController: UIViewController {
         
         let hostButton = PressableButton(frame: helpButton.frame.with(y: helpButton.frame.maxY + helpButton.height * 0.2))
         hostButton.setAttributedTitle(
-            NSAttributedString(string: "HOST", attributes: [
+            NSAttributedString(string: "HOST".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -60,7 +60,7 @@ class MainMenuController: UIViewController {
         
         let joinButton = PressableButton(frame: hostButton.frame.with(y: hostButton.frame.maxY + hostButton.height * 0.2))
         joinButton.setAttributedTitle(
-            NSAttributedString(string: "JOIN", attributes: [
+            NSAttributedString(string: "JOIN".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
