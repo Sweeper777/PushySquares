@@ -33,3 +33,12 @@
 "Success!" = "Success!";
 "All maps are now unlocked!" = "All maps are now unlocked!";
 "Unable to purchase. Please check your Internet connection." = "Unable to purchase. Please check your Internet connection.";
+
+// HostViewController
+"Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game." = "Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game.";
+"Connected" = "Connected";
+"Connecting..." = "Connecting...";
+"Unable to connect" = "Unable to connect";
+"Too many players!" = "Too many players!";
+"You can only connect at most 3 players to the game." = "You can only connect at most 3 players to the game.";
+"MAPS" = "MAPS";
