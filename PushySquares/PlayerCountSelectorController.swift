@@ -37,9 +37,9 @@ class PlayerCountSelectorController: UIViewController {
         let backButtonHeight = (view.height - 8) * backButtonWeight
         let backButtonWidth = 2 * backButtonHeight
         let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
-        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         backButton.setAttributedTitle(
-            NSAttributedString(string: "BACK", attributes: [
+            NSAttributedString(string: "BACK".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -97,7 +97,7 @@ class PlayerCountSelectorController: UIViewController {
         let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
         let startButtonWidth = longStartButton ? backButton.width * 2 : backButtonWidth
         let startButtonX = view.width - 8 - startButtonWidth
-        let startButtonText = longStartButton ? "START GAME" : "START"
+        let startButtonText = longStartButton ? "START GAME".localized : "START".localized
         let startButton = PressableButton(frame: CGRect(x: startButtonX, y: backButtonY, width: startButtonWidth, height: backButtonHeight))
         let startFontSize = fontSizeThatFits(size: startButton.frame.size, text: startButtonText as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         startButton.setAttributedTitle(
@@ -221,14 +221,14 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
     
     fileprivate func promptUnlockMaps() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("Unlock All Maps") { [weak self] in
+        alert.addButton("Unlock All Maps".localized) { [weak self] in
             self?.productRequest = SKProductsRequest(productIdentifiers: [unlockAllMapsProductID])
             self?.productRequest.delegate = self
             self?.productRequest.start()
-            EZLoadingActivity.show("Loading...", disableUI: true)
+            EZLoadingActivity.show("Loading...".localized, disableUI: true)
         }
-        alert.addButton("Cancel", action: {})
-        alert.showInfo("This map is locked!", subTitle: "Do you want to unlock all locked maps?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
+        alert.addButton("Cancel".localized, action: {})
+        alert.showInfo("This map is locked!".localized, subTitle: "Do you want to unlock all locked maps?".localized, circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
     }
 }
 
@@ -242,38 +242,38 @@ extension PlayerCountSelectorController: SKProductsRequestDelegate {
             numberFormatter.locale = product.priceLocale
             let price = numberFormatter.string(from: product.price)
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-            alert.addButton("Unlock All Maps for \(price!)") { [weak self] in
+            alert.addButton(String(format: "Unlock All Maps for %@".localized, price!)) { [weak self] in
                 guard let `self` = self else { return }
                 if SKPaymentQueue.canMakePayments() {
                     SKPaymentQueue.default().add(self)
                     SKPaymentQueue.default().add(SKPayment(product: product))
-                    EZLoadingActivity.show("Loading...", disableUI: true)
+                    EZLoadingActivity.show("Loading...".localized, disableUI: true)
                 } else {
-                    self.showIAPError(message: "Purchases are disabled on this device!")
+                    self.showIAPError(message: "Purchases are disabled on this device!".localized)
                 }
             }
-            alert.addButton("Restore Purchase") { [weak self] in
+            alert.addButton("Restore Purchase".localized) { [weak self] in
                 guard let `self` = self else { return }
                 SKPaymentQueue.default().add(self)
                 SKPaymentQueue.default().restoreCompletedTransactions()
-                EZLoadingActivity.show("Loading...", disableUI: true)
+                EZLoadingActivity.show("Loading...".localized, disableUI: true)
             }
-            alert.addButton("Cancel", action: {})
-            alert.showInfo("Unlock All Maps", subTitle: "Do you want to unlock all locked maps for \(price!)?", circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
+            alert.addButton("Cancel".localized, action: {})
+            alert.showInfo("Unlock All Maps".localized, subTitle: String(format: "Do you want to unlock all locked maps for %@?".localized, price!), circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
         } else {
-            showIAPError(message: "Unable to get product information. Please check your Internet connection.")
+            showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
         }
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
         EZLoadingActivity.hide()
-        showIAPError(message: "Unable to get product information. Please check your Internet connection.")
+        showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
     }
     
     func showIAPError(message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("OK", action: {})
-        alert.showError("Oops!", subTitle: message)
+        alert.addButton("OK".localized, action: {})
+        alert.showError("Oops!".localized, subTitle: message)
     }
 }
 
@@ -281,13 +281,13 @@ extension PlayerCountSelectorController: SKPaymentTransactionObserver {
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         EZLoadingActivity.hide()
         if queue.transactions.isEmpty {
-            showIAPError(message: "You have not purcheased this yet, so you cannot restore this purchase!")
+            showIAPError(message: "You have not purcheased this yet, so you cannot restore this purchase!".localized)
         } else {
             UserDefaults.standard.set(true, forKey: "mapsUnlocked")
             pageView.reloadData()
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-            alert.addButton("OK", action: {})
-            alert.showSuccess("Success!", subTitle: "All maps are now unlocked!")
+            alert.addButton("OK".localized, action: {})
+            alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
         }
     }
     
@@ -301,11 +301,11 @@ extension PlayerCountSelectorController: SKPaymentTransactionObserver {
                     UserDefaults.standard.set(true, forKey: "mapsUnlocked")
                     pageView.reloadData()
                     let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                    alert.addButton("OK", action: {})
-                    alert.showSuccess("Success!", subTitle: "All maps are now unlocked!")
+                    alert.addButton("OK".localized, action: {})
+                    alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
                 case .failed:
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    showIAPError(message: "Unable to purchase. Please check your Internet connection.")
+                    showIAPError(message: "Unable to purchase. Please check your Internet connection.".localized)
                 case .restored:
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                 default: break
