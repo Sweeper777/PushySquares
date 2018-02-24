@@ -50,9 +50,9 @@ class HostViewController: UIViewController {
         let backButtonHeight = (view.height - 8) * backButtonWeight
         let backButtonWidth = min(2 * backButtonHeight, (view.width - 24) / 3 )
         let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
-        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         backButton.setAttributedTitle(
-            NSAttributedString(string: "BACK", attributes: [
+            NSAttributedString(string: "BACK".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -68,7 +68,7 @@ class HostViewController: UIViewController {
             y: backButton.frame.maxY + separator,
             width: view.width - backButton.x - 8,
             height: backButton.height * 2))
-        hintLabel.text = "Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game."
+        hintLabel.text = "Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game.".localized
         hintLabel.numberOfLines = 0
         hintLabel.font = UIFont(name: "Chalkboard SE", size: hintLabel.font.pointSize)
         view.addSubview(hintLabel)
@@ -88,11 +88,11 @@ class HostViewController: UIViewController {
             cell.detailTextLabel!.font = UIFont(name: "Chalkboard SE", size: cell.detailTextLabel!.font.pointSize)
             switch model.state {
             case .connected:
-                cell.detailTextLabel!.text = "Connected"
+                cell.detailTextLabel!.text = "Connected".localized
             case .connecting:
-                cell.detailTextLabel!.text = "Connecting..."
+                cell.detailTextLabel!.text = "Connecting...".localized
             case .error:
-                cell.detailTextLabel!.text = "Unable to connect"
+                cell.detailTextLabel!.text = "Unable to connect".localized
             case .notConnected:
                 cell.detailTextLabel!.text = ""
             }
@@ -105,8 +105,8 @@ class HostViewController: UIViewController {
             if self.foundPeers.value[index].state == .error || self.foundPeers.value[index].state == .notConnected {
                 if self.foundPeers.value.filter({ $0.state == .connected || $0.state == .connecting }).count == 3 {
                     let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                    alert.addButton("OK", action: {})
-                    alert.showError("Too many players!", subTitle: "You can only connect at most 3 players to the game.")
+                    alert.addButton("OK".localized, action: {})
+                    alert.showError("Too many players!".localized, subTitle: "You can only connect at most 3 players to the game.".localized)
                     return
                 }
                 self.browser.invitePeer(self.foundPeers.value[index].peerID, to: self.session, withContext: nil, timeout: 10)
@@ -121,7 +121,7 @@ class HostViewController: UIViewController {
         let longStartButton = (view.width - 24) / 2 >= backButton.width * 2
         let startButtonWidth = longStartButton ? backButton.width * 2 : backButtonWidth
         let startButtonX = view.width - 8 - startButtonWidth
-        let startButtonText = longStartButton ? "START GAME" : "START"
+        let startButtonText = longStartButton ? "START GAME".localized : "START".localized
         let startButton = PressableButton(frame: CGRect(x: startButtonX, y: backButtonY, width: startButtonWidth, height: backButtonHeight))
         let startFontSize = fontSizeThatFits(size: startButton.frame.size, text: startButtonText as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         startButton.setAttributedTitle(
@@ -138,7 +138,7 @@ class HostViewController: UIViewController {
         let mapNuttonX = backButton.frame.maxX + 8
         let mapButton = PressableButton(frame: CGRect(x: mapNuttonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
         mapButton.setAttributedTitle(
-            NSAttributedString(string: "MAPS", attributes: [
+            NSAttributedString(string: "MAPS".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
