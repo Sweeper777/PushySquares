@@ -10,10 +10,10 @@ class JoinViewController : UIViewController {
         didSet {
             if let connectedPeer = connectedPeerID {
                 activityIndicator.stopAnimating()
-                connectionStatusLabel.text = "Connected to \(connectedPeer.displayName)"
+                connectionStatusLabel.text = String(format: "Connected to %@".localized, connectedPeer.displayName)
             } else {
                 activityIndicator.startAnimating()
-                connectionStatusLabel.text = "Waiting to be connected to a game..."
+                connectionStatusLabel.text = "Waiting to be connected to a game...".localized
             }
         }
     }
@@ -35,9 +35,9 @@ class JoinViewController : UIViewController {
         let backButtonHeight = (view.height - 8) * backButtonWeight
         let backButtonWidth = 2.5 * backButtonHeight
         let backButton = PressableButton(frame: CGRect(x: backButtonX, y: backButtonY, width: backButtonWidth, height: backButtonHeight))
-        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK", font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
+        let fontSize = fontSizeThatFits(size: backButton.frame.size, text: "BACK".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!) * 0.7
         backButton.setAttributedTitle(
-            NSAttributedString(string: "BACK", attributes: [
+            NSAttributedString(string: "BACK".localized, attributes: [
                 NSFontAttributeName: UIFont(name: "Chalkboard SE", size: fontSize)!,
                 NSForegroundColorAttributeName: UIColor.white
                 ])
@@ -63,10 +63,10 @@ class JoinViewController : UIViewController {
         view.addSubview(connectionStatusLabel)
         if let connectedPeer = connectedPeerID {
             activityIndicator.stopAnimating()
-            connectionStatusLabel.text = "Connected to \(connectedPeer.displayName)"
+            connectionStatusLabel.text = String(format: "Connected to %@".localized, connectedPeer.displayName)
         } else {
             activityIndicator.startAnimating()
-            connectionStatusLabel.text = "Waiting to be connected to a game..."
+            connectionStatusLabel.text = "Waiting to be connected to a game...".localized
         }
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
