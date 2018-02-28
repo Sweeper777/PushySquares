@@ -44,13 +44,13 @@ class AIGameViewController: GameViewController {
             UIGraphicsEndImageContext()
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
             alert.addButton("OK", action: {})
-            _ = alert.showCustom("Your color is \(GameBoardView.colorToString[myColor]!).", subTitle: "", color: .black, icon: image)
+            _ = alert.showCustom(String(format: "Your color is %@.".localized, GameBoardView.colorToString[myColor]!), subTitle: "", color: .black, icon: image)
         }
     }
     
     override func restartTapped() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("Yes", action: {
+        alert.addButton("Yes".localized, action: {
             [weak self] in
             guard let `self` = self else { return }
             self.game = self.newGame()
@@ -67,8 +67,8 @@ class AIGameViewController: GameViewController {
             let image = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
-            alert.addButton("OK", action: {})
-            _ = alert.showCustom("Your color is \(GameBoardView.colorToString[myColor]!).", subTitle: "", color: .black, icon: image)
+            alert.addButton("OK".localized, action: {})
+            _ = alert.showCustom(String(format: "Your color is %@.".localized, GameBoardView.colorToString[myColor]!), subTitle: "", color: .black, icon: image)
             if self.playerColors.contains(self.game.currentPlayer.color) {
                 self.allGR.forEach { $0.isEnabled = true }
             } else {
@@ -80,8 +80,8 @@ class AIGameViewController: GameViewController {
             }
             self.showHideActionBar()
         })
-        alert.addButton("No", action: {})
-        alert.showWarning("Confirm", subTitle: "Do you really want to restart?")
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to restart?".localized)
     }
     
     fileprivate func twoPlayerAI() -> GameAI {
