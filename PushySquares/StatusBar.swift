@@ -14,7 +14,7 @@ class StatusBar: UIView {
         let string = NSMutableAttributedString()
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.alignment = .center
-        string.append(NSAttributedString(string: "NEW SQUARE IN:\n", attributes: [
+        string.append(NSAttributedString(string: "NEW SQUARE IN:\n".localized, attributes: [
             NSFontAttributeName: UIFont(name: "Chalkboard SE", size: 30)!,
             NSParagraphStyleAttributeName: paraStyle
             ]))
@@ -30,7 +30,7 @@ class StatusBar: UIView {
     }
     
     func setLives(players: [Player]) {
-        let text = NSMutableAttributedString(string: "LIVES\n")
+        let text = NSMutableAttributedString(string: "LIVES\n".localized)
         let player1Lives = NSAttributedString(string: "♥︎", attributes: [NSForegroundColorAttributeName: GameBoardView.colorToUIColor[players[0].color]!])
         text.append(player1Lives)
         text.append(NSAttributedString(string: "\(players[0].lives) "))
@@ -77,8 +77,9 @@ class StatusBar: UIView {
         imgLives.contentMode = .scaleAspectFit
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            let fontSize = fontSizeThatFits(size: self.currentTurnHeader.frame.size, text: "TURN", font: UIFont(name: "Chalkboard SE", size: 0)!)
+            let fontSize = fontSizeThatFits(size: self.currentTurnHeader.frame.size, text: "TURN".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!)
             self.currentTurnHeader.font = self.currentTurnHeader.font.withSize(fontSize)
+            self.currentTurnHeader.text = "TURN".localized
         }
     }
     
