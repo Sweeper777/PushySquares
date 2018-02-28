@@ -12,10 +12,10 @@ class GameBoardView: UIView {
     ]
     
     static let colorToString: [Color: String] = [
-        .color1: "Red",
-        .color2: "Blue",
-        .color3: "Green",
-        .color4: "Yellow"
+        .color1: "Red".localized,
+        .color2: "Blue".localized,
+        .color3: "Green".localized,
+        .color4: "Yellow".localized
     ]
     
     static let borderSize: CGFloat = 8
