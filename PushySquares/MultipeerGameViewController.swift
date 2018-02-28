@@ -17,8 +17,8 @@ class MultipeerGameViewController: GameViewController {
             let image = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
-            alert.addButton("OK", action: {})
-            _ = alert.showCustom("Your color is \(GameBoardView.colorToString[myColor]!).", subTitle: "", color: .black, icon: image)
+            alert.addButton("OK".localized, action: {})
+            _ = alert.showCustom(String(format: "Your color is %@.".localized, GameBoardView.colorToString[myColor]!), subTitle: "", color: .black, icon: image)
         }
     }
     
@@ -99,15 +99,15 @@ class MultipeerGameViewController: GameViewController {
     
     override func quitTapped() {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-        alert.addButton("Yes", action: {
+        alert.addButton("Yes".localized, action: {
             [weak self] in
             guard let `self` = self else { return }
             self.disconnectHandled = true
             self.session.disconnect()
             self.performSegue(withIdentifier: "quitGame", sender: self)
         })
-        alert.addButton("No", action: {})
-        alert.showWarning("Confirm", subTitle: "Do you really want to quit?")
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to quit?".localized)
     }
 }
 
@@ -169,20 +169,20 @@ extension MultipeerGameViewController: MCSessionDelegate {
             if game.players.filter({ $0.lives > 0 }).count > 2 {
                 DispatchQueue.main.async { [weak self] in
                     let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                    alert.addButton("OK", action: {
+                    alert.addButton("OK".localized, action: {
                         [weak self] in
                         self?.dismiss(animated: true, completion: nil)
                     })
-                    _ = alert.showWarning("Oops!", subTitle: "You disconnected from the game.")
+                    _ = alert.showWarning("Oops!".localized, subTitle: "You disconnected from the game.".localized)
                 }
             } else {
                 DispatchQueue.main.async { [weak self] in
                     let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                    alert.addButton("OK", action: {
+                    alert.addButton("OK".localized, action: {
                         [weak self] in
                         self?.dismiss(animated: true, completion: nil)
                     })
-                    _ = alert.showWarning("Game Over", subTitle: "All other players disconnected.")
+                    _ = alert.showWarning("Game Over".localized, subTitle: "All other players disconnected.".localized)
                 }
             }
         }
@@ -201,7 +201,7 @@ extension MultipeerGameViewController: MCSessionDelegate {
         game.killPlayer(color)
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK", action: {})
-        _ = alert.showWarning("Oops!", subTitle: "\(peerID.displayName) disconnected from the game.")
+        _ = alert.showWarning("Oops!".localized, subTitle: String(format: "%@ disconnected from the game.".localized, peerID.displayName))
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
