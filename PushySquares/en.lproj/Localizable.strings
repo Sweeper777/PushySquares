@@ -47,3 +47,10 @@
 "Connected to %@" = "Connected to %@";
 "Waiting to be connected to a game..." = "Waiting to be connected to a game...";
 
+// MultipeerGameController
+"Your color is %@." = "Your color is %@.";
+"You disconnected from the game." = "You disconnected from the game.";
+"Game Over" = "Game Over";
+"All other players disconnected." = "All other players disconnected.";
+"%@ disconnected from the game." = "%@ disconnected from the game.";
+
