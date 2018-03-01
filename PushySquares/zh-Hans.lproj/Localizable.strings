@@ -41,3 +41,26 @@
 "Too many players!" = "太多人了！";
 "You can only connect at most 3 players to the game." = "最多把三人加入游戏！";
 "MAPS" = "地图";
+
+// JoinViewController
+"Connected to %@" = "已连接 %@";
+"Waiting to be connected to a game..." = "正在等待被链接...";
+
+// MultipeerGameController
+"Your color is %@." = "你的颜色是%@.";
+"You disconnected from the game." = "你已断开连接";
+"Game Over" = "游戏结束";
+"All other players disconnected." = "所有玩家已断开连接";
+"%@ disconnected from the game." = "%@ 已断开连接";
+
+// GameBoardView
+"Red" = "红色";
+"Green" = "绿色";
+"Blue" = "蓝色";
+"Yellow" = "黄色";
+
+// StatusBar
+"NEW SQUARE IN:\n" = "离下一个方块:\n";
+"LIVES\n" = "生命值\n";
+"TURN" = "回合";
+
