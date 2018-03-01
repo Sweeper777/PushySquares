@@ -1,0 +1,15 @@
+// GameViewController
+"It's a draw" = "平局";
+"%@ is the winner!" = "%@贏了!";
+"OK" = "確定";
+"Yes" = "是";
+"No" = "否";
+"Confirm" = "確認";
+"Do you really want to quit?" = "你確定要退出嗎？";
+"Do you really want to restart?" = "你真的要重新開始嗎？";
+
+// MainMenuController
+"START" = "開始";
+"HELP" = "幫助";
+"JOIN" = "加入遊戲";
+"HOST" = "開始多人";
