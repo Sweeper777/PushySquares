@@ -13,3 +13,32 @@
 "HELP" = "幫助";
 "JOIN" = "加入遊戲";
 "HOST" = "開始多人";
+
+// PlayerCountSelectorVC
+"BACK" = "返回";
+"START GAME" = "開始遊戲";
+"Unlock All Maps" = "解鎖所有地圖";
+"Loading..." = "正在加載...";
+"Cancel" = "取消";
+"This map is locked!" = "被鎖住了！";
+"Do you want to unlock all locked maps?" = "要解鎖所有地圖嗎？";
+"Unlock All Maps for %@" = "用 %@ 解鎖所有地圖";
+"Purchases are disabled on this device!" = "這個裝置上的購買功能已被停用！";
+"Restore Purchase" = "恢復購買";
+"Do you want to unlock all locked maps for %@?" = "要用 %@ 解鎖所有地圖嗎？";
+"Unable to get product information. Please check your Internet connection." = "無法獲取商品信息，請檢查你的網絡連接。";
+"Oops!" = "糟糕！";
+"You have not purcheased this yet, so you cannot restore this purchase!" = "無法恢復購買！你還沒有購買過這個商品！";
+"Success!" = "成功！";
+"All maps are now unlocked!" = "所有地圖已被解鎖！";
+"Unable to purchase. Please check your Internet connection." = "無法購買，請檢查你的網絡連接。";
+
+// HostViewController
+"Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game." = "附近願意加入遊戲的裝置會被顯示在下面，點擊以把該裝置加入遊戲。";
+"Connected" = "已連接";
+"Connecting..." = "連接中...";
+"Unable to connect" = "無法連接";
+"Too many players!" = "太多人了！";
+"You can only connect at most 3 players to the game." = "最多把三人加入遊戲！";
+"MAPS" = "地圖";
+
