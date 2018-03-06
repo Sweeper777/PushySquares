@@ -80,7 +80,7 @@ class GameViewController: UIViewController, GameDelegate {
         var moveAnim = Animate()
         
         for position in originalPositions {
-            let squareView = boardView.viewWithTag(position.hashValue) as! SquareView
+            guard let squareView = boardView.viewWithTag(position.hashValue) as? SquareView else { return }
             let squareViewMove: Animate
             switch direction! {
             case .down:
