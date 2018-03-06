@@ -38,7 +38,7 @@ class HelpController: UIViewController, UIWebViewDelegate {
         webView.backgroundColor = .clear
         self.view.addSubview(webView)
         
-        let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help", withExtension: "html")!)
+        let htmlString = try! String(contentsOf: Bundle.main.url(forResource: "help".localized, withExtension: "html")!)
         webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
         
         backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
