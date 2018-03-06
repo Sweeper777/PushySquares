@@ -63,3 +63,5 @@
 "NEW SQUARE IN:\n" = "離下一個方塊:\n";
 "LIVES\n" = "生命值\n";
 "TURN" = "回合";
+
+"help" = "help(zh-Hant)";
