@@ -65,6 +65,9 @@
 		5A3AF5E5201C9EC500E9EBDC /* superslippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3AF5E3201C9EB500E9EBDC /* superslippery.map */; };
 		5A3C1E0D1FE8A94B006DFEB3 /* MapSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */; };
 		5A3C1E0F1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */; };
+		5A3C89B32049798100811DE1 /* new square in zh-Hant.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C89B02049798000811DE1 /* new square in zh-Hant.png */; };
+		5A3C89B42049798100811DE1 /* new square in zh-Hans.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C89B12049798100811DE1 /* new square in zh-Hans.png */; };
+		5A3C89B52049798100811DE1 /* lives zh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C89B22049798100811DE1 /* lives zh.png */; };
 		5A3ED5F920128B8300A9629E /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3ED5F820128B6F00A9629E /* slippery.map */; };
 		5A3ED5FA20128B8400A9629E /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A3ED5F820128B6F00A9629E /* slippery.map */; };
 		5A42491C1FDBE72100557067 /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A42491B1FDBE71100557067 /* quick.map */; };
@@ -73,6 +76,8 @@
 		5A467AEC1FF9B9C700BCB771 /* grey1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A467AEA1FF9B9A400BCB771 /* grey1.map */; };
 		5A467AEE1FF9DBBE00BCB771 /* grey2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A467AED1FF9DBAA00BCB771 /* grey2.map */; };
 		5A467AEF1FF9DBBE00BCB771 /* grey2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A467AED1FF9DBAA00BCB771 /* grey2.map */; };
+		5A5E12A02043065C00568F45 /* help(zh-Hans).html in Resources */ = {isa = PBXBuildFile; fileRef = 5A5E129F2043065C00568F45 /* help(zh-Hans).html */; };
+		5A5E12A220430F2500568F45 /* help(zh-Hant).html in Resources */ = {isa = PBXBuildFile; fileRef = 5A5E12A120430F2500568F45 /* help(zh-Hant).html */; };
 		5A6A0D011F9B9D260075FDB2 /* SecretStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */; };
 		5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */; };
 		5AB021981F5815FA001A40D1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB021971F5815FA001A40D1 /* Player.swift */; };
@@ -151,10 +156,18 @@
 		5A3AF5E3201C9EB500E9EBDC /* superslippery.map */ = {isa = PBXFileReference; explicitFileType = text; path = superslippery.map; sourceTree = "<group>"; };
 		5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewController.swift; sourceTree = "<group>"; };
 		5A3C1E0E1FE8A9AC006DFEB3 /* MapSelectorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectorViewControllerDelegate.swift; sourceTree = "<group>"; };
+		5A3C89B02049798000811DE1 /* new square in zh-Hant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hant.png"; sourceTree = "<group>"; };
+		5A3C89B12049798100811DE1 /* new square in zh-Hans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hans.png"; sourceTree = "<group>"; };
+		5A3C89B22049798100811DE1 /* lives zh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lives zh.png"; sourceTree = "<group>"; };
 		5A3ED5F820128B6F00A9629E /* slippery.map */ = {isa = PBXFileReference; explicitFileType = text; path = slippery.map; sourceTree = "<group>"; };
+		5A3F47E120418AD40003119B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		5A3F47E220418AD40003119B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5A3F47E320418AD40003119B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5A42491B1FDBE71100557067 /* quick.map */ = {isa = PBXFileReference; explicitFileType = text; path = quick.map; sourceTree = "<group>"; };
 		5A467AEA1FF9B9A400BCB771 /* grey1.map */ = {isa = PBXFileReference; explicitFileType = text; path = grey1.map; sourceTree = "<group>"; };
 		5A467AED1FF9DBAA00BCB771 /* grey2.map */ = {isa = PBXFileReference; explicitFileType = text; path = grey2.map; sourceTree = "<group>"; };
+		5A5E129F2043065C00568F45 /* help(zh-Hans).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hans).html"; sourceTree = "<group>"; };
+		5A5E12A120430F2500568F45 /* help(zh-Hant).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hant).html"; sourceTree = "<group>"; };
 		5A6A0D001F9B9D260075FDB2 /* SecretStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
 		5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AB021971F5815FA001A40D1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -226,6 +239,9 @@
 				5A6A0D021F9B9DB10075FDB2 /* GoogleService-Info.plist */,
 				5A2DEEE31F921AE400001B96 /* new square in.png */,
 				5A2DEEE11F921AC000001B96 /* lives.png */,
+				5A3C89B22049798100811DE1 /* lives zh.png */,
+				5A3C89B12049798100811DE1 /* new square in zh-Hans.png */,
+				5A3C89B02049798000811DE1 /* new square in zh-Hant.png */,
 				5A2947411F569D22002E833B /* AppDelegate.swift */,
 				5A2947431F569D22002E833B /* GameViewController.swift */,
 				5A3223411F7F983000B476A1 /* MainMenuController.swift */,
@@ -237,6 +253,8 @@
 				5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */,
 				5A3C1E0C1FE8A94A006DFEB3 /* MapSelectorViewController.swift */,
 				5A2706031F8A28030057B90C /* help.html */,
+				5A5E129F2043065C00568F45 /* help(zh-Hans).html */,
+				5A5E12A120430F2500568F45 /* help(zh-Hant).html */,
 				5A2947451F569D22002E833B /* Main.storyboard */,
 				5A2E11E01F5D283100B82A2D /* SquareView.swift */,
 				5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */,
@@ -379,6 +397,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = 5A2947351F569D22002E833B;
 			productRefGroup = 5A29473F1F569D22002E833B /* Products */;
@@ -400,17 +420,21 @@
 				5A29474C1F569D22002E833B /* LaunchScreen.storyboard in Resources */,
 				5A2706041F8A28030057B90C /* help.html in Resources */,
 				5A6A0D031F9B9DB10075FDB2 /* GoogleService-Info.plist in Resources */,
+				5A3C89B52049798100811DE1 /* lives zh.png in Resources */,
 				5A2FF3841FC08DE000E7FB23 /* zigzag.map in Resources */,
 				5A373C201FB7103F00F99847 /* standard.map in Resources */,
+				5A5E12A02043065C00568F45 /* help(zh-Hans).html in Resources */,
 				5A29E61D1FB4DE3C00B39790 /* dummy.map in Resources */,
 				5A3ED5F920128B8300A9629E /* slippery.map in Resources */,
 				5A2947491F569D22002E833B /* Assets.xcassets in Resources */,
 				5A2947471F569D22002E833B /* Main.storyboard in Resources */,
+				5A3C89B42049798100811DE1 /* new square in zh-Hans.png in Resources */,
 				5A374925203835B800221142 /* Localizable.strings in Resources */,
 				5A269FA81F61D2FF00FEE02D /* StatusBar.xib in Resources */,
 				5A467AEF1FF9DBBE00BCB771 /* grey2.map in Resources */,
 				5A3AF5E4201C9EC100E9EBDC /* superslippery.map in Resources */,
 				5A3995BE2000AD6C00E8AE66 /* diagonal.map in Resources */,
+				5A3C89B32049798100811DE1 /* new square in zh-Hant.png in Resources */,
 				5A2FF3811FC043AE00E7FB23 /* walls.map in Resources */,
 				5A3661F11FFF5B86005372F8 /* grey3.map in Resources */,
 				5A373C2B1FB8406500F99847 /* GameBoardCell.xib in Resources */,
@@ -421,6 +445,7 @@
 				5A373C251FB8330200F99847 /* small.map in Resources */,
 				5A2FF37E1FC03B5900E7FB23 /* hole.map in Resources */,
 				5A2DEEE21F921AC000001B96 /* lives.png in Resources */,
+				5A5E12A220430F2500568F45 /* help(zh-Hant).html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +608,7 @@
 			children = (
 				5A2947461F569D22002E833B /* Base */,
 				5A37AD112036FC9200205509 /* zh-Hans */,
+				5A3F47E120418AD40003119B /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -592,6 +618,7 @@
 			children = (
 				5A29474B1F569D22002E833B /* Base */,
 				5A37AD122036FC9200205509 /* zh-Hans */,
+				5A3F47E220418AD40003119B /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -601,6 +628,7 @@
 			children = (
 				5A374926203835B800221142 /* zh-Hans */,
 				5A374928203835BA00221142 /* en */,
+				5A3F47E320418AD40003119B /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
