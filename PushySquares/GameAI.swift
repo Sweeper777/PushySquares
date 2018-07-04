@@ -34,7 +34,7 @@ class GameAI {
         return gameStates.last!
     }
     let wSelfLife: Int
-//    let wOpponentLifeLoss: Int
+    //    let wOpponentLifeLoss: Int
     let wDiffLives: Int
     let wSquareThreshold: Int
     let wSelfSpreadBelowThreshold: Int
@@ -43,9 +43,9 @@ class GameAI {
     let wSelfInDanger: Int
     let wOpponentInDangerBelowThreshold: Int
     let wOpponentInDangerAboveThreshold: Int
-//    var wBlockedSpawnPointCount: Int {
-//        return game.player(myColor).lives * wSelfLife
-//    }
+    //    var wBlockedSpawnPointCount: Int {
+    //        return game.player(myColor).lives * wSelfLife
+    //    }
     
     let myColor: Color
     
@@ -55,7 +55,7 @@ class GameAI {
         self.gameStates = [game]
         self.myColor = myColor
         self.wSelfLife = wSelfLife
-//        self.wOpponentLifeLoss = wOpponentLifeLoss
+        //        self.wOpponentLifeLoss = wOpponentLifeLoss
         self.wDiffLives = wDiffLives
         self.wSquareThreshold = wSquareThreshold
         self.wSelfSpreadBelowThreshold = wSelfSpreadBelowThreshold
@@ -78,16 +78,16 @@ class GameAI {
         if livingPlayers.count == 0 {
             return 0
         }
-//        let finalSelfLifeLoss = -lifeLosses[myColor]!
+        //        let finalSelfLifeLoss = -lifeLosses[myColor]!
         let finalSelfLives = me.lives
         let opponents = game.opponents(to: myColor)
         let finalDiffLives: Int
-//        let finalOpponentLifeLoss: Int
+        //        let finalOpponentLifeLoss: Int
         if livingPlayers.count == 2 {
             finalDiffLives = me.lives - game.player(opponents[0]).lives
-//            finalOpponentLifeLoss = 0
+            //            finalOpponentLifeLoss = 0
         } else {
-//            finalOpponentLifeLoss = opponents.map { lifeLosses[$0]! }.reduce(0, +)
+            //            finalOpponentLifeLoss = opponents.map { lifeLosses[$0]! }.reduce(0, +)
             finalDiffLives = 0
         }
         let mySquares = game.board.indicesOf(color: myColor)
@@ -103,23 +103,23 @@ class GameAI {
             opponentInDanger += game.board.indicesOf(color: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
         }
         let finalOpponentInDanger = opponentInDanger
-//        let spawnpoints = opponents.map { self.game.board[self.game.spawnpoints[$0]!] }
-//        var count = 0
-//        for point in spawnpoints {
-//            if case .empty = point {} else {
-//                count = 1
-//                break
-//            }
-//        }
-//        let finalBlockedSpawnPointCount = -count
+        //        let spawnpoints = opponents.map { self.game.board[self.game.spawnpoints[$0]!] }
+        //        var count = 0
+        //        for point in spawnpoints {
+        //            if case .empty = point {} else {
+        //                count = 1
+        //                break
+        //            }
+        //        }
+        //        let finalBlockedSpawnPointCount = -count
         return finalSelfLives * wSelfLife +
             finalDiffLives * wDiffLives +
-//            finalOpponentLifeLoss * wOpponentLifeLoss +
-//            finalBlockedSpawnPointCount * wBlockedSpawnPointCount +
+            //            finalOpponentLifeLoss * wOpponentLifeLoss +
+            //            finalBlockedSpawnPointCount * wBlockedSpawnPointCount +
             finalSelfSpread * (mySquares.count < wSquareThreshold ? wSelfSpreadBelowThreshold : wSelfSpreadAboveThreshold) +
             finalOpponentSpread * wOpponentSpread +
             finalSelfInDanger * wSelfInDanger +
-        finalOpponentInDanger * (mySquares.count < wSquareThreshold ? wOpponentInDangerBelowThreshold : wOpponentInDangerAboveThreshold)
+            finalOpponentInDanger * (mySquares.count < wSquareThreshold ? wOpponentInDangerBelowThreshold : wOpponentInDangerAboveThreshold)
     }
     
     private func spread(of positions: [Position], pivot: Position) -> Int {
