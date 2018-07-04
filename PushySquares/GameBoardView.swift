@@ -61,7 +61,7 @@ class GameBoardView: UIView {
                     let path = UIBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
                     UIColor.black.setStroke()
                     path.lineWidth = strokeWidth
-                    UIColor.purple.setFill()
+                    UIColor(patternImage: #imageLiteral(resourceName: "texture")).setFill()
                     path.fill()
                     path.stroke()
                 }
