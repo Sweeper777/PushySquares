@@ -216,7 +216,7 @@ extension PlayerCountSelectorController: FSPagerViewDelegate, FSPagerViewDataSou
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         pagerView.deselectItem(at: index, animated: false)
-        if index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked") {
+        if index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked") && pagerView == mapPageView {
             promptUnlockMaps()
         }
     }
