@@ -123,3 +123,17 @@ class GameBoardView: UIView {
         return Position(tag / 1000, tag % 1000)
     }
 }
+
+extension UIImage {
+    func resized(toWidth newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / size.width
+        let newHeight = size.height * scale
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: newWidth, height: newHeight), false, 0)
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
