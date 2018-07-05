@@ -55,13 +55,13 @@ class GameBoardView: UIView {
         
         self.subviews.forEach { $0.removeFromSuperview() }
         
+        UIColor(patternImage: #imageLiteral(resourceName: "texture").resized(toWidth: strokeWidth * 2)).setFill()
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
                 if case .void = game.board[x, y] {} else {
                     let path = UIBezierPath(rect: CGRect(origin: point(for: Position(x, y)), size: CGSize(width: squareLength, height: squareLength)))
                     UIColor.black.setStroke()
                     path.lineWidth = strokeWidth
-                    UIColor(patternImage: #imageLiteral(resourceName: "texture")).setFill()
                     path.fill()
                     path.stroke()
                 }
