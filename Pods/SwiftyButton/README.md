@@ -1,6 +1,8 @@
 SwiftyButton
 ============
 
+**Maintainer(s)**: [@camanjj](https://github.com/camanjj)
+
 Simple and customizable button in Swift.
 
 ![](Examples/demo.gif)
@@ -127,12 +129,36 @@ label.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 10, left: 0, bottom: 
 label.autoPinEdge(.left, to: .right, of: indicator, withOffset: 10)
 label.text = "Loading..."
 label.textColor = .white
-``` 
+```
+
+### Known limitations
+
+ - `PressableButton` only works with plain colors (no alpha / transparency) because of the way its background image is rendered. See [#2](https://github.com/TakeScoop/SwiftyButton/issues/2)
+ - `PressableButton` manages title and image insets automatically (`titleEdgeInsets` and `imageEdgeInsets`). See [#5](https://github.com/TakeScoop/SwiftyButton/issues/15)
+    - User-specified inset values for `top` and `bottom` will be overridden.
+    - You may specify inset values for `left` and `right`.
 
 More examples
 -------------
 
 Look at the [Examples](Examples/) folder to see more button examples.
+
+Contribute
+----------
+
+### Publishing a new version
+
+Here's an example of a version bump: [bump to 0.8.0](https://github.com/TakeScoop/SwiftyButton/commit/d6e85522835db6f4c39e4c3ee8114d37f6dc9531).
+
+Replace `NEW_VERSION` with the version you're about to publish.
+
+ - Checkout the `master` branch and ensure it's up-to-date.
+ - Open `SwiftyButton.xcworkspace` and edit settings for the `SwiftyButton` target. Change the target version to `NEW_VERSION`.
+ - Open `CHANGELOG.md` and add a new section `[NEW_VERSION]`. At the bottom of the document, copy a version anchor and link to the new version tag (which we'll create later). Insert a new empty `[master]` section on top.
+ - Open `SwiftyButton.podspec` and edit `s.version` to `NEW_VERSION`.
+ - Commit your changes as `Bump to NEW_VERSION`.
+ - Create a new git tag named `NEW_VERSION` and push your commit + tag to Github.
+ - Push the new pod version with `$ pod trunk push ./`
 
 License
 -------
