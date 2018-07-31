@@ -137,7 +137,7 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
         }
         if data[0] == DataCodes.startGame.rawValue {
             var map: String?
-            if data[1] == DataCodes.mapInfo.rawValue {
+            if data.count == 3 && data[1] == DataCodes.mapInfo.rawValue {
                 map = allMaps[Int(data[2])]
             }
             DispatchQueue.main.async { [weak self] in
