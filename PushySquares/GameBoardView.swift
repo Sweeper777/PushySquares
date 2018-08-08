@@ -63,6 +63,26 @@ class GameBoardView: UIView {
                     path.lineWidth = strokeWidth
                     path.fill()
                     path.stroke()
+                    
+                    let pointForSquareView = squareViewPoint(for: Position(x, y))
+//
+//                    let T: CGFloat = 3     // desired thickness of lines
+//                    let G: CGFloat = 3     // desired gap between lines
+//                    let W = squareViewLength
+//                    let H = squareViewLength
+//
+//                    guard let c = UIGraphicsGetCurrentContext() else { return }
+//                    c.setStrokeColor(UIColor.orange.cgColor)
+//                    c.setLineWidth(T)
+//
+//                    var p = -(W > H ? W : H) - T
+//                    while p <= W {
+//
+//                        c.move( to: CGPoint(x: pointForSquareView.x + p-T, y: pointForSquareView.y + -T) )
+//                        c.addLine( to: CGPoint(x: pointForSquareView.x + p+T+H, y: pointForSquareView.y + T+H) )
+//                        c.strokePath()
+//                        p += G + T + T
+//                    }
                 }
             }
         }
