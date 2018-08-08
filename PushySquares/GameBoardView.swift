@@ -55,7 +55,6 @@ class GameBoardView: UIView {
         
         self.subviews.forEach { $0.removeFromSuperview() }
         
-        UIColor(patternImage: #imageLiteral(resourceName: "texture").resized(toWidth: strokeWidth * 2)).setFill()
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
                 if case .void = game.board[x, y] {} else {
