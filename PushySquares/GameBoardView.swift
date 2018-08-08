@@ -91,6 +91,7 @@ class GameBoardView: UIView {
         }
         
 //        UIColor(patternImage: #imageLiteral(resourceName: "texture").ResizeImage(targetSize: CGSize(width: strokeWidth * 2, height: strokeWidth * 2))).setFill()
+        UIColor.clear.setFill()
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
                 if case .void = game.board[x, y] {} else {
@@ -101,6 +102,7 @@ class GameBoardView: UIView {
                     path.stroke()
                     
                     let pointForSquareView = squareViewPoint(for: Position(x, y))
+                    simpleStripes(x: pointForSquareView.x, y: pointForSquareView.y, width: squareViewLength, height: squareViewLength)
 //
 //                    let T: CGFloat = 3     // desired thickness of lines
 //                    let G: CGFloat = 3     // desired gap between lines
