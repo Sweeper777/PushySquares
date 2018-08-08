@@ -90,7 +90,6 @@ class GameBoardView: UIView {
             c.restoreGState()
         }
         
-//        UIColor(patternImage: #imageLiteral(resourceName: "texture").ResizeImage(targetSize: CGSize(width: strokeWidth * 2, height: strokeWidth * 2))).setFill()
         UIColor.clear.setFill()
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
@@ -103,24 +102,6 @@ class GameBoardView: UIView {
                     
                     let pointForSquareView = squareViewPoint(for: Position(x, y))
                     simpleStripes(x: pointForSquareView.x, y: pointForSquareView.y, width: squareViewLength, height: squareViewLength)
-//
-//                    let T: CGFloat = 3     // desired thickness of lines
-//                    let G: CGFloat = 3     // desired gap between lines
-//                    let W = squareViewLength
-//                    let H = squareViewLength
-//
-//                    guard let c = UIGraphicsGetCurrentContext() else { return }
-//                    c.setStrokeColor(UIColor.orange.cgColor)
-//                    c.setLineWidth(T)
-//
-//                    var p = -(W > H ? W : H) - T
-//                    while p <= W {
-//
-//                        c.move( to: CGPoint(x: pointForSquareView.x + p-T, y: pointForSquareView.y + -T) )
-//                        c.addLine( to: CGPoint(x: pointForSquareView.x + p+T+H, y: pointForSquareView.y + T+H) )
-//                        c.strokePath()
-//                        p += G + T + T
-//                    }
                 }
             }
         }
@@ -178,48 +159,5 @@ class GameBoardView: UIView {
     
     func position(forViewTag tag: Int) -> Position {
         return Position(tag / 1000, tag % 1000)
-    }
-}
-
-extension UIImage {
-    func resized(toWidth newWidth: CGFloat) -> UIImage {
-        
-        let scale = newWidth / size.width
-        let newHeight = size.height * scale
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: newWidth, height: newHeight), false, 0)
-        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
-    }
-}
-
-extension UIImage {
-    
-    func ResizeImage(targetSize: CGSize) -> UIImage
-    {
-        let size = self.size
-        
-        let widthRatio  = targetSize.width  / self.size.width
-        let heightRatio = targetSize.height / self.size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
-        }
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width,height: newSize.height)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        self.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
     }
 }
