@@ -55,6 +55,41 @@ class GameBoardView: UIView {
         
         self.subviews.forEach { $0.removeFromSuperview() }
         
+        func simpleStripes(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+            
+            let stripeWidth: CGFloat = strokeWidth // whatever you want
+            let m = stripeWidth / 2.0
+            
+            guard let c = UIGraphicsGetCurrentContext() else { return }
+            c.setLineWidth(stripeWidth)
+            
+            let r = CGRect(x: x, y: y, width: width, height: height)
+            let longerSide = width > height ? width : height
+            
+            c.saveGState()
+            c.clip(to: r)
+            
+            var p = x - longerSide
+            while p <= x + width {
+                
+                c.setStrokeColor(UIColor(hex: "ccc3a9").cgColor)
+                c.move( to: CGPoint(x: p-m, y: y-m) )
+                c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
+                c.strokePath()
+                
+                p += stripeWidth
+                
+                c.setStrokeColor(UIColor.clear.cgColor)
+                c.move( to: CGPoint(x: p-m, y: y-m) )
+                c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
+                c.strokePath()
+                
+                p += stripeWidth
+            }
+            
+            c.restoreGState()
+        }
+        
 //        UIColor(patternImage: #imageLiteral(resourceName: "texture").ResizeImage(targetSize: CGSize(width: strokeWidth * 2, height: strokeWidth * 2))).setFill()
         for x in 0..<game.board.columns {
             for y in 0..<game.board.rows {
