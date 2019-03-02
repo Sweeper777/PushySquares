@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4CBCD09224F5D9D61836338AD29C9D7E'
-               BlueprintName = 'SCLAlertView'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SCLAlertView.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B0ECCA91E0CCF234701EF568EF05B733"
+               BlueprintName = "SCLAlertView"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SCLAlertView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

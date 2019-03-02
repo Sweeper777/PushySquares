@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '19864AB8F7B8E9064740E008772C4404'
-               BlueprintName = 'DynamicColor'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DynamicColor.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CFD59036C43DAC1E7E2B4AE9A74A2062"
+               BlueprintName = "DynamicColor"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "DynamicColor.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

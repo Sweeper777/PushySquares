@@ -64,7 +64,7 @@ extension String {
     }
 
     public var capitalizedFirst: String {
-        let result = replacingCharacters(in: Range(startIndex..<startIndex), with: String(self[startIndex]).capitalized)
+        let result = replacingCharacters(in: startIndex..<startIndex, with: String(self[startIndex]).capitalized)
         return result
     }
 

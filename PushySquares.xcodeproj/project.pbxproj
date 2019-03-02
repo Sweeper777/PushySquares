@@ -342,7 +342,6 @@
 				5A29473B1F569D22002E833B /* Frameworks */,
 				5A29473C1F569D22002E833B /* Resources */,
 				ABE678E962A4782065EE6088 /* [CP] Embed Pods Frameworks */,
-				0D675EAA2DD5100747B9F9E4 /* [CP] Copy Pods Resources */,
 				5A2947671F56B9DC002E833B /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -479,21 +478,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D675EAA2DD5100747B9F9E4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		ABE678E962A4782065EE6088 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

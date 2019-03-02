@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EE3691EC1790F9E2DF30CA69838D230D'
-               BlueprintName = 'FittableFontLabel'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FittableFontLabel.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FE9B72553A1D3897B5141DF9777D44E3"
+               BlueprintName = "FittableFontLabel"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "FittableFontLabel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
