@@ -147,11 +147,11 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-//        if connectedPeerID != nil {
-//            invitationHandler(false, nil)
-//        } else {
+        if connectedPeerID != nil {
+            invitationHandler(false, nil)
+        } else {
             invitationHandler(true, session)
             connectedPeerID = peerID
-//        }
+        }
     }
 }
