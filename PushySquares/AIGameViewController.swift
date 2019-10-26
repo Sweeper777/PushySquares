@@ -7,6 +7,8 @@ class AIGameViewController: GameViewController {
     var aiQueue = DispatchQueue(label: "gameAI")
     var currentAI: GameAI!
     
+    var shouldRestart = false
+    
     override func newGame() -> Game {
         let game = Game(map: map, playerCount: playerCount + aiCount)
         var colors = game.players.map { $0.color }
