@@ -20,6 +20,11 @@ class AIGameViewController: GameViewController {
     }
     
     override func animationDidComplete() {
+        if shouldRestart {
+            restart()
+            shouldRestart = false
+            return
+        }
         if !self.playerColors.contains(self.game.currentPlayer.color) {
             allGR.forEach { $0.isEnabled = false }
             let livingPlayersCount = game.players.filter({$0.lives > 0}).count
@@ -58,6 +63,7 @@ class AIGameViewController: GameViewController {
             if self.playerColors.contains(self.game.currentPlayer.color) {
                 self.restart()
             } else {
+                self.shouldRestart = true
             }
         })
         alert.addButton("No".localized, action: {})
