@@ -78,5 +78,24 @@ public func printBoard(_ board: Array2D<Tile>) {
     }
 }
 
-let allMaps = ["standard", "small", "large", "hole", "walls", "zigzag", "quick", "grey1", "grey2", "grey3", "diagonal", "slippery", "superslippery", "morewalls"]
+let allMaps = ["standard",
+               "small",
+               "large",
+               "hole",
+               "walls",
+               "zigzag",
+               "quick",
+               "grey1",
+               "grey2",
+               "grey3",
+               "diagonal",
+               "slippery",
+               "superslippery",
+               "morewalls",
+               "cublex1",
+               "cublex2",
+               "cublex3",
+               "cublex4",
+               "cublex5",
+]
 
