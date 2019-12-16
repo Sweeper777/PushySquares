@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A08D2DB23A54B6500A56878 /* cublex1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A08D2D923A54B5200A56878 /* cublex1.map */; };
+		5A08D2DC23A54B6500A56878 /* cublex2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A08D2D723A54B5200A56878 /* cublex2.map */; };
+		5A08D2DD23A54B6500A56878 /* cublex3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A08D2D623A54B5200A56878 /* cublex3.map */; };
+		5A08D2DE23A54B6500A56878 /* cublex4.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A08D2DA23A54B5200A56878 /* cublex4.map */; };
+		5A08D2DF23A54B6500A56878 /* cublex5.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A08D2D823A54B5200A56878 /* cublex5.map */; };
 		5A22431B1FA9B2E4005FD64B /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431A1FA9B2E4005FD64B /* GameAI.swift */; };
 		5A22431C1FA9B2E4005FD64B /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431A1FA9B2E4005FD64B /* GameAI.swift */; };
 		5A22431E1FA9B3AD005FD64B /* AIGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */; };
@@ -106,6 +111,11 @@
 /* Begin PBXFileReference section */
 		165727B66FC409F48166F07A /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Pods/Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 		42D8CA04A9DAEA669F896D08 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A08D2D623A54B5200A56878 /* cublex3.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex3.map; sourceTree = "<group>"; };
+		5A08D2D723A54B5200A56878 /* cublex2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex2.map; sourceTree = "<group>"; };
+		5A08D2D823A54B5200A56878 /* cublex5.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex5.map; sourceTree = "<group>"; };
+		5A08D2D923A54B5200A56878 /* cublex1.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex1.map; sourceTree = "<group>"; };
+		5A08D2DA23A54B5200A56878 /* cublex4.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex4.map; sourceTree = "<group>"; };
 		5A22431A1FA9B2E4005FD64B /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		5A22431D1FA9B3AD005FD64B /* AIGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIGameViewController.swift; sourceTree = "<group>"; };
 		5A2316CC1F88B88D00CDD382 /* ButtonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonImageView.swift; sourceTree = "<group>"; };
@@ -296,6 +306,11 @@
 				5A3ED5F820128B6F00A9629E /* slippery.map */,
 				5A3AF5E3201C9EB500E9EBDC /* superslippery.map */,
 				5A44398A20ECC4BC00A49486 /* morewalls.map */,
+				5A08D2D923A54B5200A56878 /* cublex1.map */,
+				5A08D2D723A54B5200A56878 /* cublex2.map */,
+				5A08D2D623A54B5200A56878 /* cublex3.map */,
+				5A08D2DA23A54B5200A56878 /* cublex4.map */,
+				5A08D2D823A54B5200A56878 /* cublex5.map */,
 				5A374927203835B800221142 /* Localizable.strings */,
 			);
 			path = PushySquares;
@@ -398,6 +413,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hant",
@@ -419,6 +435,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A08D2DB23A54B6500A56878 /* cublex1.map in Resources */,
+				5A08D2DC23A54B6500A56878 /* cublex2.map in Resources */,
+				5A08D2DD23A54B6500A56878 /* cublex3.map in Resources */,
+				5A08D2DE23A54B6500A56878 /* cublex4.map in Resources */,
+				5A08D2DF23A54B6500A56878 /* cublex5.map in Resources */,
 				5A467AEB1FF9B9C200BCB771 /* grey1.map in Resources */,
 				5A29474C1F569D22002E833B /* LaunchScreen.storyboard in Resources */,
 				5A2706041F8A28030057B90C /* help.html in Resources */,
