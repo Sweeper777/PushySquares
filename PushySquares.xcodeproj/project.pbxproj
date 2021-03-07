@@ -15,6 +15,9 @@
 		5AD4F44B25F34A7D00B500A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */; };
 		5AD4F45625F34A7E00B500A9 /* PushySquaresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F45525F34A7E00B500A9 /* PushySquaresTests.swift */; };
 		5AD4F46125F34A7E00B500A9 /* PushySquaresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F46025F34A7E00B500A9 /* PushySquaresUITests.swift */; };
+		5EF7FF885880A176B51D40F8 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */; };
+		7BE3A0B950EC58FC1CA72937 /* Pods_PushySquaresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */; };
+		C14C3474F295C0ACD18F65AA /* Pods_PushySquares_PushySquaresUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		5AD4F45C25F34A7E00B500A9 /* PushySquaresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushySquaresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD4F46025F34A7E00B500A9 /* PushySquaresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushySquaresUITests.swift; sourceTree = "<group>"; };
 		5AD4F46225F34A7E00B500A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E98453662355195AEDAB5A6 /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
+		7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares-PushySquaresUITests.debug.xcconfig"; path = "Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8275876E72990E344C24CA91 /* Pods-PushySquaresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquaresTests.debug.xcconfig"; path = "Target Support Files/Pods-PushySquaresTests/Pods-PushySquaresTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares-PushySquaresUITests.release.xcconfig"; path = "Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquaresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7148E52F07B3DBED3B62D5 /* Pods-PushySquaresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquaresTests.release.xcconfig"; path = "Target Support Files/Pods-PushySquaresTests/Pods-PushySquaresTests.release.xcconfig"; sourceTree = "<group>"; };
+		CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares_PushySquaresUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC2DE3B54C49071F7B6F460 /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF7FF885880A176B51D40F8 /* Pods_PushySquares.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE3A0B950EC58FC1CA72937 /* Pods_PushySquaresTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14C3474F295C0ACD18F65AA /* Pods_PushySquares_PushySquaresUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44CA1BB36074894F1A38335E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */,
+				CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */,
+				C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5AD4F43225F34A7B00B500A9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				5AD4F45425F34A7E00B500A9 /* PushySquaresTests */,
 				5AD4F45F25F34A7E00B500A9 /* PushySquaresUITests */,
 				5AD4F43C25F34A7B00B500A9 /* Products */,
+				6D2F5245F0DC49B74684D85C /* Pods */,
+				44CA1BB36074894F1A38335E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,20 @@
 			path = PushySquaresUITests;
 			sourceTree = "<group>";
 		};
+		6D2F5245F0DC49B74684D85C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E98453662355195AEDAB5A6 /* Pods-PushySquares.debug.xcconfig */,
+				EEC2DE3B54C49071F7B6F460 /* Pods-PushySquares.release.xcconfig */,
+				7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */,
+				AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */,
+				8275876E72990E344C24CA91 /* Pods-PushySquaresTests.debug.xcconfig */,
+				CC7148E52F07B3DBED3B62D5 /* Pods-PushySquaresTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AD4F46525F34A7E00B500A9 /* Build configuration list for PBXNativeTarget "PushySquares" */;
 			buildPhases = (
+				BD9C89AF86621D8B7448DA11 /* [CP] Check Pods Manifest.lock */,
 				5AD4F43725F34A7B00B500A9 /* Sources */,
 				5AD4F43825F34A7B00B500A9 /* Frameworks */,
 				5AD4F43925F34A7B00B500A9 /* Resources */,
+				B6F04F7EDFBCFAB0033F5790 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AD4F46825F34A7E00B500A9 /* Build configuration list for PBXNativeTarget "PushySquaresTests" */;
 			buildPhases = (
+				8C7FCD8124A8DFA83E3B488F /* [CP] Check Pods Manifest.lock */,
 				5AD4F44D25F34A7E00B500A9 /* Sources */,
 				5AD4F44E25F34A7E00B500A9 /* Frameworks */,
 				5AD4F44F25F34A7E00B500A9 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AD4F46B25F34A7E00B500A9 /* Build configuration list for PBXNativeTarget "PushySquaresUITests" */;
 			buildPhases = (
+				9B0239468BAB31CC2040ABA4 /* [CP] Check Pods Manifest.lock */,
 				5AD4F45825F34A7E00B500A9 /* Sources */,
 				5AD4F45925F34A7E00B500A9 /* Frameworks */,
 				5AD4F45A25F34A7E00B500A9 /* Resources */,
+				DDD84C7079C67971ACE632A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C7FCD8124A8DFA83E3B488F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushySquaresTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0239468BAB31CC2040ABA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushySquares-PushySquaresUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6F04F7EDFBCFAB0033F5790 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushySquares/Pods-PushySquares-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushySquares/Pods-PushySquares-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushySquares/Pods-PushySquares-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD9C89AF86621D8B7448DA11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushySquares-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDD84C7079C67971ACE632A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AD4F43725F34A7B00B500A9 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		5AD4F46625F34A7E00B500A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E98453662355195AEDAB5A6 /* Pods-PushySquares.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +602,7 @@
 		};
 		5AD4F46725F34A7E00B500A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC2DE3B54C49071F7B6F460 /* Pods-PushySquares.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +622,7 @@
 		};
 		5AD4F46925F34A7E00B500A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8275876E72990E344C24CA91 /* Pods-PushySquaresTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +645,7 @@
 		};
 		5AD4F46A25F34A7E00B500A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC7148E52F07B3DBED3B62D5 /* Pods-PushySquaresTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +668,7 @@
 		};
 		5AD4F46C25F34A7E00B500A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +689,7 @@
 		};
 		5AD4F46D25F34A7E00B500A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
