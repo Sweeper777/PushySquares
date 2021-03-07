@@ -1,6 +1,0 @@
-framework module Pods_PushySquares {
-  umbrella header "Pods-PushySquares-umbrella.h"
-
-  export *
-  module * { export * }
-}
