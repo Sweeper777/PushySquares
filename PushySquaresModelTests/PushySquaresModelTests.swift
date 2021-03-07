@@ -1,14 +1,14 @@
 //
-//  PushySquaresTests.swift
-//  PushySquaresTests
+//  PushySquaresModelTests.swift
+//  PushySquaresModelTests
 //
-//  Created by Mulang Su on 6/3/2021.
+//  Created by Mulang Su on 7/3/2021.
 //
 
 import XCTest
-@testable import PushySquares
+@testable import PushySquaresModel
 
-class PushySquaresTests: XCTestCase {
+class PushySquaresModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
