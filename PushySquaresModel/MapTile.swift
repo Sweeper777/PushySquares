@@ -1,4 +1,4 @@
-public enum MapTile {
+public enum MapTile : Equatable {
     case void
     case ground
     case wall
