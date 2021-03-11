@@ -21,4 +21,45 @@ public struct Map {
         self.spawnpoints = spawnpoints
     }
     
+    public init(file path: String) {
+        let fileContents = try! String(contentsOfFile: path)
+        let mapTileDict: [Character: MapTile] = [
+            ".": .void,
+            "+": .ground,
+            "O": .wall,
+            "g": .ground,
+            "s": .slippery,
+            "1": .spawnpoint(for: .red),
+            "2": .spawnpoint(for: .blue),
+            "3": .spawnpoint(for: .green),
+            "4": .spawnpoint(for: .yellow),
+        ]
+        let boardStateDict: [Character: BoardState] = [
+            "g": .deadBody,
+        ]
+        let lines = fileContents.components(separatedBy: "\n").filter({!$0.isEmpty})
+        var board = Array2D<MapTile>(columns: lines.first!.count, rows: lines.count, initialValue: .void)
+        var initialState = Array2D<BoardState>(columns: lines.first!.count, rows: lines.count, initialValue: .empty)
+        var spawnpoints = [Color: Position]()
+        for (x, line) in lines.enumerated() {
+            for (y, c) in line.enumerated() {
+                board[x, y] = mapTileDict[c] ?? .ground
+                initialState[x, y] = boardStateDict[c] ?? .empty
+                switch c {
+                case "1":
+                    spawnpoints[.red] = Position(x, y)
+                case "2":
+                    spawnpoints[.blue] = Position(x, y)
+                case "3":
+                    spawnpoints[.green] = Position(x, y)
+                case "4":
+                    spawnpoints[.yellow] = Position(x, y)
+                default: break
+                }
+            }
+        }
+        self.board = board
+        self.spawnpoints = spawnpoints
+        self.initialBoardState = initialState
+    }
 }
