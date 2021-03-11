@@ -157,3 +157,11 @@ extension Position: CustomStringConvertible {
         return "(\(x), \(y))"
     }
 }
+
+extension Array2D where Element == BoardState {
+    public func indices(ofColor color: Color) -> [Position] {
+        indicesOf(itemsWhere: {
+            $0 == .square(color)
+        })
+    }
+}
