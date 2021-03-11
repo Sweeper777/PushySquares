@@ -21,8 +21,8 @@ public struct Map {
         self.spawnpoints = spawnpoints
     }
     
-    public init(file path: String) {
-        let fileContents = try! String(contentsOfFile: path)
+    public init(file url: URL) {
+        let fileContents = try! String(contentsOf: url)
         let mapTileDict: [Character: MapTile] = [
             ".": .void,
             "+": .ground,
