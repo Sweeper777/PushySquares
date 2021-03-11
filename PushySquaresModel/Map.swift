@@ -63,3 +63,34 @@ public struct Map {
         self.initialBoardState = initialState
     }
 }
+
+public func printBoard(_ board: Array2D<MapTile>, state: Array2D<BoardState>) {
+    for y in 0..<board.columns {
+        for x in 0..<board.rows {
+            switch (board[x, y], state[x, y]) {
+            case (.spawnpoint, .empty), (.ground, .empty):
+                print("⬜️", separator: "", terminator: "")
+            case (.slippery, .empty):
+                print("💦", separator: "", terminator: "")
+            case (.wall, _):
+                print("🔲", separator: "", terminator: "")
+            case (.void, _):
+                print("▫️", separator: "", terminator: "")
+            case (_, .square(let color)):
+                switch color {
+                case .red:
+                    print("🚹", separator: "", terminator: "")
+                case .blue:
+                    print("🚺", separator: "", terminator: "")
+                case .green:
+                    print("🚼", separator: "", terminator: "")
+                case .yellow:
+                    print("❇️", separator: "", terminator: "")
+                }
+            case (_, .deadBody):
+                print("ℹ️", separator: "", terminator: "")
+            }
+        }
+        print("")
+    }
+}
