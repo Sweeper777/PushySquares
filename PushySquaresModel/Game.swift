@@ -51,4 +51,12 @@ public class Game {
         currentPlayer.turnsUntilNewSquare -= 1
     }
     
+    public init(game: Game) {
+        self.boardState = game.boardState
+        self.map = game.map
+        self.spawnpoints = game.spawnpoints
+        self.players = game.players.map { $0.createCopy() }
+        self.currentPlayerIndex = game.currentPlayerIndex
+    }
+    
 }
