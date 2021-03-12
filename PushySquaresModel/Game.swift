@@ -60,6 +60,24 @@ public class Game {
     }
     
     
+    func isEdge(position: Position) -> [Direction] {
+        var directions = [Direction]()
+        if case .void = map[position.above()] {
+            directions.append(.up)
+        }
+        if case .void = map[position.below()] {
+            directions.append(.down)
+        }
+        if case .void = map[position.left()] {
+            directions.append(.left)
+        }
+        if case .void = map[position.right()] {
+            directions.append(.right)
+        }
+        return directions
+    }
+
+    
     enum SlipResult {
         case success
         case fail
