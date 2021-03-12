@@ -59,4 +59,10 @@ public class Game {
         self.currentPlayerIndex = game.currentPlayerIndex
     }
     
+    
+    enum SlipResult {
+        case success
+        case fail
+        case death
+    }
 }
