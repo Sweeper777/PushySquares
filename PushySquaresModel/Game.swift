@@ -77,6 +77,9 @@ public class Game {
         return directions
     }
 
+    private func spawnNewSquare(color: Color) {
+        boardState[spawnpoints[color]!] = .square(color)
+    }
     
     enum SlipResult {
         case success
