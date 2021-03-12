@@ -60,6 +60,27 @@ public class Game {
     }
     
     
+    private func canSlip(in direction: Direction, position: Position) -> SlipResult {
+        let displace = direction.displacementFunction
+        let displaced = displace(position)
+        if map[displaced] == .slippery || boardState[displaced].isSquare {
+            return .fail
+        }
+        if let slippedState = boardState[safe: displace(displaced)],
+           let slippedMapTile = map[safe: displace(displaced)] {
+            switch (slippedMapTile, slippedState) {
+            case (.void, _):
+                return .death
+            case (.wall, _), (_, .square), (_, .deadBody):
+                return .fail
+            default:
+                return .success
+            }
+        } else {
+            return .fail
+        }
+    }
+    
     func isEdge(position: Position) -> [Direction] {
         var directions = [Direction]()
         if case .void = map[position.above()] {
