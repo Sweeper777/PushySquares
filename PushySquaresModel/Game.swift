@@ -59,6 +59,22 @@ public class Game {
         self.currentPlayerIndex = game.currentPlayerIndex
     }
     
+    public func killPlayer(_ color: Color) {
+        guard let index = players.firstIndex(where: { $0.color == color && $0.lives > 0 }) else { return }
+        let player = players[index]
+        player.lives = 0
+        var greyedOutPositions = [Position]()
+        for position in boardState.indices(ofColor: color) {
+            boardState[position] = .deadBody
+            greyedOutPositions.append(position)
+        }
+        
+        if currentPlayer.color == color {
+            nextTurn()
+        }
+        
+    }
+    
     private func nextTurn() {
         if (!players.contains { $0.lives > 0 }) {
             return
