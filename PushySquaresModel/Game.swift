@@ -59,6 +59,22 @@ public class Game {
         self.currentPlayerIndex = game.currentPlayerIndex
     }
     
+    private func nextTurn() {
+        if (!players.contains { $0.lives > 0 }) {
+            return
+        }
+        
+        repeat {
+            currentPlayerIndex = currentPlayerIndex == players.endIndex - 1 ? 0 : currentPlayerIndex + 1
+        } while currentPlayer.lives == 0
+        currentPlayer.turnsUntilNewSquare -= 1
+        if currentPlayer.turnsUntilNewSquare == 0 {
+            if case .empty = boardState[spawnpoints[currentPlayer.color]!] {
+                spawnNewSquare(color: currentPlayer.color)
+            }
+            currentPlayer.turnsUntilNewSquare = Game.playerCountToTurnsUntilNewSquare[players.count]! + 1
+        }
+    }
     
     private func canSlip(in direction: Direction, position: Position) -> SlipResult {
         let displace = direction.displacementFunction
