@@ -5,7 +5,7 @@ public struct Map {
     public let initialBoardState: Array2D<BoardState>
     public let spawnpoints: [Color: Position]
     
-    public static let standard = Map(file: Bundle.main.path(forResource: "standard", ofType: "map")!)
+    public static let standard = Map(file: Bundle.main.url(forResource: "standard", withExtension: "map")!)
     
     public init(board: Array2D<MapTile>, initialBoardState: Array2D<BoardState>) {
         self.board = board
