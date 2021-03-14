@@ -6,9 +6,9 @@ public class Game {
     ]
     
     public let map: Array2D<MapTile>
-    public private(set) var boardState: Array2D<BoardState>
-    public private(set) var spawnpoints: [Color: Position]
-    public private(set) var players = [Player]()
+    public internal(set) var boardState: Array2D<BoardState>
+    public internal(set) var spawnpoints: [Color: Position]
+    public internal(set) var players = [Player]()
     public var currentPlayer: Player {
         return players[currentPlayerIndex]
     }
