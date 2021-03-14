@@ -132,6 +132,26 @@ public class Game {
                 newSquareColor: newSquareColor)
     }
 
+    private func handleDeaths(destroyedSquarePositions: [Position]) -> [Position] {
+        var retVal = [Position]()
+        for player in players {
+            let destroyedSquares = destroyedSquarePositions.filter {
+                if case .square(player.color) = boardState[$0] {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            player.lives -= destroyedSquares.count
+            if player.lives == 0 {
+                for pos in boardState.indices(ofColor: player.color) {
+                    retVal.append(pos)
+                    boardState[pos] = .deadBody
+                }
+            }
+        }
+        return retVal
+    }
     
     public func killPlayer(_ color: Color) {
         guard let index = players.firstIndex(where: { $0.color == color && $0.lives > 0 }) else { return }
