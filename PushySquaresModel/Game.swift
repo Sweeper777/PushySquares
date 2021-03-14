@@ -59,6 +59,26 @@ public class Game {
         self.currentPlayerIndex = game.currentPlayerIndex
     }
 
+    @discardableResult
+    public func moveUp() -> MoveResult {
+        move(sortOrder: { $0.y < $1.y }, direction: .up)
+    }
+
+    @discardableResult
+    public func moveDown() -> MoveResult {
+        move(sortOrder: { $0.y > $1.y }, direction: .down)
+    }
+
+    @discardableResult
+    public func moveLeft() -> MoveResult {
+        move(sortOrder: { $0.x < $1.x }, direction: .left)
+    }
+
+    @discardableResult
+    public func moveRight() -> MoveResult {
+        move(sortOrder: { $0.x > $1.x }, direction: .right)
+    }
+
     private func move(sortOrder: (Position, Position) -> Bool, direction: Direction) -> MoveResult {
         let displace = direction.displacementFunction
         let allSquaresPositions = boardState.indices(ofColor: currentPlayer.color)
