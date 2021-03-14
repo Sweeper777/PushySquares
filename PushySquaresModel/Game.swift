@@ -58,6 +58,80 @@ public class Game {
         self.players = game.players.map { $0.createCopy() }
         self.currentPlayerIndex = game.currentPlayerIndex
     }
+
+    private func move(sortOrder: (Position, Position) -> Bool, direction: Direction) -> MoveResult {
+        let displace = direction.displacementFunction
+        let allSquaresPositions = boardState.indices(ofColor: currentPlayer.color)
+
+        if allSquaresPositions.isEmpty {
+            nextTurn()
+            let newSquareColor = evaluateTurnsUntilNewSquare()
+            return MoveResult(direction: direction, newSquareColor: newSquareColor)
+        }
+
+        var movingSquaresPositions = [Position]()
+        var beingDestroyedSquaresPositions = [Position]()
+        for position in allSquaresPositions {
+            var pushedPositions = [position]
+            loop: while true {
+                switch (boardState[displace(pushedPositions.last!)], map[displace(pushedPositions.last!)]) {
+                case (.empty, .ground), (.empty, .slippery), (.empty, .spawnpoint):
+                    break loop
+                case (_, .wall):
+                    pushedPositions = []
+                    break loop
+                case (_, .void):
+                    beingDestroyedSquaresPositions.append(pushedPositions.last!)
+                    break loop
+                default:
+                    pushedPositions.append(displace(pushedPositions.last!))
+                }
+            }
+            movingSquaresPositions.append(contentsOf: pushedPositions)
+        }
+        var slippedPositions = [Position]()
+        movingSquaresPositions = Array(Set(movingSquaresPositions))
+
+        for position in movingSquaresPositions {
+            switch canSlip(in: direction, position: position) {
+            case .fail:
+                continue
+            case .death:
+                beingDestroyedSquaresPositions.append(position)
+                fallthrough
+            case .success:
+                slippedPositions.append(position)
+                movingSquaresPositions.removeAll(where: { $0 == position })
+            }
+        }
+
+        let sortedPositions = movingSquaresPositions.sorted(by: sortOrder)
+        beingDestroyedSquaresPositions = Array(Set(beingDestroyedSquaresPositions))
+
+        let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
+
+        for position in slippedPositions + sortedPositions {
+            let tile = boardState[position]
+            boardState[position] = .empty
+            if !beingDestroyedSquaresPositions.contains(position) {
+                if slippedPositions.contains(position) {
+                    boardState[displace(displace(position))] = tile
+                } else {
+                    boardState[displace(position)] = tile
+                }
+            }
+        }
+        nextTurn()
+        let newSquareColor = evaluateTurnsUntilNewSquare()
+        return MoveResult(
+                direction: direction,
+                movedPositions: movingSquaresPositions,
+                slippedPositions: slippedPositions,
+                fellPositions: beingDestroyedSquaresPositions,
+                greyedOutPositions: greyedOutSquaresPositions,
+                newSquareColor: newSquareColor)
+    }
+
     
     public func killPlayer(_ color: Color) {
         guard let index = players.firstIndex(where: { $0.color == color && $0.lives > 0 }) else { return }
