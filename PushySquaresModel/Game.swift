@@ -83,13 +83,19 @@ public class Game {
         repeat {
             currentPlayerIndex = currentPlayerIndex == players.endIndex - 1 ? 0 : currentPlayerIndex + 1
         } while currentPlayer.lives == 0
+    }
+
+    private func evaluateTurnsUntilNewSquare() -> Color? {
         currentPlayer.turnsUntilNewSquare -= 1
         if currentPlayer.turnsUntilNewSquare == 0 {
-            if case .empty = boardState[spawnpoints[currentPlayer.color]!] {
+            if boardState[spawnpoints[currentPlayer.color]!] == .empty {
                 spawnNewSquare(color: currentPlayer.color)
+                currentPlayer.turnsUntilNewSquare = Game.playerCountToTurnsUntilNewSquare[players.count]! + 1
+                return currentPlayer.color
             }
             currentPlayer.turnsUntilNewSquare = Game.playerCountToTurnsUntilNewSquare[players.count]! + 1
         }
+        return nil
     }
     
     private func canSlip(in direction: Direction, position: Position) -> SlipResult {
