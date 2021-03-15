@@ -23,3 +23,23 @@ extension Game {
     }
 }
 
+public class GameAI {
+    var gameStates: [Game]
+    var game: Game {
+        gameStates.last!
+    }
+    let wSelfLife: Int
+    //    let wOpponentLifeLoss: Int
+    let wDiffLives: Int
+    let wSquareThreshold: Int
+    let wSelfSpreadBelowThreshold: Int
+    let wSelfSpreadAboveThreshold: Int
+    let wOpponentSpread: Int
+    let wSelfInDanger: Int
+    let wOpponentInDangerBelowThreshold: Int
+    let wOpponentInDangerAboveThreshold: Int
+    let searchDepth = 6
+
+    let myColor: Color
+
+}
