@@ -89,8 +89,8 @@ public class Game {
             return MoveResult(direction: direction, newSquareColor: newSquareColor)
         }
 
-        var movingSquaresPositions = [Position]()
-        var beingDestroyedSquaresPositions = [Position]()
+        var movingSquaresPositions = Set<Position>()
+        var beingDestroyedSquaresPositions = Set<Position>()
         for position in allSquaresPositions {
             var pushedPositions = [position]
             loop: while true {
@@ -101,32 +101,31 @@ public class Game {
                     pushedPositions = []
                     break loop
                 case (_, .void):
-                    beingDestroyedSquaresPositions.append(pushedPositions.last!)
+                    beingDestroyedSquaresPositions.insert(pushedPositions.last!)
                     break loop
                 default:
                     pushedPositions.append(displace(pushedPositions.last!))
                 }
             }
-            movingSquaresPositions.append(contentsOf: pushedPositions)
+            movingSquaresPositions.formUnion(pushedPositions)
         }
-        var slippedPositions = [Position]()
-        movingSquaresPositions = Array(Set(movingSquaresPositions))
+        var slippedPositions = Set<Position>()
 
         for position in movingSquaresPositions {
             switch canSlip(in: direction, position: position) {
             case .fail:
                 continue
             case .death:
-                beingDestroyedSquaresPositions.append(position)
+                beingDestroyedSquaresPositions.insert(position)
                 fallthrough
             case .success:
-                slippedPositions.append(position)
-                movingSquaresPositions.removeAll(where: { $0 == position })
+                slippedPositions.insert(position)
+                movingSquaresPositions.remove(position)
             }
         }
 
         let sortedPositions = movingSquaresPositions.sorted(by: sortOrder)
-        beingDestroyedSquaresPositions = Array(Set(beingDestroyedSquaresPositions))
+        beingDestroyedSquaresPositions = Set(beingDestroyedSquaresPositions)
 
         let greyedOutSquaresPositions = handleDeaths(destroyedSquarePositions: beingDestroyedSquaresPositions)
 
@@ -152,8 +151,8 @@ public class Game {
                 newSquareColor: newSquareColor)
     }
 
-    private func handleDeaths(destroyedSquarePositions: [Position]) -> [Position] {
-        var retVal = [Position]()
+    private func handleDeaths(destroyedSquarePositions: Set<Position>) -> Set<Position> {
+        var retVal = Set<Position>()
         for player in players {
             let destroyedSquares = destroyedSquarePositions.filter {
                 if case .square(player.color) = boardState[$0] {
@@ -165,7 +164,7 @@ public class Game {
             player.lives -= destroyedSquares.count
             if player.lives == 0 {
                 for pos in boardState.indices(ofColor: player.color) {
-                    retVal.append(pos)
+                    retVal.insert(pos)
                     boardState[pos] = .deadBody
                 }
             }
