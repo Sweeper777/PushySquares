@@ -182,4 +182,13 @@ public class GameAI {
         return (bestScore, bestDirection ?? .left)
     }
 
+    public func getNextMove(on dispatchQueue: DispatchQueue, completion: @escaping (Direction) -> Void) {
+        dispatchQueue.sync {
+            completion(minimax(depth: searchDepth, color: myColor).direction)
+        }
+    }
+
+    public func getNextMove() -> Direction {
+        minimax(depth: searchDepth, color: myColor).direction
+    }
 }
