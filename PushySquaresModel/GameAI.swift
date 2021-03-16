@@ -61,4 +61,49 @@ public class GameAI {
         self.init(game: game, myColor: myColor, wSelfLife: arr[0], wDiffLives: arr[1], wSquareThreshold: arr[2], wSelfSpreadBelowThreshold: arr[3], wSelfSpreadAboveThreshold: arr[4], wOpponentSpread: arr[5], wSelfInDanger: arr[6], wOpponentInDangerBelowThreshold: arr[7], wOpponentInDangerAboveThreshold: arr[8])
     }
 
+    func evaluateHeuristics() -> Int {
+        let livingPlayers = game.players.filter({ $0.lives > 0 })
+        let me = game.player(myColor)
+        if me.lives == 0 {
+            return Int.min
+        }
+        if livingPlayers.count == 1 && me.lives > 0 {
+            return Int.max
+        }
+        if livingPlayers.count == 0 {
+            return 0
+        }
+        //        let finalSelfLifeLoss = -lifeLosses[myColor]!
+        let finalSelfLives = me.lives
+        let opponents = game.opponents(to: myColor)
+        let finalDiffLives: Int
+        //        let finalOpponentLifeLoss: Int
+        if livingPlayers.count == 2 {
+            finalDiffLives = me.lives - game.player(opponents[0]).lives
+            //            finalOpponentLifeLoss = 0
+        } else {
+            //            finalOpponentLifeLoss = opponents.map { lifeLosses[$0]! }.reduce(0, +)
+            finalDiffLives = 0
+        }
+        let mySquares = game.boardState.indices(ofColor: myColor)
+        let finalSelfSpread = -spread(of: mySquares, pivot: game.spawnpoints[myColor]!)
+        let finalOpponentSpread = opponents.map { self.spread(of: self.game.boardState.indices(ofColor: $0), pivot: self.game.spawnpoints[$0]!) }.reduce(0, +) / opponents.count
+        let selfInDanger = mySquares.map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: myColor) }.filter{ $0 }.count
+        if selfInDanger >= me.lives {
+            return Int.min
+        }
+        let finalSelfInDanger = -selfInDanger
+        var opponentInDanger = 0
+        for opponent in opponents {
+            opponentInDanger += game.boardState.indices(ofColor: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
+        }
+        let finalOpponentInDanger = opponentInDanger
+        return finalSelfLives * wSelfLife +
+                finalDiffLives * wDiffLives +
+                finalSelfSpread * (mySquares.count < wSquareThreshold ? wSelfSpreadBelowThreshold : wSelfSpreadAboveThreshold) +
+                finalOpponentSpread * wOpponentSpread +
+                finalSelfInDanger * wSelfInDanger +
+                finalOpponentInDanger * (mySquares.count < wSquareThreshold ? wOpponentInDangerBelowThreshold : wOpponentInDangerAboveThreshold)
+    }
+
 }
