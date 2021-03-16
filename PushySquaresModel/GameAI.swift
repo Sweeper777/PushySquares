@@ -106,4 +106,45 @@ public class GameAI {
                 finalOpponentInDanger * (mySquares.count < wSquareThreshold ? wOpponentInDangerBelowThreshold : wOpponentInDangerAboveThreshold)
     }
 
+    private func spread(of positions: [Position], pivot: Position) -> Int {
+        if let maxX = positions.map({ abs($0.x - pivot.x) }).max(), let maxY = positions.map({ abs($0.y - pivot.y) }).max() {
+            return max(maxX, maxY)
+        }
+        return 0
+    }
+
+    private func isInDanger(position: Position, directionsOfEdge: [Direction], myColor: Color) -> Bool {
+        directionLoop: for direction in directionsOfEdge {
+            let translate: (Position) -> Position
+            switch direction {
+            case .up: translate = { $0.below() }
+            case .down: translate = { $0.above() }
+            case .left: translate = { $0.right() }
+            case .right: translate = { $0.left() }
+            }
+            var curr = position
+            translationLoop: while true {
+                curr = translate(curr)
+                switch game.boardState[curr] {
+                case .empty: continue directionLoop
+                case .square(myColor): continue translationLoop
+                default: return true
+                }
+            }
+        }
+        return false
+    }
+
+    private func calculateLifeLosses() -> [Color: Int] {
+        var dict = [Color: Int]()
+        if gameStates.count == 1 {
+            return [.red: 0, .blue: 0, .green: 0, .yellow: 0]
+        }
+        for player in game.players {
+            let diff = gameStates[gameStates.endIndex - 2].player(player.color).lives - player.lives
+            dict[player.color] = diff
+        }
+        return dict
+    }
+
 }
