@@ -147,4 +147,39 @@ public class GameAI {
         return dict
     }
 
+    private func minimax(depth: Int, color: Color) -> (score: Int, direction: Direction) {
+        var bestScore = color == myColor ? Int.min : Int.max
+        var currentScore: Int
+        var bestDirection: Direction?
+        if game.players.filter({$0.lives > 0}).count < 2 || depth == 0 {
+            bestScore = evaluateHeuristics()
+        } else {
+            for move in (game.boardState.indices(ofColor: color).count == 0 ? [Direction.up] : [Direction.up, .down, .left, .right]) {
+                let gameCopy = game.createCopy()
+                switch move {
+                case .up: gameCopy.moveUp()
+                case .down: gameCopy.moveDown()
+                case .left: gameCopy.moveLeft()
+                case .right: gameCopy.moveRight()
+                }
+                gameStates.append(gameCopy)
+                if color == myColor {
+                    currentScore = minimax(depth: depth - 1, color: game.currentPlayer.color).score
+                    if currentScore > bestScore {
+                        bestScore = currentScore
+                        bestDirection = move
+                    }
+                } else {
+                    currentScore = minimax(depth: depth - 1, color: game.currentPlayer.color).score
+                    if currentScore < bestScore {
+                        bestScore = currentScore
+                        bestDirection = move
+                    }
+                }
+                gameStates.removeLast()
+            }
+        }
+        return (bestScore, bestDirection ?? .left)
+    }
+
 }
