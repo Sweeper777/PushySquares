@@ -1,6 +1,14 @@
 import Foundation
 
-public struct Map {
+public struct Map : BoardProvider {
+    public var map: Array2D<MapTile> {
+        board
+    }
+
+    public var boardState: Array2D<BoardState> {
+        initialBoardState
+    }
+
     public let board: Array2D<MapTile>
     public let initialBoardState: Array2D<BoardState>
     public let spawnpoints: [Color: Position]
