@@ -47,4 +47,15 @@ class PushySquaresModelTests: XCTestCase {
         XCTAssertEqual(game.currentPlayer.turnsUntilNewSquare, 2)
     }
 
+    func testPlayerDeath() {
+        let game = Game(map: .standard, playerCount: 2, lives: 1)
+        game.boardState[2, 1] = .square(.red)
+        let moveResult = game.moveLeft()
+        XCTAssertEqual(game.players.first(where: { $0.color == .red })!.lives, 0)
+        XCTAssertEqual(moveResult.movedPositions, [Position(1, 1), Position(2, 1)])
+        XCTAssertEqual(moveResult.fellPositions, [Position(1, 1)])
+        XCTAssertEqual(moveResult.greyedOutPositions, [Position(1, 1), Position(2, 1)])
+        XCTAssertEqual(game.boardState[1, 1], .deadBody)
+        XCTAssertEqual(game.boardState[2, 1], .empty)
+    }
 }
