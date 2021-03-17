@@ -1,4 +1,4 @@
-public class Game {
+public class Game : BoardProvider {
     static let playerCountToTurnsUntilNewSquare = [
         2: 2,
         3: 4,
