@@ -9,13 +9,24 @@ class PushySquaresModelTests: XCTestCase {
         XCTAssertTrue(map.board.contains { $0 == .wall })
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testGamePlayerCount() {
+        let game2Player = Game(map: .standard, playerCount: 2)
+        XCTAssertEqual(game2Player.spawnpoints.count, 2)
+        XCTAssertTrue(game2Player.boardState.contains(where: { $0 == .square(.red) }))
+        XCTAssertTrue(game2Player.boardState.contains(where: { $0 == .square(.green) }))
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let game3Player = Game(map: .standard, playerCount: 3)
+        XCTAssertEqual(game3Player.spawnpoints.count, 3)
+        XCTAssertTrue(game3Player.boardState.contains(where: { $0 == .square(.red) }))
+        XCTAssertTrue(game3Player.boardState.contains(where: { $0 == .square(.green) }))
+        XCTAssertTrue(game3Player.boardState.contains(where: { $0 == .square(.blue) }))
+
+        let game4Player = Game(map: .standard, playerCount: 4)
+        XCTAssertEqual(game4Player.spawnpoints.count, 4)
+        XCTAssertTrue(game4Player.boardState.contains(where: { $0 == .square(.red) }))
+        XCTAssertTrue(game4Player.boardState.contains(where: { $0 == .square(.green) }))
+        XCTAssertTrue(game4Player.boardState.contains(where: { $0 == .square(.blue) }))
+        XCTAssertTrue(game4Player.boardState.contains(where: { $0 == .square(.yellow) }))
     }
 
     func testPerformanceExample() throws {
