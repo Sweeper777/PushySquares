@@ -1,17 +1,12 @@
-//
-//  PushySquaresModelTests.swift
-//  PushySquaresModelTests
-//
-//  Created by Mulang Su on 7/3/2021.
-//
-
 import XCTest
 @testable import PushySquaresModel
 
 class PushySquaresModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testMap() throws {
+        let map = Map.standard
+        XCTAssertEqual(map.spawnpoints.count, 4)
+        XCTAssertTrue(map.board.contains { $0 == .wall })
     }
 
     override func tearDownWithError() throws {
