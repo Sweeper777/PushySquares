@@ -19,6 +19,16 @@ class BoardView : UIView {
         }
     }
 
+
+    private func drawWall(point: CGPoint, wallSquare: SquareView) {
+        let size = CGSize(width: squareViewLength, height: squareViewLength)
+        wallSquare.frame = CGRect(origin: point, size: size)
+        let ctx = UIGraphicsGetCurrentContext()!
+        ctx.translateBy(x: point.x, y: point.y)
+        wallSquare.layer.render(in: ctx)
+        ctx.translateBy(x: -point.x, y: -point.y)
+    }
+
     private func drawSimpleStripes(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
 
         let stripeWidth: CGFloat = strokeWidth
