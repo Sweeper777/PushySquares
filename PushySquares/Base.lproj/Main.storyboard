@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="YTT-Wn-3ad">
             <objects>
-                <viewController id="k4l-qi-DG5" sceneMemberID="viewController">
+                <viewController id="k4l-qi-DG5" customClass="ViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ahn-7X-zI0"/>
                         <viewControllerLayoutGuide type="bottom" id="1eb-2Z-oLF"/>
@@ -18,13 +18,31 @@
                     <view key="view" contentMode="scaleToFill" id="Jj7-nl-lMU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" customClass="BoardView" customModule="PushySquares" customModuleProvider="target" colorLabel="IBBuiltInLabel-Gray">
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YFR-Qc-Lvt" secondAttribute="height" multiplier="1:1" id="dhI-WK-d3K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zG0-ib-lqj"/>
                         <color key="backgroundColor" red="1" green="0.95527199009999997" blue="0.83132437039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="centerX" secondItem="Jj7-nl-lMU" secondAttribute="centerX" id="KaL-gk-SmG"/>
+                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="leading" secondItem="zG0-ib-lqj" secondAttribute="leading" constant="20" id="MSk-gG-2v9"/>
+                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="centerY" secondItem="Jj7-nl-lMU" secondAttribute="centerY" id="Oaf-gw-PuP"/>
+                            <constraint firstItem="zG0-ib-lqj" firstAttribute="trailing" secondItem="YFR-Qc-Lvt" secondAttribute="trailing" constant="20" id="fFc-ju-2Yh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="board" destination="YFR-Qc-Lvt" id="tEO-Zu-HFc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7U-fm-wOf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="132"/>
+            <point key="canvasLocation" x="779.71014492753625" y="131.91964285714286"/>
         </scene>
     </scenes>
 </document>
