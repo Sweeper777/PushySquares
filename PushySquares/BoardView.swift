@@ -110,6 +110,26 @@ class BoardView : UIView {
         c.restoreGState()
     }
 
+    override func layoutSubviews() {
+        refreshSubviews()
+    }
+
+    func refreshSubviews() {
+        subviews.forEach { $0.removeFromSuperview() }
+
+        for x in 0..<board.boardState.columns {
+            for y in 0..<board.boardState.rows {
+                switch board.boardState[x, y] {
+                case .empty:
+                    break
+                case .deadBody:
+                    addSquareView(x: x, y: y, color: .gray)
+                case .square(let color):
+                    addSquareView(x: x, y: y, color: BoardView.colorToUIColor[color]!)
+                }
+            }
+        }
+    }
 
     private func addSquareView(x: Int, y: Int, color: UIColor) {
         let position = Position(x, y)
