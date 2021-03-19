@@ -20,6 +20,15 @@ class BoardView : UIView {
     }
 
 
+    private func drawBorder(point: CGPoint, color: UIColor) {
+        let path = UIBezierPath(rect:
+            CGRect(origin: point,
+                    size: CGSize(width: squareLength, height: squareLength)))
+        color.setStroke()
+        path.lineWidth = strokeWidth
+        path.stroke()
+    }
+
     private func drawWall(point: CGPoint, wallSquare: SquareView) {
         let size = CGSize(width: squareViewLength, height: squareViewLength)
         wallSquare.frame = CGRect(origin: point, size: size)
