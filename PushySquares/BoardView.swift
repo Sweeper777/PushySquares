@@ -19,6 +19,43 @@ class BoardView : UIView {
         }
     }
 
+    override func draw(_ rect: CGRect) {
+        guard let board = board else {
+            return
+        }
+
+        let squareSize = CGSize(width: squareViewLength, height: squareViewLength)
+        let wallSquare = SquareView(frame: CGRect(origin: .zero, size: squareSize))
+        wallSquare.backgroundColor = .white
+        var spawnPoints = [Position: Color]()
+        for x in 0..<board.map.columns {
+            for y in 0..<board.map.rows {
+                let squareViewPos = squareViewPoint(for: Position(x, y))
+                let squarePos = point(for: Position(x, y))
+                switch board.map[x, y] {
+                case .void:
+                    break
+                case .spawnpoint(let color):
+                    spawnPoints[Position(x, y)] = color
+                case .ground:
+                    drawBorder(point: squarePos, color: .black)
+                    drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength)
+                case .slippery:
+                    UIImage(named: "wet")!.draw(in: CGRect(origin: squarePos, size: squareSize))
+                case .wall:
+                    drawBorder(point: squarePos, color: .black)
+                    drawWall(point: squareViewPos, wallSquare: wallSquare)
+                }
+            }
+        }
+
+        for (position, color) in spawnPoints {
+            let squareViewPos = squareViewPoint(for: position)
+            let squarePos = point(for: position)
+            drawBorder(point: squarePos, color: BoardView.colorToUIColor[color]!)
+            drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength)
+        }
+    }
 
     private func drawBorder(point: CGPoint, color: UIColor) {
         let path = UIBezierPath(rect:
