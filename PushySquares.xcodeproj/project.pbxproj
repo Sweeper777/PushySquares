@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EF00CC831A42B60AF5CF21 /* BoardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF01C251B7257CBE5672B3 /* BoardProvider.swift */; };
+		25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04759A80F6E1726EFD64 /* MoveResult.swift */; };
+		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
+		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
 		5A609AC425F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */; };
 		5A609ACB25F46F8B00AAB972 /* PushySquaresModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609ACA25F46F8B00AAB972 /* PushySquaresModelTests.swift */; };
 		5A609ACD25F46F8B00AAB972 /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +24,27 @@
 		5A609B1C25F47BEE00AAB972 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609B1B25F47BEE00AAB972 /* Player.swift */; };
 		5A609B2425F47E5B00AAB972 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609B2325F47E5B00AAB972 /* Game.swift */; };
 		5A609B2925F4810E00AAB972 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609B2825F4810E00AAB972 /* Direction.swift */; };
+		5A6314EC25FDAA2C00E2B0CA /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A69F2EC25FC77A60075B5EA /* standard.map */; };
+		5A6314F625FDB1E800E2B0CA /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0FA2484F5DA4128F622A /* SquareView.swift */; };
+		5A69F25025FC69AB0075B5EA /* cublex1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0B25F47B1800AAB972 /* cublex1.map */; };
+		5A69F25425FC69AE0075B5EA /* cublex2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0825F47B1800AAB972 /* cublex2.map */; };
+		5A69F25B25FC69B10075B5EA /* cublex3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0725F47B1800AAB972 /* cublex3.map */; };
+		5A69F26225FC69B40075B5EA /* cublex4.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1525F47B1900AAB972 /* cublex4.map */; };
+		5A69F26925FC69B70075B5EA /* cublex5.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0C25F47B1800AAB972 /* cublex5.map */; };
+		5A69F27025FC69B90075B5EA /* diagonal.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1325F47B1900AAB972 /* diagonal.map */; };
+		5A69F27725FC69BC0075B5EA /* dummy.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1125F47B1800AAB972 /* dummy.map */; };
+		5A69F27E25FC69BF0075B5EA /* grey1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1925F47B1900AAB972 /* grey1.map */; };
+		5A69F28525FC69C10075B5EA /* grey2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0D25F47B1800AAB972 /* grey2.map */; };
+		5A69F28C25FC69C40075B5EA /* grey3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1A25F47B1900AAB972 /* grey3.map */; };
+		5A69F29325FC69C60075B5EA /* hole.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1425F47B1900AAB972 /* hole.map */; };
+		5A69F29A25FC69C90075B5EA /* large.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1825F47B1900AAB972 /* large.map */; };
+		5A69F2A125FC69CC0075B5EA /* morewalls.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0E25F47B1800AAB972 /* morewalls.map */; };
+		5A69F2A825FC69CF0075B5EA /* quick.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1225F47B1800AAB972 /* quick.map */; };
+		5A69F2AF25FC69D10075B5EA /* slippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0925F47B1800AAB972 /* slippery.map */; };
+		5A69F2B625FC69D60075B5EA /* small.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1625F47B1900AAB972 /* small.map */; };
+		5A69F2C425FC69DB0075B5EA /* superslippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1025F47B1800AAB972 /* superslippery.map */; };
+		5A69F2CB25FC69DF0075B5EA /* walls.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0A25F47B1800AAB972 /* walls.map */; };
+		5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0F25F47B1800AAB972 /* zigzag.map */; };
 		5AD4F43F25F34A7B00B500A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */; };
 		5AD4F44125F34A7B00B500A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */; };
 		5AD4F44325F34A7B00B500A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F44225F34A7B00B500A9 /* ViewController.swift */; };
@@ -28,7 +53,6 @@
 		5AD4F44B25F34A7D00B500A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */; };
 		5AD4F46125F34A7E00B500A9 /* PushySquaresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F46025F34A7E00B500A9 /* PushySquaresUITests.swift */; };
 		5EF7FF885880A176B51D40F8 /* Pods_PushySquares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */; };
-		C14C3474F295C0ACD18F65AA /* Pods_PushySquares_PushySquaresUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +101,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
+		25EF02F749E9C7771AB0BC56 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		25EF04759A80F6E1726EFD64 /* MoveResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveResult.swift; sourceTree = "<group>"; };
+		25EF0E42B828C3FC6CE13C78 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
+		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A609ABE25F46F8B00AAB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,29 +117,29 @@
 		5A609AF725F4738D00AAB972 /* BoardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardState.swift; sourceTree = "<group>"; };
 		5A609AFC25F473FF00AAB972 /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		5A609B0125F4744700AAB972 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		5A609B0725F47B1800AAB972 /* cublex3.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex3.map; sourceTree = "<group>"; };
-		5A609B0825F47B1800AAB972 /* cublex2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex2.map; sourceTree = "<group>"; };
-		5A609B0925F47B1800AAB972 /* slippery.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = slippery.map; sourceTree = "<group>"; };
-		5A609B0A25F47B1800AAB972 /* walls.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = walls.map; sourceTree = "<group>"; };
-		5A609B0B25F47B1800AAB972 /* cublex1.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex1.map; sourceTree = "<group>"; };
-		5A609B0C25F47B1800AAB972 /* cublex5.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex5.map; sourceTree = "<group>"; };
-		5A609B0D25F47B1800AAB972 /* grey2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = grey2.map; sourceTree = "<group>"; };
-		5A609B0E25F47B1800AAB972 /* morewalls.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = morewalls.map; sourceTree = "<group>"; };
-		5A609B0F25F47B1800AAB972 /* zigzag.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = zigzag.map; sourceTree = "<group>"; };
-		5A609B1025F47B1800AAB972 /* superslippery.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = superslippery.map; sourceTree = "<group>"; };
-		5A609B1125F47B1800AAB972 /* dummy.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = dummy.map; sourceTree = "<group>"; };
-		5A609B1225F47B1800AAB972 /* quick.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = quick.map; sourceTree = "<group>"; };
-		5A609B1325F47B1900AAB972 /* diagonal.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = diagonal.map; sourceTree = "<group>"; };
-		5A609B1425F47B1900AAB972 /* hole.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = hole.map; sourceTree = "<group>"; };
-		5A609B1525F47B1900AAB972 /* cublex4.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = cublex4.map; sourceTree = "<group>"; };
-		5A609B1625F47B1900AAB972 /* small.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = small.map; sourceTree = "<group>"; };
-		5A609B1725F47B1900AAB972 /* standard.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = standard.map; sourceTree = "<group>"; };
-		5A609B1825F47B1900AAB972 /* large.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = large.map; sourceTree = "<group>"; };
-		5A609B1925F47B1900AAB972 /* grey1.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = grey1.map; sourceTree = "<group>"; };
-		5A609B1A25F47B1900AAB972 /* grey3.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = grey3.map; sourceTree = "<group>"; };
+		5A609B0725F47B1800AAB972 /* cublex3.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = cublex3.map; sourceTree = "<group>"; };
+		5A609B0825F47B1800AAB972 /* cublex2.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = cublex2.map; sourceTree = "<group>"; };
+		5A609B0925F47B1800AAB972 /* slippery.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = slippery.map; sourceTree = "<group>"; };
+		5A609B0A25F47B1800AAB972 /* walls.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = walls.map; sourceTree = "<group>"; };
+		5A609B0B25F47B1800AAB972 /* cublex1.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = cublex1.map; sourceTree = "<group>"; };
+		5A609B0C25F47B1800AAB972 /* cublex5.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = cublex5.map; sourceTree = "<group>"; };
+		5A609B0D25F47B1800AAB972 /* grey2.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = grey2.map; sourceTree = "<group>"; };
+		5A609B0E25F47B1800AAB972 /* morewalls.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = morewalls.map; sourceTree = "<group>"; };
+		5A609B0F25F47B1800AAB972 /* zigzag.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = zigzag.map; sourceTree = "<group>"; };
+		5A609B1025F47B1800AAB972 /* superslippery.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = superslippery.map; sourceTree = "<group>"; };
+		5A609B1125F47B1800AAB972 /* dummy.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = dummy.map; sourceTree = "<group>"; };
+		5A609B1225F47B1800AAB972 /* quick.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = quick.map; sourceTree = "<group>"; };
+		5A609B1325F47B1900AAB972 /* diagonal.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = diagonal.map; sourceTree = "<group>"; };
+		5A609B1425F47B1900AAB972 /* hole.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = hole.map; sourceTree = "<group>"; };
+		5A609B1525F47B1900AAB972 /* cublex4.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = cublex4.map; sourceTree = "<group>"; };
+		5A609B1625F47B1900AAB972 /* small.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = small.map; sourceTree = "<group>"; };
+		5A609B1825F47B1900AAB972 /* large.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = large.map; sourceTree = "<group>"; };
+		5A609B1925F47B1900AAB972 /* grey1.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = grey1.map; sourceTree = "<group>"; };
+		5A609B1A25F47B1900AAB972 /* grey3.map */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = grey3.map; sourceTree = "<group>"; };
 		5A609B1B25F47BEE00AAB972 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5A609B2325F47E5B00AAB972 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5A609B2825F4810E00AAB972 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		5A69F2EC25FC77A60075B5EA /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; path = standard.map; sourceTree = "<group>"; };
 		5AD4F43B25F34A7B00B500A9 /* PushySquares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,12 +153,9 @@
 		5AD4F46225F34A7E00B500A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E98453662355195AEDAB5A6 /* Pods-PushySquares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.debug.xcconfig"; path = "Target Support Files/Pods-PushySquares/Pods-PushySquares.debug.xcconfig"; sourceTree = "<group>"; };
 		7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares-PushySquaresUITests.debug.xcconfig"; path = "Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8275876E72990E344C24CA91 /* Pods-PushySquaresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquaresTests.debug.xcconfig"; path = "Target Support Files/Pods-PushySquaresTests/Pods-PushySquaresTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares-PushySquaresUITests.release.xcconfig"; path = "Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquaresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7148E52F07B3DBED3B62D5 /* Pods-PushySquaresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquaresTests.release.xcconfig"; path = "Target Support Files/Pods-PushySquaresTests/Pods-PushySquaresTests.release.xcconfig"; sourceTree = "<group>"; };
-		CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushySquares_PushySquaresUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC2DE3B54C49071F7B6F460 /* Pods-PushySquares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushySquares.release.xcconfig"; path = "Target Support Files/Pods-PushySquares/Pods-PushySquares.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +188,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C14C3474F295C0ACD18F65AA /* Pods_PushySquares_PushySquaresUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */,
-				CDE70F9027CE04B999A127AC /* Pods_PushySquares_PushySquaresUITests.framework */,
 				C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */,
 			);
 			name = Frameworks;
@@ -193,6 +217,9 @@
 				5A609B2325F47E5B00AAB972 /* Game.swift */,
 				5A609B0125F4744700AAB972 /* Map.swift */,
 				5A609B1B25F47BEE00AAB972 /* Player.swift */,
+				25EF04759A80F6E1726EFD64 /* MoveResult.swift */,
+				25EF0E42B828C3FC6CE13C78 /* GameAI.swift */,
+				25EF01C251B7257CBE5672B3 /* BoardProvider.swift */,
 			);
 			path = PushySquaresModel;
 			sourceTree = "<group>";
@@ -209,6 +236,7 @@
 		5A609B0625F47AFF00AAB972 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				5A69F2EC25FC77A60075B5EA /* standard.map */,
 				5A609B0B25F47B1800AAB972 /* cublex1.map */,
 				5A609B0825F47B1800AAB972 /* cublex2.map */,
 				5A609B0725F47B1800AAB972 /* cublex3.map */,
@@ -225,7 +253,6 @@
 				5A609B1225F47B1800AAB972 /* quick.map */,
 				5A609B0925F47B1800AAB972 /* slippery.map */,
 				5A609B1625F47B1900AAB972 /* small.map */,
-				5A609B1725F47B1900AAB972 /* standard.map */,
 				5A609B1025F47B1800AAB972 /* superslippery.map */,
 				5A609B0A25F47B1800AAB972 /* walls.map */,
 				5A609B0F25F47B1800AAB972 /* zigzag.map */,
@@ -267,6 +294,8 @@
 				5AD4F44725F34A7D00B500A9 /* Assets.xcassets */,
 				5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */,
 				5AD4F44C25F34A7D00B500A9 /* Info.plist */,
+				25EF0FA2484F5DA4128F622A /* SquareView.swift */,
+				25EF02F749E9C7771AB0BC56 /* BoardView.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -285,8 +314,6 @@
 			children = (
 				5E98453662355195AEDAB5A6 /* Pods-PushySquares.debug.xcconfig */,
 				EEC2DE3B54C49071F7B6F460 /* Pods-PushySquares.release.xcconfig */,
-				7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */,
-				AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */,
 				8275876E72990E344C24CA91 /* Pods-PushySquaresTests.debug.xcconfig */,
 				CC7148E52F07B3DBED3B62D5 /* Pods-PushySquaresTests.release.xcconfig */,
 			);
@@ -369,11 +396,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AD4F46B25F34A7E00B500A9 /* Build configuration list for PBXNativeTarget "PushySquaresUITests" */;
 			buildPhases = (
-				9B0239468BAB31CC2040ABA4 /* [CP] Check Pods Manifest.lock */,
 				5AD4F45825F34A7E00B500A9 /* Sources */,
 				5AD4F45925F34A7E00B500A9 /* Frameworks */,
 				5AD4F45A25F34A7E00B500A9 /* Resources */,
-				DDD84C7079C67971ACE632A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -451,9 +476,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A69F2C425FC69DB0075B5EA /* superslippery.map in Resources */,
 				5AD4F44B25F34A7D00B500A9 /* LaunchScreen.storyboard in Resources */,
+				5A69F25B25FC69B10075B5EA /* cublex3.map in Resources */,
+				5A69F2AF25FC69D10075B5EA /* slippery.map in Resources */,
+				5A69F2CB25FC69DF0075B5EA /* walls.map in Resources */,
+				5A6314EC25FDAA2C00E2B0CA /* standard.map in Resources */,
+				5A69F26225FC69B40075B5EA /* cublex4.map in Resources */,
+				5A69F27725FC69BC0075B5EA /* dummy.map in Resources */,
+				5A69F2A825FC69CF0075B5EA /* quick.map in Resources */,
+				5A69F2B625FC69D60075B5EA /* small.map in Resources */,
 				5AD4F44825F34A7D00B500A9 /* Assets.xcassets in Resources */,
 				5AD4F44625F34A7B00B500A9 /* Main.storyboard in Resources */,
+				5A69F29325FC69C60075B5EA /* hole.map in Resources */,
+				5A69F28525FC69C10075B5EA /* grey2.map in Resources */,
+				5A69F29A25FC69C90075B5EA /* large.map in Resources */,
+				5A69F25425FC69AE0075B5EA /* cublex2.map in Resources */,
+				5A69F27025FC69B90075B5EA /* diagonal.map in Resources */,
+				5A69F25025FC69AB0075B5EA /* cublex1.map in Resources */,
+				5A69F27E25FC69BF0075B5EA /* grey1.map in Resources */,
+				5A69F28C25FC69C40075B5EA /* grey3.map in Resources */,
+				5A69F26925FC69B70075B5EA /* cublex5.map in Resources */,
+				5A69F2A125FC69CC0075B5EA /* morewalls.map in Resources */,
+				5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,28 +512,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9B0239468BAB31CC2040ABA4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PushySquares-PushySquaresUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B6F04F7EDFBCFAB0033F5790 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,23 +551,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DDD84C7079C67971ACE632A7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushySquares-PushySquaresUITests/Pods-PushySquares-PushySquaresUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -560,6 +566,9 @@
 				5A609AEE25F4710600AAB972 /* MapTile.swift in Sources */,
 				5A609B1C25F47BEE00AAB972 /* Player.swift in Sources */,
 				5A609AF325F4714100AAB972 /* Color.swift in Sources */,
+				25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */,
+				25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */,
+				25EF00CC831A42B60AF5CF21 /* BoardProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +587,8 @@
 				5AD4F44325F34A7B00B500A9 /* ViewController.swift in Sources */,
 				5AD4F43F25F34A7B00B500A9 /* AppDelegate.swift in Sources */,
 				5AD4F44125F34A7B00B500A9 /* SceneDelegate.swift in Sources */,
+				5A6314F625FDB1E800E2B0CA /* SquareView.swift in Sources */,
+				25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,7 +902,6 @@
 		};
 		5AD4F46C25F34A7E00B500A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EB7831B7E4E3163D061FF68 /* Pods-PushySquares-PushySquaresUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -912,7 +922,6 @@
 		};
 		5AD4F46D25F34A7E00B500A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3BB5BA3CF4E25AEC8A0B8D /* Pods-PushySquares-PushySquaresUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
