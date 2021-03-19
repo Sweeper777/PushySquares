@@ -111,6 +111,15 @@ class BoardView : UIView {
     }
 
 
+    private func addSquareView(x: Int, y: Int, color: UIColor) {
+        let position = Position(x, y)
+        let pos = squareViewPoint(for: position)
+        let square = SquareView(frame: CGRect(origin: pos, size: CGSize(width: squareViewLength, height: squareViewLength)))
+        square.backgroundColor = color
+        square.tag = position.hashValue
+        addSubview(square)
+    }
+
     private func point(for position: Position) -> CGPoint {
         CGPoint(x: strokeWidth / 2 + position.x.f * squareLength, y: strokeWidth / 2 + position.y.f * squareLength)
     }
