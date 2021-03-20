@@ -17,6 +17,34 @@ class StatusBar: UIView {
         return paraStyle
     }()
 
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+    }
+    private func setupView() {
+        let view = viewFromNibForClass()
+        view.frame = bounds
+        view.autoresizingMask = [
+            .flexibleWidth,
+            .flexibleHeight
+        ]
+        addSubview(view)
+        backgroundColor = .clear
+        imgLives.contentMode = .scaleAspectFit
+
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let fontSize = fontSizeThatFits(size: self.currentTurnHeader.frame.size, text: "TURN".localized as NSString, font: UIFont(name: "Chalkboard SE", size: 0)!)
+            self.currentTurnHeader.font = self.currentTurnHeader.font.withSize(fontSize)
+            self.currentTurnHeader.text = "TURN".localized
+        }
+    }
+
     private func viewFromNibForClass() -> UIView {
 
         let bundle = Bundle(for: StatusBar.self)
