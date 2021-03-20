@@ -17,6 +17,14 @@ class StatusBar: UIView {
         return paraStyle
     }()
 
+    private func viewFromNibForClass() -> UIView {
+
+        let bundle = Bundle(for: StatusBar.self)
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+
+        return view
+    }
 
     private func imageFrom(_ str: NSAttributedString) -> UIImage {
         let size = str.size()
