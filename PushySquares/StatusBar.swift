@@ -34,6 +34,30 @@ class StatusBar: UIView {
         imgCurrentTurn.backgroundColor = BoardView.colorToUIColor[value]!
     }
 
+    func setLives(players: [Player]) {
+        let text = NSMutableAttributedString(string: "LIVES\n".localized)
+        let player1Lives = NSAttributedString(string: "♥︎", attributes: [.foregroundColor: BoardView.colorToUIColor[players[0].color]!])
+        text.append(player1Lives)
+        text.append(NSAttributedString(string: "\(players[0].lives) "))
+        let player2Lives = NSAttributedString(string: "♥︎", attributes: [.foregroundColor: BoardView.colorToUIColor[players[1].color]!])
+        text.append(player2Lives)
+        text.append(NSAttributedString(string: "\(players[1].lives) "))
+        if players.count > 2 {
+            let player3Lives = NSAttributedString(string: "\n♥︎", attributes: [.foregroundColor: BoardView.colorToUIColor[players[2].color]!])
+            text.append(player3Lives)
+            text.append(NSAttributedString(string: "\(players[2].lives)"))
+        }
+        if players.count > 3 {
+            let player4Lives = NSAttributedString(string: " ♥︎", attributes: [.foregroundColor: BoardView.colorToUIColor[players[3].color]!])
+            text.append(player4Lives)
+            text.append(NSAttributedString(string: "\(players[3].lives)"))
+        }
+        text.addAttributes([
+            .font: UIFont(name: "Chalkboard SE", size: 60)!,
+            .paragraphStyle: centerAlignedParaStyle
+        ], range: NSRange(location: 0, length: text.length))
+        imgLives.image = imageFrom(text)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
