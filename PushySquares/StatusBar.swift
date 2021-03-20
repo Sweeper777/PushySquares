@@ -17,6 +17,23 @@ class StatusBar: UIView {
         return paraStyle
     }()
 
+    func setNewSquareIn(_ value: Int) {
+        let string = NSMutableAttributedString()
+        string.append(NSAttributedString(string: "NEW SQUARE IN:\n".localized, attributes: [
+            .font: UIFont(name: "Chalkboard SE", size: 30)!,
+            .paragraphStyle: centerAlignedParaStyle
+        ]))
+        string.append(NSAttributedString(string: value.description, attributes: [
+            .font: UIFont(name: "Chalkboard SE", size: 60)!,
+            .paragraphStyle: centerAlignedParaStyle
+        ]))
+        imgNewSquareIn.image = imageFrom(string)
+    }
+
+    func setCurrentTurn(_ value: Color) {
+        imgCurrentTurn.backgroundColor = BoardView.colorToUIColor[value]!
+    }
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
