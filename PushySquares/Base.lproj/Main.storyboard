@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k4l-qi-DG5">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,28 +16,112 @@
                         <viewControllerLayoutGuide type="bottom" id="1eb-2Z-oLF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jj7-nl-lMU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" customClass="BoardView" customModule="PushySquares" customModuleProvider="target" colorLabel="IBBuiltInLabel-Gray">
-                                <rect key="frame" x="20" y="261" width="374" height="374"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-eO-gxd">
+                                <rect key="frame" x="16" y="120" width="343" height="427"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP8-as-STy" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="qH8-fB-34Q"/>
+                                            <constraint firstAttribute="height" constant="100" id="s8x-nV-H7E"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qH8-fB-34Q"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="qH8-fB-34Q"/>
+                                                <exclude reference="s8x-nV-H7E"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" customClass="BoardView" customModule="PushySquares" customModuleProvider="target" colorLabel="IBBuiltInLabel-Gray">
+                                        <rect key="frame" x="16" y="116" width="311" height="311"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YFR-Qc-Lvt" secondAttribute="height" multiplier="1:1" id="dhI-WK-d3K"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="YFR-Qc-Lvt" secondAttribute="height" multiplier="1:1" id="dhI-WK-d3K"/>
+                                    <constraint firstAttribute="bottom" secondItem="qP8-as-STy" secondAttribute="bottom" id="7Xd-44-1e8"/>
+                                    <constraint firstItem="YFR-Qc-Lvt" firstAttribute="top" secondItem="Bf6-eO-gxd" secondAttribute="top" priority="750" constant="16" id="HWp-GI-lKY"/>
+                                    <constraint firstAttribute="trailing" secondItem="qP8-as-STy" secondAttribute="trailing" id="J0i-fe-tET"/>
+                                    <constraint firstAttribute="bottom" secondItem="YFR-Qc-Lvt" secondAttribute="bottom" priority="750" constant="16" id="JMA-UC-yJl"/>
+                                    <constraint firstAttribute="trailing" secondItem="YFR-Qc-Lvt" secondAttribute="trailing" priority="750" constant="16" id="Npn-Ih-Pj1"/>
+                                    <constraint firstItem="qP8-as-STy" firstAttribute="leading" secondItem="Bf6-eO-gxd" secondAttribute="leading" id="OQR-dX-rsa"/>
+                                    <constraint firstItem="YFR-Qc-Lvt" firstAttribute="leading" secondItem="Bf6-eO-gxd" secondAttribute="leading" priority="750" constant="16" id="cQt-hb-Pmz"/>
+                                    <constraint firstItem="qP8-as-STy" firstAttribute="top" secondItem="Bf6-eO-gxd" secondAttribute="top" id="rpw-U4-KbK"/>
                                 </constraints>
-                            </view>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Xd-44-1e8"/>
+                                        <exclude reference="rpw-U4-KbK"/>
+                                        <exclude reference="HWp-GI-lKY"/>
+                                        <exclude reference="JMA-UC-yJl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" axis="horizontal">
+                                    <mask key="constraints">
+                                        <include reference="7Xd-44-1e8"/>
+                                        <exclude reference="J0i-fe-tET"/>
+                                        <exclude reference="OQR-dX-rsa"/>
+                                        <include reference="rpw-U4-KbK"/>
+                                        <include reference="HWp-GI-lKY"/>
+                                        <include reference="JMA-UC-yJl"/>
+                                        <exclude reference="Npn-Ih-Pj1"/>
+                                        <exclude reference="cQt-hb-Pmz"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zG0-ib-lqj"/>
                         <color key="backgroundColor" red="1" green="0.95527199009999997" blue="0.83132437039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="centerX" secondItem="Jj7-nl-lMU" secondAttribute="centerX" id="KaL-gk-SmG"/>
-                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="leading" secondItem="zG0-ib-lqj" secondAttribute="leading" constant="20" id="MSk-gG-2v9"/>
-                            <constraint firstItem="YFR-Qc-Lvt" firstAttribute="centerY" secondItem="Jj7-nl-lMU" secondAttribute="centerY" id="Oaf-gw-PuP"/>
-                            <constraint firstItem="zG0-ib-lqj" firstAttribute="trailing" secondItem="YFR-Qc-Lvt" secondAttribute="trailing" constant="20" id="fFc-ju-2Yh"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zG0-ib-lqj" secondAttribute="leading" constant="16" id="2Sv-mV-tUu"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zG0-ib-lqj" secondAttribute="top" constant="16" id="3TY-GR-LUE"/>
+                            <constraint firstItem="zG0-ib-lqj" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bf6-eO-gxd" secondAttribute="bottom" constant="16" id="VNv-cC-baJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Bf6-eO-gxd" secondAttribute="bottom" constant="16" id="YaF-hj-KKg"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="centerY" secondItem="Jj7-nl-lMU" secondAttribute="centerY" id="ccZ-yF-VdB"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="top" secondItem="zG0-ib-lqj" secondAttribute="top" constant="16" id="fmV-GT-zfj"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="centerX" secondItem="Jj7-nl-lMU" secondAttribute="centerX" id="lEu-EO-3am"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="trailing" secondItem="zG0-ib-lqj" secondAttribute="trailing" constant="-16" id="o6k-rP-XNj"/>
+                            <constraint firstItem="zG0-ib-lqj" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bf6-eO-gxd" secondAttribute="trailing" constant="16" id="tLz-hd-fz3"/>
+                            <constraint firstItem="Bf6-eO-gxd" firstAttribute="leading" secondItem="zG0-ib-lqj" secondAttribute="leading" constant="16" id="xZ2-9N-fac"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tLz-hd-fz3"/>
+                                <exclude reference="2Sv-mV-tUu"/>
+                                <exclude reference="YaF-hj-KKg"/>
+                                <exclude reference="fmV-GT-zfj"/>
+                                <exclude reference="lEu-EO-3am"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="VNv-cC-baJ"/>
+                                <include reference="tLz-hd-fz3"/>
+                                <include reference="2Sv-mV-tUu"/>
+                                <exclude reference="3TY-GR-LUE"/>
+                                <include reference="YaF-hj-KKg"/>
+                                <exclude reference="ccZ-yF-VdB"/>
+                                <include reference="fmV-GT-zfj"/>
+                                <include reference="lEu-EO-3am"/>
+                                <exclude reference="o6k-rP-XNj"/>
+                                <exclude reference="xZ2-9N-fac"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="board" destination="YFR-Qc-Lvt" id="tEO-Zu-HFc"/>
+                        <outlet property="statusBar" destination="qP8-as-STy" id="qXy-2j-sl0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7U-fm-wOf" sceneMemberID="firstResponder"/>
