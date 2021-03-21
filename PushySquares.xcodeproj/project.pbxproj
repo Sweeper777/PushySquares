@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		25EF00CC831A42B60AF5CF21 /* BoardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF01C251B7257CBE5672B3 /* BoardProvider.swift */; };
+		25EF01267696845BFC9FB0BB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */; };
 		25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04759A80F6E1726EFD64 /* MoveResult.swift */; };
+		25EF08FD4ABED1FC0C556849 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A53EC1122B75623549 /* StatusBar.swift */; };
 		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
 		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
 		5A609AC425F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */; };
@@ -45,6 +47,7 @@
 		5A69F2C425FC69DB0075B5EA /* superslippery.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B1025F47B1800AAB972 /* superslippery.map */; };
 		5A69F2CB25FC69DF0075B5EA /* walls.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0A25F47B1800AAB972 /* walls.map */; };
 		5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0F25F47B1800AAB972 /* zigzag.map */; };
+		5A81B0182605887C0058A36E /* StatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A81B0172605887C0058A36E /* StatusBar.xib */; };
 		5AD4F43F25F34A7B00B500A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */; };
 		5AD4F44125F34A7B00B500A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */; };
 		5AD4F44325F34A7B00B500A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4F44225F34A7B00B500A9 /* ViewController.swift */; };
@@ -104,6 +107,8 @@
 		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
 		25EF02F749E9C7771AB0BC56 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		25EF04759A80F6E1726EFD64 /* MoveResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveResult.swift; sourceTree = "<group>"; };
+		25EF04A53EC1122B75623549 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		25EF0E42B828C3FC6CE13C78 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +145,7 @@
 		5A609B2325F47E5B00AAB972 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5A609B2825F4810E00AAB972 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		5A69F2EC25FC77A60075B5EA /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; path = standard.map; sourceTree = "<group>"; };
+		5A81B0172605887C0058A36E /* StatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBar.xib; sourceTree = "<group>"; };
 		5AD4F43B25F34A7B00B500A9 /* PushySquares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,11 +297,14 @@
 				5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */,
 				5AD4F44225F34A7B00B500A9 /* ViewController.swift */,
 				5AD4F44425F34A7B00B500A9 /* Main.storyboard */,
+				5A81B0172605887C0058A36E /* StatusBar.xib */,
 				5AD4F44725F34A7D00B500A9 /* Assets.xcassets */,
 				5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */,
 				5AD4F44C25F34A7D00B500A9 /* Info.plist */,
 				25EF0FA2484F5DA4128F622A /* SquareView.swift */,
 				25EF02F749E9C7771AB0BC56 /* BoardView.swift */,
+				25EF04A53EC1122B75623549 /* StatusBar.swift */,
+				25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 				5A69F26925FC69B70075B5EA /* cublex5.map in Resources */,
 				5A69F2A125FC69CC0075B5EA /* morewalls.map in Resources */,
 				5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */,
+				5A81B0182605887C0058A36E /* StatusBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +599,8 @@
 				5AD4F44125F34A7B00B500A9 /* SceneDelegate.swift in Sources */,
 				5A6314F625FDB1E800E2B0CA /* SquareView.swift in Sources */,
 				25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */,
+				25EF08FD4ABED1FC0C556849 /* StatusBar.swift in Sources */,
+				25EF01267696845BFC9FB0BB /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
