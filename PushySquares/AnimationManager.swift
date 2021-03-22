@@ -7,4 +7,10 @@ class AnimationManager<Phase: AnimationPhase> {
     private var completionHandlers = [(() -> Void)?]()
     private var phases = [Phase]()
 
+    func addPhase(group: AnimationGroup, duration: TimeInterval, completion: (() -> Void)?) {
+        groups.append(group)
+        completionHandlers.append(completion)
+        phases.append(Phase(duration: duration))
+    }
+
 }
