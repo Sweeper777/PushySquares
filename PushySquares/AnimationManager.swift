@@ -30,4 +30,9 @@ class AnimationManager<Phase: AnimationPhase> {
         }
     }
 
+    func reset() {
+        groups = []
+        completionHandlers = []
+        phases = []
+    }
 }
