@@ -117,7 +117,18 @@ public struct Array2D<T>: Sequence, ExpressibleByArrayLiteral{
     }
 }
 
-public struct Position: Hashable {
+public struct Position: Hashable, RawRepresentable {
+    public init?(rawValue: Int) {
+        x = rawValue / 1000
+        y = rawValue % 1000
+    }
+
+    public var rawValue: Int {
+        x * 1000 + y
+    }
+
+    public typealias RawValue = Int
+
     public let x: Int
     public let y: Int
     
