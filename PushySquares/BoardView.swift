@@ -19,6 +19,8 @@ class BoardView : UIView {
         }
     }
 
+    private let animationManager = AnimationManager<ViewAnimationPhase>()
+
     override func draw(_ rect: CGRect) {
         guard let board = board else {
             return
@@ -129,6 +131,19 @@ class BoardView : UIView {
                 }
             }
         }
+    }
+
+
+    private func squareView(atPosition position: Position) -> SquareView? {
+        viewWithTag(viewTag(forPosition: position)) as? SquareView
+    }
+
+    private func viewTag(forPosition position: Position) -> Int {
+        position.rawValue
+    }
+
+    private func position(fromTag tag: Int) -> Position {
+        Position(rawValue: tag)!
     }
 
     private func newSquareView(x: Int, y: Int, color: UIColor) -> SquareView {
