@@ -123,21 +123,21 @@ class BoardView : UIView {
                 case .empty:
                     break
                 case .deadBody:
-                    addSquareView(x: x, y: y, color: .gray)
+                    addSubview(newSquareView(x: x, y: y, color: .gray))
                 case .square(let color):
-                    addSquareView(x: x, y: y, color: BoardView.colorToUIColor[color]!)
+                    addSubview(newSquareView(x: x, y: y, color: BoardView.colorToUIColor[color]!))
                 }
             }
         }
     }
 
-    private func addSquareView(x: Int, y: Int, color: UIColor) {
+    private func newSquareView(x: Int, y: Int, color: UIColor) -> SquareView {
         let position = Position(x, y)
         let pos = squareViewPoint(for: position)
         let square = SquareView(frame: CGRect(origin: pos, size: CGSize(width: squareViewLength, height: squareViewLength)))
         square.backgroundColor = color
-        square.tag = position.hashValue
-        addSubview(square)
+        square.tag = viewTag(forPosition: position)
+        return square
     }
 
     private func point(for position: Position) -> CGPoint {
