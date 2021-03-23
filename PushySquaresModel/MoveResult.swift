@@ -6,19 +6,19 @@ public struct MoveResult {
     public let slippedPositions: Set<Position>
     public let fellPositions: Set<Position>
     public let greyedOutPositions: Set<Position>
-    public let newSquareColor: Color?
+    public let newSquare: (Color, Position)?
 
     init(direction: Direction,
-         movedPositions: Set<Position> = [],
-         slippedPositions: Set<Position> = [],
-         fellPositions: Set<Position> = [],
-         greyedOutPositions: Set<Position> = [],
-         newSquareColor: Color? = nil) {
+                movedPositions: Set<Position> = [],
+                slippedPositions: Set<Position> = [],
+                fellPositions: Set<Position> = [],
+                greyedOutPositions: Set<Position> = [],
+                newSquare: (Color, Position)? = nil) {
         self.direction = direction
         self.movedPositions = movedPositions
         self.slippedPositions = slippedPositions
         self.fellPositions = fellPositions
         self.greyedOutPositions = greyedOutPositions
-        self.newSquareColor = newSquareColor
+        self.newSquare = newSquare
     }
 }
