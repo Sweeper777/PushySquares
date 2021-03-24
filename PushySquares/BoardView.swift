@@ -153,6 +153,35 @@ class BoardView : UIView {
         let slippedSquares = moveResult.slippedPositions.compactMap(squareView(atPosition:))
         let fellSquares = moveResult.fellPositions.compactMap(squareView(atPosition:))
         let grayedOutSquares = moveResult.greyedOutPositions.compactMap(squareView(atPosition:))
+        if movedSquares.isNotEmpty || slippedSquares.isNotEmpty {
+            animationManager.addPhase(group: [
+                .move(dx: Double(dx) * unit, dy: Double(dy) * unit): movedSquares,
+                .move(dx: Double(dx) * unit * 2, dy: Double(dy) * unit * 2): slippedSquares
+            ], duration: 0.5, completion: nil)
+        }
+        if fellSquares.isNotEmpty {
+            animationManager.addPhase(group: [.fall: fellSquares], duration: 0.5) {
+                fellSquares.forEach {
+                    $0.removeFromSuperview()
+                }
+            }
+        }
+        if grayedOutSquares.isNotEmpty {
+            animationManager.addPhase(group: [.grayOut: grayedOutSquares], duration: 0.5, completion: nil)
+        }
+        if let (color, position) = moveResult.newSquare {
+            let newSquare = newSquareView(x: position.x, y: position.y, color: BoardView.colorToUIColor[color]!)
+            newSquare.transform = CGAffineTransform(scaleX: ViewAnimationPhase.invisibleScale, y: ViewAnimationPhase.invisibleScale)
+            addSubview(newSquare)
+            animationManager.addPhase(group: [.newSquare: [newSquare]], duration: 0.5) {
+                newSquare.layoutSubviews()
+            }
+        }
+        animationManager.runAnimation {
+            (movedSquares + slippedSquares).forEach {
+                $0.tag = moveResult.direction.displacementFunction(self.position(fromTag: $0.tag)).rawValue
+            }
+        }
     }
 
     private func squareView(atPosition position: Position) -> SquareView? {
