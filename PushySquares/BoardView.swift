@@ -133,6 +133,27 @@ class BoardView : UIView {
         }
     }
 
+    func animateMoveResult(_ moveResult: MoveResult) {
+        animationManager.reset()
+        let dx: Int
+        let dy: Int
+        let unit = Double(squareLength)
+        switch moveResult.direction {
+        case .right:
+            (dx, dy) = (1, 0)
+        case .left:
+            (dx, dy) = (-1, 0)
+        case .down:
+            (dx, dy) = (0, 1)
+        case .up:
+            (dx, dy) = (0, -1)
+        }
+
+        let movedSquares = moveResult.movedPositions.compactMap(squareView(atPosition:))
+        let slippedSquares = moveResult.slippedPositions.compactMap(squareView(atPosition:))
+        let fellSquares = moveResult.fellPositions.compactMap(squareView(atPosition:))
+        let grayedOutSquares = moveResult.greyedOutPositions.compactMap(squareView(atPosition:))
+    }
 
     private func squareView(atPosition position: Position) -> SquareView? {
         viewWithTag(viewTag(forPosition: position)) as? SquareView
