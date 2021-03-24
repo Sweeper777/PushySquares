@@ -51,5 +51,17 @@ class ViewController: UIViewController {
         let moveResult = game.moveRight()
         board.animateMoveResult(moveResult)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        board.refreshSubviews()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        DispatchQueue.main.async {
+            self.board.refreshSubviews()
+        }
+    }
 }
 

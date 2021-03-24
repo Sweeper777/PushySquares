@@ -15,7 +15,7 @@ class BoardView : UIView {
     var board: BoardProvider! {
         didSet {
             setNeedsDisplay()
-            setNeedsLayout()
+            refreshSubviews()
         }
     }
 
@@ -113,7 +113,7 @@ class BoardView : UIView {
     }
 
     override func layoutSubviews() {
-        refreshSubviews()
+//        refreshSubviews()
     }
 
     func refreshSubviews() {
