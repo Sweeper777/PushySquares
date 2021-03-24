@@ -20,11 +20,11 @@ class SquareView : UIView{
     }
 
     func addShadowLayer() {
-        let strokeWidth = self.width / 8
+        let strokeWidth = bounds.width / 8
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: self.width - strokeWidth / 2, y: 0))
-        path.addLine(to: CGPoint(x: self.width - strokeWidth / 2, y: self.height - strokeWidth / 2))
-        path.addLine(to: CGPoint(x: 0, y: self.height - strokeWidth / 2))
+        path.move(to: CGPoint(x: bounds.width - strokeWidth / 2, y: 0))
+        path.addLine(to: CGPoint(x: bounds.width - strokeWidth / 2, y: bounds.width - strokeWidth / 2))
+        path.addLine(to: CGPoint(x: 0, y: bounds.width - strokeWidth / 2))
         shadowLayer = CAShapeLayer()
         shadowLayer.strokeColor = UIColor(white: 0, alpha: 0.3).cgColor
         shadowLayer.fillColor = UIColor.clear.cgColor
@@ -33,11 +33,9 @@ class SquareView : UIView{
         layer.addSublayer(shadowLayer)
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
         shadowLayer.removeFromSuperlayer()
         addShadowLayer()
-        var a = [1]
-        a.remove(atOffsets: IndexSet())
     }
 }
