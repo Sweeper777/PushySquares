@@ -8,6 +8,11 @@ class ViewController: UIViewController {
 
     let game = Game(map: .standard, playerCount: 4)
 
+    private var swipeUpGR: UISwipeGestureRecognizer!
+    private var swipeDownGR: UISwipeGestureRecognizer!
+    private var swipeLeftGR: UISwipeGestureRecognizer!
+    private var swipeRightGR: UISwipeGestureRecognizer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         board.board = game
@@ -15,10 +20,10 @@ class ViewController: UIViewController {
         statusBar.setLives(players: game.players)
         statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
 
-        let swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
-        let swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
-        let swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
-        let swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
+        swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
+        swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
+        swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
 
         swipeUpGR.direction = .up
         swipeDownGR.direction = .down
@@ -29,6 +34,13 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(swipeDownGR)
         view.addGestureRecognizer(swipeLeftGR)
         view.addGestureRecognizer(swipeRightGR)
+    }
+
+    func setAllGestureRecognisersEnabled(_ enabled: Bool) {
+        swipeUpGR.isEnabled = enabled
+        swipeDownGR.isEnabled = enabled
+        swipeLeftGR.isEnabled = enabled
+        swipeRightGR.isEnabled = enabled
     }
 
     @objc func swipeUp() {
