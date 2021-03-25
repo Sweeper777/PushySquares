@@ -175,10 +175,12 @@ class BoardView : UIView {
                 newSquare.layoutSubviews()
             }
         }
-        animationManager.runAnimation {
+        animationManager.runAnimation { [weak self] in
+            guard let `self` = self else { return }
             (movedSquares + slippedSquares).forEach {
                 $0.tag = moveResult.direction.displacementFunction(self.position(fromTag: $0.tag)).rawValue
             }
+            self.delegate?.boardDidEndAnimatingMoveResult(moveResult)
         }
     }
 
