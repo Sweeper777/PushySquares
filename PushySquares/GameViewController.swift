@@ -1,7 +1,7 @@
 import UIKit
 import PushySquaresModel
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     @IBOutlet var board: BoardView!
     @IBOutlet var statusBar: StatusBar!
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: BoardViewDelegate {
+extension GameViewController: BoardViewDelegate {
     func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
         let remainingPlayerCount = game.players.filter { $0.lives > 0 }.count
         if remainingPlayerCount > 1 {
