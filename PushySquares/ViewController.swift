@@ -46,22 +46,26 @@ class ViewController: UIViewController {
     @objc func swipeUp() {
         let moveResult = game.moveUp()
         board.animateMoveResult(moveResult)
+        setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeDown() {
         let moveResult = game.moveDown()
         board.animateMoveResult(moveResult)
+        setAllGestureRecognisersEnabled(false)
     }
 
 
     @objc func swipeLeft() {
         let moveResult = game.moveLeft()
         board.animateMoveResult(moveResult)
+        setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeRight() {
         let moveResult = game.moveRight()
         board.animateMoveResult(moveResult)
+        setAllGestureRecognisersEnabled(false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
