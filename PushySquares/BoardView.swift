@@ -21,6 +21,8 @@ class BoardView : UIView {
 
     private let animationManager = AnimationManager<ViewAnimationPhase>()
 
+    weak var delegate: BoardViewDelegate?
+
     override func draw(_ rect: CGRect) {
         guard let board = board else {
             return
@@ -110,10 +112,6 @@ class BoardView : UIView {
         }
 
         c.restoreGState()
-    }
-
-    override func layoutSubviews() {
-//        refreshSubviews()
     }
 
     func refreshSubviews() {
@@ -226,4 +224,8 @@ class BoardView : UIView {
         let offset = squareLength / BoardView.borderSize / 2
         return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
     }
+}
+
+protocol BoardViewDelegate: class {
+    func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult)
 }
