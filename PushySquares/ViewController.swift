@@ -77,3 +77,16 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: BoardViewDelegate {
+    func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
+        let remainingPlayerCount = game.players.filter { $0.lives > 0 }.count
+        if remainingPlayerCount > 1 {
+            setAllGestureRecognisersEnabled(true)
+        } else {
+            // TODO: handle winning conditions
+        }
+        statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
+        statusBar.setLives(players: game.players)
+        statusBar.setCurrentTurn(game.currentPlayer.color)
+    }
+}
