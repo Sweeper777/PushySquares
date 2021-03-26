@@ -97,7 +97,11 @@ public class Game : BoardProvider {
         if allSquaresPositions.isEmpty {
             nextTurn()
             let newSquareColor = evaluateTurnsUntilNewSquare()
-            return MoveResult(direction: direction, newSquare: newSquareColor.map { ($0, spawnpoints[$0]!) })
+            return MoveResult(
+                    direction: direction,
+                    newSquare: newSquareColor.map { ($0, spawnpoints[$0]!) },
+                    gameResult: gameResult
+            )
         }
 
         var movingSquaresPositions = Set<Position>()
@@ -159,7 +163,8 @@ public class Game : BoardProvider {
                 slippedPositions: slippedPositions,
                 fellPositions: beingDestroyedSquaresPositions,
                 greyedOutPositions: greyedOutSquaresPositions,
-                newSquare: newSquareColor.map { ($0, spawnpoints[$0]!) })
+                newSquare: newSquareColor.map { ($0, spawnpoints[$0]!) },
+                gameResult: gameResult)
     }
 
     private func handleDeaths(destroyedSquarePositions: Set<Position>) -> Set<Position> {
