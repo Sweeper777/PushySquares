@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         board.board = game
+        board.delegate = self
         statusBar.setCurrentTurn(game.currentPlayer.color)
         statusBar.setLives(players: game.players)
         statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
@@ -83,11 +84,15 @@ class GameViewController: UIViewController {
 
 extension GameViewController: BoardViewDelegate {
     func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
-        let remainingPlayerCount = game.players.filter { $0.lives > 0 }.count
-        if remainingPlayerCount > 1 {
+        switch moveResult.gameResult {
+        case .unknown:
             setAllGestureRecognisersEnabled(true)
-        } else {
-            // TODO: handle winning conditions
+        case .won(let winningColor):
+            // TODO: handle winning
+            break
+        case .tie:
+            // TODO: handle tie
+            break
         }
         statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
         statusBar.setLives(players: game.players)
