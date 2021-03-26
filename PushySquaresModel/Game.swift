@@ -12,6 +12,17 @@ public class Game : BoardProvider {
     public var currentPlayer: Player {
         return players[currentPlayerIndex]
     }
+
+    public var gameResult: GameResult {
+        let remainingPlayers = players.filter { $0.lives > 0 }
+        if remainingPlayers.count > 1 {
+            return .unknown
+        }
+        if let solePlayerLeft = remainingPlayers.first {
+            return .won(solePlayerLeft.color)
+        }
+        return .tie
+    }
     
     private var currentPlayerIndex = 0
     
