@@ -8,4 +8,9 @@ class AIGameViewController : GameViewController {
     let aiQueue = DispatchQueue(label: "gameAI", qos: .background)
     var currentAI: GameAI?
 
+
+    var isAITurn: Bool {
+        game.currentPlayer.color != humanPlayerColor
+    }
+
 }
