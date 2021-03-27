@@ -1,12 +1,15 @@
 import UIKit
 import PushySquaresModel
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, BoardViewDelegate {
 
     @IBOutlet var board: BoardView!
     @IBOutlet var statusBar: StatusBar!
 
-    let game = Game(map: .standard, playerCount: 4)
+    var map: Map! = .standard
+    var playerCount: Int! = 4
+
+    var game: Game!
 
     private var swipeUpGR: UISwipeGestureRecognizer!
     private var swipeDownGR: UISwipeGestureRecognizer!
@@ -15,11 +18,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        board.board = game
         board.delegate = self
-        statusBar.setCurrentTurn(game.currentPlayer.color)
-        statusBar.setLives(players: game.players)
-        statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
 
         swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
@@ -69,9 +68,17 @@ class GameViewController: UIViewController {
         setAllGestureRecognisersEnabled(false)
     }
 
+    func restartGame() {
+        game = Game(map: map, playerCount: playerCount)
+        board.board = game
+        setAllGestureRecognisersEnabled(true)
+        board.refreshSubviews()
+        updateStatusBar()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        board.refreshSubviews()
+        restartGame()
     }
 
     override func viewDidLayoutSubviews() {
@@ -80,9 +87,13 @@ class GameViewController: UIViewController {
             self.board.refreshSubviews()
         }
     }
-}
 
-extension GameViewController: BoardViewDelegate {
+    func updateStatusBar() {
+        statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
+        statusBar.setLives(players: game.players)
+        statusBar.setCurrentTurn(game.currentPlayer.color)
+    }
+
     func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
         switch moveResult.gameResult {
         case .unknown:
@@ -94,8 +105,6 @@ extension GameViewController: BoardViewDelegate {
             // TODO: handle tie
             break
         }
-        statusBar.setNewSquareIn(game.currentPlayer.turnsUntilNewSquare)
-        statusBar.setLives(players: game.players)
-        statusBar.setCurrentTurn(game.currentPlayer.color)
+        updateStatusBar()
     }
 }
