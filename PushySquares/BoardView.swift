@@ -10,6 +10,13 @@ class BoardView : UIView {
         .yellow: .yellow,
     ]
 
+    static let colorToString: [Color: String] = [
+        .red: "Red".localized,
+        .blue: "Blue".localized,
+        .green: "Green".localized,
+        .yellow: "Yellow".localized
+    ]
+
     static let borderSize: CGFloat = 8
 
     var board: BoardProvider! {
@@ -115,6 +122,8 @@ class BoardView : UIView {
     }
 
     func refreshSubviews() {
+        guard board != nil else { return }
+
         subviews.forEach { $0.removeFromSuperview() }
 
         for x in 0..<board.boardState.columns {
