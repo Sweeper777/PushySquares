@@ -183,8 +183,9 @@ public class GameAI {
     }
 
     public func getNextMove(on dispatchQueue: DispatchQueue, completion: @escaping (Direction) -> Void) {
-        dispatchQueue.sync {
-            completion(minimax(depth: searchDepth, color: myColor).direction)
+        dispatchQueue.async { [weak self] in
+            guard let `self` = self else { return }
+            completion(self.minimax(depth: self.searchDepth, color: self.myColor).direction)
         }
     }
 
