@@ -21,3 +21,15 @@ extension String {
         NSLocalizedString(self, comment: "")
     }
 }
+
+extension UIColor {
+    func image(size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 56, height: 56), false, 0)
+        setFill()
+        let path = UIBezierPath(ovalIn: CGRect.zero.with(size: size))
+        path.fill()
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
