@@ -1,5 +1,6 @@
 import UIKit
 import PushySquaresModel
+import SwiftyButton
 
 class GameViewController: UIViewController, BoardViewDelegate {
 
@@ -34,6 +35,22 @@ class GameViewController: UIViewController, BoardViewDelegate {
         view.addGestureRecognizer(swipeDownGR)
         view.addGestureRecognizer(swipeLeftGR)
         view.addGestureRecognizer(swipeRightGR)
+
+        setupStackView()
+    }
+
+    func setupStackView() {
+        let stackView = UIStackView(arrangedSubviews: makeMenuButtons())
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .equalCentering
+        stackView.spacing = 16
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 
     func setAllGestureRecognisersEnabled(_ enabled: Bool) {
