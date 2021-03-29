@@ -28,6 +28,40 @@ class AIGameViewController : GameViewController {
         game.currentPlayer.color != humanPlayerColor
     }
 
+    func tryAIMove() {
+        guard isAITurn else {
+            setAllGestureRecognisersEnabled(true)
+            return
+        }
+        setAllGestureRecognisersEnabled(false)
+        guard game.gameResult == .unknown else {
+            return
+        }
+        let weightsArray: [Int]
+        if playerCount > 2 {
+            weightsArray = multiplayerAIArrays.randomElement()!
+        } else {
+            weightsArray = twoPlayerAIArray
+        }
+        currentAI = GameAI(game: Game(game: game), myColor: game.currentPlayer.color, weightsArray)
+        currentAI!.getNextMove(on: aiQueue) { direction in
+            DispatchQueue.main.async { [weak self] in
+                guard let `self` = self else { return }
+                let moveResult: MoveResult
+                switch direction {
+                case .up:
+                    moveResult = self.game.moveUp()
+                case .down:
+                    moveResult = self.game.moveDown()
+                case .left:
+                    moveResult = self.game.moveLeft()
+                case .right:
+                    moveResult = self.game.moveRight()
+                }
+                self.board.animateMoveResult(moveResult)
+            }
+        }
+    }
 
     override func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
         super.boardDidEndAnimatingMoveResult(moveResult)
