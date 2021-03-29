@@ -39,6 +39,37 @@ class GameViewController: UIViewController, BoardViewDelegate {
         setupStackView()
     }
 
+    func makeMenuButtons() -> [UIView] {
+        let quitButton = PressableButton()
+        let buttonHeight = 40.f
+        quitButton.shadowHeight = buttonHeight * 0.1
+        quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+        quitButton.translatesAutoresizingMaskIntoConstraints = false
+        quitButton.tintColor = .white
+        quitButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            quitButton.widthAnchor.constraint(equalToConstant: buttonHeight),
+            quitButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        ])
+
+        let restartButton = PressableButton()
+        restartButton.shadowHeight = buttonHeight * 0.1
+        restartButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+        restartButton.translatesAutoresizingMaskIntoConstraints = false
+        restartButton.tintColor = .white
+        restartButton.setImage(UIImage(systemName: "arrow.counterclockwise"), for: .normal)
+        restartButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            restartButton.widthAnchor.constraint(equalToConstant: buttonHeight),
+            restartButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        ])
+
+        return [quitButton, restartButton]
+    }
+
     func setupStackView() {
         let stackView = UIStackView(arrangedSubviews: makeMenuButtons())
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +116,11 @@ class GameViewController: UIViewController, BoardViewDelegate {
         setAllGestureRecognisersEnabled(false)
     }
 
-    func restartGame() {
+    @objc func quitTapped() {
+
+    }
+
+    @objc func restartGame() {
         game = Game(map: map, playerCount: playerCount)
         board.board = game
         setAllGestureRecognisersEnabled(true)
