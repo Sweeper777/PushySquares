@@ -28,4 +28,9 @@ class AIGameViewController : GameViewController {
         game.currentPlayer.color != humanPlayerColor
     }
 
+
+    override func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
+        super.boardDidEndAnimatingMoveResult(moveResult)
+        tryAIMove()
+    }
 }
