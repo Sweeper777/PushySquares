@@ -11,6 +11,7 @@
 		25EF00CC831A42B60AF5CF21 /* BoardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF01C251B7257CBE5672B3 /* BoardProvider.swift */; };
 		25EF01267696845BFC9FB0BB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */; };
 		25EF023BA3D455B3F7B1FA56 /* AnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */; };
+		25EF04FD522BB9BB0EE1852A /* GameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */; };
 		25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04759A80F6E1726EFD64 /* MoveResult.swift */; };
 		25EF060107A9428F47C75E43 /* AIGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF07149CEC8F7E69E55FB9 /* AIGameViewController.swift */; };
 		25EF08582B0766455C07A538 /* ViewAnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerStrategy.swift; sourceTree = "<group>"; };
 		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
 		25EF02F749E9C7771AB0BC56 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		25EF04759A80F6E1726EFD64 /* MoveResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveResult.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				25EF0E257F08E06D7776E47D /* AnimationManager.swift */,
 				25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */,
 				25EF07149CEC8F7E69E55FB9 /* AIGameViewController.swift */,
+				25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				25EF009688A895321FC36D9E /* AnimationManager.swift in Sources */,
 				25EF08582B0766455C07A538 /* ViewAnimationPhase.swift in Sources */,
 				25EF060107A9428F47C75E43 /* AIGameViewController.swift in Sources */,
+				25EF04FD522BB9BB0EE1852A /* GameControllerStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
