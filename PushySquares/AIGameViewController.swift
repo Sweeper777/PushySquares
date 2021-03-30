@@ -44,7 +44,11 @@ class AIGameViewController : GameViewController {
             weightsArray = twoPlayerAIArray
         }
         currentAI = GameAI(game: Game(game: game), myColor: game.currentPlayer.color, weightsArray)
-        currentAI!.getNextMove(on: aiQueue) { direction in
+        currentAI!.getNextMove(on: aiQueue) { [weak self, game] direction in
+            guard self?.game === game else {
+                return
+            }
+
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
                 let moveResult: MoveResult
