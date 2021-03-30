@@ -1,6 +1,7 @@
 import UIKit
 import PushySquaresModel
 import SwiftyButton
+import SCLAlertView
 
 class GameViewController: UIViewController, BoardViewDelegate {
 
@@ -66,7 +67,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
         restartButton.translatesAutoresizingMaskIntoConstraints = false
         restartButton.tintColor = .white
         restartButton.setImage(UIImage(systemName: "arrow.counterclockwise"), for: .normal)
-        restartButton.addTarget(self, action: #selector(restartGame), for: .touchUpInside)
+        restartButton.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             restartButton.widthAnchor.constraint(equalToConstant: buttonHeight),
@@ -144,7 +145,19 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     }
 
-    @objc func restartGame() {
+    @objc func restartTapped() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes".localized, action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.restartGame()
+            self.toggleMenu()
+        })
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to restart?".localized)
+    }
+
+    func restartGame() {
         game = Game(map: map, playerCount: playerCount)
         board.board = game
         setAllGestureRecognisersEnabled(true)
