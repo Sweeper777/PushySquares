@@ -6,6 +6,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     @IBOutlet var board: BoardView!
     @IBOutlet var statusBar: StatusBar!
+    var menu: UIStackView!
 
     var map: Map! = .standard
     var playerCount: Int! = 4
@@ -16,6 +17,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     private var swipeDownGR: UISwipeGestureRecognizer!
     private var swipeLeftGR: UISwipeGestureRecognizer!
     private var swipeRightGR: UISwipeGestureRecognizer!
+    private var tapGR: UITapGestureRecognizer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +27,20 @@ class GameViewController: UIViewController, BoardViewDelegate {
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
         swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        tapGR = UITapGestureRecognizer(target: self, action: #selector(toggleMenu))
 
         swipeUpGR.direction = .up
         swipeDownGR.direction = .down
         swipeLeftGR.direction = .left
         swipeRightGR.direction = .right
+        tapGR.numberOfTapsRequired = 1
+        tapGR.numberOfTouchesRequired = 1
 
         view.addGestureRecognizer(swipeUpGR)
         view.addGestureRecognizer(swipeDownGR)
         view.addGestureRecognizer(swipeLeftGR)
         view.addGestureRecognizer(swipeRightGR)
+        view.addGestureRecognizer(tapGR)
 
         setupStackView()
     }
@@ -77,11 +83,13 @@ class GameViewController: UIViewController, BoardViewDelegate {
         stackView.alignment = .fill
         stackView.distribution = .equalCentering
         stackView.spacing = 16
+        stackView.isHidden = true
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        menu = stackView
     }
 
     func setAllGestureRecognisersEnabled(_ enabled: Bool) {
@@ -115,6 +123,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
         board.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
+
+    @objc func toggleMenu() {
 
     @objc func quitTapped() {
 
