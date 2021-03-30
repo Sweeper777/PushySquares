@@ -125,6 +125,20 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func toggleMenu() {
+        if menu.isHidden {
+            menu.isHidden = false
+            menu.alpha = 0
+            UIView.animate(withDuration: 0.25) { [weak self] in
+                self?.menu.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.25) { [weak self] in
+                self?.menu.alpha = 0
+            } completion: { [weak self] _ in
+                self?.menu.isHidden = true
+            }
+        }
+    }
 
     @objc func quitTapped() {
 
