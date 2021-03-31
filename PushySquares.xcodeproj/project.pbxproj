@@ -20,6 +20,7 @@
 		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
 		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
 		25EF0CC4F8BAFCF32EE875EB /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0612B7C63E05A6923EC7 /* AnimationType.swift */; };
+		25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */; };
 		25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */; };
 		5A609AC425F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */; };
 		5A609ACB25F46F8B00AAB972 /* PushySquaresModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609ACA25F46F8B00AAB972 /* PushySquaresModelTests.swift */; };
@@ -121,6 +122,7 @@
 		25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimationPhase.swift; sourceTree = "<group>"; };
 		25EF0612B7C63E05A6923EC7 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIGameControllerStrategy.swift; sourceTree = "<group>"; };
+		25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPhase.swift; sourceTree = "<group>"; };
 		25EF0E257F08E06D7776E47D /* AnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */,
 				25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */,
 				25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */,
+				25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				25EF060107A9428F47C75E43 /* AIGameControllerStrategy.swift in Sources */,
 				25EF04FD522BB9BB0EE1852A /* GameControllerStrategy.swift in Sources */,
 				25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */,
+				25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
