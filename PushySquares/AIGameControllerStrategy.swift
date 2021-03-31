@@ -2,14 +2,19 @@ import PushySquaresModel
 import UIKit
 import SCLAlertView
 
-class AIGameViewController : GameViewController {
+class AIGameControllerStrategy : GameControllerStrategy {
+
+    private unowned var gameViewController: GameViewController
     var hasHumanPlayer = true
     var humanPlayerColor: Color?
     let aiQueue = DispatchQueue(label: "gameAI", qos: .userInitiated)
     var currentAI: GameAI?
 
-    override func restartGame() {
-        super.restartGame()
+    init(gameViewController: GameViewController) {
+        self.gameViewController = gameViewController
+    }
+
+    func didRestartGame() {
         if hasHumanPlayer {
             humanPlayerColor = Color.allCases.randomElement()
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
@@ -24,28 +29,41 @@ class AIGameViewController : GameViewController {
         tryAIMove()
     }
 
+    func didEndAnimatingMoveResult(_ moveResult: MoveResult) {
+        tryAIMove()
+    }
+
+    func makeMenuButtons() -> [UIView]? {
+        nil
+    }
+
+    func willMove(_ direction: Direction) {
+
+    }
+
     var isAITurn: Bool {
-        game.currentPlayer.color != humanPlayerColor
+        gameViewController.game.currentPlayer.color != humanPlayerColor
     }
 
     func tryAIMove() {
         guard isAITurn else {
-            setAllGestureRecognisersEnabled(true)
+            gameViewController.setAllGestureRecognisersEnabled(true)
             return
         }
-        setAllGestureRecognisersEnabled(false)
-        guard game.gameResult == .unknown else {
+        gameViewController.setAllGestureRecognisersEnabled(false)
+        guard gameViewController.game.gameResult == .unknown else {
             return
         }
         let weightsArray: [Int]
-        if playerCount > 2 {
+        if gameViewController.playerCount > 2 {
             weightsArray = multiplayerAIArrays.randomElement()!
         } else {
             weightsArray = twoPlayerAIArray
         }
-        currentAI = GameAI(game: Game(game: game), myColor: game.currentPlayer.color, weightsArray)
+        let game = gameViewController.game
+        currentAI = GameAI(game: Game(game: gameViewController.game), myColor: gameViewController.game.currentPlayer.color, weightsArray)
         currentAI!.getNextMove(on: aiQueue) { [weak self, game] direction in
-            guard self?.game === game else {
+            guard self?.gameViewController.game === game else {
                 return
             }
 
@@ -54,21 +72,16 @@ class AIGameViewController : GameViewController {
                 let moveResult: MoveResult
                 switch direction {
                 case .up:
-                    moveResult = self.game.moveUp()
+                    moveResult = self.gameViewController.game.moveUp()
                 case .down:
-                    moveResult = self.game.moveDown()
+                    moveResult = self.gameViewController.game.moveDown()
                 case .left:
-                    moveResult = self.game.moveLeft()
+                    moveResult = self.gameViewController.game.moveLeft()
                 case .right:
-                    moveResult = self.game.moveRight()
+                    moveResult = self.gameViewController.game.moveRight()
                 }
-                self.board.animateMoveResult(moveResult)
+                self.gameViewController.board.animateMoveResult(moveResult)
             }
         }
-    }
-
-    override func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
-        super.boardDidEndAnimatingMoveResult(moveResult)
-        tryAIMove()
     }
 }
