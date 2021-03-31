@@ -11,8 +11,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     var map: Map! = .standard
     var playerCount: Int! = 4
-
     var game: Game!
+    lazy var strategy: GameControllerStrategy = AIGameControllerStrategy(gameViewController: self)
 
     private var swipeUpGR: UISwipeGestureRecognizer!
     private var swipeDownGR: UISwipeGestureRecognizer!
@@ -78,7 +78,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     func setupStackView() {
-        let stackView = UIStackView(arrangedSubviews: makeMenuButtons())
+        let stackView = UIStackView(arrangedSubviews: strategy.makeMenuButtons() ?? makeMenuButtons())
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.alignment = .fill
@@ -101,12 +101,14 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func swipeUp() {
+        strategy.willMove(.up)
         let moveResult = game.moveUp()
         board.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeDown() {
+        strategy.willMove(.down)
         let moveResult = game.moveDown()
         board.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
@@ -114,12 +116,14 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
 
     @objc func swipeLeft() {
+        strategy.willMove(.left)
         let moveResult = game.moveLeft()
         board.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeRight() {
+        strategy.willMove(.right)
         let moveResult = game.moveRight()
         board.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
@@ -163,6 +167,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
         setAllGestureRecognisersEnabled(true)
         board.refreshSubviews()
         updateStatusBar()
+        strategy.didRestartGame()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -195,5 +200,6 @@ class GameViewController: UIViewController, BoardViewDelegate {
             break
         }
         updateStatusBar()
+        strategy.didEndAnimatingMoveResult(moveResult)
     }
 }
