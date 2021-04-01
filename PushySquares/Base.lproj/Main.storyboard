@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="-79" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Mode Selector View Controller-->
         <scene sceneID="c1Q-r6-eCm">
             <objects>
-                <viewController id="RKk-I9-67S" sceneMemberID="viewController">
+                <viewController id="RKk-I9-67S" customClass="GameModeSelectorViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSQ-RQ-znH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,6 +361,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="gBS-J6-p3y"/>
                     <connections>
+                        <outlet property="backButton" destination="g3w-yp-yG5" id="w9l-pB-EeJ"/>
+                        <outlet property="mapSelector" destination="sgW-HC-CGN" id="xp8-tK-d9e"/>
+                        <outlet property="mapSelectorPageControl" destination="Ije-6h-Nkp" id="H77-H5-2W6"/>
+                        <outlet property="playerCountSelector" destination="Yu4-6c-ZSg" id="bZw-y9-KjS"/>
+                        <outlet property="playerCountSelectorPageControl" destination="3KO-ca-XNs" id="7cH-Nh-y1m"/>
+                        <outlet property="startButton" destination="0kq-aF-miQ" id="2cL-ac-rVw"/>
                         <segue destination="k4l-qi-DG5" kind="presentation" modalPresentationStyle="fullScreen" id="uDH-uY-j0M"/>
                     </connections>
                 </viewController>
