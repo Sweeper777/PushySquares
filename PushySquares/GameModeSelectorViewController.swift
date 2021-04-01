@@ -21,8 +21,8 @@ class GameModeSelectorViewController: UIViewController {
 
         backButton.setTitle("BACK".localized, for: .normal)
         backButton.colors = PressableButton.ColorSet(
-                button: UIColor.green.desaturated().darker(),
-                shadow: UIColor.green.desaturated().darker().darker())
+                button: UIColor.gray,
+                shadow: UIColor.gray.darker())
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
     }
 
@@ -32,6 +32,6 @@ class GameModeSelectorViewController: UIViewController {
 
 
     @objc func backTapped() {
-
+        dismiss(animated: true)
     }
 }

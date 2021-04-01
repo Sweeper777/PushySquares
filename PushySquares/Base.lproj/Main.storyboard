@@ -256,7 +256,7 @@
                         <outlet property="hostButton" destination="1uS-ys-9WZ" id="mzo-h6-ew3"/>
                         <outlet property="joinButton" destination="4KV-xc-N4b" id="CO6-GN-ujS"/>
                         <outlet property="startButton" destination="hwu-ku-f6x" id="sEV-zz-0Me"/>
-                        <segue destination="RKk-I9-67S" kind="presentation" modalPresentationStyle="fullScreen" id="3VP-BZ-gol"/>
+                        <segue destination="RKk-I9-67S" kind="presentation" identifier="showGameModeSelector" modalPresentationStyle="fullScreen" id="3VP-BZ-gol"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ora-qq-Upf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -35,7 +35,7 @@ class MainMenuViewController : UIViewController {
     }
 
     @objc func startTapped() {
-
+        performSegue(withIdentifier: "showGameModeSelector", sender: nil)
     }
 
     @objc func helpTapped() {
