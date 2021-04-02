@@ -38,6 +38,8 @@
 		5A609B2925F4810E00AAB972 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609B2825F4810E00AAB972 /* Direction.swift */; };
 		5A6314EC25FDAA2C00E2B0CA /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A69F2EC25FC77A60075B5EA /* standard.map */; };
 		5A6314F625FDB1E800E2B0CA /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0FA2484F5DA4128F622A /* SquareView.swift */; };
+		5A640A082616BC4C003D3970 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A640A062616BC4C003D3970 /* GameBoardCell.swift */; };
+		5A640A092616BC4C003D3970 /* GameBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A640A072616BC4C003D3970 /* GameBoardCell.xib */; };
 		5A69F25025FC69AB0075B5EA /* cublex1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0B25F47B1800AAB972 /* cublex1.map */; };
 		5A69F25425FC69AE0075B5EA /* cublex2.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0825F47B1800AAB972 /* cublex2.map */; };
 		5A69F25B25FC69B10075B5EA /* cublex3.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0725F47B1800AAB972 /* cublex3.map */; };
@@ -164,6 +166,8 @@
 		5A609B1B25F47BEE00AAB972 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5A609B2325F47E5B00AAB972 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5A609B2825F4810E00AAB972 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		5A640A062616BC4C003D3970 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
+		5A640A072616BC4C003D3970 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
 		5A69F2EC25FC77A60075B5EA /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; path = standard.map; sourceTree = "<group>"; };
 		5A81B0172605887C0058A36E /* StatusBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBar.xib; sourceTree = "<group>"; };
 		5AD4F43B25F34A7B00B500A9 /* PushySquares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushySquares.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +318,8 @@
 		5AD4F43D25F34A7B00B500A9 /* PushySquares */ = {
 			isa = PBXGroup;
 			children = (
+				5A640A062616BC4C003D3970 /* GameBoardCell.swift */,
+				5A640A072616BC4C003D3970 /* GameBoardCell.xib */,
 				5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */,
 				5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */,
 				5AD4F44225F34A7B00B500A9 /* GameViewController.swift */,
@@ -518,6 +524,7 @@
 				5A69F2C425FC69DB0075B5EA /* superslippery.map in Resources */,
 				5AD4F44B25F34A7D00B500A9 /* LaunchScreen.storyboard in Resources */,
 				5A69F25B25FC69B10075B5EA /* cublex3.map in Resources */,
+				5A640A092616BC4C003D3970 /* GameBoardCell.xib in Resources */,
 				5A69F2AF25FC69D10075B5EA /* slippery.map in Resources */,
 				5A69F2CB25FC69DF0075B5EA /* walls.map in Resources */,
 				5A6314EC25FDAA2C00E2B0CA /* standard.map in Resources */,
@@ -638,6 +645,7 @@
 				25EF08582B0766455C07A538 /* ViewAnimationPhase.swift in Sources */,
 				25EF060107A9428F47C75E43 /* AIGameControllerStrategy.swift in Sources */,
 				25EF04FD522BB9BB0EE1852A /* GameControllerStrategy.swift in Sources */,
+				5A640A082616BC4C003D3970 /* GameBoardCell.swift in Sources */,
 				25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */,
 				25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */,
 				25EF043ABB7A6C07356BCE08 /* GameModeSelectorViewController.swift in Sources */,
