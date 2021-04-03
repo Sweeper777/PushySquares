@@ -32,7 +32,7 @@
                 <constraint firstItem="aTU-Ah-rrp" firstAttribute="leading" secondItem="KOC-Pc-tYW" secondAttribute="leading" id="uk6-QI-G31"/>
             </constraints>
             <connections>
-                <outlet property="gameBoardView" destination="H0T-2W-6Pj" id="mGF-2Z-l0G"/>
+                <outlet property="boardView" destination="H0T-2W-6Pj" id="xfl-Xe-O6Y"/>
                 <outlet property="lockedImage" destination="aTU-Ah-rrp" id="LwZ-AX-HSq"/>
             </connections>
             <point key="canvasLocation" x="88" y="42"/>
