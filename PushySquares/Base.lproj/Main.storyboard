@@ -321,6 +321,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-6c-ZSg" customClass="FSPagerView" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="266.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KO-ca-XNs" customClass="FSPageControl" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="266.5" width="343" height="16"/>
@@ -332,6 +335,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-HC-CGN" customClass="FSPagerView" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="282.5" width="343" height="266.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-6h-Nkp" customClass="FSPageControl" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="549" width="343" height="16"/>
