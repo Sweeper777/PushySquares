@@ -67,4 +67,28 @@ class GameModeSelectorViewController: UIViewController {
     @objc func backTapped() {
         dismiss(animated: true)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updatePageViewItemSize()
+    }
+
+    func updatePageViewItemSize() {
+        let pageViewWidth = playerCountSelector.width
+        let pageViewHeight = playerCountSelector.height
+        let itemSideLength = min(pageViewWidth, pageViewHeight) * 0.7
+        playerCountSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+        mapSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { [weak self] context in
+            self?.updatePageViewItemSize()
+        }
+    }
 }
