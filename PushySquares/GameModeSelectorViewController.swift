@@ -18,6 +18,9 @@ class GameModeSelectorViewController: UIViewController {
         return Map(file: url)
     }
 
+    lazy var playerCountSelectorDelegate = PlayerCountSelectorDelegate(gameModes: gameModes, pageControl: playerCountSelectorPageControl)
+    lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +44,8 @@ class GameModeSelectorViewController: UIViewController {
         playerCountSelectorPageControl.setStrokeColor(.black, for: .selected)
         playerCountSelectorPageControl.setFillColor(.clear, for: .normal)
         playerCountSelectorPageControl.setFillColor(.black, for: .selected)
+        playerCountSelector.delegate = playerCountSelectorDelegate
+        playerCountSelector.dataSource = playerCountSelectorDelegate
 
         mapSelector.register(UINib(nibName: "GameBoardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         mapSelector.transformer = FSPagerViewTransformer(type: .linear)
@@ -50,6 +55,8 @@ class GameModeSelectorViewController: UIViewController {
         mapSelectorPageControl.setStrokeColor(.black, for: .selected)
         mapSelectorPageControl.setFillColor(.clear, for: .normal)
         mapSelectorPageControl.setFillColor(.black, for: .selected)
+        mapSelector.delegate = mapSelectorDelegate
+        mapSelector.dataSource = mapSelectorDelegate
     }
 
     @objc func startTapped() {
