@@ -31,3 +31,28 @@ class PlayerCountSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDat
     }
 }
 
+class MapSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDataSource {
+    let maps: [Map]
+    let pageControl: FSPageControl
+
+    init(maps: [Map], pageControl: FSPageControl) {
+        self.maps = maps
+        self.pageControl = pageControl
+        super.init()
+    }
+
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        maps.count
+    }
+
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! GameBoardCell
+        cell.board = maps[index]
+        cell.locked = index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked")
+        return cell
+    }
+
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        pageControl.currentPage = pagerView.currentIndex
+    }
+}
