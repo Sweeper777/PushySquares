@@ -66,7 +66,13 @@ class GameModeSelectorViewController: UIViewController {
     }
 
     @objc func startTapped() {
-
+        if mapSelector.currentIndex <= 3 || UserDefaults.standard.bool(forKey: mapsUnlockedKey) {
+            let (playerCount, aiCount) = gameModePlayerAICounts[playerCountSelector.currentIndex]
+            let map = maps[mapSelector.currentIndex]
+            delegate?.didEndSelectingGameMode(playerCount: playerCount, aiCount: aiCount, map: map)
+        } else {
+            // TODO: show IAP prompt
+        }
     }
 
 
