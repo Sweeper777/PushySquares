@@ -48,7 +48,7 @@ class MapSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDataSource 
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! GameBoardCell
         cell.board = maps[index]
-        cell.locked = index > 3 && !UserDefaults.standard.bool(forKey: "mapsUnlocked")
+        cell.locked = index > 3 && !UserDefaults.standard.bool(forKey: mapsUnlockedKey)
         return cell
     }
 

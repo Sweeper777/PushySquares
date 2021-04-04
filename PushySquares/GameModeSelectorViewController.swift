@@ -92,3 +92,5 @@ class GameModeSelectorViewController: UIViewController {
         }
     }
 }
+
+let mapsUnlockedKey = "mapsUnlocked"
