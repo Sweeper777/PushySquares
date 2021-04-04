@@ -9,7 +9,7 @@ class MainMenuViewController : UIViewController {
     @IBOutlet var hostButton: PressableButton!
 
     override func viewDidLoad() {
-        startButton.setTitle("PLAY".localized, for: .normal)
+        startButton.setTitle("START".localized, for: .normal)
         startButton.colors = PressableButton.ColorSet(
                 button: UIColor.green.desaturated().darker(),
                 shadow: UIColor.green.desaturated().darker().darker())
