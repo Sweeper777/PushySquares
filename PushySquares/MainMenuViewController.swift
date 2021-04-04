@@ -1,6 +1,6 @@
 import UIKit
 import SwiftyButton
-
+import PushySquaresModel
 
 class MainMenuViewController : UIViewController {
     @IBOutlet var startButton: PressableButton!
@@ -35,7 +35,14 @@ class MainMenuViewController : UIViewController {
     }
 
     @objc func startTapped() {
-        performSegue(withIdentifier: "showGameModeSelector", sender: nil)
+        guard let gameModeSelectorVC: GameModeSelectorViewController =
+        UIStoryboard.main?.instantiateViewController(identifier: "GameModeSelectorVC") else {
+            return
+        }
+        gameModeSelectorVC.isModalInPresentation = true
+        gameModeSelectorVC.modalPresentationStyle = .formSheet
+        gameModeSelectorVC.delegate = self
+        present(gameModeSelectorVC, animated: true)
     }
 
     @objc func helpTapped() {
