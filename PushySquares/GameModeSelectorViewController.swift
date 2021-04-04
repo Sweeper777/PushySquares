@@ -12,6 +12,10 @@ class GameModeSelectorViewController: UIViewController {
     @IBOutlet var mapSelectorPageControl: FSPageControl!
 
     let gameModes = ["2player", "3player", "4player", "playervsai", "playervs3ai", "4ai"]
+    let gameModePlayerAICounts: [(Int, Int)] = [
+        (2, 0), (3, 0), (4, 0), (1, 1), (1, 3), (0, 4)
+    ]
+
     let maps = allMaps.map {
         name -> Map in
         let url = Bundle.main.url(forResource: name, withExtension: "map")!
@@ -20,6 +24,8 @@ class GameModeSelectorViewController: UIViewController {
 
     lazy var playerCountSelectorDelegate = PlayerCountSelectorDelegate(gameModes: gameModes, pageControl: playerCountSelectorPageControl)
     lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl)
+
+    weak var delegate: GameModeSelectorDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +97,10 @@ class GameModeSelectorViewController: UIViewController {
             self?.updatePageViewItemSize()
         }
     }
+}
+
+protocol GameModeSelectorDelegate: class {
+    func didEndSelectingGameMode(playerCount: Int, aiCount: Int, map: Map)
 }
 
 let mapsUnlockedKey = "mapsUnlocked"
