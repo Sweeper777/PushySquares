@@ -10,7 +10,7 @@
         <!--Game View Controller-->
         <scene sceneID="YTT-Wn-3ad">
             <objects>
-                <viewController id="k4l-qi-DG5" customClass="GameViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameVC" id="k4l-qi-DG5" customClass="GameViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ahn-7X-zI0"/>
                         <viewControllerLayoutGuide type="bottom" id="1eb-2Z-oLF"/>
@@ -255,7 +255,6 @@
                         <outlet property="hostButton" destination="1uS-ys-9WZ" id="mzo-h6-ew3"/>
                         <outlet property="joinButton" destination="4KV-xc-N4b" id="CO6-GN-ujS"/>
                         <outlet property="startButton" destination="hwu-ku-f6x" id="sEV-zz-0Me"/>
-                        <segue destination="RKk-I9-67S" kind="presentation" identifier="showGameModeSelector" modalPresentationStyle="fullScreen" id="3VP-BZ-gol"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ora-qq-Upf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -265,7 +264,7 @@
         <!--Game Mode Selector View Controller-->
         <scene sceneID="c1Q-r6-eCm">
             <objects>
-                <viewController id="RKk-I9-67S" customClass="GameModeSelectorViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameModeSelectorVC" id="RKk-I9-67S" customClass="GameModeSelectorViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSQ-RQ-znH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,7 +373,6 @@
                         <outlet property="playerCountSelector" destination="Yu4-6c-ZSg" id="bZw-y9-KjS"/>
                         <outlet property="playerCountSelectorPageControl" destination="3KO-ca-XNs" id="7cH-Nh-y1m"/>
                         <outlet property="startButton" destination="0kq-aF-miQ" id="2cL-ac-rVw"/>
-                        <segue destination="k4l-qi-DG5" kind="presentation" modalPresentationStyle="fullScreen" id="uDH-uY-j0M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPy-qa-UA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
