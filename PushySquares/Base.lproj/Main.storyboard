@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6J-a3-lkZ">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +16,14 @@
                         <viewControllerLayoutGuide type="bottom" id="1eb-2Z-oLF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jj7-nl-lMU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-eO-gxd">
-                                <rect key="frame" x="16" y="104" width="343" height="459"/>
+                                <rect key="frame" x="16" y="215" width="382" height="466"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP8-as-STy" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="qH8-fB-34Q"/>
@@ -43,7 +42,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" customClass="BoardView" customModule="PushySquares" customModuleProvider="target" colorLabel="IBBuiltInLabel-Gray">
-                                        <rect key="frame" x="0.0" y="116" width="343" height="343"/>
+                                        <rect key="frame" x="16" y="116" width="350" height="350"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YFR-Qc-Lvt" secondAttribute="height" multiplier="1:1" id="dhI-WK-d3K"/>
@@ -135,20 +134,20 @@
             <objects>
                 <viewController id="F6J-a3-lkZ" customClass="MainMenuViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xpB-xF-q1Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gHS-JG-gnX">
-                                <rect key="frame" x="0.0" y="16" width="375" height="635"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="786"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-IP-Ywa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="309"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387.66666666666669"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-D8-iFG">
-                                        <rect key="frame" x="0.0" y="309" width="375" height="326"/>
+                                        <rect key="frame" x="0.0" y="387.66666666666674" width="414" height="398.33333333333326"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-ku-f6x" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="37.5" y="0.0" width="300" height="74"/>
+                                                <rect key="frame" x="57" y="0.0" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="JSt-dG-BKh"/>
                                                     <constraint firstAttribute="height" constant="61" id="iyX-b7-1lX">
@@ -169,7 +168,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-qt-Jp4" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="37.5" y="84" width="300" height="74"/>
+                                                <rect key="frame" x="57" y="101.99999999999994" width="300" height="92.333333333333314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="UsN-El-mEF">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -190,7 +189,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-ys-9WZ" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="37.5" y="168" width="300" height="74"/>
+                                                <rect key="frame" x="57" y="204.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="CTr-pl-kcB">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -211,7 +210,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-xc-N4b" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="37.5" y="252" width="300" height="74"/>
+                                                <rect key="frame" x="57" y="306.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="fPP-r2-cZj"/>
                                                     <constraint firstAttribute="height" constant="61" id="t7W-yw-oDY">
@@ -268,16 +267,16 @@
             <objects>
                 <viewController id="RKk-I9-67S" customClass="GameModeSelectorViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSQ-RQ-znH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kq-aF-miQ" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="230" y="20" width="129" height="62"/>
+                                <rect key="frame" x="269" y="64" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="6O4-M9-TbT">
                                         <variation key="heightClass=regular" constant="70"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="62" id="HjC-ei-iWb"/>
+                                    <constraint firstAttribute="height" constant="50" id="HjC-ei-iWb"/>
                                     <constraint firstAttribute="width" constant="129" id="OIN-y7-fqQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
@@ -294,13 +293,13 @@
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3w-yp-yG5" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="16" y="20" width="129" height="62"/>
+                                <rect key="frame" x="16" y="64" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="ZwV-ka-1R4"/>
                                     <constraint firstAttribute="height" constant="61" id="lqo-Lu-7f5">
                                         <variation key="heightClass=regular" constant="70"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="62" id="yaY-Dq-Cs3"/>
+                                    <constraint firstAttribute="height" constant="50" id="yaY-Dq-Cs3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <state key="normal" title="BACK"/>
@@ -316,32 +315,32 @@
                                 </variation>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uPt-bL-jOv">
-                                <rect key="frame" x="16" y="90" width="343" height="565"/>
+                                <rect key="frame" x="16" y="122" width="382" height="728"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-6c-ZSg" customClass="FSPagerView" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="266.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="348"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KO-ca-XNs" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="266.5" width="343" height="16"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="348" width="382" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="spe-Xx-F9I"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-HC-CGN" customClass="FSPagerView" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="282.5" width="343" height="266.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="364" width="382" height="348"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-6h-Nkp" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="549" width="343" height="16"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="712" width="382" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="RUI-MN-agj"/>
                                         </constraints>
@@ -359,7 +358,9 @@
                             <constraint firstItem="g3w-yp-yG5" firstAttribute="top" secondItem="RQe-dL-tNT" secondAttribute="top" constant="20" id="BZf-hg-HOv"/>
                             <constraint firstItem="0kq-aF-miQ" firstAttribute="top" secondItem="RQe-dL-tNT" secondAttribute="top" constant="20" id="JHH-uw-1GK"/>
                             <constraint firstItem="RQe-dL-tNT" firstAttribute="trailing" secondItem="0kq-aF-miQ" secondAttribute="trailing" constant="16" id="NAZ-wF-ljI"/>
-                            <constraint firstItem="uPt-bL-jOv" firstAttribute="top" secondItem="0kq-aF-miQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Tkh-on-eyd"/>
+                            <constraint firstItem="uPt-bL-jOv" firstAttribute="top" secondItem="0kq-aF-miQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Tkh-on-eyd">
+                                <variation key="heightClass=compact" constant="-50"/>
+                            </constraint>
                             <constraint firstItem="g3w-yp-yG5" firstAttribute="leading" secondItem="RQe-dL-tNT" secondAttribute="leading" constant="16" id="UOf-Q0-bsi"/>
                             <constraint firstItem="RQe-dL-tNT" firstAttribute="trailing" secondItem="uPt-bL-jOv" secondAttribute="trailing" constant="16" id="VM1-Dn-UDW"/>
                             <constraint firstItem="RQe-dL-tNT" firstAttribute="bottom" secondItem="uPt-bL-jOv" secondAttribute="bottom" constant="12" id="j8C-hq-3jy"/>
@@ -403,8 +404,5 @@
     </designables>
     <resources>
         <image name="logo" width="862" height="364"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
