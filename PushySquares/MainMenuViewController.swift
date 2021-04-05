@@ -57,3 +57,29 @@ class MainMenuViewController : UIViewController {
 
     }
 }
+
+extension MainMenuViewController: GameModeSelectorDelegate {
+    func didEndSelectingGameMode(playerCount: Int, aiCount: Int, map: Map) {
+        guard let gameVC: GameViewController = UIStoryboard.main?.instantiateViewController(identifier: "GameVC") else {
+            return
+        }
+
+        gameVC.map = map
+        gameVC.playerCount = playerCount + aiCount
+
+        if aiCount > 0 {
+            let strategy = AIGameControllerStrategy(gameViewController: gameVC)
+            strategy.hasHumanPlayer = playerCount > 0
+            gameVC.strategy = strategy
+        } else {
+            gameVC.strategy = DefaultGameControllerStrategy()
+        }
+
+        gameVC.isModalInPresentation = true
+        gameVC.modalPresentationStyle = .fullScreen
+
+        presentedViewController?.dismiss(animated: true) { [weak self] in
+            self?.present(gameVC, animated: true)
+        }
+    }
+}
