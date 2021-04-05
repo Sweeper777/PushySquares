@@ -200,13 +200,21 @@ class GameViewController: UIViewController, BoardViewDelegate {
         case .unknown:
             setAllGestureRecognisersEnabled(true)
         case .won(let winningColor):
-            // TODO: handle winning
+            let uiColor = BoardView.colorToUIColor[winningColor]!
+            let colorString = BoardView.colorToString[winningColor]!
+            showGameResult(message: String(format: "%@ is the winner!".localized, colorString), color: uiColor)
             break
         case .tie:
-            // TODO: handle tie
+            showGameResult(message: "It's a draw".localized, color: .gray)
             break
         }
         updateStatusBar()
         strategy.didEndAnimatingMoveResult(moveResult)
+    }
+
+    func showGameResult(message: String, color: UIColor) {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
+        alert.addButton("OK".localized, action: {})
+        _ = alert.showCustom(message, subTitle: "", color: .black, icon: color.image(size: CGSize(width: 56, height: 56)))
     }
 }
