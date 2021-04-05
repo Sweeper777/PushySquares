@@ -12,7 +12,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     var map: Map! = .standard
     var playerCount: Int! = 4
     var game: Game!
-    lazy var strategy: GameControllerStrategy = AIGameControllerStrategy(gameViewController: self)
+    var strategy: GameControllerStrategy!
 
     private var swipeUpGR: UISwipeGestureRecognizer!
     private var swipeDownGR: UISwipeGestureRecognizer!
@@ -146,7 +146,14 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func quitTapped() {
-
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes".localized, action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.dismiss(animated: true)
+        })
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to quit?".localized)
     }
 
     @objc func restartTapped() {
