@@ -3,7 +3,7 @@ import FSPagerView
 import SwiftyButton
 import PushySquaresModel
 
-class GameModeSelectorViewController: UIViewController {
+class GameModeSelectorViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
     @IBOutlet var startButton: PressableButton!
     @IBOutlet var playerCountSelector: FSPagerView!
@@ -53,20 +53,11 @@ class GameModeSelectorViewController: UIViewController {
         playerCountSelector.delegate = playerCountSelectorDelegate
         playerCountSelector.dataSource = playerCountSelectorDelegate
 
-        mapSelector.register(UINib(nibName: "GameBoardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        mapSelector.transformer = FSPagerViewTransformer(type: .linear)
-        mapSelectorPageControl.numberOfPages = maps.count
-        mapSelectorPageControl.currentPage = mapSelector.currentIndex
-        mapSelectorPageControl.setStrokeColor(.black, for: .normal)
-        mapSelectorPageControl.setStrokeColor(.black, for: .selected)
-        mapSelectorPageControl.setFillColor(.clear, for: .normal)
-        mapSelectorPageControl.setFillColor(.black, for: .selected)
-        mapSelector.delegate = mapSelectorDelegate
-        mapSelector.dataSource = mapSelectorDelegate
+        setupMapSelector()
     }
 
     @objc func startTapped() {
-        if mapSelector.currentIndex <= 3 || UserDefaults.standard.bool(forKey: mapsUnlockedKey) {
+        if mapUnlocked {
             let (playerCount, aiCount) = gameModePlayerAICounts[playerCountSelector.currentIndex]
             let map = maps[mapSelector.currentIndex]
             delegate?.didEndSelectingGameMode(playerCount: playerCount, aiCount: aiCount, map: map)
@@ -86,21 +77,15 @@ class GameModeSelectorViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        updatePageViewItemSize()
-    }
-
-    func updatePageViewItemSize() {
-        let pageViewWidth = playerCountSelector.width
-        let pageViewHeight = playerCountSelector.height
-        let itemSideLength = min(pageViewWidth, pageViewHeight) * 0.7
-        playerCountSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
-        mapSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+        updateMapSelectorItemSize()
+        playerCountSelector.itemSize = mapSelector.itemSize
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { [weak self] context in
-            self?.updatePageViewItemSize()
+            self?.updateMapSelectorItemSize()
+            self?.playerCountSelector.itemSize = self?.mapSelector.itemSize ?? .zero
         }
     }
 }
