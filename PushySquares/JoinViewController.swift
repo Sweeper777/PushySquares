@@ -29,5 +29,22 @@ class JoinViewController: UIViewController {
         }
     }
 
+
+    override func viewDidLoad() {
+        backButton.setTitle("BACK".localized, for: .normal)
+        backButton.colors = PressableButton.ColorSet(
+                button: UIColor.gray,
+                shadow: UIColor.gray.darker())
+        backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        connectedPeerID = nil
+        advertiser.startAdvertisingPeer()
+    }
+
+    @objc func backTapped() {
+
+    }
 }
 
+protocol JoinViewControllerDelegate: class {
+    func gameWillStart(session: MCSession, map: String)
+}
