@@ -77,4 +77,17 @@ class HostViewController: UIViewController, HasMapSelector {
 
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateMapSelectorItemSize()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { [weak self] context in
+            self?.updateMapSelectorItemSize()
+        }
+    }
+}
+
 }
