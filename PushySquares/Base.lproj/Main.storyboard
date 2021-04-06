@@ -519,6 +519,77 @@
             </objects>
             <point key="canvasLocation" x="696" y="796"/>
         </scene>
+        <!--Join View Controller-->
+        <scene sceneID="tVG-sG-soE">
+            <objects>
+                <viewController storyboardIdentifier="JoinVC" id="2qC-iZ-L5e" customClass="JoinViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEH-dD-z2t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLw-CL-4vj" customClass="PressableButton" customModule="SwiftyButton">
+                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="cMB-fO-OlH"/>
+                                    <constraint firstAttribute="height" constant="61" id="eG9-qF-dyl">
+                                        <variation key="heightClass=regular" constant="70"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="gzM-cF-ni6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <state key="normal" title="BACK"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eG9-qF-dyl"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="acD-a2-FxU">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to be connected to a game..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUh-NI-BtS">
+                                <rect key="frame" x="65.333333333333343" y="474.66666666666669" width="283.33333333333326" height="24.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-ty-qqC">
+                                <rect key="frame" x="188.66666666666666" y="432" width="37" height="33"/>
+                                <color key="tintColor" red="0.23137254900000001" green="0.4823529412" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tOm-Xe-y8H"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="centerX" secondItem="eEH-dD-z2t" secondAttribute="centerX" id="6cE-Hg-DkZ"/>
+                            <constraint firstItem="WUh-NI-BtS" firstAttribute="centerX" secondItem="eEH-dD-z2t" secondAttribute="centerX" id="HVJ-vL-13u"/>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="centerY" secondItem="CeY-ty-qqC" secondAttribute="centerY" id="Q13-Dd-azk"/>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="centerY" secondItem="eEH-dD-z2t" secondAttribute="centerY" id="YNu-ob-NgQ"/>
+                            <constraint firstItem="WUh-NI-BtS" firstAttribute="top" secondItem="acD-a2-FxU" secondAttribute="bottom" constant="8" symbolic="YES" id="ZuX-hy-DLF"/>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="width" secondItem="CeY-ty-qqC" secondAttribute="width" id="a7E-JO-m7f"/>
+                            <constraint firstItem="BLw-CL-4vj" firstAttribute="top" secondItem="tOm-Xe-y8H" secondAttribute="top" constant="20" id="cZ3-NS-l7Y"/>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="centerX" secondItem="CeY-ty-qqC" secondAttribute="centerX" id="eHC-nP-nrm"/>
+                            <constraint firstItem="BLw-CL-4vj" firstAttribute="leading" secondItem="tOm-Xe-y8H" secondAttribute="leading" constant="16" id="ekd-YR-nTI"/>
+                            <constraint firstItem="acD-a2-FxU" firstAttribute="height" secondItem="CeY-ty-qqC" secondAttribute="height" id="ps2-hR-C9D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z7p-l3-04f"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="acD-a2-FxU" id="fB3-bP-O6e"/>
+                        <outlet property="backButton" destination="BLw-CL-4vj" id="y6p-pj-K0k"/>
+                        <outlet property="checkmark" destination="CeY-ty-qqC" id="wj0-EB-hAd"/>
+                        <outlet property="hintLabel" destination="WUh-NI-BtS" id="7I0-ce-V9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgj-nb-LDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508.6956521739132" y="795.53571428571422"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="0kq-aF-miQ">
@@ -529,6 +600,9 @@
         </designable>
         <designable name="4KV-xc-N4b">
             <size key="intrinsicContentSize" width="124" height="74"/>
+        </designable>
+        <designable name="BLw-CL-4vj">
+            <size key="intrinsicContentSize" width="72" height="43"/>
         </designable>
         <designable name="XdR-qt-Jp4">
             <size key="intrinsicContentSize" width="118" height="74"/>
@@ -547,6 +621,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="logo" width="862" height="364"/>
     </resources>
 </document>
