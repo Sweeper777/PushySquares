@@ -90,4 +90,58 @@ class HostViewController: UIViewController, HasMapSelector {
     }
 }
 
+extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate {
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+
+    }
+
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+
+    }
+
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+
+    }
+
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        if let index = foundPeers.value.firstIndex(where: { $0.peerID == peerID }) {
+            var peersCopy = foundPeers.value
+            switch state {
+            case .connected:
+                peersCopy[index].state = .connected
+            case .connecting:
+                peersCopy[index].state = .connecting
+            case .notConnected:
+                if peersCopy[index].state == .connected {
+                    peersCopy[index].state = .notConnected
+                } else {
+                    peersCopy[index].state = .error
+                }
+            @unknown default:
+                return
+            }
+            foundPeers.accept(peersCopy)
+        }
+    }
+
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+
+    }
+
+    func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+        var peersCopy = foundPeers.value
+        if peersCopy.contains(peerIDStateTuple) {
+            peersCopy.removeAll(where: { $0 == peerIDStateTuple })
+        }
+        peersCopy.append(peerIDStateTuple)
+        foundPeers.accept(peersCopy)
+    }
+
+    func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+        var peersCopy = foundPeers.value
+        peersCopy.removeAll(where: { $0 == peerIDStateTuple })
+        foundPeers.accept(peersCopy)
+    }
 }
