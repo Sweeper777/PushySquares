@@ -54,7 +54,14 @@ class MainMenuViewController : UIViewController {
     }
 
     @objc func hostTapped() {
-
+        guard let hostVC: HostViewController =
+        UIStoryboard.main?.instantiateViewController(identifier: "HostVC") else {
+            return
+        }
+        hostVC.isModalInPresentation = true
+        hostVC.modalPresentationStyle = .formSheet
+//        hostVC.delegate = self
+        present(hostVC, animated: true)
     }
 }
 
