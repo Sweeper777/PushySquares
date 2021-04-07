@@ -50,7 +50,14 @@ class MainMenuViewController : UIViewController {
     }
 
     @objc func joinTapped() {
-
+        guard let joinVC: JoinViewController =
+        UIStoryboard.main?.instantiateViewController(identifier: "JoinVC") else {
+            return
+        }
+        joinVC.isModalInPresentation = true
+        joinVC.modalPresentationStyle = .formSheet
+        joinVC.delegate = self
+        present(joinVC, animated: true)
     }
 
     @objc func hostTapped() {
