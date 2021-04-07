@@ -29,6 +29,7 @@ class JoinViewController: UIViewController {
         }
     }
 
+    weak var delegate: JoinViewControllerDelegate?
 
     override func viewDidLoad() {
         backButton.setTitle("BACK".localized, for: .normal)
@@ -42,6 +43,52 @@ class JoinViewController: UIViewController {
 
     @objc func backTapped() {
 
+    }
+}
+
+extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+
+    }
+
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+
+    }
+
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+
+    }
+
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        switch state {
+        case .notConnected:
+            if connectedPeerID == peerID {
+                connectedPeerID = nil
+            }
+        default: break
+        }
+    }
+
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        if data[0] == DataCodes.quit.rawValue {
+            session.disconnect()
+            connectedPeerID = nil
+        }
+        if data[0] == DataCodes.startGame.rawValue {
+            let map = allMaps[Int(data[2])]
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.gameWillStart(session: session, map: map)
+            }
+        }
+    }
+
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        if connectedPeerID != nil {
+            invitationHandler(false, nil)
+        } else {
+            invitationHandler(true, session)
+            connectedPeerID = peerID
+        }
     }
 }
 
