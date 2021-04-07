@@ -42,7 +42,8 @@ class JoinViewController: UIViewController {
     }
 
     @objc func backTapped() {
-
+        session.disconnect()
+        dismiss(animated: true)
     }
 }
 

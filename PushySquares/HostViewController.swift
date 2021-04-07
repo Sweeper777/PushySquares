@@ -74,7 +74,11 @@ class HostViewController: UIViewController, HasMapSelector {
     }
 
     @objc func backTapped() {
-
+        if isConnected {
+            try? session.send(Data([DataCodes.quit.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        }
+        session.disconnect()
+        dismiss(animated: true)
     }
 
     override func viewDidLayoutSubviews() {
