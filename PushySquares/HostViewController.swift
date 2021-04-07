@@ -105,22 +105,22 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
 
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         if let index = foundPeers.value.firstIndex(where: { $0.peerID == peerID }) {
-            var peersCopy = foundPeers.value
-            switch state {
-            case .connected:
-                peersCopy[index].state = .connected
-            case .connecting:
-                peersCopy[index].state = .connecting
-            case .notConnected:
-                if peersCopy[index].state == .connected {
-                    peersCopy[index].state = .notConnected
-                } else {
-                    peersCopy[index].state = .error
+            foundPeers.acceptByMutating {
+                switch state {
+                case .connected:
+                    $0[index].state = .connected
+                case .connecting:
+                    $0[index].state = .connecting
+                case .notConnected:
+                    if $0[index].state == .connected {
+                        $0[index].state = .notConnected
+                    } else {
+                        $0[index].state = .error
+                    }
+                @unknown default:
+                    return
                 }
-            @unknown default:
-                return
             }
-            foundPeers.accept(peersCopy)
         }
     }
 
@@ -130,18 +130,26 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
-        var peersCopy = foundPeers.value
-        if peersCopy.contains(peerIDStateTuple) {
-            peersCopy.removeAll(where: { $0 == peerIDStateTuple })
+        foundPeers.acceptByMutating {
+            if $0.contains(peerIDStateTuple) {
+                $0.removeAll(where: { $0 == peerIDStateTuple })
+            }
+            $0.append(peerIDStateTuple)
         }
-        peersCopy.append(peerIDStateTuple)
-        foundPeers.accept(peersCopy)
     }
 
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
-        var peersCopy = foundPeers.value
-        peersCopy.removeAll(where: { $0 == peerIDStateTuple })
-        foundPeers.accept(peersCopy)
+        foundPeers.acceptByMutating {
+            $0.removeAll(where: { $0 == peerIDStateTuple })
+        }
+    }
+}
+
+extension BehaviorRelay {
+    func acceptByMutating(_ block: (inout Element) -> Void) {
+        var copy = value
+        block(&copy)
+        accept(copy)
     }
 }
