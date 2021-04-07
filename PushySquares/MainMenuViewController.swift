@@ -1,6 +1,7 @@
 import UIKit
 import SwiftyButton
 import PushySquaresModel
+import MultipeerConnectivity
 
 class MainMenuViewController : UIViewController {
     @IBOutlet var startButton: PressableButton!
@@ -94,6 +95,15 @@ extension MainMenuViewController: GameModeSelectorDelegate {
 
         presentedViewController?.dismiss(animated: true) { [weak self] in
             self?.present(gameVC, animated: true)
+        }
+    }
+}
+
+extension MainMenuViewController : JoinViewControllerDelegate {
+    func gameWillStart(session: MCSession, map: String) {
+        presentedViewController?.dismiss(animated: true) {
+            [weak self] in
+
         }
     }
 }
