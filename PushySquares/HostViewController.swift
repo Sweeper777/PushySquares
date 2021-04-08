@@ -74,6 +74,24 @@ class HostViewController: UIViewController, HasMapSelector {
             }
         }.disposed(by: disposeBag)
 
+        tableView.rx.modelSelected(PeerIDStateTuple.self).bind { [weak self] (model) in
+            guard let `self` = self,
+                  let index = self.foundPeers.value.firstIndex(where: { $0.peerID == model.peerID }) else { return }
+            self.tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            if self.foundPeers.value[index].state == .error || self.foundPeers.value[index].state == .notConnected {
+                if self.connectedPlayersCount >= 3 {
+                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                    alert.addButton("OK".localized, action: {})
+                    alert.showError("Too many players!".localized, subTitle: "You can only connect at most 3 players to the game.".localized)
+                    return
+                }
+                self.browser.invitePeer(self.foundPeers.value[index].peerID, to: self.session, withContext: nil, timeout: 10)
+                self.foundPeers.acceptByMutating { $0[index].state = .connecting }
+            } else {
+                try? self.session.send(Data([DataCodes.quit.rawValue]), toPeers: [self.foundPeers.value[index].peerID], with: .reliable)
+            }
+        }.disposed(by: disposeBag)
+
         browser.delegate = self
         session.delegate = self
     }
