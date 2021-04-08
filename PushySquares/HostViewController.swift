@@ -167,9 +167,7 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
         foundPeers.acceptByMutating {
-            if $0.contains(peerIDStateTuple) {
-                $0.removeAll(where: { $0 == peerIDStateTuple })
-            }
+            $0.removeAll(where: { $0 == peerIDStateTuple })
             $0.append(peerIDStateTuple)
         }
     }
@@ -180,6 +178,7 @@ extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
             $0.removeAll(where: { $0 == peerIDStateTuple })
         }
     }
+
 }
 
 extension BehaviorRelay {
