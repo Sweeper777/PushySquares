@@ -94,6 +94,7 @@ class HostViewController: UIViewController, HasMapSelector {
 
         browser.delegate = self
         session.delegate = self
+        browser.startBrowsingForPeers()
     }
 
     @objc func startTapped() {
