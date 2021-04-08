@@ -120,6 +120,10 @@ class HostViewController: UIViewController, HasMapSelector {
             self?.updateMapSelectorItemSize()
         }
     }
+
+    deinit {
+        browser.stopBrowsingForPeers()
+    }
 }
 
 extension HostViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate {

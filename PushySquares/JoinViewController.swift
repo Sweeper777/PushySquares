@@ -45,6 +45,10 @@ class JoinViewController: UIViewController {
         session.disconnect()
         dismiss(animated: true)
     }
+
+    deinit {
+        advertiser.stopAdvertisingPeer()
+    }
 }
 
 extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
@@ -91,6 +95,7 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
             connectedPeerID = peerID
         }
     }
+
 }
 
 protocol JoinViewControllerDelegate: class {
