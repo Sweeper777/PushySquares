@@ -5,6 +5,7 @@ import PushySquaresModel
 import RxSwift
 import RxCocoa
 import MultipeerConnectivity
+import SCLAlertView
 
 class HostViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
@@ -27,6 +28,14 @@ class HostViewController: UIViewController, HasMapSelector {
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     lazy var browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "pushysquares\(Bundle.main.appBuild)")
     lazy var session = MCSession(peer: peerID)
+
+    var isConnected: Bool {
+        session.connectedPeers.isNotEmpty
+    }
+
+    var connectedPlayersCount: Int {
+        foundPeers.value.filter({ $0.state == .connected || $0.state == .connecting }).count
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
