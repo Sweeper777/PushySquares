@@ -52,7 +52,7 @@ class BoardView : UIView {
                     drawBorder(point: squarePos, color: .black)
                     drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength)
                 case .slippery:
-                    UIImage(named: "wet")!.draw(in: CGRect(origin: squarePos, size: squareSize))
+                    UIImage(named: "wet")!.draw(in: CGRect(origin: squarePos, size: CGSize(width: squareLength, height: squareLength)))
                 case .wall:
                     drawBorder(point: squarePos, color: .black)
                     drawWall(point: squareViewPos, wallSquare: wallSquare)
