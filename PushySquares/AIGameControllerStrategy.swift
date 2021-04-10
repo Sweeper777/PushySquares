@@ -16,7 +16,7 @@ class AIGameControllerStrategy : GameControllerStrategy {
 
     func didRestartGame() {
         if hasHumanPlayer {
-            humanPlayerColor = Color.allCases.randomElement()
+            humanPlayerColor = gameViewController.game.players.randomElement()?.color
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
             alert.addButton("OK", action: {})
             _ = alert.showCustom(
