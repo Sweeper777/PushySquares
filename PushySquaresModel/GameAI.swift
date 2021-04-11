@@ -38,7 +38,7 @@ public class GameAI {
     let wSelfInDanger: Int
     let wOpponentInDangerBelowThreshold: Int
     let wOpponentInDangerAboveThreshold: Int
-    let searchDepth = 6
+    let searchDepth = 4
 
     let myColor: Color
 
@@ -97,7 +97,7 @@ public class GameAI {
         for opponent in opponents {
             opponentInDanger += game.boardState.indices(ofColor: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
         }
-        let finalOpponentInDanger = opponentInDanger * 3 / opponents.count
+        let finalOpponentInDanger = opponentInDanger
         return finalSelfLives * wSelfLife +
                 finalDiffLives * wDiffLives +
                 finalSelfSpread * (mySquares.count < wSquareThreshold ? wSelfSpreadBelowThreshold : wSelfSpreadAboveThreshold) +
@@ -197,10 +197,12 @@ public class GameAI {
 }
 
 public let multiplayerAIArrays = [
-    [9817,3256,2,6212,3272,4225,6744,2582,5886],
-    [9264,2083,3,2111,1915,4922,3956,397,3952],
-    [8420,9285,0,181,4669,5890,4306,4200,7995],
-    [9062,3260,0,2634,4669,8793,1705,2725,6083]
+    [26852,1620,1,2215,2187,6381,3931,5450,5726],
+    [11272,4625,1,4958,5089,4497,3298,2129,3190],
+    [16375,1413,1,3201,2927,7291,2164,4735,1830],
+//    [9264,2083,3,2111,1915,4922,3956,397,3952],
+//    [8420,9285,0,181,4669,5890,4306,4200,7995],
+//    [9062,3260,0,2634,4669,8793,1705,2725,6083]
 ]
 
 public let twoPlayerAIArray = [9817,3256,2,6212,3272,4225,6744,2582,5886]
