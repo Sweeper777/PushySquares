@@ -97,7 +97,7 @@ public class GameAI {
         for opponent in opponents {
             opponentInDanger += game.boardState.indices(ofColor: opponent).map { self.isInDanger(position: $0, directionsOfEdge: self.game.isEdge(position: $0), myColor: opponent) }.filter{ $0 }.count
         }
-        let finalOpponentInDanger = opponentInDanger
+        let finalOpponentInDanger = opponentInDanger * 3 / opponents.count
         return finalSelfLives * wSelfLife +
                 finalDiffLives * wDiffLives +
                 finalSelfSpread * (mySquares.count < wSquareThreshold ? wSelfSpreadBelowThreshold : wSelfSpreadAboveThreshold) +
@@ -127,7 +127,7 @@ public class GameAI {
                 curr = translate(curr)
                 switch game.boardState[curr] {
                 case .empty: continue directionLoop
-                case .square(myColor): continue translationLoop
+                case .square(myColor), .deadBody: continue translationLoop
                 default: return true
                 }
             }
@@ -147,13 +147,15 @@ public class GameAI {
         return dict
     }
 
-    private func minimax(depth: Int, color: Color) -> (score: Int, direction: Direction) {
-        var bestScore = color == myColor ? Int.min : Int.max
-        var currentScore: Int
+    private func minimax(depth: Int, color: Color, alpha: Int = Int.min, beta: Int = Int.max) -> (score: Int, direction: Direction) {
+        var score = 0
         var bestDirection: Direction?
         if game.players.filter({$0.lives > 0}).count < 2 || depth == 0 {
-            bestScore = evaluateHeuristics()
+            score = evaluateHeuristics()
+            return (score, bestDirection ?? .left)
         } else {
+            var alphaCopy = alpha
+            var betaCopy = beta
             for move in (game.boardState.indices(ofColor: color).count == 0 ? [Direction.up] : [Direction.up, .down, .left, .right]) {
                 let gameCopy = game.createCopy()
                 switch move {
@@ -164,22 +166,22 @@ public class GameAI {
                 }
                 gameStates.append(gameCopy)
                 if color == myColor {
-                    currentScore = minimax(depth: depth - 1, color: game.currentPlayer.color).score
-                    if currentScore > bestScore {
-                        bestScore = currentScore
+                    score = minimax(depth: depth - 1, color: game.currentPlayer.color, alpha: alphaCopy, beta: betaCopy).score
+                    if score > alphaCopy {
+                        alphaCopy = score
                         bestDirection = move
                     }
                 } else {
-                    currentScore = minimax(depth: depth - 1, color: game.currentPlayer.color).score
-                    if currentScore < bestScore {
-                        bestScore = currentScore
+                    score = minimax(depth: depth - 1, color: game.currentPlayer.color, alpha: alphaCopy, beta: betaCopy).score
+                    if score < betaCopy {
+                        betaCopy = score
                         bestDirection = move
                     }
                 }
                 gameStates.removeLast()
             }
+            return (score, bestDirection ?? .left)
         }
-        return (bestScore, bestDirection ?? .left)
     }
 
     public func getNextMove(on dispatchQueue: DispatchQueue, completion: @escaping (Direction) -> Void) {
