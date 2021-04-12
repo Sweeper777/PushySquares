@@ -30,6 +30,7 @@
 		25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */; };
 		25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF036807D1D3A81577B97C /* DataCodes.swift */; };
 		25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */; };
+		5A5E1B052623D94E00EB1A61 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5E1B042623D94E00EB1A61 /* StoreKit.framework */; };
 		5A609AC425F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */; };
 		5A609ACB25F46F8B00AAB972 /* PushySquaresModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609ACA25F46F8B00AAB972 /* PushySquaresModelTests.swift */; };
 		5A609ACD25F46F8B00AAB972 /* PushySquaresModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -147,6 +148,7 @@
 		25EF0E42B828C3FC6CE13C78 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		25EF0F5785A68F4113FBE3C8 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		5A5E1B042623D94E00EB1A61 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A609ABE25F46F8B00AAB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5E1B052623D94E00EB1A61 /* StoreKit.framework in Frameworks */,
 				5EF7FF885880A176B51D40F8 /* Pods_PushySquares.framework in Frameworks */,
 				5A609AD025F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */,
 			);
@@ -241,6 +244,7 @@
 		44CA1BB36074894F1A38335E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A5E1B042623D94E00EB1A61 /* StoreKit.framework */,
 				7814AD654ECAC2FB7238E243 /* Pods_PushySquares.framework */,
 				C4C6D7D6CEFE7D0ED82FE9DC /* Pods_PushySquaresTests.framework */,
 			);
