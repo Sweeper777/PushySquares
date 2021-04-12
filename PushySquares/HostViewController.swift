@@ -39,15 +39,6 @@ class HostViewController: UIViewController, HasMapSelector {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            let startInfo = StartInfo(turns: [peerID: 1], map: "standard")
-            let encoded = try NSKeyedArchiver.archivedData(withRootObject: startInfo, requiringSecureCoding: false)
-            let decoded = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(encoded)
-            print(decoded ?? "nil")
-        } catch {
-            print("Error!")
-            print(error)
-        }
 
         startButton.setTitle("START".localized, for: .normal)
         startButton.colors = PressableButton.ColorSet(
