@@ -27,7 +27,7 @@ class HostViewController: UIViewController, HasMapSelector {
 
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     lazy var browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "pushysquares\(Bundle.main.appBuild)")
-    lazy var session = MCSession(peer: peerID)
+    lazy var session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
 
     var isConnected: Bool {
         session.connectedPeers.isNotEmpty

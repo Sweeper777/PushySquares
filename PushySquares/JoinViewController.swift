@@ -12,7 +12,7 @@ class JoinViewController: UIViewController {
 
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     lazy var advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "pushysquares\(Bundle.main.appBuild)")
-    lazy var session = MCSession(peer: peerID)
+    lazy var session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
     var connectedPeerID: MCPeerID? {
         didSet {
             if let connectedPeer = connectedPeerID {
@@ -38,6 +38,8 @@ class JoinViewController: UIViewController {
                 shadow: UIColor.gray.darker())
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         connectedPeerID = nil
+        session.delegate = self
+        advertiser.delegate = self
         advertiser.startAdvertisingPeer()
     }
 
