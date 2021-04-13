@@ -70,7 +70,9 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
         switch state {
         case .notConnected:
             if connectedPeerID == peerID {
-                connectedPeerID = nil
+                DispatchQueue.main.async { [weak self] in
+                    self?.connectedPeerID = nil
+                }
             }
         default: break
         }
@@ -79,12 +81,15 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if data[0] == DataCodes.quit.rawValue {
             session.disconnect()
-            connectedPeerID = nil
+            DispatchQueue.main.async { [weak self] in
+                self?.connectedPeerID = nil
+            }
         }
         if data[0] == DataCodes.startGame.rawValue {
-            let map = allMaps[Int(data[2])]
+            let startInfoData = Data(data.dropFirst())
+            let startInfo = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(startInfoData) as! StartInfo
             DispatchQueue.main.async { [weak self] in
-                self?.delegate?.gameWillStart(session: session, map: map)
+                self?.delegate?.gameWillStart(session: session, startInfo: startInfo)
             }
         }
     }

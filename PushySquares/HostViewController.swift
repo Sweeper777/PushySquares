@@ -29,6 +29,8 @@ class HostViewController: UIViewController, HasMapSelector {
     lazy var browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "pushysquares\(Bundle.main.appBuild)")
     lazy var session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
 
+    weak var delegate: MultipeerViewControllerDelegate?
+
     var isConnected: Bool {
         session.connectedPeers.isNotEmpty
     }
@@ -60,8 +62,6 @@ class HostViewController: UIViewController, HasMapSelector {
             row, model, cell in
             cell.backgroundColor = .clear
             cell.textLabel!.text = model.peerID.displayName
-//            cell.textLabel!.font = UIFont(name: "Chalkboard SE", size: cell.textLabel!.font.pointSize)
-//            cell.detailTextLabel!.font = UIFont(name: "Chalkboard SE", size: cell.detailTextLabel!.font.pointSize)
             switch model.state {
             case .connected:
                 cell.detailTextLabel!.text = "Connected".localized
@@ -98,7 +98,22 @@ class HostViewController: UIViewController, HasMapSelector {
     }
 
     @objc func startTapped() {
-
+        let turns = (1...session.connectedPeers.count + 1).shuffled().map { Color(rawValue: $0)! }
+        let allPlayerPeerIDs = [peerID] + session.connectedPeers
+        let startInfo = StartInfo(
+                turns: Dictionary(uniqueKeysWithValues: zip(allPlayerPeerIDs, turns)),
+                map: allMaps[mapSelector.currentIndex])
+        do {
+            let startInfoData = try NSKeyedArchiver.archivedData(withRootObject: startInfo, requiringSecureCoding: false)
+            try session.send([DataCodes.startGame.rawValue] + startInfoData, toPeers: session.connectedPeers, with: .reliable)
+            delegate?.gameWillStart(session: session, startInfo: startInfo)
+        } catch {
+            print(error)
+            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            alert.addButton("OK".localized, action: {})
+            // TODO: localise this!
+            alert.showError("Error".localized, subTitle: "An unknown error occurred!".localized)
+        }
     }
 
     @objc func backTapped() {
