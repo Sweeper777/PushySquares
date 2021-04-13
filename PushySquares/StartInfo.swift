@@ -1,7 +1,8 @@
 import MultipeerConnectivity
+import PushySquaresModel
 
 final class StartInfo : NSObject, NSCoding {
-    let turns: [MCPeerID: Int]
+    let turns: [MCPeerID: Color]
     let map: String
 
     enum Keys: CodingKey {
@@ -9,13 +10,13 @@ final class StartInfo : NSObject, NSCoding {
         case map
     }
 
-    init(turns: [MCPeerID: Int], map: String) {
+    init(turns: [MCPeerID: Color], map: String) {
         self.turns = turns
         self.map = map
     }
 
     func encode(with coder: NSCoder) {
-        coder.encode(turns, forKey: Keys.turns.stringValue)
+        coder.encode(turns.mapValues(\.rawValue), forKey: Keys.turns.stringValue)
         coder.encode(map, forKey: Keys.map.stringValue)
     }
 
@@ -23,10 +24,10 @@ final class StartInfo : NSObject, NSCoding {
         guard let turns = coder.decodeObject(of: NSDictionary.self, forKey: Keys.turns.stringValue) as? [MCPeerID: Int] else {
             return nil
         }
-        guard let map = coder.decodeObject(of: NSString.self, forKey: Keys.map.stringValue) as? String else {
+        guard let map = coder.decodeObject(of: NSString.self, forKey: Keys.map.stringValue) as String? else {
             return nil
         }
-        self.init(turns: turns, map: map)
+    self.init(turns: turns.mapValues { Color(rawValue: $0)! }, map: map)
     }
 
     override var description: String {
