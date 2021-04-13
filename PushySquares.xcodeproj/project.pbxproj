@@ -23,6 +23,7 @@
 		25EF0A11AFE69B2A1E4CB08C /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF03A78CB588770C427D6A /* JoinViewController.swift */; };
 		25EF0A51DF4ACE9CFF95FF13 /* PeerIDStateTuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF034462C07CDD35943046 /* PeerIDStateTuple.swift */; };
 		25EF0A555C5EA59188001BBD /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0F5785A68F4113FBE3C8 /* GameResult.swift */; };
+		25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */; };
 		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
 		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
 		25EF0CC4F8BAFCF32EE875EB /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0612B7C63E05A6923EC7 /* AnimationType.swift */; };
@@ -128,6 +129,7 @@
 		25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeSelectorViewController.swift; sourceTree = "<group>"; };
 		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
 		25EF02CA7C3E3787BE934B60 /* StartInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartInfo.swift; sourceTree = "<group>"; };
+		25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerGameControllerStrategy.swift; sourceTree = "<group>"; };
 		25EF02E87B765A8533BBC016 /* HasMapSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasMapSelector.swift; sourceTree = "<group>"; };
 		25EF02F749E9C7771AB0BC56 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		25EF034462C07CDD35943046 /* PeerIDStateTuple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerIDStateTuple.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				25EF03A78CB588770C427D6A /* JoinViewController.swift */,
 				25EF036807D1D3A81577B97C /* DataCodes.swift */,
 				25EF02CA7C3E3787BE934B60 /* StartInfo.swift */,
+				25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				25EF0A11AFE69B2A1E4CB08C /* JoinViewController.swift in Sources */,
 				25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */,
 				25EF09DBF7124E50EE688F85 /* StartInfo.swift in Sources */,
+				25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
