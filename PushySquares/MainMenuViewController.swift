@@ -99,8 +99,8 @@ extension MainMenuViewController: GameModeSelectorDelegate {
     }
 }
 
-extension MainMenuViewController : JoinViewControllerDelegate {
-    func gameWillStart(session: MCSession, map: String) {
+extension MainMenuViewController : MultipeerViewControllerDelegate {
+    func gameWillStart(session: MCSession, startInfo: StartInfo) {
         presentedViewController?.dismiss(animated: true) {
             [weak self] in
 

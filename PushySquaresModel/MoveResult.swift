@@ -9,7 +9,7 @@ public struct MoveResult {
     public let newSquare: (Color, Position)?
     public let gameResult: GameResult
 
-    init(direction: Direction,
+    public init(direction: Direction,
                 movedPositions: Set<Position> = [],
                 slippedPositions: Set<Position> = [],
                 fellPositions: Set<Position> = [],

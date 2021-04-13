@@ -18,7 +18,7 @@ class AIGameControllerStrategy : GameControllerStrategy {
         if hasHumanPlayer {
             humanPlayerColor = gameViewController.game.players.randomElement()?.color
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
-            alert.addButton("OK", action: {})
+            alert.addButton("OK".localized, action: {})
             _ = alert.showCustom(
                     String(format: "Your color is %@.".localized, BoardView.colorToString[humanPlayerColor!]!),
                     subTitle: "", color: .black,

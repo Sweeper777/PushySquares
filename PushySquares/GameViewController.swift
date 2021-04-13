@@ -43,6 +43,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
         view.addGestureRecognizer(swipeRightGR)
         view.addGestureRecognizer(tapGR)
 
+        setAllGestureRecognisersEnabled(false)
+
         setupStackView()
     }
 

@@ -29,7 +29,7 @@ class JoinViewController: UIViewController {
         }
     }
 
-    weak var delegate: JoinViewControllerDelegate?
+    weak var delegate: MultipeerViewControllerDelegate?
 
     override func viewDidLoad() {
         backButton.setTitle("BACK".localized, for: .normal)
@@ -100,6 +100,6 @@ extension JoinViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
 
 }
 
-protocol JoinViewControllerDelegate: class {
-    func gameWillStart(session: MCSession, map: String)
+protocol MultipeerViewControllerDelegate: class {
+    func gameWillStart(session: MCSession, startInfo: StartInfo)
 }
