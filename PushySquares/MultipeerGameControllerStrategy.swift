@@ -34,6 +34,12 @@ class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
         )
     }
 
+    func didEndAnimatingMoveResult(_ moveResult: MoveResult) {
+        gameViewController.setAllGestureRecognisersEnabled(
+                myColor == gameViewController.game.currentPlayer.color
+        )
+    }
+
 }
 
 extension MultipeerGameControllerStrategy: MCSessionDelegate {
