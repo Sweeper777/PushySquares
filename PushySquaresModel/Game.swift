@@ -188,20 +188,22 @@ public class Game : BoardProvider {
         return retVal
     }
     
-    public func killPlayer(_ color: Color) {
-        guard let index = players.firstIndex(where: { $0.color == color && $0.lives > 0 }) else { return }
+    public func killPlayer(_ color: Color) -> MoveResult {
+        guard let index = players.firstIndex(where: { $0.color == color && $0.lives > 0 }) else {
+            return MoveResult(direction: .up, gameResult: gameResult)
+        }
         let player = players[index]
         player.lives = 0
-        var greyedOutPositions = [Position]()
+        var greyedOutPositions = Set<Position>()
         for position in boardState.indices(ofColor: color) {
             boardState[position] = .deadBody
-            greyedOutPositions.append(position)
+            greyedOutPositions.insert(position)
         }
         
         if currentPlayer.color == color {
             nextTurn()
         }
-        
+        return MoveResult(direction: .up, greyedOutPositions: greyedOutPositions, gameResult: gameResult)
     }
     
     private func nextTurn() {
