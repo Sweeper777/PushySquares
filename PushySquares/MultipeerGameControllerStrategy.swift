@@ -70,6 +70,18 @@ class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
         alert.showWarning("Confirm".localized, subTitle: "Do you really want to quit?".localized)
     }
 
+    func willMove(_ direction: Direction) {
+        switch direction {
+        case .right:
+            try! session.send(Data([DataCodes.moveRight.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        case .up:
+            try! session.send(Data([DataCodes.moveUp.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        case .down:
+            try! session.send(Data([DataCodes.moveDown.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        case .left:
+            try! session.send(Data([DataCodes.moveLeft.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        }
+    }
 }
 
 extension MultipeerGameControllerStrategy: MCSessionDelegate {
