@@ -40,6 +40,36 @@ class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
         )
     }
 
+    func makeMenuButtons() -> [UIView]? {
+        let quitButton = PressableButton()
+        let buttonHeight = 40.f
+        quitButton.shadowHeight = buttonHeight * 0.1
+        quitButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+        quitButton.translatesAutoresizingMaskIntoConstraints = false
+        quitButton.tintColor = .white
+        quitButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        quitButton.addTarget(self, action: #selector(quitTapped), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            quitButton.widthAnchor.constraint(equalToConstant: buttonHeight),
+            quitButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        ])
+        return [quitButton]
+    }
+
+    @objc func quitTapped() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes".localized, action: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.disconnectHandled = true
+            self.gameViewController.dismiss(animated: true)
+            self.session.disconnect()
+        })
+        alert.addButton("No".localized, action: {})
+        alert.showWarning("Confirm".localized, subTitle: "Do you really want to quit?".localized)
+    }
+
 }
 
 extension MultipeerGameControllerStrategy: MCSessionDelegate {
