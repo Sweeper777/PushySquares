@@ -85,6 +85,56 @@ class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
 }
 
 extension MultipeerGameControllerStrategy: MCSessionDelegate {
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        guard state == .notConnected else { return }
+
+        if gameViewController.game.players.filter({ $0.lives > 0 }).count < 2 {
+            return
+        }
+
+        if session.connectedPeers.isEmpty && !disconnectHandled {
+            disconnectHandled = true
+            if gameViewController.game.players.filter({ $0.lives > 0 }).count > 2 {
+                DispatchQueue.main.async { [weak self] in
+                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                    alert.addButton("OK".localized, action: {
+                        [weak self] in
+                        self?.gameViewController.dismiss(animated: true, completion: nil)
+                    })
+                    _ = alert.showWarning("Oops!".localized, subTitle: "You disconnected from the game.".localized)
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                    alert.addButton("OK".localized, action: {
+                        [weak self] in
+                        self?.gameViewController.dismiss(animated: true, completion: nil)
+                    })
+                    _ = alert.showWarning("Game Over".localized, subTitle: "All other players disconnected.".localized)
+                }
+            }
+        }
+
+        if !session.connectedPeers.isEmpty {
+            DispatchQueue.main.async {
+                [weak self] in
+                self?.handleDisconnection(of: peerID)
+            }
+
+        }
+    }
+
+    func handleDisconnection(of peerID: MCPeerID) {
+        let moveResult = gameViewController.game.killPlayer(myColor)
+        let moveResultWithUnknownGameResult = MoveResult(
+                direction: .up, greyedOutPositions: moveResult.greyedOutPositions, gameResult: .unknown
+        )
+        gameViewController.board.animateMoveResult(moveResultWithUnknownGameResult)
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("OK", action: {})
+        _ = alert.showWarning("Oops!".localized, subTitle: String(format: "%@ disconnected from the game.".localized, peerID.displayName))
+    }
+
 
 
 }
