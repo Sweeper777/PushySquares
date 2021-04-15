@@ -38,7 +38,7 @@ public class GameAI {
     let wSelfInDanger: Int
     let wOpponentInDangerBelowThreshold: Int
     let wOpponentInDangerAboveThreshold: Int
-    let searchDepth = 4
+    let searchDepth = 6
 
     let myColor: Color
 
@@ -179,8 +179,11 @@ public class GameAI {
                     }
                 }
                 gameStates.removeLast()
+                if alphaCopy >= betaCopy {
+                    break
+                }
             }
-            return (score, bestDirection ?? .left)
+            return (color == myColor ? alphaCopy : betaCopy, bestDirection ?? .left)
         }
     }
 
@@ -197,12 +200,9 @@ public class GameAI {
 }
 
 public let multiplayerAIArrays = [
-    [26852,1620,1,2215,2187,6381,3931,5450,5726],
-    [11272,4625,1,4958,5089,4497,3298,2129,3190],
-    [16375,1413,1,3201,2927,7291,2164,4735,1830],
-//    [9264,2083,3,2111,1915,4922,3956,397,3952],
-//    [8420,9285,0,181,4669,5890,4306,4200,7995],
-//    [9062,3260,0,2634,4669,8793,1705,2725,6083]
+    [9264,2083,3,2111,1915,4922,3956,397,3952],
+    [8420,9285,0,181,4669,5890,4306,4200,7995],
+    [9062,3260,0,2634,4669,8793,1705,2725,6083]
 ]
 
 public let twoPlayerAIArray = [9817,3256,2,6212,3272,4225,6744,2582,5886]
