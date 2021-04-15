@@ -68,7 +68,7 @@ class MainMenuViewController : UIViewController {
         }
         hostVC.isModalInPresentation = true
         hostVC.modalPresentationStyle = .formSheet
-//        hostVC.delegate = self
+        hostVC.delegate = self
         present(hostVC, animated: true)
     }
 }
@@ -101,9 +101,25 @@ extension MainMenuViewController: GameModeSelectorDelegate {
 
 extension MainMenuViewController : MultipeerViewControllerDelegate {
     func gameWillStart(session: MCSession, startInfo: StartInfo) {
-        presentedViewController?.dismiss(animated: true) {
-            [weak self] in
-
+        guard let gameVC: GameViewController = UIStoryboard.main?.instantiateViewController(identifier: "GameVC") else {
+            return
         }
+
+        guard let mapURL = Bundle.main.url(forResource: startInfo.map, withExtension: "map") else {
+            fatalError("The request map could not be found!")
+        }
+
+        gameVC.map = Map(file: mapURL)
+        gameVC.playerCount = session.connectedPeers.count + 1
+
+        gameVC.strategy = MultipeerGameControllerStrategy(session: session, turns: startInfo.turns, gameViewController: gameVC)
+
+        gameVC.isModalInPresentation = true
+        gameVC.modalPresentationStyle = .fullScreen
+
+        presentedViewController?.dismiss(animated: true) { [weak self] in
+            self?.present(gameVC, animated: true)
+        }
+
     }
 }
