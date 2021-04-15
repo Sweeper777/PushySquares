@@ -7,7 +7,7 @@ import SwiftyButton
 class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
     let session: MCSession
     let turns: [MCPeerID: Color]
-    var disconnectHandled = false
+    private var disconnectHandled = false
     private unowned let gameViewController: GameViewController
 
     init(session: MCSession, turns: [MCPeerID: Color], gameViewController: GameViewController) {
@@ -138,22 +138,26 @@ extension MultipeerGameControllerStrategy: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         guard data.count > 0 else { return }
 
-        let moveResult: MoveResult
+        DispatchQueue.main.async {
+            [weak self] in
+            guard let `self` = self else { return }
+            let moveResult: MoveResult
 
-        switch DataCodes(rawValue: data[0]) {
-        case .moveLeft?:
-            moveResult = gameViewController.game.moveLeft()
-        case .moveDown?:
-            moveResult = gameViewController.game.moveDown()
-        case .moveUp?:
-            moveResult = gameViewController.game.moveUp()
-        case .moveRight:
-            moveResult = gameViewController.game.moveRight()
-        default:
-            return
+            switch DataCodes(rawValue: data[0]) {
+            case .moveLeft?:
+                moveResult = self.gameViewController.game.moveLeft()
+            case .moveDown?:
+                moveResult = self.gameViewController.game.moveDown()
+            case .moveUp?:
+                moveResult = self.gameViewController.game.moveUp()
+            case .moveRight:
+                moveResult = self.gameViewController.game.moveRight()
+            default:
+                return
+            }
+
+            self.gameViewController.board.animateMoveResult(moveResult)
         }
-
-        gameViewController.board.animateMoveResult(moveResult)
     }
 
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
