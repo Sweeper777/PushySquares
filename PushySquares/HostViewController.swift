@@ -98,7 +98,12 @@ class HostViewController: UIViewController, HasMapSelector {
     }
 
     @objc func startTapped() {
-        let turns = (1...session.connectedPeers.count + 1).shuffled().map { Color(rawValue: $0)! }
+        let turns: [Color]
+        if session.connectedPeers.count == 1 {
+            turns = [Color.red, Color.green].shuffled()
+        } else {
+            turns = (1...session.connectedPeers.count + 1).shuffled().map { Color(rawValue: $0)! }
+        }
         let allPlayerPeerIDs = [peerID] + session.connectedPeers
         let startInfo = StartInfo(
                 turns: Dictionary(uniqueKeysWithValues: zip(allPlayerPeerIDs, turns)),
