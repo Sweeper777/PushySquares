@@ -147,11 +147,15 @@ public class GameAI {
         return dict
     }
 
-    private func minimax(depth: Int, color: Color, alpha: Int = Int.min, beta: Int = Int.max) -> (score: Int, direction: Direction) {
-        var score = 0
+    private func minimax() -> Direction {
+        minimax(depth: searchDepth, color: myColor, alpha: PositionScore(magnitude: .min, depth: searchDepth), beta: PositionScore(magnitude: .max, depth: searchDepth)).direction
+    }
+
+    private func minimax(depth: Int, color: Color, alpha: PositionScore, beta: PositionScore) -> (score: PositionScore, direction: Direction) {
+        var score = PositionScore(magnitude: 0, depth: 0)
         var bestDirection: Direction?
         if game.players.filter({$0.lives > 0}).count < 2 || depth == 0 {
-            score = evaluateHeuristics()
+            score = PositionScore(magnitude: evaluateHeuristics(), depth: depth)
             return (score, bestDirection ?? .left)
         } else {
             var alphaCopy = alpha
@@ -190,12 +194,12 @@ public class GameAI {
     public func getNextMove(on dispatchQueue: DispatchQueue, completion: @escaping (Direction) -> Void) {
         dispatchQueue.async { [weak self] in
             guard let `self` = self else { return }
-            completion(self.minimax(depth: self.searchDepth, color: self.myColor).direction)
+            completion(self.minimax())
         }
     }
 
     public func getNextMove() -> Direction {
-        minimax(depth: searchDepth, color: myColor).direction
+        minimax()
     }
 }
 
