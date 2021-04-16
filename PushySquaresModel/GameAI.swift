@@ -199,6 +199,16 @@ public class GameAI {
     }
 }
 
+struct PositionScore : Comparable {
+    let magnitude: Int
+    let depth: Int
+
+    static func <(lhs: PositionScore, rhs: PositionScore) -> Bool {
+        (lhs.magnitude < rhs.magnitude) ||
+                (lhs.magnitude == rhs.magnitude && lhs.depth > rhs.depth)
+    }
+}
+
 public let multiplayerAIArrays = [
     [9264,2083,3,2111,1915,4922,3956,397,3952],
     [8420,9285,0,181,4669,5890,4306,4200,7995],
