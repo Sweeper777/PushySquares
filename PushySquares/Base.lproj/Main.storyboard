@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6J-a3-lkZ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -552,7 +553,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="acD-a2-FxU">
                                 <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to be connected to a game..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUh-NI-BtS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to be connected to a game..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUh-NI-BtS">
                                 <rect key="frame" x="65.333333333333343" y="474.66666666666669" width="283.33333333333326" height="24.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -569,6 +570,8 @@
                             <constraint firstItem="acD-a2-FxU" firstAttribute="centerX" secondItem="eEH-dD-z2t" secondAttribute="centerX" id="6cE-Hg-DkZ"/>
                             <constraint firstItem="WUh-NI-BtS" firstAttribute="centerX" secondItem="eEH-dD-z2t" secondAttribute="centerX" id="HVJ-vL-13u"/>
                             <constraint firstItem="acD-a2-FxU" firstAttribute="centerY" secondItem="CeY-ty-qqC" secondAttribute="centerY" id="Q13-Dd-azk"/>
+                            <constraint firstItem="WUh-NI-BtS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tOm-Xe-y8H" secondAttribute="leading" constant="16" id="RnN-pX-uoj"/>
+                            <constraint firstItem="tOm-Xe-y8H" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WUh-NI-BtS" secondAttribute="trailing" constant="16" id="Wuj-mL-JN8"/>
                             <constraint firstItem="acD-a2-FxU" firstAttribute="centerY" secondItem="eEH-dD-z2t" secondAttribute="centerY" id="YNu-ob-NgQ"/>
                             <constraint firstItem="WUh-NI-BtS" firstAttribute="top" secondItem="acD-a2-FxU" secondAttribute="bottom" constant="8" symbolic="YES" id="ZuX-hy-DLF"/>
                             <constraint firstItem="acD-a2-FxU" firstAttribute="width" secondItem="CeY-ty-qqC" secondAttribute="width" id="a7E-JO-m7f"/>
@@ -590,6 +593,65 @@
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="795.53571428571422"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="7Z8-gH-yjh">
+            <objects>
+                <viewController storyboardIdentifier="JoinVC" id="FP7-0W-6Ef" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bY8-f3-yh5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-rp-Jqm" customClass="PressableButton" customModule="SwiftyButton">
+                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="iqn-CP-3nd"/>
+                                    <constraint firstAttribute="height" constant="50" id="ocS-Cy-brH"/>
+                                    <constraint firstAttribute="height" constant="61" id="sdw-By-Kc0">
+                                        <variation key="heightClass=regular" constant="70"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <state key="normal" title="BACK"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sdw-By-Kc0"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ2-KC-id0">
+                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="66S-NM-b3f"/>
+                        <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EPz-rp-Jqm" firstAttribute="top" secondItem="66S-NM-b3f" secondAttribute="top" constant="20" id="OOw-WB-nkl"/>
+                            <constraint firstItem="EPz-rp-Jqm" firstAttribute="leading" secondItem="66S-NM-b3f" secondAttribute="leading" constant="16" id="OwT-Xb-XlX"/>
+                            <constraint firstItem="rZ2-KC-id0" firstAttribute="leading" secondItem="66S-NM-b3f" secondAttribute="leading" id="SEL-Y9-tR9"/>
+                            <constraint firstItem="rZ2-KC-id0" firstAttribute="top" secondItem="EPz-rp-Jqm" secondAttribute="bottom" constant="8" symbolic="YES" id="eWN-1S-aRS"/>
+                            <constraint firstItem="66S-NM-b3f" firstAttribute="bottom" secondItem="rZ2-KC-id0" secondAttribute="bottom" id="geV-kh-YOP"/>
+                            <constraint firstItem="rZ2-KC-id0" firstAttribute="trailing" secondItem="66S-NM-b3f" secondAttribute="trailing" id="uKn-rt-iOd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eO4-He-NOR"/>
+                    <connections>
+                        <outlet property="backButton" destination="EPz-rp-Jqm" id="N2a-7w-w8K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kww-HN-cip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.710144927536234" y="795.53571428571422"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="0kq-aF-miQ">
@@ -602,6 +664,9 @@
             <size key="intrinsicContentSize" width="124" height="74"/>
         </designable>
         <designable name="BLw-CL-4vj">
+            <size key="intrinsicContentSize" width="72" height="43"/>
+        </designable>
+        <designable name="EPz-rp-Jqm">
             <size key="intrinsicContentSize" width="72" height="43"/>
         </designable>
         <designable name="XdR-qt-Jp4">
