@@ -31,6 +31,7 @@
 		25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */; };
 		25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF036807D1D3A81577B97C /* DataCodes.swift */; };
 		25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */; };
+		5A4ABC3F262A6DD80008ABE5 /* NearbyPeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */; };
 		5A5E1B052623D94E00EB1A61 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5E1B042623D94E00EB1A61 /* StoreKit.framework */; };
 		5A609AC425F46F8B00AAB972 /* PushySquaresModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */; };
 		5A609ACB25F46F8B00AAB972 /* PushySquaresModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A609ACA25F46F8B00AAB972 /* PushySquaresModelTests.swift */; };
@@ -150,6 +151,7 @@
 		25EF0E42B828C3FC6CE13C78 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		25EF0F5785A68F4113FBE3C8 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPeerCell.swift; sourceTree = "<group>"; };
 		5A5E1B042623D94E00EB1A61 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		5AD4F43D25F34A7B00B500A9 /* PushySquares */ = {
 			isa = PBXGroup;
 			children = (
+				5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */,
 				5A640A062616BC4C003D3970 /* GameBoardCell.swift */,
 				5A640A072616BC4C003D3970 /* GameBoardCell.xib */,
 				5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */,
@@ -678,6 +681,7 @@
 				25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */,
 				25EF043ABB7A6C07356BCE08 /* GameModeSelectorViewController.swift in Sources */,
 				25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */,
+				5A4ABC3F262A6DD80008ABE5 /* NearbyPeerCell.swift in Sources */,
 				25EF08052FBA384C2B87D97D /* HostViewController.swift in Sources */,
 				25EF0583C7AD01CFD8C0FD4A /* HasMapSelector.swift in Sources */,
 				25EF0A51DF4ACE9CFF95FF13 /* PeerIDStateTuple.swift in Sources */,
