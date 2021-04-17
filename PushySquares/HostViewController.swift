@@ -58,19 +58,21 @@ class HostViewController: UIViewController, HasMapSelector {
 
         setupMapSelector()
 
-        foundPeers.asObservable().bind(to: tableView.rx.items(cellIdentifier: "cell")) {
+        tableView.register(NearbyPeerCell.self, forCellReuseIdentifier: "cell")
+
+        foundPeers.asObservable().bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: NearbyPeerCell.self)) {
             row, model, cell in
             cell.backgroundColor = .clear
-            cell.textLabel!.text = model.peerID.displayName
+            cell.peerNameLabel.text = model.peerID.displayName
             switch model.state {
             case .connected:
-                cell.detailTextLabel!.text = "Connected".localized
+                cell.connectionStatusLabel.text = "Connected".localized
             case .connecting:
-                cell.detailTextLabel!.text = "Connecting...".localized
+                cell.connectionStatusLabel.text = "Connecting...".localized
             case .error:
-                cell.detailTextLabel!.text = "Unable to connect".localized
+                cell.connectionStatusLabel.text = "Unable to connect".localized
             case .notConnected:
-                cell.detailTextLabel!.text = ""
+                cell.connectionStatusLabel.text = ""
             }
         }.disposed(by: disposeBag)
 

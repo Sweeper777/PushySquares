@@ -142,13 +142,13 @@
                                 <rect key="frame" x="0.0" y="60" width="414" height="786"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-IP-Ywa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387.66666666666669"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-D8-iFG">
-                                        <rect key="frame" x="0.0" y="414.66666666666674" width="414" height="371.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="387.66666666666674" width="414" height="398.33333333333326"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-ku-f6x" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="0.0" width="300" height="85.333333333333329"/>
+                                                <rect key="frame" x="57" y="0.0" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="JSt-dG-BKh"/>
                                                     <constraint firstAttribute="height" constant="61" id="iyX-b7-1lX">
@@ -169,7 +169,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-qt-Jp4" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="95.333333333333314" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="101.99999999999994" width="300" height="92.333333333333314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="UsN-El-mEF">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -190,7 +190,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-ys-9WZ" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="190.66666666666669" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="204.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="CTr-pl-kcB">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -211,7 +211,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-xc-N4b" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="285.99999999999994" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="306.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="fPP-r2-cZj"/>
                                                     <constraint firstAttribute="height" constant="61" id="t7W-yw-oDY">
@@ -446,28 +446,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="tfU-Zv-gf3" detailTextLabel="g9V-CR-bAt" style="IBUITableViewCellStyleValue1" id="ymn-Mr-SzC">
-                                                <rect key="frame" x="0.0" y="28" width="382" height="48.666667938232422"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ymn-Mr-SzC" customClass="NearbyPeerCell" customModule="PushySquares" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="382" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ymn-Mr-SzC" id="YGi-V2-ZZU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="48.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tfU-Zv-gf3">
-                                                            <rect key="frame" x="20.000000000000004" y="12.999999999999998" width="33.333333333333336" height="24.333333333333332"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9V-CR-bAt">
-                                                            <rect key="frame" x="318" y="12.999999999999998" width="44" height="24.333333333333332"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableViewCell>
@@ -596,7 +580,7 @@
         <!--View Controller-->
         <scene sceneID="7Z8-gH-yjh">
             <objects>
-                <viewController storyboardIdentifier="JoinVC" id="FP7-0W-6Ef" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpVC" id="FP7-0W-6Ef" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bY8-f3-yh5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
