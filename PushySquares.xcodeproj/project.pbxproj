@@ -7,25 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25EF00632E0CC36BFE601637 /* help(zh-Hant).html in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */; };
 		25EF009688A895321FC36D9E /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E257F08E06D7776E47D /* AnimationManager.swift */; };
+		25EF00B579B35D7C560673E7 /* lives zh.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */; };
 		25EF00CC831A42B60AF5CF21 /* BoardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF01C251B7257CBE5672B3 /* BoardProvider.swift */; };
 		25EF01267696845BFC9FB0BB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */; };
 		25EF023BA3D455B3F7B1FA56 /* AnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */; };
 		25EF043ABB7A6C07356BCE08 /* GameModeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */; };
 		25EF04FD522BB9BB0EE1852A /* GameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */; };
+		25EF05758BC435EE527E4E5F /* new square in zh-Hant.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF00216D966DDF09C8258A /* new square in zh-Hant.png */; };
 		25EF0583C7AD01CFD8C0FD4A /* HasMapSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02E87B765A8533BBC016 /* HasMapSelector.swift */; };
+		25EF0598B3991A68768F816D /* lives.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0C02FC1064EF9E7E4065 /* lives.png */; };
 		25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04759A80F6E1726EFD64 /* MoveResult.swift */; };
 		25EF060107A9428F47C75E43 /* AIGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */; };
+		25EF0662FB3CB8461DDC919C /* new square in.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0620BF8EE9AAAC4742D0 /* new square in.png */; };
 		25EF08052FBA384C2B87D97D /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF07DE2075247ADA65417B /* HostViewController.swift */; };
 		25EF08582B0766455C07A538 /* ViewAnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */; };
+		25EF08987D5E5955098B704F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */; };
 		25EF08FD4ABED1FC0C556849 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A53EC1122B75623549 /* StatusBar.swift */; };
 		25EF09DBF7124E50EE688F85 /* StartInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02CA7C3E3787BE934B60 /* StartInfo.swift */; };
 		25EF0A11AFE69B2A1E4CB08C /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF03A78CB588770C427D6A /* JoinViewController.swift */; };
 		25EF0A51DF4ACE9CFF95FF13 /* PeerIDStateTuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF034462C07CDD35943046 /* PeerIDStateTuple.swift */; };
 		25EF0A555C5EA59188001BBD /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0F5785A68F4113FBE3C8 /* GameResult.swift */; };
+		25EF0A8744E2DD911E107C12 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0BB703C718C824CA9FDC /* help.html */; };
 		25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */; };
+		25EF0AD49FBDFDA1C55D5DBF /* help(zh-Hans).html in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0C031777BB40A0160EBF /* help(zh-Hans).html */; };
 		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
 		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
+		25EF0C4DE125F46BB0DC38ED /* new square in zh-Hans.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0014136E54BE027A772A /* new square in zh-Hans.png */; };
 		25EF0CC4F8BAFCF32EE875EB /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0612B7C63E05A6923EC7 /* AnimationType.swift */; };
 		25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */; };
 		25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */; };
@@ -126,6 +135,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25EF0014136E54BE027A772A /* new square in zh-Hans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hans.png"; sourceTree = "<group>"; };
+		25EF00216D966DDF09C8258A /* new square in zh-Hant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hant.png"; sourceTree = "<group>"; };
 		25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerStrategy.swift; sourceTree = "<group>"; };
 		25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeSelectorViewController.swift; sourceTree = "<group>"; };
 		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
@@ -141,14 +152,21 @@
 		25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlDelegates.swift; sourceTree = "<group>"; };
 		25EF04A53EC1122B75623549 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimationPhase.swift; sourceTree = "<group>"; };
+		25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		25EF0612B7C63E05A6923EC7 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		25EF0620BF8EE9AAAC4742D0 /* new square in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in.png"; sourceTree = "<group>"; };
 		25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIGameControllerStrategy.swift; sourceTree = "<group>"; };
 		25EF07DE2075247ADA65417B /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		25EF0BB703C718C824CA9FDC /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		25EF0C02FC1064EF9E7E4065 /* lives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lives.png; sourceTree = "<group>"; };
+		25EF0C031777BB40A0160EBF /* help(zh-Hans).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hans).html"; sourceTree = "<group>"; };
 		25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPhase.swift; sourceTree = "<group>"; };
+		25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hant).html"; sourceTree = "<group>"; };
 		25EF0E257F08E06D7776E47D /* AnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		25EF0E42B828C3FC6CE13C78 /* GameAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
+		25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lives zh.png"; sourceTree = "<group>"; };
 		25EF0F5785A68F4113FBE3C8 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPeerCell.swift; sourceTree = "<group>"; };
@@ -372,6 +390,15 @@
 				25EF036807D1D3A81577B97C /* DataCodes.swift */,
 				25EF02CA7C3E3787BE934B60 /* StartInfo.swift */,
 				25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */,
+				25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */,
+				25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */,
+				25EF0C031777BB40A0160EBF /* help(zh-Hans).html */,
+				25EF0BB703C718C824CA9FDC /* help.html */,
+				25EF0C02FC1064EF9E7E4065 /* lives.png */,
+				25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */,
+				25EF00216D966DDF09C8258A /* new square in zh-Hant.png */,
+				25EF0620BF8EE9AAAC4742D0 /* new square in.png */,
+				25EF0014136E54BE027A772A /* new square in zh-Hans.png */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -577,6 +604,14 @@
 				5A69F2A125FC69CC0075B5EA /* morewalls.map in Resources */,
 				5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */,
 				5A81B0182605887C0058A36E /* StatusBar.xib in Resources */,
+				25EF00632E0CC36BFE601637 /* help(zh-Hant).html in Resources */,
+				25EF0AD49FBDFDA1C55D5DBF /* help(zh-Hans).html in Resources */,
+				25EF0A8744E2DD911E107C12 /* help.html in Resources */,
+				25EF0598B3991A68768F816D /* lives.png in Resources */,
+				25EF00B579B35D7C560673E7 /* lives zh.png in Resources */,
+				25EF05758BC435EE527E4E5F /* new square in zh-Hant.png in Resources */,
+				25EF0662FB3CB8461DDC919C /* new square in.png in Resources */,
+				25EF0C4DE125F46BB0DC38ED /* new square in zh-Hans.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +724,7 @@
 				25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */,
 				25EF09DBF7124E50EE688F85 /* StartInfo.swift in Sources */,
 				25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */,
+				25EF08987D5E5955098B704F /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

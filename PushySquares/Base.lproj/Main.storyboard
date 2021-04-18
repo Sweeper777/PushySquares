@@ -142,13 +142,13 @@
                                 <rect key="frame" x="0.0" y="60" width="414" height="786"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-IP-Ywa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387.66666666666669"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-D8-iFG">
-                                        <rect key="frame" x="0.0" y="414.66666666666674" width="414" height="371.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="387.66666666666674" width="414" height="398.33333333333326"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-ku-f6x" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="0.0" width="300" height="85.333333333333329"/>
+                                                <rect key="frame" x="57" y="0.0" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="JSt-dG-BKh"/>
                                                     <constraint firstAttribute="height" constant="61" id="iyX-b7-1lX">
@@ -169,7 +169,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-qt-Jp4" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="95.333333333333314" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="101.99999999999994" width="300" height="92.333333333333314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="UsN-El-mEF">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -190,7 +190,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-ys-9WZ" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="190.66666666666669" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="204.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="CTr-pl-kcB">
                                                         <variation key="heightClass=regular" constant="70"/>
@@ -211,7 +211,7 @@
                                                 </variation>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-xc-N4b" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="285.99999999999994" width="300" height="85.333333333333314"/>
+                                                <rect key="frame" x="57" y="306.33333333333331" width="300" height="92"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="fPP-r2-cZj"/>
                                                     <constraint firstAttribute="height" constant="61" id="t7W-yw-oDY">
@@ -577,10 +577,10 @@
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="795.53571428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="7Z8-gH-yjh">
             <objects>
-                <viewController storyboardIdentifier="HelpVC" id="FP7-0W-6Ef" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpVC" id="FP7-0W-6Ef" customClass="HelpViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bY8-f3-yh5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,10 +609,10 @@
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ2-KC-id0">
                                 <rect key="frame" x="0.0" y="122" width="414" height="740"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
+                                    <wkPreferences key="preferences" minimumFontSize="18"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
@@ -630,6 +630,7 @@
                     <navigationItem key="navigationItem" id="eO4-He-NOR"/>
                     <connections>
                         <outlet property="backButton" destination="EPz-rp-Jqm" id="N2a-7w-w8K"/>
+                        <outlet property="webView" destination="rZ2-KC-id0" id="fm6-ve-dTT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kww-HN-cip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
