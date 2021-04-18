@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6J-a3-lkZ">
-    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -17,14 +17,14 @@
                         <viewControllerLayoutGuide type="bottom" id="1eb-2Z-oLF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Jj7-nl-lMU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-eO-gxd">
-                                <rect key="frame" x="16" y="215" width="382" height="466"/>
+                                <rect key="frame" x="16" y="82" width="288" height="404"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP8-as-STy" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="qH8-fB-34Q"/>
@@ -43,7 +43,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" customClass="BoardView" customModule="PushySquares" customModuleProvider="target" colorLabel="IBBuiltInLabel-Gray">
-                                        <rect key="frame" x="16" y="116" width="350" height="350"/>
+                                        <rect key="frame" x="0.0" y="116" width="288" height="288"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YFR-Qc-Lvt" secondAttribute="height" multiplier="1:1" id="dhI-WK-d3K"/>
@@ -135,121 +135,119 @@
             <objects>
                 <viewController id="F6J-a3-lkZ" customClass="MainMenuViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xpB-xF-q1Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gHS-JG-gnX">
-                                <rect key="frame" x="0.0" y="60" width="414" height="786"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-D8-iFG">
+                                <rect key="frame" x="0.0" y="226" width="320" height="326"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-IP-Ywa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387.66666666666669"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-D8-iFG">
-                                        <rect key="frame" x="0.0" y="387.66666666666674" width="414" height="398.33333333333326"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-ku-f6x" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="0.0" width="300" height="92"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="JSt-dG-BKh"/>
-                                                    <constraint firstAttribute="height" constant="61" id="iyX-b7-1lX">
-                                                        <variation key="heightClass=regular" constant="70"/>
-                                                    </constraint>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
-                                                <state key="normal" title="START"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                                        <real key="value" value="7"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="iyX-b7-1lX"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-qt-Jp4" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="101.99999999999994" width="300" height="92.333333333333314"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="61" id="UsN-El-mEF">
-                                                        <variation key="heightClass=regular" constant="70"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="width" constant="300" id="gIA-5E-c0i"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
-                                                <state key="normal" title="HELP"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                                        <real key="value" value="7"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="UsN-El-mEF"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-ys-9WZ" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="204.33333333333331" width="300" height="92"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="61" id="CTr-pl-kcB">
-                                                        <variation key="heightClass=regular" constant="70"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="width" constant="300" id="Gz6-Cs-lyh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
-                                                <state key="normal" title="HOST"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                                        <real key="value" value="7"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="CTr-pl-kcB"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-xc-N4b" customClass="PressableButton" customModule="SwiftyButton">
-                                                <rect key="frame" x="57" y="306.33333333333331" width="300" height="92"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="fPP-r2-cZj"/>
-                                                    <constraint firstAttribute="height" constant="61" id="t7W-yw-oDY">
-                                                        <variation key="heightClass=regular" constant="70"/>
-                                                    </constraint>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
-                                                <state key="normal" title="JOIN"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                                        <real key="value" value="7"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="t7W-yw-oDY"/>
-                                                    </mask>
-                                                </variation>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-ku-f6x" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="JSt-dG-BKh"/>
+                                            <constraint firstAttribute="height" constant="61" id="iyX-b7-1lX">
+                                                <variation key="heightClass=regular" constant="70"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
+                                        <state key="normal" title="START"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="iyX-b7-1lX"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdR-qt-Jp4" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="10" y="84" width="300" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="UsN-El-mEF">
+                                                <variation key="heightClass=regular" constant="70"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="300" id="gIA-5E-c0i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
+                                        <state key="normal" title="HELP"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="UsN-El-mEF"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-ys-9WZ" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="10" y="168" width="300" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="CTr-pl-kcB">
+                                                <variation key="heightClass=regular" constant="70"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="300" id="Gz6-Cs-lyh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
+                                        <state key="normal" title="HOST"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CTr-pl-kcB"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-xc-N4b" customClass="PressableButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="10" y="252" width="300" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="fPP-r2-cZj"/>
+                                            <constraint firstAttribute="height" constant="61" id="t7W-yw-oDY">
+                                                <variation key="heightClass=regular" constant="70"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="52"/>
+                                        <state key="normal" title="JOIN"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="t7W-yw-oDY"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <mask key="subviews">
-                                        <exclude reference="iwK-IP-Ywa"/>
-                                    </mask>
-                                </variation>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-IP-Ywa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="218"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RqA-2T-z4d"/>
                         <color key="backgroundColor" red="1" green="0.95527199009999997" blue="0.83132437039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RqA-2T-z4d" firstAttribute="trailing" secondItem="gHS-JG-gnX" secondAttribute="trailing" id="3lc-Vd-Wkm"/>
-                            <constraint firstItem="RqA-2T-z4d" firstAttribute="bottom" secondItem="gHS-JG-gnX" secondAttribute="bottom" constant="16" id="Qkj-cP-Abx"/>
-                            <constraint firstItem="gHS-JG-gnX" firstAttribute="leading" secondItem="RqA-2T-z4d" secondAttribute="leading" id="cxx-xs-zfw"/>
-                            <constraint firstItem="gHS-JG-gnX" firstAttribute="top" secondItem="xpB-xF-q1Y" secondAttribute="topMargin" constant="16" id="sAf-kh-wxC"/>
+                            <constraint firstItem="b5E-D8-iFG" firstAttribute="leading" secondItem="RqA-2T-z4d" secondAttribute="leading" id="AQQ-Mz-4KP"/>
+                            <constraint firstItem="b5E-D8-iFG" firstAttribute="top" secondItem="iwK-IP-Ywa" secondAttribute="bottom" constant="8" symbolic="YES" id="CHw-fw-5Oq"/>
+                            <constraint firstItem="RqA-2T-z4d" firstAttribute="trailing" secondItem="b5E-D8-iFG" secondAttribute="trailing" id="Olk-QJ-NDg"/>
+                            <constraint firstItem="iwK-IP-Ywa" firstAttribute="trailing" secondItem="RqA-2T-z4d" secondAttribute="trailing" id="ZKj-9i-tJy"/>
+                            <constraint firstItem="iwK-IP-Ywa" firstAttribute="leading" secondItem="RqA-2T-z4d" secondAttribute="leading" id="ZQO-4o-tLA"/>
+                            <constraint firstItem="iwK-IP-Ywa" firstAttribute="top" secondItem="RqA-2T-z4d" secondAttribute="top" id="mQK-yR-9eJ"/>
+                            <constraint firstItem="RqA-2T-z4d" firstAttribute="bottom" secondItem="b5E-D8-iFG" secondAttribute="bottom" constant="16" id="t4w-Yf-XES"/>
+                            <constraint firstItem="b5E-D8-iFG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RqA-2T-z4d" secondAttribute="top" constant="16" id="vyW-fR-C9r"/>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="iwK-IP-Ywa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="helpButton" destination="XdR-qt-Jp4" id="nUE-d9-BYd"/>
@@ -260,18 +258,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ora-qq-Upf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="132"/>
+            <point key="canvasLocation" x="-80.625" y="130.98591549295776"/>
         </scene>
         <!--Game Mode Selector View Controller-->
         <scene sceneID="c1Q-r6-eCm">
             <objects>
                 <viewController storyboardIdentifier="GameModeSelectorVC" id="RKk-I9-67S" customClass="GameModeSelectorViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSQ-RQ-znH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kq-aF-miQ" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="269" y="64" width="129" height="50"/>
+                                <rect key="frame" x="175" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="6O4-M9-TbT">
                                         <variation key="heightClass=regular" constant="70"/>
@@ -293,7 +291,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3w-yp-yG5" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <rect key="frame" x="16" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="ZwV-ka-1R4"/>
                                     <constraint firstAttribute="height" constant="61" id="lqo-Lu-7f5">
@@ -315,31 +313,31 @@
                                 </variation>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uPt-bL-jOv">
-                                <rect key="frame" x="16" y="122" width="382" height="728"/>
+                                <rect key="frame" x="16" y="78" width="288" height="478"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-6c-ZSg" customClass="FSPagerView" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="348"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="223"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KO-ca-XNs" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="348" width="382" height="16"/>
+                                        <rect key="frame" x="0.0" y="223" width="288" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="spe-Xx-F9I"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-HC-CGN" customClass="FSPagerView" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="364" width="382" height="348"/>
+                                        <rect key="frame" x="0.0" y="239" width="288" height="223"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-6h-Nkp" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="712" width="382" height="16"/>
+                                        <rect key="frame" x="0.0" y="462" width="288" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="RUI-MN-agj"/>
@@ -385,11 +383,11 @@
             <objects>
                 <viewController storyboardIdentifier="HostVC" id="AbW-uM-tnz" customClass="HostViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="093-Ef-IS7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmp-mQ-aF5" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="269" y="64" width="129" height="50"/>
+                                <rect key="frame" x="175" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="HES-sh-K4N">
                                         <variation key="heightClass=regular" constant="70"/>
@@ -411,7 +409,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVW-mS-GHC" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <rect key="frame" x="16" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1oR-Nz-rhz"/>
                                     <constraint firstAttribute="width" constant="129" id="LH2-GQ-Aaq"/>
@@ -433,24 +431,24 @@
                                 </variation>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o71-Hd-vXg">
-                                <rect key="frame" x="16" y="122" width="382" height="728"/>
+                                <rect key="frame" x="16" y="78" width="288" height="478"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZr-8G-ZgQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="72.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="72.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zQW-IY-vBd">
-                                        <rect key="frame" x="0.0" y="72.333333333333343" width="382" height="320"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="288" height="195"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ymn-Mr-SzC" customClass="NearbyPeerCell" customModule="PushySquares" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="382" height="43.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="28" width="288" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ymn-Mr-SzC" id="YGi-V2-ZZU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -458,14 +456,14 @@
                                         </prototypes>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKk-U2-E2N" customClass="FSPagerView" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="392.33333333333337" width="382" height="319.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="267.5" width="288" height="194.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isInfinite" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS2-uY-4sc" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="712" width="382" height="16"/>
+                                        <rect key="frame" x="0.0" y="462" width="288" height="16"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="JC4-Hj-36n"/>
@@ -509,11 +507,11 @@
             <objects>
                 <viewController storyboardIdentifier="JoinVC" id="2qC-iZ-L5e" customClass="JoinViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEH-dD-z2t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLw-CL-4vj" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <rect key="frame" x="16" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="cMB-fO-OlH"/>
                                     <constraint firstAttribute="height" constant="61" id="eG9-qF-dyl">
@@ -535,16 +533,17 @@
                                 </variation>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="acD-a2-FxU">
-                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting to be connected to a game..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUh-NI-BtS">
-                                <rect key="frame" x="65.333333333333343" y="474.66666666666669" width="283.33333333333326" height="24.333333333333314"/>
+                                <rect key="frame" x="18.5" y="310.5" width="283.5" height="24.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-ty-qqC">
-                                <rect key="frame" x="188.66666666666666" y="432" width="37" height="33"/>
+                                <rect key="frame" x="141.5" y="267.5" width="37" height="33.5"/>
                                 <color key="tintColor" red="0.23137254900000001" green="0.4823529412" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
@@ -582,11 +581,11 @@
             <objects>
                 <viewController storyboardIdentifier="HelpVC" id="FP7-0W-6Ef" customClass="HelpViewController" customModule="PushySquares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bY8-f3-yh5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-rp-Jqm" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="16" y="64" width="129" height="50"/>
+                                <rect key="frame" x="16" y="20" width="129" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="iqn-CP-3nd"/>
                                     <constraint firstAttribute="height" constant="50" id="ocS-Cy-brH"/>
@@ -608,7 +607,7 @@
                                 </variation>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ2-KC-id0">
-                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="78" width="320" height="490"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
