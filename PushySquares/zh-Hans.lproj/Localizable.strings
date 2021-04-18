@@ -1,0 +1,67 @@
+// GameViewController
+"It's a draw" = "平局";
+"%@ is the winner!" = "%@赢了!";
+"OK" = "确定";
+"Yes" = "是";
+"No" = "否";
+"Confirm" = "确认";
+"Do you really want to quit?" = "你确定要退出吗？";
+"Do you really want to restart?" = "你真的要重新开始吗？";
+
+// MainMenuController
+"START" = "开始";
+"HELP" = "帮助";
+"JOIN" = "加入游戏";
+"HOST" = "开始多人";
+
+// PlayerCountSelectorVC
+"BACK" = "返回";
+"START GAME" = "开始游戏";
+"Unlock All Maps" = "解锁所有地图";
+"Loading..." = "正在加载...";
+"Cancel" = "取消";
+"This map is locked!" = "被锁住了！";
+"Do you want to unlock all locked maps?" = "要解锁所有地图吗？";
+"Unlock All Maps for %@" = "用 %@ 解锁所有地图";
+"Purchases are disabled on this device!" = "这个装置上的购买功能已被停用！";
+"Restore Purchase" = "恢复购买";
+"Do you want to unlock all locked maps for %@?" = "要用 %@ 解锁所有地图吗？";
+"Unable to get product information. Please check your Internet connection." = "无法获取商品信息，请检查你的网络连接。";
+"Oops!" = "糟糕！";
+"You have not purcheased this yet, so you cannot restore this purchase!" = "无法恢复购买！你还没有购买过这个商品！";
+"Success!" = "成功！";
+"All maps are now unlocked!" = "所有地图已被解锁！";
+"Unable to purchase. Please check your Internet connection." = "无法购买，请检查你的网络连接。";
+
+// HostViewController
+"Nearby devices that are willing to join a game is shown below. Tap on a device to connect it to the game." = "附近愿意加入游戏的装置会被显示在下面，点击以把该装置加入游戏。";
+"Connected" = "已连接";
+"Connecting..." = "连接中...";
+"Unable to connect" = "无法连接";
+"Too many players!" = "太多人了！";
+"You can only connect at most 3 players to the game." = "最多把三人加入游戏！";
+"MAPS" = "地图";
+
+// JoinViewController
+"Connected to %@" = "已连接 %@";
+"Waiting to be connected to a game..." = "正在等待被链接...";
+
+// MultipeerGameController
+"Your color is %@." = "你的颜色是%@.";
+"You disconnected from the game." = "你已断开连接";
+"Game Over" = "游戏结束";
+"All other players disconnected." = "所有玩家已断开连接";
+"%@ disconnected from the game." = "%@ 已断开连接";
+
+// GameBoardView
+"Red" = "红色";
+"Green" = "绿色";
+"Blue" = "蓝色";
+"Yellow" = "黄色";
+
+// StatusBar
+"NEW SQUARE IN:\n" = "离下一个方块:\n";
+"LIVES\n" = "生命值\n";
+"TURN" = "回合";
+
+"help" = "help(zh-Hans)";
