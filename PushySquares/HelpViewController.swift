@@ -14,4 +14,15 @@ class HelpViewController : UIViewController {
                 shadow: UIColor.gray.darker())
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
 
+
+    private func showErrorMessage(_ message: String) {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("OK".localized, action: {})
+        // TODO: localise this!
+        alert.showError("Error".localized, subTitle: message)
+    }
+
+    @objc func backTapped() {
+        dismiss(animated: true)
+    }
 }
