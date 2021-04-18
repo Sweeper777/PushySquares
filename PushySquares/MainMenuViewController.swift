@@ -47,7 +47,14 @@ class MainMenuViewController : UIViewController {
     }
 
     @objc func helpTapped() {
+        guard let helpVC: HelpViewController =
+        UIStoryboard.main?.instantiateViewController(identifier: "HelpVC") else {
+            return
+        }
 
+        helpVC.modalPresentationStyle = .formSheet
+        helpVC.isModalInPresentation = true
+        present(helpVC, animated: true)
     }
 
     @objc func joinTapped() {
