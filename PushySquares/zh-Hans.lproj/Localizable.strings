@@ -40,7 +40,8 @@
 "Unable to connect" = "无法连接";
 "Too many players!" = "太多人了！";
 "You can only connect at most 3 players to the game." = "最多把三人加入游戏！";
-"MAPS" = "地图";
+"At least one other player must be connected!" = "请至少链接一名其他玩家！";
+"An unknown error occurred!" = "发生了一个未知的错误！";
 
 // JoinViewController
 "Connected to %@" = "已连接 %@";
@@ -65,3 +66,7 @@
 "TURN" = "回合";
 
 "help" = "help(zh-Hans)";
+"Error" = "错误";
+"Unable to find help document!" = "无法找到帮助文档！";
+"Error occurred while fetching help document!" = "获取帮助文档时发生错误！";
+

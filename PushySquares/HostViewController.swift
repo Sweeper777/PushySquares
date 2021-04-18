@@ -103,7 +103,6 @@ class HostViewController: UIViewController, HasMapSelector {
         guard isConnected else {
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
             alert.addButton("OK".localized, action: {})
-            // TODO: localise this!
             alert.showError("Error".localized, subTitle: "At least one other player must be connected!".localized)
             return
         }
@@ -126,7 +125,6 @@ class HostViewController: UIViewController, HasMapSelector {
             print(error)
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
             alert.addButton("OK".localized, action: {})
-            // TODO: localise this!
             alert.showError("Error".localized, subTitle: "An unknown error occurred!".localized)
         }
     }

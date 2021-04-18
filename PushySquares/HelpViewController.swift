@@ -15,11 +15,11 @@ class HelpViewController : UIViewController {
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
 
         guard let helpURL = Bundle.main.url(forResource: "help".localized, withExtension: "html") else {
-            showErrorMessage("Unable to find help document!")
+            showErrorMessage("Unable to find help document!".localized)
             return
         }
         guard let html = try? String(contentsOf: helpURL) else {
-            showErrorMessage("Error occurred while fetching help document!")
+            showErrorMessage("Error occurred while fetching help document!".localized)
             return
         }
         webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
@@ -29,7 +29,6 @@ class HelpViewController : UIViewController {
     private func showErrorMessage(_ message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK".localized, action: {})
-        // TODO: localise this!
         alert.showError("Error".localized, subTitle: message)
     }
 

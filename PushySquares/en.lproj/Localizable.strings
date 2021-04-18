@@ -41,7 +41,8 @@
 "Unable to connect" = "Unable to connect";
 "Too many players!" = "Too many players!";
 "You can only connect at most 3 players to the game." = "You can only connect at most 3 players to the game.";
-"MAPS" = "MAPS";
+"At least one other player must be connected!" = "At least one other player must be connected!";
+"An unknown error occurred!" = "An unknown error occurred!";
 
 // JoinViewController
 "Connected to %@" = "Connected to %@";
@@ -66,3 +67,6 @@
 "TURN" = "TURN";
 
 "help" = "help";
+"Error" = "Error";
+"Unable to find help document!" = "Unable to find help document!";
+"Error occurred while fetching help document!" = "Error occurred while fetching help document!";

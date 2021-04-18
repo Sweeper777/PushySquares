@@ -40,7 +40,8 @@
 "Unable to connect" = "無法連接";
 "Too many players!" = "太多人了！";
 "You can only connect at most 3 players to the game." = "最多把三人加入遊戲！";
-"MAPS" = "地圖";
+"At least one other player must be connected!" = "請至少鏈接一個其他玩家！";
+"An unknown error occurred!" = "發生了一個未知的錯誤！";
 
 // JoinViewController
 "Connected to %@" = "已連接 %@";
@@ -65,3 +66,6 @@
 "TURN" = "回合";
 
 "help" = "help(zh-Hant)";
+"Error" = "錯誤";
+"Unable to find help document!" = "無法找到幫助檔案！";
+"Error occurred while fetching help document!" = "獲取幫助檔案時發生錯誤！";
