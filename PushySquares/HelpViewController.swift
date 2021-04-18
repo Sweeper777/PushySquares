@@ -14,6 +14,17 @@ class HelpViewController : UIViewController {
                 shadow: UIColor.gray.darker())
         backButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
 
+        guard let helpURL = Bundle.main.url(forResource: "help".localized, withExtension: "html") else {
+            showErrorMessage("Unable to find help document!")
+            return
+        }
+        guard let html = try? String(contentsOf: helpURL) else {
+            showErrorMessage("Error occurred while fetching help document!")
+            return
+        }
+        webView.loadHTMLString(html, baseURL: Bundle.main.bundleURL)
+
+    }
 
     private func showErrorMessage(_ message: String) {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
