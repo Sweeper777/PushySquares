@@ -1,4 +1,5 @@
 PODS:
+  - EZLoadingActivity (1.01)
   - FittableFontLabel (3.0.0)
   - FSPagerView (0.8.3)
   - RxCocoa (5.1.1):
@@ -12,6 +13,7 @@ PODS:
   - SwiftyUtils (5.2.0)
 
 DEPENDENCIES:
+  - EZLoadingActivity (from `https://github.com/mahen3d/EZLoadingActivity.git`, branch `master`)
   - FittableFontLabel
   - FSPagerView
   - RxCocoa
@@ -31,7 +33,18 @@ SPEC REPOS:
     - SwiftyButton
     - SwiftyUtils
 
+EXTERNAL SOURCES:
+  EZLoadingActivity:
+    :branch: master
+    :git: https://github.com/mahen3d/EZLoadingActivity.git
+
+CHECKOUT OPTIONS:
+  EZLoadingActivity:
+    :commit: 0266c0c0472874dc85c4d76de7d262c17772e755
+    :git: https://github.com/mahen3d/EZLoadingActivity.git
+
 SPEC CHECKSUMS:
+  EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
   FittableFontLabel: 34581be026d89c02eb7be992c163e705b586b86f
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -41,6 +54,6 @@ SPEC CHECKSUMS:
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyUtils: 4c99e810e769063dbd5d4e83b486961a5d470aeb
 
-PODFILE CHECKSUM: 09a741af3c1ec453de5c8057abd65522e02b1acb
+PODFILE CHECKSUM: c2538cb779f79157cf9dcbbaed515e7a200f0326
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.10.1

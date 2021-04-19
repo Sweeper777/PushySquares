@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-PushySquares/Pods-PushySquares-frameworks.sh
+${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework
 ${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
 ${BUILT_PRODUCTS_DIR}/FittableFontLabel/FittableFontLabel.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework

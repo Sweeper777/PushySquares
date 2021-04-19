@@ -14,5 +14,6 @@ target 'PushySquares' do
   # pod 'Firebase/Core'
   # pod 'Firebase/AdMob'
   pod 'FSPagerView'
+  pod 'EZLoadingActivity', :git => 'https://github.com/mahen3d/EZLoadingActivity.git', :branch => 'master'
 
 end
