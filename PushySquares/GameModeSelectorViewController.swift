@@ -2,6 +2,7 @@ import UIKit
 import FSPagerView
 import SwiftyButton
 import PushySquaresModel
+import StoreKit
 
 class GameModeSelectorViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
@@ -23,8 +24,8 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
     }
 
     lazy var playerCountSelectorDelegate = PlayerCountSelectorDelegate(gameModes: gameModes, pageControl: playerCountSelectorPageControl)
-    lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl)
-
+    lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl, owner: self)
+    var productRequest: SKProductsRequest!
     weak var delegate: GameModeSelectorDelegate?
 
     override func viewDidLoad() {
@@ -62,7 +63,7 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
             let map = maps[mapSelector.currentIndex]
             delegate?.didEndSelectingGameMode(playerCount: playerCount, aiCount: aiCount, map: map)
         } else {
-            // TODO: show IAP prompt
+            promptUnlockMaps()
         }
     }
 

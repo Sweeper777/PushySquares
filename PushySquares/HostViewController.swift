@@ -6,6 +6,7 @@ import RxSwift
 import RxCocoa
 import MultipeerConnectivity
 import SCLAlertView
+import StoreKit
 
 class HostViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
@@ -20,8 +21,8 @@ class HostViewController: UIViewController, HasMapSelector {
         let url = Bundle.main.url(forResource: name, withExtension: "map")!
         return Map(file: url)
     }
-    lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl)
-
+    lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl, owner: self)
+    var productRequest: SKProductsRequest!
     var foundPeers = BehaviorRelay<[PeerIDStateTuple]>(value: [])
     let disposeBag = DisposeBag()
 
@@ -100,6 +101,11 @@ class HostViewController: UIViewController, HasMapSelector {
     }
 
     @objc func startTapped() {
+        guard mapUnlocked else {
+            promptUnlockMaps()
+            return
+        }
+
         guard isConnected else {
             let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
             alert.addButton("OK".localized, action: {})
