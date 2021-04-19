@@ -1,12 +1,16 @@
 import UIKit
 import FSPagerView
 import PushySquaresModel
+import SCLAlertView
+import StoreKit
+import EZLoadingActivity
 
-protocol HasMapSelector {
+protocol HasMapSelector : SKProductsRequestDelegate, SKPaymentTransactionObserver {
     var mapSelector: FSPagerView! { get }
     var mapSelectorPageControl: FSPageControl! { get }
     var maps: [Map] { get }
     var mapSelectorDelegate: MapSelectorDelegate { get }
+    var productRequest: SKProductsRequest! { get set }
 }
 
 extension HasMapSelector {
@@ -33,4 +37,17 @@ extension HasMapSelector {
         let itemSideLength = min(pageViewWidth, pageViewHeight) * 0.7
         mapSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
     }
+
+    func promptUnlockMaps() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Unlock All Maps".localized) { [weak self] in
+            self?.productRequest = SKProductsRequest(productIdentifiers: [unlockAllMapsProductID])
+            self?.productRequest.delegate = self
+            self?.productRequest.start()
+            EZLoadingActivity.show("Loading...".localized, disableUI: true)
+        }
+        alert.addButton("Cancel".localized, action: {})
+        alert.showInfo("This map is locked!".localized, subTitle: "Do you want to unlock all locked maps?".localized, circleIconImage: #imageLiteral(resourceName: "lockedicon"))
+    }
+
 }
