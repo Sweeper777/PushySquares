@@ -5,12 +5,12 @@ import SCLAlertView
 import StoreKit
 import EZLoadingActivity
 
-protocol HasMapSelector : SKProductsRequestDelegate, SKPaymentTransactionObserver {
+protocol HasMapSelector : class {
     var mapSelector: FSPagerView! { get }
     var mapSelectorPageControl: FSPageControl! { get }
     var maps: [Map] { get }
     var mapSelectorDelegate: MapSelectorDelegate { get }
-    var productRequest: SKProductsRequest! { get set }
+    var inAppPurchaseManager: InAppPurchaseManager { get }
 }
 
 extension HasMapSelector {
@@ -36,6 +36,20 @@ extension HasMapSelector {
         let pageViewHeight = mapSelector.height
         let itemSideLength = min(pageViewWidth, pageViewHeight) * 0.7
         mapSelector.itemSize = CGSize(width: itemSideLength, height: itemSideLength)
+    }
+
+    func promptUnlockMaps() {
+        inAppPurchaseManager.promptUnlockMaps()
+    }
+}
+
+class InAppPurchaseManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    weak var owner: HasMapSelector?
+    var productRequest: SKProductsRequest!
+
+    init(owner: HasMapSelector?) {
+        self.owner = owner
+        super.init()
     }
 
     func promptUnlockMaps() {
