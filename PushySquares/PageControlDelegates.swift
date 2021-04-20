@@ -34,10 +34,12 @@ class PlayerCountSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDat
 class MapSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDataSource {
     let maps: [Map]
     let pageControl: FSPageControl
+    weak var owner: HasMapSelector?
 
-    init(maps: [Map], pageControl: FSPageControl) {
+    init(maps: [Map], pageControl: FSPageControl, owner: HasMapSelector) {
         self.maps = maps
         self.pageControl = pageControl
+        self.owner = owner
         super.init()
     }
 
@@ -54,5 +56,11 @@ class MapSelectorDelegate: NSObject, FSPagerViewDelegate, FSPagerViewDataSource 
 
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         pageControl.currentPage = pagerView.currentIndex
+    }
+
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        if index > 3 && !UserDefaults.standard.bool(forKey: mapsUnlockedKey) {
+            owner?.promptUnlockMaps()
+        }
     }
 }
