@@ -25,7 +25,7 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
 
     lazy var playerCountSelectorDelegate = PlayerCountSelectorDelegate(gameModes: gameModes, pageControl: playerCountSelectorPageControl)
     lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl, owner: self)
-    var productRequest: SKProductsRequest!
+    lazy var inAppPurchaseManager = InAppPurchaseManager(owner: self)
     weak var delegate: GameModeSelectorDelegate?
 
     override func viewDidLoad() {

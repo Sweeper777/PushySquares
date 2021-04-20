@@ -22,7 +22,7 @@ class HostViewController: UIViewController, HasMapSelector {
         return Map(file: url)
     }
     lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl, owner: self)
-    var productRequest: SKProductsRequest!
+    lazy var inAppPurchaseManager = InAppPurchaseManager(owner: self)
     var foundPeers = BehaviorRelay<[PeerIDStateTuple]>(value: [])
     let disposeBag = DisposeBag()
 
