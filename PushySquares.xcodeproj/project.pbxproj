@@ -174,6 +174,7 @@
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPeerCell.swift; sourceTree = "<group>"; };
 		5A5E1B042623D94E00EB1A61 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5A5F55B1262E70D900E051E3 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		5A609ABB25F46F8B00AAB972 /* PushySquaresModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushySquaresModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A609ABD25F46F8B00AAB972 /* PushySquaresModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushySquaresModel.h; sourceTree = "<group>"; };
 		5A609ABE25F46F8B00AAB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -372,6 +373,7 @@
 				5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */,
 				5AD4F44225F34A7B00B500A9 /* GameViewController.swift */,
 				5AD4F44425F34A7B00B500A9 /* Main.storyboard */,
+				5A5F55B1262E70D900E051E3 /* Configuration.storekit */,
 				5A81B0172605887C0058A36E /* StatusBar.xib */,
 				5AD4F44725F34A7D00B500A9 /* Assets.xcassets */,
 				5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */,
