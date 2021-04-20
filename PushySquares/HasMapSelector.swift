@@ -65,40 +65,50 @@ class InAppPurchaseManager : NSObject, SKProductsRequestDelegate, SKPaymentTrans
     }
 
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        EZLoadingActivity.hide()
-        if let product = response.products.first {
-            let numberFormatter = NumberFormatter()
-            numberFormatter.formatterBehavior = .behavior10_4
-            numberFormatter.numberStyle = .currency
-            numberFormatter.locale = product.priceLocale
-            let price = numberFormatter.string(from: product.price)
-            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-            alert.addButton(String(format: "Unlock All Maps for %@".localized, price!)) { [weak self] in
-                guard let `self` = self else { return }
-                if SKPaymentQueue.canMakePayments() {
-                    SKPaymentQueue.default().add(self)
-                    SKPaymentQueue.default().add(SKPayment(product: product))
-                    EZLoadingActivity.show("Loading...".localized, disableUI: true)
-                } else {
-                    self.showIAPError(message: "Purchases are disabled on this device!".localized)
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            EZLoadingActivity.hide()
+            if let product = response.products.first {
+                let numberFormatter = NumberFormatter()
+                numberFormatter.formatterBehavior = .behavior10_4
+                numberFormatter.numberStyle = .currency
+                numberFormatter.locale = product.priceLocale
+                let price = numberFormatter.string(from: product.price)
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton(String(format: "Unlock All Maps for %@".localized, price!)) { [weak self] in
+                    guard let `self` = self else {
+                        return
+                    }
+                    if SKPaymentQueue.canMakePayments() {
+                        SKPaymentQueue.default().add(self)
+                        SKPaymentQueue.default().add(SKPayment(product: product))
+                        EZLoadingActivity.show("Loading...".localized, disableUI: true)
+                    } else {
+                        self.showIAPError(message: "Purchases are disabled on this device!".localized)
+                    }
                 }
+                alert.addButton("Restore Purchase".localized) { [weak self] in
+                    guard let `self` = self else {
+                        return
+                    }
+                    SKPaymentQueue.default().add(self)
+                    SKPaymentQueue.default().restoreCompletedTransactions()
+                    EZLoadingActivity.show("Loading...".localized, disableUI: true)
+                }
+                alert.addButton("Cancel".localized, action: {})
+                alert.showInfo("Unlock All Maps".localized, subTitle: String(format: "Do you want to unlock all locked maps for %@?".localized, price!), circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
+            } else {
+                self.showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
             }
-            alert.addButton("Restore Purchase".localized) { [weak self] in
-                guard let `self` = self else { return }
-                SKPaymentQueue.default().add(self)
-                SKPaymentQueue.default().restoreCompletedTransactions()
-                EZLoadingActivity.show("Loading...".localized, disableUI: true)
-            }
-            alert.addButton("Cancel".localized, action: {})
-            alert.showInfo("Unlock All Maps".localized, subTitle: String(format: "Do you want to unlock all locked maps for %@?".localized, price!), circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
-        } else {
-            showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
         }
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
         EZLoadingActivity.hide()
-        showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
+        print(error)
+        DispatchQueue.main.async { [weak self] in
+            self?.showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
+        }
     }
 
     func showIAPError(message: String) {
@@ -109,35 +119,39 @@ class InAppPurchaseManager : NSObject, SKProductsRequestDelegate, SKPaymentTrans
 
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         EZLoadingActivity.hide()
-        if queue.transactions.isEmpty {
-            showIAPError(message: "You have not purcheased this yet, so you cannot restore this purchase!".localized)
-        } else {
-            UserDefaults.standard.set(true, forKey: "mapsUnlocked")
-            mapSelector.reloadData()
-            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-            alert.addButton("OK".localized, action: {})
-            alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
+        DispatchQueue.main.async { [weak self] in
+            if queue.transactions.isEmpty {
+                self?.showIAPError(message: "You have not purcheased this yet, so you cannot restore this purchase!".localized)
+            } else {
+                UserDefaults.standard.set(true, forKey: "mapsUnlocked")
+                self?.owner?.mapSelector.reloadData()
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("OK".localized, action: {})
+                alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
+            }
         }
     }
 
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         EZLoadingActivity.hide()
-        for transaction:AnyObject in transactions {
-            if let trans = transaction as? SKPaymentTransaction {
-                switch trans.transactionState {
-                case .purchased:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    UserDefaults.standard.set(true, forKey: "mapsUnlocked")
-                    mapSelector.reloadData()
-                    let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                    alert.addButton("OK".localized, action: {})
-                    alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
-                case .failed:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    showIAPError(message: "Unable to purchase. Please check your Internet connection.".localized)
-                case .restored:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                default: break
+        DispatchQueue.main.async { [weak self] in
+            for transaction: AnyObject in transactions {
+                if let trans = transaction as? SKPaymentTransaction {
+                    switch trans.transactionState {
+                    case .purchased:
+                        SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                        UserDefaults.standard.set(true, forKey: "mapsUnlocked")
+                        self?.owner?.mapSelector.reloadData()
+                        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                        alert.addButton("OK".localized, action: {})
+                        alert.showSuccess("Success!".localized, subTitle: "All maps are now unlocked!".localized)
+                    case .failed:
+                        SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                        self?.showIAPError(message: "Unable to purchase. Please check your Internet connection.".localized)
+                    case .restored:
+                        SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    default: break
+                    }
                 }
             }
         }
