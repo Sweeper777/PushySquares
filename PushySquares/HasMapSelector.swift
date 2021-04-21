@@ -96,7 +96,7 @@ class InAppPurchaseManager : NSObject, SKProductsRequestDelegate, SKPaymentTrans
                     EZLoadingActivity.show("Loading...".localized, disableUI: true)
                 }
                 alert.addButton("Cancel".localized, action: {})
-                alert.showInfo("Unlock All Maps".localized, subTitle: String(format: "Do you want to unlock all locked maps for %@?".localized, price!), circleIconImage: #imageLiteral(resourceName: "lockedIcon"))
+                alert.showInfo("Unlock All Maps".localized, subTitle: String(format: "Do you want to unlock all locked maps for %@?".localized, price!), circleIconImage: UIImage(named: "lockedicon"))
             } else {
                 self.showIAPError(message: "Unable to get product information. Please check your Internet connection.".localized)
             }
