@@ -3,6 +3,7 @@ import FSPagerView
 import SwiftyButton
 import PushySquaresModel
 import StoreKit
+import GoogleMobileAds
 
 class GameModeSelectorViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
@@ -27,6 +28,10 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
     lazy var mapSelectorDelegate = MapSelectorDelegate(maps: maps, pageControl: mapSelectorPageControl, owner: self)
     lazy var inAppPurchaseManager = InAppPurchaseManager(owner: self)
     weak var delegate: GameModeSelectorDelegate?
+
+    var shouldShowAd = false
+    var hasAppeared = false
+    var interstitial: GADInterstitialAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +60,23 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
         playerCountSelector.dataSource = playerCountSelectorDelegate
 
         setupMapSelector()
+
+        if Int.random(in: 0..<100) < 30 {
+            shouldShowAd = true
+            let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID: adUnitID,
+                    request: request,
+                    completionHandler: { [weak self] ad, error in
+                        if let error = error {
+                            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                            return
+                        }
+                        self?.interstitial = ad
+                        if (self?.shouldShowAd ?? false) && (self?.hasAppeared ?? false) {
+                            self.map { ad?.present(fromRootViewController: $0) }
+                        }
+                    })
+        }
     }
 
     @objc func startTapped() {
