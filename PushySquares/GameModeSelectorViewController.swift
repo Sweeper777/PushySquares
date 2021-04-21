@@ -96,6 +96,11 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        hasAppeared = true
+        if shouldShowAd, let ad = interstitial {
+            shouldShowAd = false
+            ad.present(fromRootViewController: self)
+        }
     }
 
     override func viewDidLayoutSubviews() {
