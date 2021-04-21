@@ -11,8 +11,8 @@ target 'PushySquares' do
   pod 'SwiftyButton'
   pod 'RxSwift'
   pod 'RxCocoa'
-  # pod 'Firebase/Core'
-  # pod 'Firebase/AdMob'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
   pod 'FSPagerView'
   pod 'EZLoadingActivity', :git => 'https://github.com/mahen3d/EZLoadingActivity.git', :branch => 'master'
 
