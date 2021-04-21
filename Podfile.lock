@@ -1,8 +1,5 @@
 PODS:
   - EZLoadingActivity (1.01)
-  - Firebase/AdMob (7.10.0):
-    - Firebase/CoreOnly
-    - Google-Mobile-Ads-SDK (~> 7.66)
   - Firebase/Core (7.10.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (~> 7.10.0)
@@ -33,9 +30,9 @@ PODS:
     - PromisesObjC (~> 1.2)
   - FittableFontLabel (3.0.0)
   - FSPagerView (0.8.3)
-  - Google-Mobile-Ads-SDK (7.69.0):
+  - Google-Mobile-Ads-SDK (8.3.0):
     - GoogleAppMeasurement (~> 7.0)
-    - GoogleUserMessagingPlatform (~> 1.1)
+    - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (7.10.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -46,7 +43,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (~> 1.2)
-  - GoogleUserMessagingPlatform (1.4.0)
+  - GoogleUserMessagingPlatform (2.0.0)
   - GoogleUtilities/AppDelegateSwizzler (7.3.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -84,10 +81,10 @@ PODS:
 
 DEPENDENCIES:
   - EZLoadingActivity (from `https://github.com/mahen3d/EZLoadingActivity.git`, branch `master`)
-  - Firebase/AdMob
   - Firebase/Core
   - FittableFontLabel
   - FSPagerView
+  - Google-Mobile-Ads-SDK
   - RxCocoa
   - RxSwift
   - SCLAlertView
@@ -136,10 +133,10 @@ SPEC CHECKSUMS:
   FirebaseInstallations: bf2ec8dbf36ff4c91af6b9a003d15855757680c1
   FittableFontLabel: 34581be026d89c02eb7be992c163e705b586b86f
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
-  Google-Mobile-Ads-SDK: 2f288748a42920d1c744946a460896a95b0e9110
+  Google-Mobile-Ads-SDK: c14f5a63db1414b4ca0ee1539c9f3d700ace96c2
   GoogleAppMeasurement: 1c863b1161fc3c8cf614a7460d1be6a7c262aab3
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
-  GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
+  GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
@@ -150,6 +147,6 @@ SPEC CHECKSUMS:
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyUtils: 4c99e810e769063dbd5d4e83b486961a5d470aeb
 
-PODFILE CHECKSUM: fb3912da100b56fa205f3e9aaefcaf04052afbc0
+PODFILE CHECKSUM: b6c077dd1d64b3330c8fba80b070e423e9e39213
 
 COCOAPODS: 1.10.1
