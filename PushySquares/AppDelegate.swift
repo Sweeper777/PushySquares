@@ -1,11 +1,6 @@
-//
-//  AppDelegate.swift
-//  PushySquares
-//
-//  Created by Mulang Su on 6/3/2021.
-//
-
 import UIKit
+import GoogleMobileAds
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [kGADSimulatorID as! String]
         return true
     }
 
