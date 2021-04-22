@@ -30,6 +30,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" colorLabel="IBBuiltInLabel-Gray">
                                         <rect key="frame" x="120" y="0.0" width="416" height="288"/>
                                         <subviews>
+                                            <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-F3-XUO">
+                                                <rect key="frame" x="0.0" y="0.0" width="416" height="288"/>
+                                            </sceneKitView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-zS-KZi" customClass="BoardView" customModule="PushySquares" customModuleProvider="target">
                                                 <rect key="frame" x="64" y="0.0" width="288" height="288"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,15 +44,19 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YFR-Qc-Lvt" secondAttribute="top" id="1gC-Pn-pHz"/>
+                                            <constraint firstAttribute="bottom" secondItem="tPB-F3-XUO" secondAttribute="bottom" id="7at-hf-npp"/>
+                                            <constraint firstItem="tPB-F3-XUO" firstAttribute="top" secondItem="YFR-Qc-Lvt" secondAttribute="top" id="Mfd-yS-iXb"/>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="leading" secondItem="YFR-Qc-Lvt" secondAttribute="leading" priority="750" id="TfQ-S8-i5C"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qvC-zS-KZi" secondAttribute="bottom" id="U4V-GE-p8n"/>
                                             <constraint firstAttribute="trailing" secondItem="qvC-zS-KZi" secondAttribute="trailing" priority="750" id="XrM-m7-CpI"/>
                                             <constraint firstAttribute="bottom" secondItem="qvC-zS-KZi" secondAttribute="bottom" priority="750" id="pP3-M7-PnJ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qvC-zS-KZi" secondAttribute="trailing" id="rTy-0v-z3j"/>
+                                            <constraint firstItem="tPB-F3-XUO" firstAttribute="leading" secondItem="YFR-Qc-Lvt" secondAttribute="leading" id="u5k-wu-wEp"/>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YFR-Qc-Lvt" secondAttribute="leading" id="vR9-cH-1nR"/>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="centerY" secondItem="YFR-Qc-Lvt" secondAttribute="centerY" id="wGb-DC-D3y"/>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="top" secondItem="YFR-Qc-Lvt" secondAttribute="top" priority="750" id="x4w-47-C8F"/>
                                             <constraint firstItem="qvC-zS-KZi" firstAttribute="centerX" secondItem="YFR-Qc-Lvt" secondAttribute="centerX" id="yj2-el-Qe3"/>
+                                            <constraint firstAttribute="trailing" secondItem="tPB-F3-XUO" secondAttribute="trailing" id="zzC-Pw-nsd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -82,6 +89,7 @@
                     <navigationItem key="navigationItem" id="5l0-kX-h0N"/>
                     <connections>
                         <outlet property="board" destination="qvC-zS-KZi" id="OTD-17-5Kz"/>
+                        <outlet property="sceneView" destination="tPB-F3-XUO" id="0Ze-wB-cHo"/>
                         <outlet property="statusBar" destination="qP8-as-STy" id="qXy-2j-sl0"/>
                     </connections>
                 </viewController>

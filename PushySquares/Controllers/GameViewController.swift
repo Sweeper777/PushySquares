@@ -2,10 +2,12 @@ import UIKit
 import PushySquaresModel
 import SwiftyButton
 import SCLAlertView
+import SceneKit
 
 class GameViewController: UIViewController, BoardViewDelegate {
 
     @IBOutlet var board: BoardView!
+    @IBOutlet var sceneView: SCNView!
     @IBOutlet var statusBar: StatusBar!
     var menu: UIStackView!
 
@@ -13,7 +15,16 @@ class GameViewController: UIViewController, BoardViewDelegate {
     var playerCount: Int! = 4
     var game: Game!
     var strategy: GameControllerStrategy!
-    var in3D = false
+    var in3D = false {
+        didSet {
+            guard oldValue != in3D else { return }
+
+            UIView.transition(
+                    from: oldValue ? sceneView : board,
+                    to: in3D ? sceneView : board,
+                    duration: 0.2, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
+        }
+    }
 
     private var swipeUpGR: UISwipeGestureRecognizer!
     private var swipeDownGR: UISwipeGestureRecognizer!
