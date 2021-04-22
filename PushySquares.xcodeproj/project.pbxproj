@@ -34,12 +34,14 @@
 		25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */; };
 		25EF0AD49FBDFDA1C55D5DBF /* help(zh-Hans).html in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0C031777BB40A0160EBF /* help(zh-Hans).html */; };
 		25EF0B30F4A7047DA94E6880 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0E42B828C3FC6CE13C78 /* GameAI.swift */; };
+		25EF0B8176BEAD7AEA48F5BD /* BoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02D2ED8294C844E6F111 /* BoardScene.swift */; };
 		25EF0B913DEE753C005D2954 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02F749E9C7771AB0BC56 /* BoardView.swift */; };
 		25EF0C4DE125F46BB0DC38ED /* new square in zh-Hans.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0014136E54BE027A772A /* new square in zh-Hans.png */; };
 		25EF0CC4F8BAFCF32EE875EB /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0612B7C63E05A6923EC7 /* AnimationType.swift */; };
 		25EF0DA537CE21E5A718CBC6 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */; };
 		25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */; };
 		25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF036807D1D3A81577B97C /* DataCodes.swift */; };
+		25EF0FC5BBFFFE45156B141A /* BoardDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0159E2092E00F02AAA9D /* BoardDisplayer.swift */; };
 		25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */; };
 		5A4ABC3F262A6DD80008ABE5 /* NearbyPeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */; };
 		5A5E1B052623D94E00EB1A61 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5E1B042623D94E00EB1A61 /* StoreKit.framework */; };
@@ -141,10 +143,12 @@
 		25EF0014136E54BE027A772A /* new square in zh-Hans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hans.png"; sourceTree = "<group>"; };
 		25EF00216D966DDF09C8258A /* new square in zh-Hant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new square in zh-Hant.png"; sourceTree = "<group>"; };
 		25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerStrategy.swift; sourceTree = "<group>"; };
+		25EF0159E2092E00F02AAA9D /* BoardDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDisplayer.swift; sourceTree = "<group>"; };
 		25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModeSelectorViewController.swift; sourceTree = "<group>"; };
 		25EF01C251B7257CBE5672B3 /* BoardProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardProvider.swift; sourceTree = "<group>"; };
 		25EF02CA7C3E3787BE934B60 /* StartInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartInfo.swift; sourceTree = "<group>"; };
 		25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerGameControllerStrategy.swift; sourceTree = "<group>"; };
+		25EF02D2ED8294C844E6F111 /* BoardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardScene.swift; sourceTree = "<group>"; };
 		25EF02E87B765A8533BBC016 /* HasMapSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasMapSelector.swift; sourceTree = "<group>"; };
 		25EF02EF167598353A2D0991 /* SecretStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretStuff.swift; sourceTree = "<group>"; };
 		25EF02F749E9C7771AB0BC56 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -272,6 +276,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25EF0CD1AFE048211BE8F652 /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+				25EF02D2ED8294C844E6F111 /* BoardScene.swift */,
+			);
+			path = 3D;
+			sourceTree = "<group>";
+		};
 		44CA1BB36074894F1A38335E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +304,7 @@
 				25EF04A53EC1122B75623549 /* StatusBar.swift */,
 				25EF0FA2484F5DA4128F622A /* SquareView.swift */,
 				25EF02F749E9C7771AB0BC56 /* BoardView.swift */,
+				25EF0159E2092E00F02AAA9D /* BoardDisplayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,6 +465,7 @@
 				5AD4F44C25F34A7D00B500A9 /* Info.plist */,
 				25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */,
 				25EF02EF167598353A2D0991 /* SecretStuff.swift */,
+				25EF0CD1AFE048211BE8F652 /* 3D */,
 			);
 			path = PushySquares;
 			sourceTree = "<group>";
@@ -783,6 +797,8 @@
 				25EF0AC335C3123AFBF4B27E /* MultipeerGameControllerStrategy.swift in Sources */,
 				25EF08987D5E5955098B704F /* HelpViewController.swift in Sources */,
 				25EF03A17D042B36744C793D /* SecretStuff.swift in Sources */,
+				25EF0B8176BEAD7AEA48F5BD /* BoardScene.swift in Sources */,
+				25EF0FC5BBFFFE45156B141A /* BoardDisplayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
