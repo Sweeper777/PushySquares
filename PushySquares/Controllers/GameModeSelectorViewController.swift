@@ -61,6 +61,9 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
 
         setupMapSelector()
 
+        view.bringSubviewToFront(startButton)
+        view.bringSubviewToFront(backButton)
+
         if Int.random(in: 0..<100) < 30 {
             shouldShowAd = true
             let request = GADRequest()
