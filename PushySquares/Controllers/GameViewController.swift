@@ -13,6 +13,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     var playerCount: Int! = 4
     var game: Game!
     var strategy: GameControllerStrategy!
+    var in3D = false
 
     private var swipeUpGR: UISwipeGestureRecognizer!
     private var swipeDownGR: UISwipeGestureRecognizer!
@@ -76,7 +77,20 @@ class GameViewController: UIViewController, BoardViewDelegate {
             restartButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
 
-        return [quitButton, restartButton]
+        let threeDButton = PressableButton()
+        threeDButton.shadowHeight = buttonHeight * 0.1
+        threeDButton.colors = PressableButton.ColorSet(button: UIColor.gray.desaturated(), shadow: UIColor.gray.desaturated().darker())
+        threeDButton.translatesAutoresizingMaskIntoConstraints = false
+        threeDButton.tintColor = .white
+        threeDButton.setImage(UIImage(systemName: "view.3d"), for: .normal)
+        threeDButton.addTarget(self, action: #selector(threeDTapped), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            threeDButton.widthAnchor.constraint(equalToConstant: buttonHeight),
+            threeDButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        ])
+
+        return [quitButton, restartButton, threeDButton]
     }
 
     func setupStackView() {
@@ -168,6 +182,15 @@ class GameViewController: UIViewController, BoardViewDelegate {
         })
         alert.addButton("No".localized, action: {})
         alert.showWarning("Confirm".localized, subTitle: "Do you really want to restart?".localized)
+    }
+
+    @objc func threeDTapped(_ sender: PressableButton) {
+        if in3D {
+            sender.setImage(UIImage(systemName: "view.3d"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "view.2d"), for: .normal)
+        }
+        in3D.toggle()
     }
 
     func restartGame() {
