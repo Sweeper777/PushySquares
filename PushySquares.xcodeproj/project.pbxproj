@@ -282,6 +282,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A5EC2F02630F6C5008865CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A640A072616BC4C003D3970 /* GameBoardCell.xib */,
+				5A640A062616BC4C003D3970 /* GameBoardCell.swift */,
+				5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */,
+				5A81B0172605887C0058A36E /* StatusBar.xib */,
+				25EF04A53EC1122B75623549 /* StatusBar.swift */,
+				25EF0FA2484F5DA4128F622A /* SquareView.swift */,
+				25EF02F749E9C7771AB0BC56 /* BoardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A5EC3002630F727008865CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25EF03A78CB588770C427D6A /* JoinViewController.swift */,
+				5AD4F44225F34A7B00B500A9 /* GameViewController.swift */,
+				25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */,
+				25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */,
+				25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */,
+				25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */,
+				25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */,
+				25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */,
+				25EF07DE2075247ADA65417B /* HostViewController.swift */,
+				25EF02E87B765A8533BBC016 /* HasMapSelector.swift */,
+				25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */,
+				25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A5EC3192630F79D008865CC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				25EF0612B7C63E05A6923EC7 /* AnimationType.swift */,
+				25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */,
+				25EF0E257F08E06D7776E47D /* AnimationManager.swift */,
+				25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		5A5EC31A2630F7FC008865CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				25EF034462C07CDD35943046 /* PeerIDStateTuple.swift */,
+				25EF036807D1D3A81577B97C /* DataCodes.swift */,
+				25EF02CA7C3E3787BE934B60 /* StartInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A5EC31B2630F81C008865CC /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */,
+				25EF0C031777BB40A0160EBF /* help(zh-Hans).html */,
+				25EF0BB703C718C824CA9FDC /* help.html */,
+				25EF0C02FC1064EF9E7E4065 /* lives.png */,
+				25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */,
+				25EF00216D966DDF09C8258A /* new square in zh-Hant.png */,
+				25EF0620BF8EE9AAAC4742D0 /* new square in.png */,
+				25EF0014136E54BE027A772A /* new square in zh-Hans.png */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
 		5A609ABC25F46F8B00AAB972 /* PushySquaresModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,50 +436,21 @@
 		5AD4F43D25F34A7B00B500A9 /* PushySquares */ = {
 			isa = PBXGroup;
 			children = (
+				5A5EC31B2630F81C008865CC /* HTML */,
+				5A5EC31A2630F7FC008865CC /* Models */,
+				5A5EC3192630F79D008865CC /* Animations */,
+				5A5EC3002630F727008865CC /* Controllers */,
+				5A5EC2F02630F6C5008865CC /* Views */,
 				5A5E8534262FBE7B0068C2D6 /* GoogleService-Info.plist */,
 				5A61E537262BD0F400414CEA /* Localizable.strings */,
-				5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */,
-				5A640A062616BC4C003D3970 /* GameBoardCell.swift */,
-				5A640A072616BC4C003D3970 /* GameBoardCell.xib */,
 				5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */,
 				5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */,
-				5AD4F44225F34A7B00B500A9 /* GameViewController.swift */,
 				5AD4F44425F34A7B00B500A9 /* Main.storyboard */,
 				5A5F55B1262E70D900E051E3 /* Configuration.storekit */,
-				5A81B0172605887C0058A36E /* StatusBar.xib */,
 				5AD4F44725F34A7D00B500A9 /* Assets.xcassets */,
 				5AD4F44925F34A7D00B500A9 /* LaunchScreen.storyboard */,
 				5AD4F44C25F34A7D00B500A9 /* Info.plist */,
-				25EF0FA2484F5DA4128F622A /* SquareView.swift */,
-				25EF02F749E9C7771AB0BC56 /* BoardView.swift */,
-				25EF04A53EC1122B75623549 /* StatusBar.swift */,
 				25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */,
-				25EF0612B7C63E05A6923EC7 /* AnimationType.swift */,
-				25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */,
-				25EF0E257F08E06D7776E47D /* AnimationManager.swift */,
-				25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */,
-				25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */,
-				25EF00BCEAC886F85FC33D6A /* GameControllerStrategy.swift */,
-				25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */,
-				25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */,
-				25EF01A21887FC0FA82B338C /* GameModeSelectorViewController.swift */,
-				25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */,
-				25EF07DE2075247ADA65417B /* HostViewController.swift */,
-				25EF02E87B765A8533BBC016 /* HasMapSelector.swift */,
-				25EF034462C07CDD35943046 /* PeerIDStateTuple.swift */,
-				25EF03A78CB588770C427D6A /* JoinViewController.swift */,
-				25EF036807D1D3A81577B97C /* DataCodes.swift */,
-				25EF02CA7C3E3787BE934B60 /* StartInfo.swift */,
-				25EF02CF68CCA501A29BBD6D /* MultipeerGameControllerStrategy.swift */,
-				25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */,
-				25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */,
-				25EF0C031777BB40A0160EBF /* help(zh-Hans).html */,
-				25EF0BB703C718C824CA9FDC /* help.html */,
-				25EF0C02FC1064EF9E7E4065 /* lives.png */,
-				25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */,
-				25EF00216D966DDF09C8258A /* new square in zh-Hant.png */,
-				25EF0620BF8EE9AAAC4742D0 /* new square in.png */,
-				25EF0014136E54BE027A772A /* new square in zh-Hans.png */,
 				25EF02EF167598353A2D0991 /* SecretStuff.swift */,
 			);
 			path = PushySquares;
