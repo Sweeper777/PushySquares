@@ -6,11 +6,17 @@ import SceneKit
 
 class GameViewController: UIViewController, BoardViewDelegate {
 
-    @IBOutlet var board: BoardView!
-    @IBOutlet var sceneView: SCNView!
+    @IBOutlet private var board: BoardView!
+    @IBOutlet private var sceneView: SCNView!
     @IBOutlet var statusBar: StatusBar!
     var menu: UIStackView!
-    var currentBoardDisplayer: BoardDisplayer!
+    private var boardScene: BoardScene!
+
+    var currentBoardDisplayer: BoardDisplayer {
+        get {
+            in3D ? boardScene! : board!
+        }
+    }
 
     var map: Map! = .standard
     var playerCount: Int! = 4
