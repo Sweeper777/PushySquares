@@ -10,6 +10,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     @IBOutlet var sceneView: SCNView!
     @IBOutlet var statusBar: StatusBar!
     var menu: UIStackView!
+    var currentBoardDisplayer: BoardDisplayer!
 
     var map: Map! = .standard
     var playerCount: Int! = 4
@@ -34,7 +35,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        board.delegate = self
+        currentBoardDisplayer.delegate = self
 
         swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
@@ -130,14 +131,14 @@ class GameViewController: UIViewController, BoardViewDelegate {
     @objc func swipeUp() {
         strategy.willMove(.up)
         let moveResult = game.moveUp()
-        board.animateMoveResult(moveResult)
+        currentBoardDisplayer.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeDown() {
         strategy.willMove(.down)
         let moveResult = game.moveDown()
-        board.animateMoveResult(moveResult)
+        currentBoardDisplayer.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
@@ -145,14 +146,14 @@ class GameViewController: UIViewController, BoardViewDelegate {
     @objc func swipeLeft() {
         strategy.willMove(.left)
         let moveResult = game.moveLeft()
-        board.animateMoveResult(moveResult)
+        currentBoardDisplayer.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
     @objc func swipeRight() {
         strategy.willMove(.right)
         let moveResult = game.moveRight()
-        board.animateMoveResult(moveResult)
+        currentBoardDisplayer.animateMoveResult(moveResult)
         setAllGestureRecognisersEnabled(false)
     }
 
@@ -206,9 +207,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     func restartGame() {
         game = Game(map: map, playerCount: playerCount)
-        board.board = game
+        currentBoardDisplayer.board = game
         setAllGestureRecognisersEnabled(true)
-        board.refreshSubviews()
         updateStatusBar()
         strategy.didRestartGame()
     }
@@ -221,7 +221,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         DispatchQueue.main.async {
-            self.board.refreshSubviews()
+            (self.currentBoardDisplayer as? BoardView)?.refreshSubviews()
         }
     }
 

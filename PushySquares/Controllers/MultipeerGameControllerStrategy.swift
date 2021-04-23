@@ -142,7 +142,7 @@ extension MultipeerGameControllerStrategy: MCSessionDelegate {
         let moveResultWithUnknownGameResult = MoveResult(
                 direction: .up, greyedOutPositions: moveResult.greyedOutPositions, gameResult: .unknown
         )
-        gameViewController.board.animateMoveResult(moveResultWithUnknownGameResult)
+        gameViewController.currentBoardDisplayer.animateMoveResult(moveResultWithUnknownGameResult)
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
         alert.addButton("OK", action: {})
         _ = alert.showWarning("Oops!".localized, subTitle: String(format: "%@ disconnected from the game.".localized, peerID.displayName))
@@ -169,7 +169,7 @@ extension MultipeerGameControllerStrategy: MCSessionDelegate {
                 return
             }
 
-            self.gameViewController.board.animateMoveResult(moveResult)
+            self.gameViewController.currentBoardDisplayer.animateMoveResult(moveResult)
         }
     }
 

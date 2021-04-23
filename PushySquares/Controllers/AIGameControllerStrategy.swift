@@ -88,7 +88,7 @@ class AIGameControllerStrategy : GameControllerStrategy {
                 case .right:
                     moveResult = self.gameViewController.game.moveRight()
                 }
-                self.gameViewController.board.animateMoveResult(moveResult)
+                self.gameViewController.currentBoardDisplayer.animateMoveResult(moveResult)
             }
         }
     }
