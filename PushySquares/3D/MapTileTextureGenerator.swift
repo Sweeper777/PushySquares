@@ -56,6 +56,15 @@ enum MapTileTextureGenerator {
         return material
     }
 
+    static func material(for color: UIColor) -> SCNMaterial {
+        if let cached = colorMaterialCache[color] {
+            return cached
+        }
+        let material = SCNMaterial()
+        material.diffuse.contents = color
+        colorMaterialCache[color] = material
+        return material
+    }
 }
 
 extension UIImage {
