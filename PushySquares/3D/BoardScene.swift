@@ -20,14 +20,15 @@ class BoardScene: SCNScene, BoardDisplayer {
         addLight(position: SCNVector3(20, 10, -10))
     }
 
-    private func setupCamera() {
+    private func setupCamera(_ mapTiles: Array2D<MapTile>) {
         cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 0)
-        cameraNode.position.y = 10
-        cameraNode.eulerAngles.x = -0.523599
-        cameraNode.eulerAngles.y = -.pi / 2
-    }
+        let camera = SCNCamera()
+        cameraNode.camera = camera
+
+        let boardRadius = mapTiles.columns.f / 2
+        let cameraDistance = boardRadius / tan(degreesToRadians(camera.fieldOfView) / 2) * 1.2
+        let cameraX = determineMidpoint(mapTiles.columns)
+        let cameraZ = determineMidpoint(mapTiles.rows)
 
     private func setupBoard() {
         guard let board = board else { return }
@@ -47,4 +48,14 @@ class BoardScene: SCNScene, BoardDisplayer {
     }
 }
 
+func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
+    degrees / 180 * .pi
+}
+
+func determineMidpoint(_ length: Int) -> CGFloat {
+    if length % 2 == 1 {
+        return (length / 2).f
+    } else {
+        return length.f / 2 - 0.5
+    }
 }
