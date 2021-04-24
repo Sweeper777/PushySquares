@@ -1,15 +1,18 @@
 import SceneKit
 import PushySquaresModel
 
-class BoardScene: SCNScene {
+class BoardScene: SCNScene, BoardDisplayer {
+
     var cameraNode: SCNNode!
-    var board: BoardProvider?
+    var board: BoardProvider!
 
     let cubeLength: CGFloat = 0.9
 
-    func setup() {
-        setupCamera()
-        setupBoard()
+    var delegate: BoardViewDelegate?
+
+    func setup(with mapTiles: Array2D<MapTile>) {
+        setupCamera(mapTiles)
+        setupBoard(mapTiles)
 
         addLight(position: SCNVector3(-10, 10, -10))
         addLight(position: SCNVector3(-10, 10, 20))
@@ -38,4 +41,10 @@ class BoardScene: SCNScene {
         lightNode.light?.type = .omni
         rootNode.addChildNode(lightNode)
     }
+
+    func animateMoveResult(_ moveResult: MoveResult) {
+
+    }
+}
+
 }
