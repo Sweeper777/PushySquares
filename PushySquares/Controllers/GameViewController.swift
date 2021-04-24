@@ -41,7 +41,13 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentBoardDisplayer.delegate = self
+        boardScene = BoardScene()
+        boardScene.delegate = self
+        board.delegate = self
+        boardScene.setup(with: map.map)
+        sceneView.scene = boardScene
+        sceneView.pointOfView = boardScene.cameraNode
+        sceneView.allowsCameraControl = true
 
         swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
