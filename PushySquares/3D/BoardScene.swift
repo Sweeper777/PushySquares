@@ -30,9 +30,24 @@ class BoardScene: SCNScene, BoardDisplayer {
         let cameraX = determineMidpoint(mapTiles.columns)
         let cameraZ = determineMidpoint(mapTiles.rows)
 
-    private func setupBoard() {
-        guard let board = board else { return }
+        cameraNode.position = SCNVector3(x: Float(cameraX), y: 5, z: Float(cameraZ + cameraDistance))
+        cameraNode.eulerAngles.x = -0.5
+    }
 
+    private func setupBoard(_ mapTiles: Array2D<MapTile>) {
+        for x in 0..<mapTiles.columns {
+            for y in 0..<mapTiles.rows {
+                guard let material = MapTileTextureGenerator.material(for: mapTiles[x, y]) else { continue }
+                let black = MapTileTextureGenerator.material(for: UIColor.black)
+                let boardGeometry = SCNBox(width: 1, height: 0.1, length: 1, chamferRadius: 0)
+                boardGeometry.materials = [
+                    black, black, black, black, material, black
+                ]
+                let tileNode = SCNNode(geometry: boardGeometry)
+                tileNode.position = SCNVector3(x, 0, y)
+                rootNode.addChildNode(tileNode)
+            }
+        }
     }
 
     func addLight(position: SCNVector3) {
