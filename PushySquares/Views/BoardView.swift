@@ -50,7 +50,7 @@ class BoardView : UIView {
                     spawnPoints[Position(x, y)] = color
                 case .ground:
                     drawBorder(point: squarePos, color: .black)
-                    drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength)
+                    drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength, strokeWidth: strokeWidth)
                 case .slippery:
                     UIImage(named: "wet")!.draw(in: CGRect(origin: squarePos, size: CGSize(width: squareLength, height: squareLength)))
                 case .wall:
@@ -64,7 +64,7 @@ class BoardView : UIView {
             let squareViewPos = squareViewPoint(for: position)
             let squarePos = point(for: position)
             drawBorder(point: squarePos, color: BoardView.colorToUIColor[color]!)
-            drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength)
+            drawSimpleStripes(x: squareViewPos.x, y: squareViewPos.y, width: squareViewLength, height: squareViewLength, strokeWidth: strokeWidth)
         }
     }
 
@@ -84,41 +84,6 @@ class BoardView : UIView {
         ctx.translateBy(x: point.x, y: point.y)
         wallSquare.layer.render(in: ctx)
         ctx.translateBy(x: -point.x, y: -point.y)
-    }
-
-    private func drawSimpleStripes(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
-
-        let stripeWidth: CGFloat = strokeWidth
-        let m = stripeWidth / 2.0
-
-        guard let c = UIGraphicsGetCurrentContext() else { return }
-        c.setLineWidth(stripeWidth)
-
-        let r = CGRect(x: x, y: y, width: width, height: height)
-        let longerSide = width > height ? width : height
-
-        c.saveGState()
-        c.clip(to: r)
-
-        var p = x - longerSide
-        while p <= x + width {
-
-            c.setStrokeColor(UIColor(hex: "ccc3a9").cgColor)
-            c.move( to: CGPoint(x: p-m, y: y-m) )
-            c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
-            c.strokePath()
-
-            p += stripeWidth
-
-            c.setStrokeColor(UIColor.clear.cgColor)
-            c.move( to: CGPoint(x: p-m, y: y-m) )
-            c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
-            c.strokePath()
-
-            p += stripeWidth
-        }
-
-        c.restoreGState()
     }
 
     func refreshSubviews() {
@@ -235,6 +200,41 @@ class BoardView : UIView {
         let offset = squareLength / BoardView.borderSize / 2
         return CGPoint(x: pointForPosition.x + offset, y: pointForPosition.y + offset)
     }
+}
+
+func drawSimpleStripes(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, strokeWidth: CGFloat) {
+
+    let stripeWidth: CGFloat = strokeWidth
+    let m = stripeWidth / 2.0
+
+    guard let c = UIGraphicsGetCurrentContext() else { return }
+    c.setLineWidth(stripeWidth)
+
+    let r = CGRect(x: x, y: y, width: width, height: height)
+    let longerSide = width > height ? width : height
+
+    c.saveGState()
+    c.clip(to: r)
+
+    var p = x - longerSide
+    while p <= x + width {
+
+        c.setStrokeColor(UIColor(hex: "ccc3a9").cgColor)
+        c.move( to: CGPoint(x: p-m, y: y-m) )
+        c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
+        c.strokePath()
+
+        p += stripeWidth
+
+        c.setStrokeColor(UIColor.clear.cgColor)
+        c.move( to: CGPoint(x: p-m, y: y-m) )
+        c.addLine( to: CGPoint(x: p+m+height, y: y+m+height) )
+        c.strokePath()
+
+        p += stripeWidth
+    }
+
+    c.restoreGState()
 }
 
 protocol BoardViewDelegate: class {
