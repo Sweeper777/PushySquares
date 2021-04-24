@@ -14,8 +14,8 @@ class BoardScene: SCNScene, BoardDisplayer {
         setupCamera(mapTiles)
         setupBoard(mapTiles)
 
-        addLight(position: SCNVector3(-10, 10, -10))
-        addLight(position: SCNVector3(-10, 10, 20))
+//        addLight(position: SCNVector3(-10, 10, -10))
+//        addLight(position: SCNVector3(-10, 10, 20))
         addLight(position: SCNVector3(20, 10, 20))
         addLight(position: SCNVector3(20, 10, -10))
     }
