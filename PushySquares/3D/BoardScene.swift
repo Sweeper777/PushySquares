@@ -4,6 +4,7 @@ import PushySquaresModel
 class BoardScene: SCNScene, BoardDisplayer {
 
     var cameraNode: SCNNode!
+    var cameraPivot: SCNVector3!
     var board: BoardProvider!
 
     let cubeLength: CGFloat = 0.9
@@ -26,12 +27,15 @@ class BoardScene: SCNScene, BoardDisplayer {
         cameraNode.camera = camera
 
         let boardRadius = mapTiles.columns.f / 2
-        let cameraDistance = boardRadius / tan(degreesToRadians(camera.fieldOfView) / 2) * 1.2
-        let cameraX = determineMidpoint(mapTiles.columns)
-        let cameraZ = determineMidpoint(mapTiles.rows)
+        let cameraDistance = boardRadius / tan(degreesToRadians(camera.fieldOfView) / 2) * 1
+        let centerX = determineMidpoint(mapTiles.columns)
+        let centerZ = determineMidpoint(mapTiles.rows)
+        let cameraHeight: Float = 7.5
 
-        cameraNode.position = SCNVector3(x: Float(cameraX), y: 5, z: Float(cameraZ + cameraDistance))
-        cameraNode.eulerAngles.x = -0.5
+        cameraNode.position = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(centerZ + cameraDistance))
+        cameraPivot = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(centerZ))
+
+        cameraNode.eulerAngles.x = -0.9
     }
 
     private func setupBoard(_ mapTiles: Array2D<MapTile>) {
