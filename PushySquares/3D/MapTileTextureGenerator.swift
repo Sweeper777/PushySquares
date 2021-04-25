@@ -62,6 +62,8 @@ enum MapTileTextureGenerator {
         }
         let material = SCNMaterial()
         material.diffuse.contents = color
+        material.specular.contents = UIColor.white
+        material.shininess = 1
         colorMaterialCache[color] = material
         return material
     }
