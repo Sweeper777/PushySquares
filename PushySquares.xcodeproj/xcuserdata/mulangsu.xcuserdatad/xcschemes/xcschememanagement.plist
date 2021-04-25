@@ -9,14 +9,14 @@
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>26</integer>
 		</dict>
 		<key>MyPlayground (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>29</integer>
 		</dict>
 		<key>MyPlayground (Playground).xcscheme</key>
 		<dict>
@@ -33,7 +33,7 @@
 		<key>PushySquaresModel.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>30</integer>
+			<integer>27</integer>
 		</dict>
 		<key>PushySquaresModelTests.xcscheme</key>
 		<dict>
