@@ -5,9 +5,14 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     var cameraNode: SCNNode!
     var cameraPivot: SCNVector3!
-    var board: BoardProvider!
+    var board: BoardProvider! {
+        didSet {
 
-    let cubeLength: CGFloat = 0.9
+        }
+    }
+
+    let cubeLength: CGFloat = 0.88
+    let cubeChamferRadius: CGFloat = 0.1
 
     var delegate: BoardViewDelegate?
 
@@ -50,8 +55,18 @@ class BoardScene: SCNScene, BoardDisplayer {
                 let tileNode = SCNNode(geometry: boardGeometry)
                 tileNode.position = SCNVector3(x, 0, y)
                 rootNode.addChildNode(tileNode)
+                if mapTiles[x, y] == .wall {
+                    let wallNode = cubeNode(withColor: .white)
+                    wallNode.position = SCNVector3(x, 0, y)
+                    rootNode.addChildNode(wallNode)
+                }
             }
         }
+    }
+
+    private func refreshBoardNodes() {
+        guard let boardState = board?.boardState else { return }
+
     }
 
     func addLight(position: SCNVector3) {
@@ -64,6 +79,15 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     func animateMoveResult(_ moveResult: MoveResult) {
 
+    }
+
+    func cubeNode(withColor color: UIColor) -> SCNNode {
+        let colorMaterial = MapTileTextureGenerator.material(for: color)
+        let boardGeometry = SCNBox(width: cubeLength, height: cubeLength, length: cubeLength, chamferRadius: cubeChamferRadius)
+        boardGeometry.firstMaterial = colorMaterial
+        let node = SCNNode(geometry: boardGeometry)
+        node.pivot = SCNMatrix4MakeTranslation(0, -0.4998, 0)
+        return node
     }
 }
 
