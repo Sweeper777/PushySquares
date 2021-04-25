@@ -39,8 +39,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
     private var swipeRightGR: UISwipeGestureRecognizer!
     private var tapGR: UITapGestureRecognizer!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func setupBoards() {
         boardScene = BoardScene()
         boardScene.delegate = self
         board.delegate = self
@@ -48,6 +47,22 @@ class GameViewController: UIViewController, BoardViewDelegate {
         sceneView.scene = boardScene
         sceneView.pointOfView = boardScene.cameraNode
         sceneView.allowsCameraControl = true
+//        sceneView.gestureRecognizers?.removeAll(where: {
+//            $0 is UIPinchGestureRecognizer ||
+//                    ($0 is UIPanGestureRecognizer && $0.numberOfTouches >= 2) ||
+//                    ($0 is UITapGestureRecognizer && ($0 as! UITapGestureRecognizer).numberOfTapsRequired >= 2)
+//        })
+        sceneView.cameraControlConfiguration.allowsTranslation = false
+        sceneView.defaultCameraController.target = boardScene.cameraPivot
+        sceneView.defaultCameraController.interactionMode = .orbitTurntable
+        sceneView.defaultCameraController.pointOfView = boardScene.cameraNode
+        sceneView.defaultCameraController.minimumVerticalAngle = 0
+        sceneView.defaultCameraController.maximumVerticalAngle = 0.000001
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupBoards()
 
         swipeUpGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
