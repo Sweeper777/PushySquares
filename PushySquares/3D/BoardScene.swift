@@ -30,12 +30,12 @@ class BoardScene: SCNScene, BoardDisplayer {
         let cameraDistance = boardRadius / tan(degreesToRadians(camera.fieldOfView) / 2) * 1
         let centerX = determineMidpoint(mapTiles.columns)
         let centerZ = determineMidpoint(mapTiles.rows)
-        let cameraHeight: Float = 7.5
+        let cameraHeight: Float = 10
 
-        cameraNode.position = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(centerZ + cameraDistance))
+        cameraNode.position = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(mapTiles.rows.f + cameraDistance))
         cameraPivot = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(centerZ))
 
-        cameraNode.eulerAngles.x = -0.9
+        cameraNode.eulerAngles.x = -0.5
     }
 
     private func setupBoard(_ mapTiles: Array2D<MapTile>) {
