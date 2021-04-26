@@ -13,6 +13,7 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     let cubeLength: CGFloat = 0.88
     let cubeChamferRadius: CGFloat = 0.1
+    let cubeNodeNamePrefix = "square"
 
     var delegate: BoardViewDelegate?
 
@@ -88,6 +89,10 @@ class BoardScene: SCNScene, BoardDisplayer {
         let node = SCNNode(geometry: boardGeometry)
         node.pivot = SCNMatrix4MakeTranslation(0, -0.4998, 0)
         return node
+    }
+
+    func nameForSquare(atX x: Int, y: Int) -> String {
+        "\(cubeNodeNamePrefix) \(x) \(y)"
     }
 }
 
