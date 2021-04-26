@@ -48,6 +48,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
         sceneView.scene = boardScene
         sceneView.pointOfView = boardScene.cameraNode
         sceneView.allowsCameraControl = true
+        sceneView.defaultCameraController.target = boardScene.cameraPivot
     }
 
     override func viewDidLoad() {
