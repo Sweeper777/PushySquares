@@ -7,7 +7,7 @@ class BoardScene: SCNScene, BoardDisplayer {
     var cameraPivot: SCNVector3!
     var board: BoardProvider! {
         didSet {
-
+            refreshBoardNodes()
         }
     }
 
@@ -68,6 +68,28 @@ class BoardScene: SCNScene, BoardDisplayer {
     private func refreshBoardNodes() {
         guard let boardState = board?.boardState else { return }
 
+        rootNode.enumerateChildNodes { node, _ in
+            if (node.name ?? "").hasPrefix(cubeNodeNamePrefix) {
+                node.removeFromParentNode()
+            }
+        }
+
+        for x in 0..<boardState.columns {
+            for y in 0..<boardState.rows {
+                let cube: SCNNode
+                switch boardState[x, y] {
+                case .empty:
+                    continue
+                case .square(let color):
+                    cube = cubeNode(withColor: BoardView.colorToUIColor[color]!)
+                case .deadBody:
+                    cube = cubeNode(withColor: .gray)
+                }
+                cube.name = nameForSquare(atX: x, y: y)
+                cube.position = SCNVector3(x.f, 0, y.f)
+                rootNode.addChildNode(cube)
+            }
+        }
     }
 
     func addLight(position: SCNVector3) {
