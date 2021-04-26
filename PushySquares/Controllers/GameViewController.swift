@@ -30,6 +30,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
                     from: oldValue ? sceneView : board,
                     to: in3D ? sceneView : board,
                     duration: 0.2, options: [.showHideTransitionViews, .transitionFlipFromLeft], completion: nil)
+            currentBoardDisplayer.board = game
         }
     }
 
