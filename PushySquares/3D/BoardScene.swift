@@ -21,10 +21,10 @@ class BoardScene: SCNScene, BoardDisplayer {
         setupCamera(mapTiles)
         setupBoard(mapTiles)
 
-//        addLight(position: SCNVector3(-10, 10, -10))
-//        addLight(position: SCNVector3(-10, 10, 20))
-        addLight(position: SCNVector3(20, 10, 20))
-        addLight(position: SCNVector3(20, 10, -10))
+        addLight(position: SCNVector3(0, 10, 0))
+        addLight(position: SCNVector3(mapTiles.columns, 10, 0))
+        addLight(position: SCNVector3(0, 10, mapTiles.rows))
+        addLight(position: SCNVector3(mapTiles.columns, 10, mapTiles.rows))
     }
 
     private func setupCamera(_ mapTiles: Array2D<MapTile>) {
@@ -97,6 +97,7 @@ class BoardScene: SCNScene, BoardDisplayer {
         lightNode.position = position
         lightNode.light = SCNLight()
         lightNode.light?.type = .omni
+        lightNode.light?.intensity = 300
         rootNode.addChildNode(lightNode)
     }
 
