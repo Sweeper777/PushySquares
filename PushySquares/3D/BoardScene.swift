@@ -77,12 +77,26 @@ class BoardScene: SCNScene, BoardDisplayer {
                 tileNode.position = SCNVector3(x, 0, y)
                 rootNode.addChildNode(tileNode)
                 if mapTiles[x, y] == .wall {
-                    let wallNode = cubeNode(withColor: .white)
+                    let wallNode = makeCubeNode(withColor: .white)
                     wallNode.position = SCNVector3(x, 0, y)
                     rootNode.addChildNode(wallNode)
                 }
             }
         }
+    }
+
+    private func setupArrows(_ mapTiles: Array2D<MapTile>) {
+        let centerX = determineMidpoint(mapTiles.columns)
+        let centerZ = determineMidpoint(mapTiles.rows)
+        let upArrow = makeArrowNode()
+        upArrow.position = SCNVector3(centerX, 0, -1)
+        upArrow.eulerAngles.y = 0
+        rootNode.addChildNode(upArrow)
+
+        let downArrow = makeArrowNode()
+        downArrow.position = SCNVector3(centerX, 0, mapTiles.rows.f + 1)
+        downArrow.eulerAngles.y = .pi
+        rootNode.addChildNode(downArrow)
     }
 
     private func refreshBoardNodes() {
