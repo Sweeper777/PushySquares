@@ -14,6 +14,14 @@ class BoardScene: SCNScene, BoardDisplayer {
     let cubeLength: CGFloat = 0.88
     let cubeChamferRadius: CGFloat = 0.1
     let cubeNodeNamePrefix = "square"
+    private lazy var trianglePath = { () -> UIBezierPath in
+        let triangle = UIBezierPath()
+        triangle.move(to: CGPoint(x: 0, y: -2))
+        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(120)), y: -2 * cos(degreesToRadians(120))))
+        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(240)), y: -2 * cos(degreesToRadians(240))))
+        triangle.close()
+        return triangle
+    }()
 
     var delegate: BoardViewDelegate?
 
@@ -124,6 +132,16 @@ class BoardScene: SCNScene, BoardDisplayer {
         let node = SCNNode(geometry: boardGeometry)
         node.pivot = SCNMatrix4MakeTranslation(0, -0.4998, 0)
         return node
+    }
+
+    func makeArrowNode() -> SCNNode {
+        let geometry = SCNShape(path: trianglePath, extrusionDepth: 1)
+        geometry.chamferRadius = cubeChamferRadius
+        geometry.firstMaterial = MapTileTextureGenerator.material(for: .black)
+        let arrow = SCNNode(geometry: geometry)
+        arrow.eulerAngles.x = .pi / 2
+        arrow.pivot = SCNMatrix4MakeTranslation(0, 2, 0.5)
+        return arrow
     }
 
     func nameForSquare(atX x: Int, y: Int) -> String {
