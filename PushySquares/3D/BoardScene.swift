@@ -93,9 +93,9 @@ class BoardScene: SCNScene, BoardDisplayer {
                 case .empty:
                     continue
                 case .square(let color):
-                    cube = cubeNode(withColor: BoardView.colorToUIColor[color]!)
+                    cube = makeCubeNode(withColor: BoardView.colorToUIColor[color]!)
                 case .deadBody:
-                    cube = cubeNode(withColor: .gray)
+                    cube = makeCubeNode(withColor: .gray)
                 }
                 cube.name = nameForSquare(atX: x, y: y)
                 cube.position = SCNVector3(x.f, 0, y.f)
@@ -117,7 +117,7 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     }
 
-    func cubeNode(withColor color: UIColor) -> SCNNode {
+    func makeCubeNode(withColor color: UIColor) -> SCNNode {
         let colorMaterial = MapTileTextureGenerator.material(for: color)
         let boardGeometry = SCNBox(width: cubeLength, height: cubeLength, length: cubeLength, chamferRadius: cubeChamferRadius)
         boardGeometry.firstMaterial = colorMaterial
