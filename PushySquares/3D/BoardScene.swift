@@ -25,6 +25,18 @@ class BoardScene: SCNScene, BoardDisplayer {
         addLight(position: SCNVector3(mapTiles.columns, 10, 0))
         addLight(position: SCNVector3(0, 10, mapTiles.rows))
         addLight(position: SCNVector3(mapTiles.columns, 10, mapTiles.rows))
+
+        let triangle = UIBezierPath()
+        triangle.move(to: CGPoint(x: 0, y: -2))
+        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(120)), y: -2 * cos(degreesToRadians(120))))
+        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(240)), y: -2 * cos(degreesToRadians(240))))
+        triangle.close()
+        let geometry = SCNShape(path: triangle, extrusionDepth: 1)
+        geometry.chamferRadius = cubeChamferRadius
+        geometry.firstMaterial = MapTileTextureGenerator.material(for: .red)
+        let node = SCNNode(geometry: geometry)
+        node.position = SCNVector3(x: 1, y: 0, z: 1)
+        rootNode.addChildNode(node)
     }
 
     private func setupCamera(_ mapTiles: Array2D<MapTile>) {

@@ -32,6 +32,7 @@
                                         <subviews>
                                             <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-F3-XUO">
                                                 <rect key="frame" x="0.0" y="0.0" width="416" height="288"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </sceneKitView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvC-zS-KZi" customClass="BoardView" customModule="PushySquares" customModuleProvider="target">
                                                 <rect key="frame" x="64" y="0.0" width="288" height="288"/>
