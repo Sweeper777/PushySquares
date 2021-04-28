@@ -119,6 +119,11 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
             self?.playerCountSelector.itemSize = self?.mapSelector.itemSize ?? .zero
         }
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        shouldShowAd = false
+    }
 }
 
 protocol GameModeSelectorDelegate: class {
