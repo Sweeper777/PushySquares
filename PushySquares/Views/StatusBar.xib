@@ -16,14 +16,14 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="TH1-H9-o1c">
+        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" id="TH1-H9-o1c">
             <rect key="frame" x="0.0" y="0.0" width="438" height="82"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-hZ-BM8">
                     <rect key="frame" x="0.0" y="0.0" width="146" height="82"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-wf-qVO">
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-wf-qVO">
                     <rect key="frame" x="146" y="0.0" width="146" height="82"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-zX-D1J" customClass="FittableFontLabel" customModule="FittableFontLabel">
@@ -35,7 +35,7 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="autoAdjustFontSize" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5y-YM-hxi" customClass="SquareView" customModule="PushySquares" customModuleProvider="target">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5y-YM-hxi" customClass="SquareView" customModule="PushySquares" customModuleProvider="target">
                             <rect key="frame" x="52.5" y="41" width="41" height="41"/>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -47,7 +47,7 @@
                         <constraint firstItem="g5y-YM-hxi" firstAttribute="width" secondItem="l0Q-zX-D1J" secondAttribute="width" id="tGx-An-Kq9"/>
                     </constraints>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtY-5b-Qis" customClass="UIImageView">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtY-5b-Qis" customClass="UIImageView">
                     <rect key="frame" x="292" y="0.0" width="146" height="82"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
