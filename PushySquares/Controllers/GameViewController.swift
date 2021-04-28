@@ -68,11 +68,6 @@ class GameViewController: UIViewController, BoardViewDelegate {
         tapGR.numberOfTapsRequired = 1
         tapGR.numberOfTouchesRequired = 1
 
-        swipeUpGR.delegate = self
-        swipeDownGR.delegate = self
-        swipeLeftGR.delegate = self
-        swipeRightGR.delegate = self
-        tapGR.delegate = self
         view.addGestureRecognizer(swipeUpGR)
         view.addGestureRecognizer(swipeDownGR)
         view.addGestureRecognizer(swipeLeftGR)
@@ -275,18 +270,5 @@ class GameViewController: UIViewController, BoardViewDelegate {
         let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(kCircleIconHeight: 56, showCloseButton: false))
         alert.addButton("OK".localized, action: {})
         _ = alert.showCustom(message, subTitle: "", color: .black, icon: color.image(size: CGSize(width: 56, height: 56)))
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        toggleMenu()
-    }
-}
-
-extension GameViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        !in3D
-                || !sceneView.bounds.contains(touch.location(in: sceneView))
-                || gestureRecognizer == tapGR
     }
 }
