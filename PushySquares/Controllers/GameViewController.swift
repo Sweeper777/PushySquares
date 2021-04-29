@@ -26,6 +26,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         didSet {
             guard oldValue != in3D else { return }
 
+            setAllGestureRecognisersEnabled(!in3D)
             UIView.transition(
                     from: oldValue ? sceneView : board,
                     to: in3D ? sceneView : board,
@@ -39,6 +40,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
     private var swipeLeftGR: UISwipeGestureRecognizer!
     private var swipeRightGR: UISwipeGestureRecognizer!
     private var tapGR: UITapGestureRecognizer!
+    private var allowMoves = false
 
     private func setupBoards() {
         boardScene = BoardScene()
@@ -74,7 +76,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         view.addGestureRecognizer(swipeRightGR)
         view.addGestureRecognizer(tapGR)
 
-        setAllGestureRecognisersEnabled(false)
+        setAllowMoves(false)
 
         setupStackView()
     }
@@ -139,6 +141,10 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         menu = stackView
     }
 
+    func setAllowMoves(_ allowMoves: Bool) {
+        self.allowMoves = allowMoves
+    }
+
     func setAllGestureRecognisersEnabled(_ enabled: Bool) {
         swipeUpGR.isEnabled = enabled
         swipeDownGR.isEnabled = enabled
@@ -147,40 +153,40 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
     }
 
     @objc func swipeUp() {
-        guard !in3D else { return }
+        guard allowMoves else { return }
 
         strategy.willMove(.up)
         let moveResult = game.moveUp()
         currentBoardDisplayer.animateMoveResult(moveResult)
-        setAllGestureRecognisersEnabled(false)
+        setAllowMoves(false)
     }
 
     @objc func swipeDown() {
-        guard !in3D else { return }
+        guard allowMoves else { return }
 
         strategy.willMove(.down)
         let moveResult = game.moveDown()
         currentBoardDisplayer.animateMoveResult(moveResult)
-        setAllGestureRecognisersEnabled(false)
+        setAllowMoves(false)
     }
 
 
     @objc func swipeLeft() {
-        guard !in3D else { return }
+        guard allowMoves else { return }
 
         strategy.willMove(.left)
         let moveResult = game.moveLeft()
         currentBoardDisplayer.animateMoveResult(moveResult)
-        setAllGestureRecognisersEnabled(false)
+        setAllowMoves(false)
     }
 
     @objc func swipeRight() {
-        guard !in3D else { return }
+        guard allowMoves else { return }
 
         strategy.willMove(.right)
         let moveResult = game.moveRight()
         currentBoardDisplayer.animateMoveResult(moveResult)
-        setAllGestureRecognisersEnabled(false)
+        setAllowMoves(false)
     }
 
     @objc func toggleMenu() {
@@ -234,7 +240,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
     func restartGame() {
         game = Game(map: map, playerCount: playerCount)
         currentBoardDisplayer.board = game
-        setAllGestureRecognisersEnabled(true)
+        setAllowMoves(true)
         updateStatusBar()
         strategy.didRestartGame()
     }
@@ -258,9 +264,13 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
     }
 
     func boardDidEndAnimatingMoveResult(_ boardDisplayer: BoardDisplayer, moveResult: MoveResult) {
+        guard (boardDisplayer === boardScene && in3D) || (boardDisplayer === board && !in3D) else {
+            return
+        }
+
         switch moveResult.gameResult {
         case .unknown:
-            setAllGestureRecognisersEnabled(true)
+            setAllowMoves(true)
         case .won(let winningColor):
             let uiColor = BoardView.colorToUIColor[winningColor]!
             let colorString = BoardView.colorToString[winningColor]!

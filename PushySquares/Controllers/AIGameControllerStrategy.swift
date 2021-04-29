@@ -47,10 +47,10 @@ class AIGameControllerStrategy : GameControllerStrategy {
 
     func tryAIMove() {
         guard isAITurn else {
-            gameViewController.setAllGestureRecognisersEnabled(true)
+            gameViewController.setAllowMoves(true)
             return
         }
-        gameViewController.setAllGestureRecognisersEnabled(false)
+        gameViewController.setAllowMoves(false)
         guard gameViewController.game.gameResult == .unknown else {
             return
         }

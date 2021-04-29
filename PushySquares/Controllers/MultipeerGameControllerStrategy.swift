@@ -29,13 +29,13 @@ class MultipeerGameControllerStrategy: NSObject, GameControllerStrategy {
                 String(format: "Your color is %@.".localized, BoardView.colorToString[myColor]!),
                 subTitle: "", color: .black,
                 icon: BoardView.colorToUIColor[myColor]!.image(size: CGSize(width: 56, height: 56)))
-        gameViewController.setAllGestureRecognisersEnabled(
+        gameViewController.setAllowMoves(
                 myColor == gameViewController.game.currentPlayer.color
         )
     }
 
     func didEndAnimatingMoveResult(_ moveResult: MoveResult) {
-        gameViewController.setAllGestureRecognisersEnabled(
+        gameViewController.setAllowMoves(
                 myColor == gameViewController.game.currentPlayer.color
         )
     }
