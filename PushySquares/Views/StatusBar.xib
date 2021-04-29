@@ -29,7 +29,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-zX-D1J" customClass="FittableFontLabel" customModule="FittableFontLabel">
                             <rect key="frame" x="52.5" y="0.0" width="41" height="41"/>
                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="autoAdjustFontSize" value="YES"/>
