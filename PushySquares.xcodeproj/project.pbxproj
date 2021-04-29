@@ -43,6 +43,7 @@
 		25EF0DF48A0D5A2287208390 /* PageControlDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A257A2DB72E70EDEF7 /* PageControlDelegates.swift */; };
 		25EF0E0D2490ABFC5781628F /* DataCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF036807D1D3A81577B97C /* DataCodes.swift */; };
 		25EF0FC5BBFFFE45156B141A /* BoardDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0159E2092E00F02AAA9D /* BoardDisplayer.swift */; };
+		25EF0FE04CA4822FE52451BC /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0FB938BFA7782DB00021 /* Camera.swift */; };
 		25EF0FF55772BC841C56C19B /* DefaultGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A1A10558589D208033 /* DefaultGameControllerStrategy.swift */; };
 		5A4ABC3F262A6DD80008ABE5 /* NearbyPeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */; };
 		5A5E1B052623D94E00EB1A61 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5E1B042623D94E00EB1A61 /* StoreKit.framework */; };
@@ -179,6 +180,7 @@
 		25EF0F3DAAE2DC38C36D1A7B /* lives zh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lives zh.png"; sourceTree = "<group>"; };
 		25EF0F5785A68F4113FBE3C8 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		25EF0FA2484F5DA4128F622A /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		25EF0FB938BFA7782DB00021 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		5A4ABC3E262A6DD80008ABE5 /* NearbyPeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyPeerCell.swift; sourceTree = "<group>"; };
 		5A5E1B042623D94E00EB1A61 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5A5E8534262FBE7B0068C2D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				25EF02D2ED8294C844E6F111 /* BoardScene.swift */,
 				25EF09BB9BD5389F1CC0B7AA /* MapTileTextureGenerator.swift */,
+				25EF0FB938BFA7782DB00021 /* Camera.swift */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				25EF0B8176BEAD7AEA48F5BD /* BoardScene.swift in Sources */,
 				25EF0FC5BBFFFE45156B141A /* BoardDisplayer.swift in Sources */,
 				25EF0C6158326A38936C07B7 /* MapTileTextureGenerator.swift in Sources */,
+				25EF0FE04CA4822FE52451BC /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
