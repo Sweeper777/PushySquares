@@ -147,6 +147,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func swipeUp() {
+        guard !in3D else { return }
+
         strategy.willMove(.up)
         let moveResult = game.moveUp()
         currentBoardDisplayer.animateMoveResult(moveResult)
@@ -154,6 +156,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func swipeDown() {
+        guard !in3D else { return }
+
         strategy.willMove(.down)
         let moveResult = game.moveDown()
         currentBoardDisplayer.animateMoveResult(moveResult)
@@ -162,6 +166,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
 
 
     @objc func swipeLeft() {
+        guard !in3D else { return }
+
         strategy.willMove(.left)
         let moveResult = game.moveLeft()
         currentBoardDisplayer.animateMoveResult(moveResult)
@@ -169,6 +175,8 @@ class GameViewController: UIViewController, BoardViewDelegate {
     }
 
     @objc func swipeRight() {
+        guard !in3D else { return }
+
         strategy.willMove(.right)
         let moveResult = game.moveRight()
         currentBoardDisplayer.animateMoveResult(moveResult)
