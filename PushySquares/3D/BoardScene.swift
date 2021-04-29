@@ -14,11 +14,14 @@ class BoardScene: SCNScene, BoardDisplayer {
     let cubeLength: CGFloat = 0.88
     let cubeChamferRadius: CGFloat = 0.1
     let cubeNodeNamePrefix = "square"
+    let arrowRadius: CGFloat = 1
+    let arrowHeight: CGFloat = 0.5
+
     private lazy var trianglePath = { () -> UIBezierPath in
         let triangle = UIBezierPath()
-        triangle.move(to: CGPoint(x: 0, y: -2))
-        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(120)), y: -2 * cos(degreesToRadians(120))))
-        triangle.addLine(to: CGPoint(x: 2 * sin(degreesToRadians(240)), y: -2 * cos(degreesToRadians(240))))
+        triangle.move(to: CGPoint(x: 0, y: -arrowRadius))
+        triangle.addLine(to: CGPoint(x: arrowRadius * sin(degreesToRadians(120)), y: -arrowRadius * cos(degreesToRadians(120))))
+        triangle.addLine(to: CGPoint(x: arrowRadius * sin(degreesToRadians(240)), y: -arrowRadius * cos(degreesToRadians(240))))
         triangle.close()
         return triangle
     }()
@@ -80,21 +83,25 @@ class BoardScene: SCNScene, BoardDisplayer {
         let upArrow = makeArrowNode()
         upArrow.position = SCNVector3(centerX, 0, -1)
         upArrow.eulerAngles.y = 0
+        upArrow.name = "up arrow"
         rootNode.addChildNode(upArrow)
 
         let downArrow = makeArrowNode()
         downArrow.position = SCNVector3(centerX, 0, mapTiles.rows.f)
         downArrow.eulerAngles.y = .pi
+        downArrow.name = "down arrow"
         rootNode.addChildNode(downArrow)
 
         let leftArrow = makeArrowNode()
         leftArrow.position = SCNVector3(-1, 0, centerZ)
         leftArrow.eulerAngles.y = .pi / 2
+        leftArrow.name = "left arrow"
         rootNode.addChildNode(leftArrow)
 
         let rightArrow = makeArrowNode()
         rightArrow.position = SCNVector3(mapTiles.columns.f, 0, centerZ)
         rightArrow.eulerAngles.y = -.pi / 2
+        rightArrow.name = "right arrow"
         rootNode.addChildNode(rightArrow)
     }
 
@@ -148,12 +155,12 @@ class BoardScene: SCNScene, BoardDisplayer {
     }
 
     func makeArrowNode() -> SCNNode {
-        let geometry = SCNShape(path: trianglePath, extrusionDepth: 1)
+        let geometry = SCNShape(path: trianglePath, extrusionDepth: arrowHeight)
         geometry.chamferRadius = cubeChamferRadius
         geometry.firstMaterial = MapTileTextureGenerator.material(for: .black)
         let arrow = SCNNode(geometry: geometry)
         arrow.eulerAngles.x = .pi / 2
-        arrow.pivot = SCNMatrix4MakeTranslation(0, 2, 0.5)
+        arrow.pivot = SCNMatrix4MakeTranslation(0, Float(arrowRadius), Float(arrowHeight / 2))
         return arrow
     }
 
