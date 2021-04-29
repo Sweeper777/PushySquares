@@ -4,7 +4,7 @@ import SwiftyButton
 import SCLAlertView
 import SceneKit
 
-class GameViewController: UIViewController, BoardViewDelegate {
+class GameViewController: UIViewController, BoardDisplayerDelegate {
 
     @IBOutlet private var board: BoardView!
     @IBOutlet private var sceneView: SCNView!
@@ -257,7 +257,7 @@ class GameViewController: UIViewController, BoardViewDelegate {
         statusBar.setCurrentTurn(game.currentPlayer.color)
     }
 
-    func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult) {
+    func boardDidEndAnimatingMoveResult(_ boardDisplayer: BoardDisplayer, moveResult: MoveResult) {
         switch moveResult.gameResult {
         case .unknown:
             setAllGestureRecognisersEnabled(true)

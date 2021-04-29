@@ -28,7 +28,7 @@ class BoardView : UIView {
 
     private let animationManager = AnimationManager<ViewAnimationPhase>()
 
-    weak var delegate: BoardViewDelegate?
+    weak var delegate: BoardDisplayerDelegate?
 
     override func draw(_ rect: CGRect) {
         guard let board = board else {
@@ -154,7 +154,7 @@ class BoardView : UIView {
             (movedSquares + slippedSquares).forEach {
                 $0.tag = moveResult.direction.displacementFunction(self.position(fromTag: $0.tag)).rawValue
             }
-            self.delegate?.boardDidEndAnimatingMoveResult(moveResult)
+            self.delegate?.boardDidEndAnimatingMoveResult(self, moveResult: moveResult)
         }
     }
 
@@ -235,8 +235,4 @@ func drawSimpleStripes(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, 
     }
 
     c.restoreGState()
-}
-
-protocol BoardViewDelegate: class {
-    func boardDidEndAnimatingMoveResult(_ moveResult: MoveResult)
 }

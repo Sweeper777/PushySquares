@@ -23,7 +23,7 @@ class BoardScene: SCNScene, BoardDisplayer {
         return triangle
     }()
 
-    var delegate: BoardViewDelegate?
+    var delegate: BoardDisplayerDelegate?
 
     func setup(with mapTiles: Array2D<MapTile>) {
         setupCamera(mapTiles)
