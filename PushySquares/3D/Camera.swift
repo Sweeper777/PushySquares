@@ -14,4 +14,17 @@ class HorizontalPivotCamera {
         angle = atan2f(cameraNode.position.z - target.position.z, cameraNode.position.x - target.position.x)
         eulerY = cameraNode.eulerAngles.y
     }
+
+    func pivot(_ radians: Float) {
+        angle += radians
+        eulerY -= radians
+        angle.formRemainder(dividingBy: 2 * .pi)
+        updateCameraPosition()
+    }
+
+    private func updateCameraPosition() {
+        cameraNode.position.x = target.position.x + radius * cos(angle)
+        cameraNode.position.z = target.position.z + radius * sin(angle)
+        cameraNode.eulerAngles.y = eulerY
+    }
 }
