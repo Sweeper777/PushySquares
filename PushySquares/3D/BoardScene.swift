@@ -5,6 +5,7 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     var cameraNode: SCNNode!
     var cameraPivot: SCNVector3!
+    var cameraController: HorizontalPivotCamera!
     var board: BoardProvider! {
         didSet {
             refreshBoardNodes()
@@ -54,6 +55,11 @@ class BoardScene: SCNScene, BoardDisplayer {
         cameraPivot = SCNVector3(x: Float(centerX), y: cameraHeight, z: Float(centerZ))
 
         cameraNode.eulerAngles.x = -0.7
+
+        let cameraPivotNode = SCNNode()
+        cameraPivotNode.position = cameraPivot
+        rootNode.addChildNode(cameraPivotNode)
+        cameraController = .init(target: cameraPivotNode, cameraNode: cameraNode)
     }
 
     private func setupBoard(_ mapTiles: Array2D<MapTile>) {
@@ -166,6 +172,10 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     func nameForSquare(atX x: Int, y: Int) -> String {
         "\(cubeNodeNamePrefix) \(x) \(y)"
+    }
+
+    func rotateCamera(_ dTheta: Float) {
+        cameraController.pivot(dTheta)
     }
 }
 
