@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-eO-gxd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-eO-gxd">
                                 <rect key="frame" x="16" y="16" width="536" height="288"/>
                                 <subviews>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP8-as-STy" customClass="StatusBar" customModule="PushySquares" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="288"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" colorLabel="IBBuiltInLabel-Gray">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFR-Qc-Lvt" colorLabel="IBBuiltInLabel-Gray">
                                         <rect key="frame" x="120" y="0.0" width="416" height="288"/>
                                         <subviews>
-                                            <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-F3-XUO">
+                                            <sceneKitView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-F3-XUO" customClass="BoardSceneView" customModule="PushySquares" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="416" height="288"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </sceneKitView>
