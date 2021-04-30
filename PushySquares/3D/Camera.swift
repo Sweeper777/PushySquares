@@ -10,10 +10,5 @@ class HorizontalPivotCamera {
         self.target = target
         self.cameraNode = cameraNode
         radius = hypotf(target.position.x - cameraNode.position.x, target.position.z - cameraNode.position.z)
-        let lookAtConstraint = SCNLookAtConstraint(target: target)
-        lookAtConstraint.isGimbalLockEnabled = true
-        if (cameraNode.constraints?.append(lookAtConstraint)) == nil {
-            cameraNode.constraints = [lookAtConstraint]
-        }
     }
 }
