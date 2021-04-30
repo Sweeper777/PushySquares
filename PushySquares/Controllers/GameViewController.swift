@@ -49,8 +49,6 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         boardScene.setup(with: map.map)
         sceneView.scene = boardScene
         sceneView.pointOfView = boardScene.cameraNode
-        sceneView.allowsCameraControl = true
-        sceneView.defaultCameraController.target = boardScene.cameraPivot
     }
 
     override func viewDidLoad() {
@@ -69,6 +67,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         swipeRightGR.direction = .right
         tapGR.numberOfTapsRequired = 1
         tapGR.numberOfTouchesRequired = 1
+        tapGR.cancelsTouchesInView = false
 
         view.addGestureRecognizer(swipeUpGR)
         view.addGestureRecognizer(swipeDownGR)
@@ -264,10 +263,6 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
     }
 
     func boardDidEndAnimatingMoveResult(_ boardDisplayer: BoardDisplayer, moveResult: MoveResult) {
-        guard (boardDisplayer === boardScene && in3D) || (boardDisplayer === board && !in3D) else {
-            return
-        }
-
         switch moveResult.gameResult {
         case .unknown:
             setAllowMoves(true)
