@@ -6,6 +6,7 @@ class BoardScene: SCNScene, BoardDisplayer {
     var cameraNode: SCNNode!
     var cameraPivot: SCNVector3!
     var cameraController: HorizontalPivotCamera!
+    private var animationManager = AnimationManager<SceneAnimationPhase>()
     var board: BoardProvider! {
         didSet {
             refreshBoardNodes()
@@ -164,6 +165,10 @@ class BoardScene: SCNScene, BoardDisplayer {
         rootNode.addChildNode(lightNode)
     }
 
+    private func cubeNode(atPosition position: Position) -> SCNNode? {
+        rootNode.childNode(withName: nameForSquare(atX: position.x, y: position.y), recursively: false)
+    }
+
     func animateMoveResult(_ moveResult: MoveResult) {
 
     }
@@ -189,6 +194,11 @@ class BoardScene: SCNScene, BoardDisplayer {
 
     func nameForSquare(atX x: Int, y: Int) -> String {
         "\(cubeNodeNamePrefix) \(x) \(y)"
+    }
+
+    func positionFromSquareName(_ name: String) -> Position {
+        let components = name.components(separatedBy: " ")
+        return Position(Int(components[1])!, Int(components[2])!)
     }
 
     func rotateCamera(_ dTheta: Float) {
