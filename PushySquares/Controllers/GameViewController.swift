@@ -64,7 +64,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         swipeDownGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
         swipeLeftGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
         swipeRightGR = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
-        tapGR = UITapGestureRecognizer(target: self, action: #selector(toggleMenu))
+        tapGR = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
 
         swipeUpGR.direction = .up
         swipeDownGR.direction = .down
@@ -193,7 +193,23 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         setAllowMoves(false)
     }
 
-    @objc func toggleMenu() {
+    @objc func viewTapped() {
+        guard in3D else {
+            toggleMenu()
+            return
+        }
+        let point = tapGR.location(in: sceneView)
+        guard sceneView.bounds.contains(point) else {
+            toggleMenu()
+            return
+        }
+        let results = sceneView.hitTest(point)
+        if !boardScene.onTap(results) {
+            toggleMenu()
+        }
+    }
+
+    func toggleMenu() {
         if menu.isHidden {
             menu.isHidden = false
             menu.alpha = 0
@@ -226,7 +242,7 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
             [weak self] in
             guard let `self` = self else { return }
             self.restartGame()
-            self.toggleMenu()
+            self.viewTapped()
         })
         alert.addButton("No".localized, action: {})
         alert.showWarning("Confirm".localized, subTitle: "Do you really want to restart?".localized)
