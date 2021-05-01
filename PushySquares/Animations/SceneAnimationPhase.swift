@@ -7,6 +7,16 @@ class SceneAnimationPhase : AnimationPhase {
     var onEnd: (() -> Void)?
 
     func start(animations: [AnimationType: [SCNNode]]) {
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = duration
+        SCNTransaction.completionBlock = onEnd
+        for (type, nodes) in animations {
+            let transform = block(forAnimationType: type)
+            for node in nodes {
+                transform(node)
+            }
+        }
+        SCNTransaction.commit()
     }
 
     func block(forAnimationType animationType: AnimationType) -> (SCNNode) -> Void {
