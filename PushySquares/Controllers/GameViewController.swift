@@ -49,6 +49,11 @@ class GameViewController: UIViewController, BoardDisplayerDelegate {
         boardScene.setup(with: map.map)
         sceneView.scene = boardScene
         sceneView.pointOfView = boardScene.cameraNode
+        boardScene.setTarget(self,
+                moveUp: #selector(swipeUp),
+                moveDown: #selector(swipeDown),
+                moveLeft: #selector(swipeLeft),
+                moveRight: #selector(swipeRight))
     }
 
     override func viewDidLoad() {

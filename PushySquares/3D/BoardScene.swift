@@ -28,6 +28,23 @@ class BoardScene: SCNScene, BoardDisplayer {
     }()
 
     var delegate: BoardDisplayerDelegate?
+    private weak var target: AnyObject?
+    private var upSelector: Selector?
+    private var downSelector: Selector?
+    private var leftSelector: Selector?
+    private var rightSelector: Selector?
+
+    func setTarget(_ target: AnyObject,
+                   moveUp: Selector,
+                   moveDown: Selector,
+                   moveLeft: Selector,
+                   moveRight: Selector) {
+        self.target = target
+        upSelector = moveUp
+        downSelector = moveDown
+        leftSelector = moveLeft
+        rightSelector = moveRight
+    }
 
     func setup(with mapTiles: Array2D<MapTile>) {
         setupCamera(mapTiles)
