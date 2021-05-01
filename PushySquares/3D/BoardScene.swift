@@ -194,6 +194,29 @@ class BoardScene: SCNScene, BoardDisplayer {
     func rotateCamera(_ dTheta: Float) {
         cameraController.pivot(dTheta)
     }
+
+    func onTap(_ results: [SCNHitTestResult]) -> Bool {
+        if let firstResult = results.first {
+            let selectorToPerform: Selector?
+            switch firstResult.node.name {
+            case "up arrow":
+                selectorToPerform = upSelector
+            case "down arrow":
+                selectorToPerform = downSelector
+            case "left arrow":
+                selectorToPerform = leftSelector
+            case "right arrow":
+                selectorToPerform = rightSelector
+            default:
+                selectorToPerform = nil
+            }
+            if let target = target, let sel = selectorToPerform {
+                _ = target.perform(sel)
+            }
+            return selectorToPerform != nil
+        }
+        return false
+    }
 }
 
 func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
