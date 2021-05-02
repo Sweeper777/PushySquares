@@ -22,8 +22,11 @@ class AnimationManager<Phase: AnimationPhase> {
                 self.phases[next].start(animations: self.groups[next])
             }
         }
-        if let first = phases.first, let last = phases.last {
-            last.onEnd = completion
+        if let first = phases.first, let last = phases.last, let lastPhaseComplete = completionHandlers.last {
+            last.onEnd = {
+                lastPhaseComplete?()
+                completion?()
+            }
             first.start(animations: groups.first!)
         } else if let comp = completion {
             DispatchQueue.main.async(execute: comp)
