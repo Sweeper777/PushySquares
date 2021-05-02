@@ -4,7 +4,6 @@ import SceneKit
 
 enum MapTileTextureGenerator {
     private static var mapTileMaterialCache: [MapTile: SCNMaterial] = [:]
-    private static var colorMaterialCache: [UIColor: SCNMaterial] = [:]
 
     static func material(for mapTile: MapTile) -> SCNMaterial? {
         if let cached = mapTileMaterialCache[mapTile] {
@@ -57,14 +56,10 @@ enum MapTileTextureGenerator {
     }
 
     static func material(for color: UIColor) -> SCNMaterial {
-        if let cached = colorMaterialCache[color] {
-            return cached
-        }
         let material = SCNMaterial()
         material.diffuse.contents = color
         material.specular.contents = UIColor.white
         material.shininess = 1
-        colorMaterialCache[color] = material
         return material
     }
 }
