@@ -170,7 +170,57 @@ class BoardScene: SCNScene, BoardDisplayer {
     }
 
     func animateMoveResult(_ moveResult: MoveResult) {
+        animationManager.reset()
+        let dx: Double
+        let dy: Double
+        switch moveResult.direction {
+        case .right:
+            (dx, dy) = (1, 0)
+        case .left:
+            (dx, dy) = (-1, 0)
+        case .down:
+            (dx, dy) = (0, 1)
+        case .up:
+            (dx, dy) = (0, -1)
+        }
 
+        let movedSquares = moveResult.movedPositions.compactMap(cubeNode(atPosition:))
+        let slippedSquares = moveResult.slippedPositions.compactMap(cubeNode(atPosition:))
+        let fellSquares = moveResult.fellPositions.compactMap(cubeNode(atPosition:))
+        let grayedOutSquares = moveResult.greyedOutPositions.compactMap(cubeNode(atPosition:))
+        if movedSquares.isNotEmpty || slippedSquares.isNotEmpty {
+            animationManager.addPhase(group: [
+                .move(dx: Double(dx), dy: Double(dy)): movedSquares,
+                .move(dx: Double(dx) * 2, dy: Double(dy) * 2): slippedSquares
+            ], duration: 0.5, completion: nil)
+        }
+        if fellSquares.isNotEmpty {
+            animationManager.addPhase(group: [.fall: fellSquares], duration: 0.5) {
+                fellSquares.forEach {
+                    $0.removeFromParentNode()
+                }
+            }
+        }
+        if grayedOutSquares.isNotEmpty {
+            animationManager.addPhase(group: [.grayOut: grayedOutSquares], duration: 0.5, completion: nil)
+        }
+        if let (color, position) = moveResult.newSquare {
+            let newSquare = makeCubeNode(withColor: BoardView.colorToUIColor[color]!)
+            newSquare.position.x = Float(position.x)
+            newSquare.position.z = Float(position.y)
+            newSquare.scale = SCNVector3(SceneAnimationPhase.invisibleScale, SceneAnimationPhase.invisibleScale, SceneAnimationPhase.invisibleScale)
+            newSquare.name = nameForSquare(atX: position.x, y: position.y)
+            rootNode.addChildNode(newSquare)
+            animationManager.addPhase(group: [.newSquare: [newSquare]], duration: 0.5, completion: nil)
+        }
+        animationManager.runAnimation { [weak self] in
+            guard let `self` = self else { return }
+            (movedSquares + slippedSquares).forEach {
+                let newPosition = moveResult.direction.displacementFunction(self.positionFromSquareName($0.name!))
+                $0.name = self.nameForSquare(atX: newPosition.x, y: newPosition.y)
+            }
+            self.delegate?.boardDidEndAnimatingMoveResult(self, moveResult: moveResult)
+        }
     }
 
     func makeCubeNode(withColor color: UIColor) -> SCNNode {
