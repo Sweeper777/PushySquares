@@ -84,13 +84,14 @@ class BoardScene: SCNScene, BoardDisplayer {
         for x in 0..<mapTiles.columns {
             for y in 0..<mapTiles.rows {
                 guard let material = MapTileTextureGenerator.material(for: mapTiles[x, y]) else { continue }
-                let black = MapTileTextureGenerator.material(for: UIColor.black)
-                let boardGeometry = SCNBox(width: 1, height: 0.1, length: 1, chamferRadius: 0)
+                let otherSides = MapTileTextureGenerator.material(for: UIColor(hex: "fff4cc"))
+                let boardGeometry = SCNBox(width: 1, height: CGFloat(SceneAnimationPhase.fallHeight), length: 1, chamferRadius: 0)
                 boardGeometry.materials = [
-                    black, black, black, black, material, black
+                    otherSides, otherSides, otherSides, otherSides, material, otherSides
                 ]
                 let tileNode = SCNNode(geometry: boardGeometry)
                 tileNode.position = SCNVector3(x, 0, y)
+                tileNode.pivot = SCNMatrix4MakeTranslation(0, SceneAnimationPhase.fallHeight / 2, 0)
                 rootNode.addChildNode(tileNode)
                 if mapTiles[x, y] == .wall {
                     let wallNode = makeCubeNode(withColor: .white)

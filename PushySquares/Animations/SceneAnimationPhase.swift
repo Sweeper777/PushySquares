@@ -3,6 +3,7 @@ import SceneKit
 class SceneAnimationPhase : AnimationPhase {
     var duration: TimeInterval
     static let invisibleScale: Float = 0.000001
+    static let fallHeight: Float = 10
 
     var onEnd: (() -> Void)?
 
@@ -27,7 +28,7 @@ class SceneAnimationPhase : AnimationPhase {
                 node.position.z += Float(dy)
             }
         case .fall:
-            return { $0.position.y -= 10 }
+            return { $0.position.y -= Self.fallHeight }
         case .grayOut:
             return { $0.geometry?.firstMaterial?.diffuse.contents = UIColor.gray }
         case .newSquare:
