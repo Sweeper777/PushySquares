@@ -55,18 +55,11 @@ class AIGameControllerStrategy : GameControllerStrategy {
             return
         }
 
-        let aiIndex: Int
-        if gameViewController.game.currentPlayer.color.rawValue > humanPlayerColor?.rawValue ?? Int.max {
-            aiIndex = gameViewController.game.currentPlayer.color.rawValue - 2
-        } else {
-            aiIndex = gameViewController.game.currentPlayer.color.rawValue - 1
-        }
-
         let weightsArray: [Int]
         if gameViewController.playerCount == 2 {
             weightsArray = twoPlayerAIArray
         } else {
-            weightsArray = multiplayerAIArrays[aiIndex]
+            weightsArray = multiplayerAIArrays.randomElement()!
         }
         let game = gameViewController.game
         currentAI = GameAI(game: Game(game: gameViewController.game), myColor: gameViewController.game.currentPlayer.color, weightsArray)
