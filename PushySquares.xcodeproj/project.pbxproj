@@ -22,8 +22,10 @@
 		25EF05D89DEAF36AB03C74A0 /* MoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04759A80F6E1726EFD64 /* MoveResult.swift */; };
 		25EF060107A9428F47C75E43 /* AIGameControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF07149CEC8F7E69E55FB9 /* AIGameControllerStrategy.swift */; };
 		25EF0662FB3CB8461DDC919C /* new square in.png in Resources */ = {isa = PBXBuildFile; fileRef = 25EF0620BF8EE9AAAC4742D0 /* new square in.png */; };
+		25EF078F0DA0CFFDD13689B5 /* BoardSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0BD215671E2BCAEA6AAB /* BoardSceneView.swift */; };
 		25EF08052FBA384C2B87D97D /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF07DE2075247ADA65417B /* HostViewController.swift */; };
 		25EF08582B0766455C07A538 /* ViewAnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */; };
+		25EF088548B52C03E9316D39 /* SceneAnimationPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0C972C5B48888967B275 /* SceneAnimationPhase.swift */; };
 		25EF08987D5E5955098B704F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF05F5A3FFF30FAAF5B7D3 /* HelpViewController.swift */; };
 		25EF08FD4ABED1FC0C556849 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF04A53EC1122B75623549 /* StatusBar.swift */; };
 		25EF09DBF7124E50EE688F85 /* StartInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF02CA7C3E3787BE934B60 /* StartInfo.swift */; };
@@ -170,9 +172,11 @@
 		25EF09BB9BD5389F1CC0B7AA /* MapTileTextureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTileTextureGenerator.swift; sourceTree = "<group>"; };
 		25EF0B5055DC0411C31B57A2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		25EF0BB703C718C824CA9FDC /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
+		25EF0BD215671E2BCAEA6AAB /* BoardSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSceneView.swift; sourceTree = "<group>"; };
 		25EF0C02FC1064EF9E7E4065 /* lives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lives.png; sourceTree = "<group>"; };
 		25EF0C031777BB40A0160EBF /* help(zh-Hans).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hans).html"; sourceTree = "<group>"; };
 		25EF0C79909A2DF79BB5A2A1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		25EF0C972C5B48888967B275 /* SceneAnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneAnimationPhase.swift; sourceTree = "<group>"; };
 		25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPhase.swift; sourceTree = "<group>"; };
 		25EF0DA4AAB86C98ADD257F9 /* help(zh-Hant).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "help(zh-Hant).html"; sourceTree = "<group>"; };
 		25EF0E257F08E06D7776E47D /* AnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				25EF02D2ED8294C844E6F111 /* BoardScene.swift */,
 				25EF09BB9BD5389F1CC0B7AA /* MapTileTextureGenerator.swift */,
 				25EF0FB938BFA7782DB00021 /* Camera.swift */,
+				25EF0BD215671E2BCAEA6AAB /* BoardSceneView.swift */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				25EF0D0E72D7EA9AC20BC6B2 /* AnimationPhase.swift */,
 				25EF0E257F08E06D7776E47D /* AnimationManager.swift */,
 				25EF05022778B881B0ABA422 /* ViewAnimationPhase.swift */,
+				25EF0C972C5B48888967B275 /* SceneAnimationPhase.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -807,6 +813,8 @@
 				25EF0FC5BBFFFE45156B141A /* BoardDisplayer.swift in Sources */,
 				25EF0C6158326A38936C07B7 /* MapTileTextureGenerator.swift in Sources */,
 				25EF0FE04CA4822FE52451BC /* Camera.swift in Sources */,
+				25EF078F0DA0CFFDD13689B5 /* BoardSceneView.swift in Sources */,
+				25EF088548B52C03E9316D39 /* SceneAnimationPhase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
