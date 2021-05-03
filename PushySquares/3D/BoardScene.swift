@@ -81,6 +81,16 @@ class BoardScene: SCNScene, BoardDisplayer {
     }
 
     private func setupBoard(_ mapTiles: Array2D<MapTile>) {
+        let floorGeometry = SCNFloor()
+        floorGeometry.firstMaterial = SCNMaterial()
+        floorGeometry.firstMaterial?.diffuse.contents = UIImage(named: "grass")
+//        floorGeometry.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(32, 32, 0)
+        floorGeometry.firstMaterial?.diffuse.wrapS = .repeat
+        floorGeometry.firstMaterial?.diffuse.wrapT = .repeat
+        let floor = SCNNode(geometry: floorGeometry)
+        floor.position.y = -SceneAnimationPhase.fallHeight
+        rootNode.addChildNode(floor)
+
         for x in 0..<mapTiles.columns {
             for y in 0..<mapTiles.rows {
                 guard let material = MapTileTextureGenerator.material(for: mapTiles[x, y]) else { continue }
