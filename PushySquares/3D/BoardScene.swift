@@ -230,8 +230,13 @@ class BoardScene: SCNScene, BoardDisplayer {
         }
         animationManager.runAnimation { [weak self] in
             guard let `self` = self else { return }
-            (movedSquares + slippedSquares).forEach {
-                let newPosition = moveResult.direction.displacementFunction(self.positionFromSquareName($0.name!))
+            let displace = moveResult.direction.displacementFunction
+            (movedSquares).forEach {
+                let newPosition = displace(self.positionFromSquareName($0.name!))
+                $0.name = self.nameForSquare(atX: newPosition.x, y: newPosition.y)
+            }
+            (slippedSquares).forEach {
+                let newPosition = displace(displace(self.positionFromSquareName($0.name!)))
                 $0.name = self.nameForSquare(atX: newPosition.x, y: newPosition.y)
             }
             self.delegate?.boardDidEndAnimatingMoveResult(self, moveResult: moveResult)

@@ -151,8 +151,12 @@ class BoardView : UIView {
         }
         animationManager.runAnimation { [weak self] in
             guard let `self` = self else { return }
-            (movedSquares + slippedSquares).forEach {
-                $0.tag = moveResult.direction.displacementFunction(self.position(fromTag: $0.tag)).rawValue
+            let displace = moveResult.direction.displacementFunction
+            (movedSquares).forEach {
+                $0.tag = displace(self.position(fromTag: $0.tag)).rawValue
+            }
+            (slippedSquares).forEach {
+                $0.tag = displace(displace(self.position(fromTag: $0.tag))).rawValue
             }
             self.delegate?.boardDidEndAnimatingMoveResult(self, moveResult: moveResult)
         }
