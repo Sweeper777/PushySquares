@@ -66,6 +66,7 @@
 		5A61E535262BD0F400414CEA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A61E537262BD0F400414CEA /* Localizable.strings */; };
 		5A6314EC25FDAA2C00E2B0CA /* standard.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A69F2EC25FC77A60075B5EA /* standard.map */; };
 		5A6314F625FDB1E800E2B0CA /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EF0FA2484F5DA4128F622A /* SquareView.swift */; };
+		5A63612726481C96009F44A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A63612926481C96009F44A7 /* InfoPlist.strings */; };
 		5A640A082616BC4C003D3970 /* GameBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A640A062616BC4C003D3970 /* GameBoardCell.swift */; };
 		5A640A092616BC4C003D3970 /* GameBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A640A072616BC4C003D3970 /* GameBoardCell.xib */; };
 		5A69F25025FC69AB0075B5EA /* cublex1.map in Resources */ = {isa = PBXBuildFile; fileRef = 5A609B0B25F47B1800AAB972 /* cublex1.map */; };
@@ -225,6 +226,9 @@
 		5A61E536262BD0F400414CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A61E53B262BD11500414CEA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5A61E53F262BD11F00414CEA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A63612826481C96009F44A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5A63612D26481C9B009F44A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5A63612E26481C9D009F44A7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5A640A062616BC4C003D3970 /* GameBoardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardCell.swift; sourceTree = "<group>"; };
 		5A640A072616BC4C003D3970 /* GameBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardCell.xib; sourceTree = "<group>"; };
 		5A69F2EC25FC77A60075B5EA /* standard.map */ = {isa = PBXFileReference; explicitFileType = text; path = standard.map; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 				5A5EC2F02630F6C5008865CC /* Views */,
 				5A5E8534262FBE7B0068C2D6 /* GoogleService-Info.plist */,
 				5A61E537262BD0F400414CEA /* Localizable.strings */,
+				5A63612926481C96009F44A7 /* InfoPlist.strings */,
 				5AD4F43E25F34A7B00B500A9 /* AppDelegate.swift */,
 				5AD4F44025F34A7B00B500A9 /* SceneDelegate.swift */,
 				5AD4F44425F34A7B00B500A9 /* Main.storyboard */,
@@ -685,6 +690,7 @@
 				5A69F26925FC69B70075B5EA /* cublex5.map in Resources */,
 				5A69F2A125FC69CC0075B5EA /* morewalls.map in Resources */,
 				5A69F2D225FC69E20075B5EA /* zigzag.map in Resources */,
+				5A63612726481C96009F44A7 /* InfoPlist.strings in Resources */,
 				5A81B0182605887C0058A36E /* StatusBar.xib in Resources */,
 				25EF00632E0CC36BFE601637 /* help(zh-Hant).html in Resources */,
 				5A5E8535262FBE7B0068C2D6 /* GoogleService-Info.plist in Resources */,
@@ -860,6 +866,16 @@
 				5A61E53F262BD11F00414CEA /* zh-Hant */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5A63612926481C96009F44A7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A63612826481C96009F44A7 /* en */,
+				5A63612D26481C9B009F44A7 /* zh-Hans */,
+				5A63612E26481C9D009F44A7 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		5AD4F44425F34A7B00B500A9 /* Main.storyboard */ = {
@@ -1106,7 +1122,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = PushySquares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1219,7 +1235,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = PushySquares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
