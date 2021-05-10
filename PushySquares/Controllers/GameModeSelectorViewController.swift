@@ -4,6 +4,7 @@ import SwiftyButton
 import PushySquaresModel
 import StoreKit
 import GoogleMobileAds
+import AppTrackingTransparency
 
 class GameModeSelectorViewController: UIViewController, HasMapSelector {
     @IBOutlet var backButton: PressableButton!
@@ -66,20 +67,32 @@ class GameModeSelectorViewController: UIViewController, HasMapSelector {
 
         if Int.random(in: 0..<100) < 30 {
             shouldShowAd = true
-            let request = GADRequest()
-            GADInterstitialAd.load(withAdUnitID: adUnitID,
-                    request: request,
-                    completionHandler: { [weak self] ad, error in
-                        if let error = error {
-                            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                            return
-                        }
-                        self?.interstitial = ad
-                        if (self?.shouldShowAd ?? false) && (self?.hasAppeared ?? false) {
-                            self.map { ad?.present(fromRootViewController: $0) }
-                        }
-                    })
+            if #available(iOS 14, *) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { [weak self] status in
+                    self?.loadAd()
+                })
+            } else {
+                loadAd()
+            }
         }
+    }
+
+    private func loadAd() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: adUnitID,
+                request: request,
+                completionHandler: { [weak self] ad, error in
+                    if let error = error {
+                        print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                        return
+                    }
+                    self?.interstitial = ad
+                    if (self?.shouldShowAd ?? false) && (self?.hasAppeared ?? false) {
+                        self.map {
+                            ad?.present(fromRootViewController: $0)
+                        }
+                    }
+                })
     }
 
     @objc func startTapped() {
