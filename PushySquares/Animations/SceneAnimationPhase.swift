@@ -28,7 +28,10 @@ class SceneAnimationPhase : AnimationPhase {
                 node.position.z += Float(dy)
             }
         case .fall:
-            return { $0.position.y -= Self.fallHeight }
+            return {
+                $0.position.y -= Self.fallHeight
+                $0.opacity = 0
+            }
         case .grayOut:
             return { $0.geometry?.firstMaterial?.diffuse.contents = UIColor.gray }
         case .newSquare:
