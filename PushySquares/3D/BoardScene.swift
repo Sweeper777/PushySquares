@@ -16,8 +16,10 @@ class BoardScene: SCNScene, BoardDisplayer {
     let cubeLength: CGFloat = 0.88
     let cubeChamferRadius: CGFloat = 0.1
     let cubeNodeNamePrefix = "square"
-    let arrowRadius: CGFloat = 1
-    let arrowHeight: CGFloat = 0.5
+    var arrowRadius: CGFloat = 1
+    var arrowHeight: CGFloat {
+        arrowRadius / 2
+    }
 
     private lazy var trianglePath = { () -> UIBezierPath in
         let triangle = UIBezierPath()
@@ -117,6 +119,7 @@ class BoardScene: SCNScene, BoardDisplayer {
     }
 
     private func setupArrows(_ mapTiles: Array2D<MapTile>) {
+        arrowRadius = max(1, max(mapTiles.columns, mapTiles.rows).f / 10)
         let centerX = determineMidpoint(mapTiles.columns)
         let centerZ = determineMidpoint(mapTiles.rows)
         let upArrow = makeArrowNode()
